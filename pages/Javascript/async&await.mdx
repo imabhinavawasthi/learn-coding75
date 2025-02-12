@@ -1,0 +1,110 @@
+---
+title: "Async & Await"
+description: "Your Good to go Place for Tech Insights!"
+---
+
+import { Callout } from 'nextra/components';
+
+# Welcome to **Coding75** 🚀  
+Your Good to go Place for Tech Insights!
+
+At **Coding75**, we cover everything from programming tips and software development best practices to the latest trends in web, mobile, and deep tech. Each article is crafted with:
+
+✅ **Clear explanations** – No unnecessary jargon, just straight-to-the-point learning.  
+✅ **Practical examples** – Real-world use cases to help you apply concepts effectively.  
+✅ **Step-by-step guides** – Easy-to-follow tutorials for hands-on learning.
+
+<Callout emoji="🚣">Let’s Dive In!</Callout>
+
+## Exploring **Async & Await**
+
+In today’s post, we’re exploring **Async & Await** — why it matters, how it works, and how you can master it. Whether you're just starting or looking to level up, this guide will provide everything you need.
+
+### Ready? Let’s get started!
+### 1️⃣ Understanding **async and await** in JavaScript
+
+JavaScript is asynchronous by nature, meaning it doesn't wait for tasks like API calls or file operations to complete before moving to the next line of code. This is where **async** and **await** come into play, making asynchronous code look and behave like synchronous code, improving readability and maintainability.
+
+### What is `async`?
+
+The `async` keyword is used to define a function that always returns a promise. Even if you return a simple value, JavaScript automatically wraps it in a promise.
+
+#### Example:
+
+```javascript
+async function greet() {  
+   return "Hello!";
+}
+greet().then(console.log);  // Output: Hello!
+```
+
+Here, `greet()` returns a promise that resolves to "Hello!".
+### What is `await`? ⏰
+
+The `await` keyword is used inside an `async` function to pause execution until a promise is resolved. It simplifies working with promises without using `.then()`.
+
+#### Example:
+
+```javascript
+async function fetchData() {
+    let response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    let data = await response.json();
+    console.log(data);
+}
+
+fetchData();
+```
+
+In this example:
+
+- `fetch()` returns a promise that resolves with a response.
+- `await` pauses execution until the response is received.
+- `await response.json()` waits for the JSON data to be extracted.
+
+### 2️⃣ Error Handling with `try...catch` 😣
+
+Since `await` pauses execution, we can handle errors using `try...catch`.
+
+#### Example:
+
+```javascript
+async function fetchData() {
+    try {
+        let response = await fetch("invalid-url"); // Invalid URL
+        let data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+}
+
+fetchData();
+```
+
+Here, if an error occurs (like a network failure), the `catch` block handles it gracefully.
+
+### Key Takeaways:
+
+- `async` functions always return a promise.
+- `await` pauses execution until a promise resolves. ⏰
+- Error handling is easier with `try...catch`.
+- It makes asynchronous code look synchronous, improving readability. 🧾
+
+## Final Thoughts:
+
+`async` and `await` have transformed the way we handle asynchronous operations in JavaScript. They provide a clean, readable, and efficient way to work with promises, making code easier to understand and maintain.
+
+By now, you should have a clear understanding of:
+- ✅ How async functions work.
+- ✅ How await helps pause execution until a promise resolves.
+- ✅ How to handle errors using `try...catch`.
+
+Mastering `async/await` is essential for modern JavaScript development, especially when working with APIs, databases, and real-time applications. The best way to get comfortable with it? Practice!
+
+---
+
+## What’s Next?
+
+Want to dive deeper? Try implementing `async/await` in a real-world project—like fetching data from an API, handling multiple promises, or integrating with a backend. If you have any questions or thoughts, drop a comment below!
+
+Thanks for reading, and happy coding! 🚀

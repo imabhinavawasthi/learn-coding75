@@ -1,0 +1,531 @@
+---
+title: "Binary Search"
+description:
+---
+
+import { Callout } from 'nextra-theme-docs'
+
+# 🫣 Are you Struggling with Binary Search? Solve These 10 Questions to Become a Pro! 🚀
+
+**Hey everyone!** Welcome back to the article of **Coding75**. Today, we're deep diving into one of the most powerful searching algorithms in Data Structures – **Binary Search**! If you’ve ever wondered how Google searches so fast or how numbers are found in a sorted list instantly, Binary Search is the magic behind it. Let's break it down in the simplest way possible! 🚀
+
+## Welcome to another insightful article! 
+Let’s understand how **Binary Search Code Works** step by step.
+
+---
+
+## 📌 Part 1: What is Binary Search?
+
+Imagine you have a dictionary, and you’re searching for the word ‘Java’. You don’t flip through every page one by one, right? Instead, you open the book in the middle, check the word, and decide whether to go left or right. That’s exactly how **Binary Search** works! Instead of checking every element, we keep dividing the search space in half until we find the target. It’s super-efficient!
+
+---
+
+## 💡 Part 2: How Does It Work?
+
+Alright, let’s visualize this! Suppose we have a sorted array: `[2, 3, 4, 10, 18, 20]` and we need to find the number `10`.
+
+📌 **Step 1:** Set two pointers – `low` (start of array) and `high` (end of array).  
+📌 **Step 2:** Find the middle element. If it matches the target, we’re done! 🎯
+📌 **Step 3:** If the middle element is smaller, search in the right half.  
+📌 **Step 4:** If the middle element is larger, search in the left half.  
+📌 **Step 5:** Repeat until we find the number or the search space becomes empty.
+
+---
+## 💻 Part 3: Coding It in Java
+
+Now, let’s write the code! We’ll use an iterative approach to implement Binary Search in Java. Watch closely!
+
+```java
+class Coding75 {
+    static int binarySearch(int arr[], int target) {
+        int low = 0, high = arr.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (arr[mid] == target)
+                return mid;
+
+            if (arr[mid] < target)
+                low = mid + 1;
+            else
+                high = mid - 1;
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {2, 3, 4, 10, 18, 20}; 
+        int target = 10;
+        
+        int result = binarySearch(arr, target);
+        if (result != -1)
+            System.out.println("Element found at index: " + result);
+        else
+            System.out.println("Element not found");
+    }
+}
+
+```
+
+And that’s it! Our program efficiently finds the number `10` at index `3`. Simple, right? 😃
+
+---
+
+## 📊 Part 4: Complexity 🚀 
+
+** Time Complexity: **
+- **Best Case:** O(1) → When the element is found at the middle.
+- **Average & Worst Case:** O(log n) → The search space is divided in half in each step.
+
+** Space Complexity: **
+- **Iterative Approach:** → No extra space used.
+- **Recursive Approach:** → Due to recursive call stack.
+
+Now, let’s talk about efficiency. Unlike **Linear Search**, which takes O(n) time, **Binary Search** works in O(log n) time. That means even if we have millions of elements, we only need around **20 comparisons** to find an element. That’s why it’s used in **databases, search engines, and even competitive programming!**
+
+---
+## 🚀 Part 5: Recap & Challenge
+
+Alright, let’s recap what we learned today!
+
+✅ **Binary Search** works on sorted arrays.  
+✅ It divides the search space in half each time.  
+✅ The **time complexity** is **O(log n)**, making it super fast!  
+
+**Happy coding! 🚀**
+
+---
+
+## [📌 Summary of Questions: ]
+
+These are common **Binary Search problems** that frequently appear in coding interviews (**Amazon, Google, Microsoft, etc.**).
+
+### Here are 10 must-know Binary Search questions with solutions in Java:
+
+---
+
+
+### 1️⃣ Find the First and Last Occurrence of an Element in a Sorted Array.
+
+**Problem:** Given a sorted array, find the first and last position of a given target element. If not found, return `[-1, -1]`.
+
+**Solution:**
+
+```java
+class FirstLastOccurrenceAtCoding75 {
+    static int[] searchRange(int[] nums, int target) {
+        int first = findBound(nums, target, true);
+        int last = findBound(nums, target, false);
+        return new int[]{first, last};
+    }
+
+    static int findBound(int[] nums, int target, boolean isFirst) {
+        int low = 0, high = nums.length - 1, bound = -1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] == target) {
+                bound = mid;
+                if (isFirst) high = mid - 1;  // Search left
+                else low = mid + 1;  // Search right
+            } else if (nums[mid] < target)
+                low = mid + 1;
+            else
+                high = mid - 1;
+        }
+        return bound;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {5, 7, 7, 8, 8, 10};
+        int target = 8;
+        int[] result = searchRange(nums, target);
+        System.out.println("First and Last Occurrence: [" + result[0] + ", " + result[1] + "]");
+    }
+}
+```
+
+**Output:**
+```
+First and Last Occurrence: [3, 4]
+```
+
+**Time Complexity:** O(log n)
+
+---
+
+
+
+### 2️⃣ Find Square Root Using Binary Search
+
+```java
+class SquareRootAtCoding75 {
+    static int mySqrt(int x) {
+        if (x == 0 || x == 1) return x;
+        int low = 1, high = x, ans = 0;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (mid <= x / mid) { // Avoid overflow by using x/mid instead of mid*mid
+                ans = mid;
+                low = mid + 1;
+            } else
+                high = mid - 1;
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        int x = 10;
+        System.out.println("Square root of " + x + " is " + mySqrt(x));
+    }
+}
+```
+
+**Output:**
+```
+Square root of 10 is 3
+```
+
+**Time Complexity:** O(log n)
+
+---
+
+### 3️⃣ Find Peak Element in an Array
+
+**Problem:** A peak element is an element that is greater than its neighbors. Find any peak element in the array.
+
+
+```java
+class PeakElementAtCoding75 {
+    static int findPeakElement(int[] nums) {
+        int low = 0, high = nums.length - 1;
+
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] > nums[mid + 1])
+                high = mid; // Peak is in the left half
+            else
+                low = mid + 1; // Peak is in the right half
+        }
+        return low;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 1};
+        System.out.println("Peak element index: " + findPeakElement(nums));
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+Peak element index: 2
+```
+
+**Time Complexity:** O(log n)
+
+
+
+### 4️⃣ Search in a Rotated Sorted Array
+
+**Problem:** Given a rotated sorted array and a target, find the index of the target. If not found, return -1.
+
+
+
+```java
+class RotatedArraySearch {
+    static int search(int[] nums, int target) {
+        int low = 0, high = nums.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] == target) return mid;
+
+            if (nums[low] <= nums[mid]) { // Left half sorted
+                if (target >= nums[low] && target < nums[mid])
+                    high = mid - 1;
+                else
+                    low = mid + 1;
+            } else { // Right half sorted
+                if (target > nums[mid] && target <= nums[high])
+                    low = mid + 1;
+                else
+                    high = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {4, 5, 6, 7, 0, 1, 2};
+        int target = 0;
+        System.out.println("Target found at index: " + search(nums, target));
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+Target found at index: 4
+```
+
+**Time Complexity:** O(log n)
+
+
+
+
+### 5️⃣ Find the Smallest Element in a Rotated Sorted Array
+**Problem:** Given a rotated sorted array, find the smallest element (minimum value).
+
+```java
+class FindMinInRotatedArray {
+    static int findMin(int[] nums) {
+        int low = 0, high = nums.length - 1;
+
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] > nums[high]) 
+                low = mid + 1; // Minimum is in the right half
+            else
+                high = mid; // Minimum is in the left half
+        }
+        return nums[low];
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {4, 5, 6, 7, 0, 1, 2};
+        System.out.println("Smallest element: " + findMin(nums));
+    }
+}
+```
+**Output:**
+
+```plaintext
+Smallest element: 0
+```
+
+**Time Complexity:** O(log n)
+
+
+
+### 6️⃣ Find the Insert Position in a Sorted Array
+**Problem:** Given a sorted array and a target, return the index where it would be inserted if not found.
+
+
+```java
+class SearchInsertPositionAtCoding75 {
+    static int searchInsert(int[] nums, int target) {
+        int low = 0, high = nums.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] == target)
+                return mid;
+            else if (nums[mid] < target)
+                low = mid + 1;
+            else
+                high = mid - 1;
+        }
+        return low;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 3, 5, 6};
+        int target = 5;
+        System.out.println("Insert position: " + searchInsert(nums, target));
+    }
+}
+```
+
+**Output:**
+
+```plaintext
+Insert position: 2
+```
+
+**Time Complexity:** O(log n)
+
+
+## 7️⃣ Find the Single Element in a Sorted Array
+**Problem:** In a sorted array where every element appears twice except one, find that single element.
+
+
+```java
+class SingleElement {
+    static int singleNonDuplicate(int[] nums) {
+        int low = 0, high = nums.length - 1;
+
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            if (mid % 2 == 1) mid--; // Ensure we start at an even index
+
+            if (nums[mid] == nums[mid + 1])
+                low = mid + 2; // Move to next pair
+            else
+                high = mid;
+        }
+        return nums[low];
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 2, 2, 3, 4, 4};
+        System.out.println("Single element: " + singleNonDuplicate(nums));
+    }
+}
+```
+
+**Output:**
+```plaintext
+Single element: 3
+```
+**Time Complexity:** O(log n)
+
+ 
+## 8️⃣ Find the Missing Number in an Array
+** Problem:** Given an array of size n containing numbers from 0 to n, find the missing number.
+
+** Solution **
+
+```java
+class MissingNumberAtCoding75 {
+    static int missingNumber(int[] nums) {
+        int low = 0, high = nums.length;
+
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            if (nums[mid] > mid)
+                high = mid; // Search in left half
+            else
+                low = mid + 1; // Search in right half
+        }
+        return low;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {0, 1, 2, 3, 4, 6};
+        System.out.println("Missing number: " + missingNumber(nums));
+    }
+}
+```
+
+** Output **
+```plaintext
+Missing number: 5
+```
+**Time Complexity:** O(log n)
+
+
+ ## 9️⃣ Binary Search Implementation
+** Problem: ** You are given a sorted array of distinct integers `nums` and a target value `target`. Implement a function to find the index of `target` using binary search. If the target is not found, return `-1`.
+
+** Solution **
+
+```java
+public class BinarySearchExample {
+    public static int binarySearch(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        
+        return -1; // Target not found
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {-5, 1, 3, 6, 9, 12};
+        int target = 6;
+        System.out.println(binarySearch(nums, target)); // Output: 3
+
+        target = 7;
+        System.out.println(binarySearch(nums, target)); // Output: -1
+    }
+}
+```
+
+** Output **
+```plaintext
+3
+-1
+```
+**Time Complexity:** O(log n)
+
+## 🔟 Find the Median of Two Sorted Arrays
+
+** Problem: **
+Given two sorted arrays, find the median in optimal time.
+
+** Solution **
+
+```java
+class MedianTwoSortedArrays {
+    static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        if (nums1.length > nums2.length)
+            return findMedianSortedArrays(nums2, nums1); // Ensure nums1 is smaller
+
+        int x = nums1.length, y = nums2.length;
+        int low = 0, high = x;
+
+        while (low <= high) {
+            int partitionX = (low + high) / 2;
+            int partitionY = (x + y + 1) / 2 - partitionX;
+
+            int maxLeftX = (partitionX == 0) ? Integer.MIN_VALUE : nums1[partitionX - 1];
+            int minRightX = (partitionX == x) ? Integer.MAX_VALUE : nums1[partitionX];
+
+            int maxLeftY = (partitionY == 0) ? Integer.MIN_VALUE : nums2[partitionY - 1];
+            int minRightY = (partitionY == y) ? Integer.MAX_VALUE : nums2[partitionY];
+
+            if (maxLeftX <= minRightY && maxLeftY <= minRightX) {
+                // If total length is even
+                if ((x + y) % 2 == 0)
+                    return (Math.max(maxLeftX, maxLeftY) + Math.min(minRightX, minRightY)) / 2.0;
+                else
+                    return Math.max(maxLeftX, maxLeftY); // If total length is odd
+            } else if (maxLeftX > minRightY)
+                high = partitionX - 1;
+            else
+                low = partitionX + 1;
+        }
+        throw new IllegalArgumentException("Input arrays are not sorted properly.");
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {1, 3, 8};
+        int[] nums2 = {7, 9, 10, 11};
+
+        System.out.println("Median: " + findMedianSortedArrays(nums1, nums2));
+    }
+}
+```
+
+** Output **
+```plaintext
+Median: 8.0
+```
+**Time Complexity:** O(log(min(n, m)))
+
+
+## What’s Next?
+
+Want to dive deeper? Try implementing `async/await` in a real-world project—like fetching data from an API, handling multiple promises, or integrating with a backend. If you have any questions or thoughts, drop a comment below!
+
+Thanks for reading, and happy coding! 🚀
