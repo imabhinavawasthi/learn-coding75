@@ -1,0 +1,15 @@
+{
+  "index": "Introduction",
+  "dsa": "DSA Notes",
+
+  "about": {
+    "title": "Coding Resources",
+    "type": "page"
+  },
+  "contact": {
+    "title": "Interview Prepration ↗",
+    "type": "page",
+    "href": "#",
+    "newWindow": false
+  }
+}
