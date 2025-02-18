@@ -1,15 +1,12 @@
 {
-  "index": "Introduction",
-  "dsa": "DSA Notes",
-
-  "about": {
-    "title": "Coding Resources",
+  "dsa": {
+    "display": "hidden",
+    "title": "DSA",
     "type": "page"
   },
-  "contact": {
-    "title": "Interview Prepration ↗",
-    "type": "page",
-    "href": "#",
-    "newWindow": false
+  "webdevelopment": {
+    "display": "hidden",
+    "title": "Web Development",
+    "type": "page"
   }
 }

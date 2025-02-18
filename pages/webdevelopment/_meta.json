@@ -1,7 +1,7 @@
 {
-  "learn": {
+  "docs": {
     "display": "hidden",
-    "title": "Learn",
+    "title": "webdoc",
     "type": "page"
   }
 }
