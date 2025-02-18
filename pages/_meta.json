@@ -1,12 +1,12 @@
 {
   "dsa": {
     "display": "hidden",
-    "title": "dsa",
+    "title": "DSA",
     "type": "page"
   },
   "webdevelopment": {
     "display": "hidden",
-    "title": "web",
+    "title": "Web Development",
     "type": "page"
   }
 }
