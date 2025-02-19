@@ -1,0 +1,80 @@
+---
+title: "Getting Started"
+description: "Learn the basics of Java, including installation and setup."
+---
+
+import { Callout } from 'nextra/components';
+
+# Introduction to Java
+
+Java is a powerful, object-oriented programming language widely used for building applications, ranging from web and mobile apps to enterprise systems and embedded devices. It follows the **"Write Once, Run Anywhere" (WORA)** principle, meaning Java programs can run on any platform that supports the Java Virtual Machine (JVM).
+
+# Installing Java
+
+Before writing Java programs, you need to install the Java Development Kit (JDK).
+
+## Step 1: Download and Install JDK
+
+- Visit the official Oracle website: [Download JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
+- Choose the appropriate version for your OS (Windows, macOS, or Linux).
+- Install the JDK and set up the `JAVA_HOME` environment variable.
+
+<Callout>
+Ensure that you download the latest **LTS (Long-Term Support)** version for better stability and support.
+</Callout>
+
+## Step 2: Verify Installation
+
+Open a terminal or command prompt and type:
+
+```sh
+java -version
+```
+
+If Java is installed correctly, you should see output similar to:
+
+```sh
+java version "17.0.1" 2021-10-19 LTS
+Java(TM) SE Runtime Environment (build 17.0.1+12-LTS-39)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.1+12-LTS-39, mixed mode)
+```
+
+# Writing Your First Java Program
+
+Once Java is installed, let's write a simple program.
+
+1. Open a text editor (VS Code, IntelliJ IDEA, or Notepad++).
+2. Create a new file named `HelloWorld.java`.
+3. Add the following code:
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+4. Save the file and open a terminal in the same directory.
+
+## Compiling and Running Java Code
+
+To compile the program, run:
+
+```sh
+javac HelloWorld.java
+```
+
+This generates a `HelloWorld.class` file. Now, run the program:
+
+```sh
+java HelloWorld
+```
+
+**Output:**
+
+```sh
+Hello, World!
+```
+
+Congratulations! You've successfully written and executed your first Java program.
