@@ -1,7 +1,5 @@
 {
-  "docs": {
-    "display": "hidden",
-    "title": "webdoc",
-    "type": "page"
+  "html": {
+    "title": "html"
   }
 }

@@ -1,7 +1,4 @@
 {
-  "learn": {
-    "display": "hidden",
-    "title": "Learn",
-    "type": "page"
-  }
+  "introduction": "Introduction",
+  "arrays": "Arrays"
 }
