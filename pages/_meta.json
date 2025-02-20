@@ -10,5 +10,9 @@
   "webdevelopment": {
     "title": "Web Dev",
     "type": "page"
+  },
+  "java": {
+    "title": "Java",
+    "type": "page"
   }
 }
