@@ -1,0 +1,64 @@
+# Java Break and Continue
+
+## Java Break
+
+The `break` statement can be used to exit a loop early when a certain condition is met.
+
+### Example: Stopping a loop when `i` equals 4
+
+```java
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    break;
+  }
+  System.out.println(i);
+}
+```
+
+## Java Continue
+
+The `continue` statement skips the current iteration and moves to the next one when a condition is met.
+
+### Example: Skipping the value `4`
+
+```java
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    continue;
+  }
+  System.out.println(i);
+}
+```
+
+## Break and Continue in While Loop
+
+You can also use `break` and `continue` in while loops.
+
+### Example: Using `break` in a while loop
+
+```java
+int i = 0;
+while (i < 10) {
+  System.out.println(i);
+  i++;
+  if (i == 4) {
+    break;
+  }
+}
+```
+
+### Example: Using `continue` in a while loop
+
+```java
+int i = 0;
+while (i < 10) {
+  if (i == 4) {
+    i++;
+    continue;
+  }
+  System.out.println(i);
+  i++;
+}
+```
+
+This section covered the `break` and `continue` statements in Java. Let me know if you need more details! 🚀
