@@ -1,0 +1,98 @@
+## Java Try-Catch Block
+### Java Try Block
+A Java try block is used to enclose the code that might throw an exception. It must be used within a method.
+
+If an exception occurs at a particular statement in the try block, the rest of the block code will not execute. So, it is recommended not to keep code in a try block that will not throw an exception.
+
+A Java try block must be followed by either a catch or finally block.
+
+#### Syntax of Java Try-Catch:
+```java
+try {    
+    // Code that may throw an exception    
+} catch(ExceptionClassName ref) {    
+    // Handling code  
+}    
+```
+
+#### Syntax of Try-Finally Block:
+```java
+try {    
+    // Code that may throw an exception    
+} finally {    
+    // Cleanup code  
+}    
+```
+
+### Java Catch Block
+A Java catch block is used to handle exceptions by declaring the type of exception within the parameter. The declared exception must be either the parent class exception (i.e., Exception) or the generated exception type. However, a good approach is to declare the specific type of exception generated.
+
+A catch block must always be used after a try block. Multiple catch blocks can be used with a single try block.
+
+## Example of Try-Catch
+```java
+public class TryCatchExample {
+    public static void main(String[] args) {
+        try {
+            int data = 50 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println(e);
+        }
+        System.out.println("Rest of the code");
+    }
+}
+```
+**Output:**
+```
+java.lang.ArithmeticException: / by zero
+Rest of the code
+```
+
+## Example of Handling Checked Exception
+```java
+import java.io.*;
+class TryCatchExample {
+    public static void main(String[] args) throws IOException {
+        FileReader f = new FileReader("C:\\test\\a.txt");
+        BufferedReader fi = new BufferedReader(f);
+        for (int i = 0; i < 2; i++)
+            System.out.println(fi.readLine());
+        fi.close();
+    }
+}
+```
+**Output:**
+```
+No Exception occurs
+```
+
+## Example of Handling Unchecked Exception
+```java
+public class TryCatchExample {
+    public static void main(String[] args) {
+        try {
+            int arr[] = {1, 3, 5, 7};  
+            System.out.println(arr[10]); // May throw exception   
+        } catch (ArrayIndexOutOfBoundsException e) {  
+            System.out.println(e);  
+        }
+        System.out.println("Rest of the code");  
+    }  
+}
+```
+**Output:**
+```
+java.lang.ArrayIndexOutOfBoundsException: 10
+Rest of the code
+```
+
+The separation into checked and unchecked exceptions sounded like a good idea at the time. However, over the years, it has introduced more boilerplate and less aesthetically pleasing code patterns than it solved real problems. The typical (and unfortunately quite cumbersome) pattern within the Java ecosystem is to hide (or wrap) the checked exception within an unchecked one.
+
+### Example:
+```java
+try {
+    // Some I/O operation here
+} catch (final IOException ex) {
+    throw new RuntimeException("I/O operation failed", ex);
+}
+```

@@ -1,0 +1,53 @@
+## Java Methods
+
+### Creating a Method
+A method is a block of code that runs when called. Methods help reuse code efficiently.
+
+```java
+public class Main {
+  static void myMethod() {
+    System.out.println("I just got executed!");
+  }
+}
+```
+
+### Calling a Method
+To call a method, use its name followed by parentheses:
+
+```java
+public class Main {
+  static void myMethod() {
+    System.out.println("I just got executed!");
+  }
+  public static void main(String[] args) {
+    myMethod();
+  }
+}
+```
+
+#### Output:
+```
+I just got executed!
+```
+
+### Calling a Method Multiple Times
+```java
+public class Main {
+  static void myMethod() {
+    System.out.println("I just got executed!");
+  }
+  public static void main(String[] args) {
+    myMethod();
+    myMethod();
+    myMethod();
+  }
+}
+```
+#### Output:
+```
+I just got executed!
+I just got executed!
+I just got executed!
+```
+
+Methods make code reusable and more organized, reducing redundancy.

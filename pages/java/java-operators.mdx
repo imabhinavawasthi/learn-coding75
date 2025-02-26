@@ -1,0 +1,210 @@
+---
+title: "Operators in Java"
+description: "Comprehensive guide on operators in Java with examples."
+---
+
+# Operators in Java
+
+Operators are an essential part of any programming language. In Java, an operator is a symbol used to perform operations. For example: `+`, `-`, `*`, `/`, etc. These are essential for performing different types of operations on variables and values.
+
+## Types of Operators in Java
+
+- Unary Operator
+- Arithmetic Operator
+- Shift Operator
+- Relational Operator
+- Bitwise Operator
+- Logical Operator
+- Ternary Operator
+- Assignment Operator
+
+## Java Unary Operator
+
+The Java unary operators require only one operand. Unary operators are used to perform various operations:
+
+- Incrementing/decrementing a value by one
+- Negating an expression
+- Inverting the value of a boolean
+
+### Java Unary Operator Example: `++` and `--`
+
+#### File Name: `OperatorExample1.java`
+
+```java
+public class OperatorExample {  
+    public static void main(String args[]) {  
+        int x = 10;  
+        System.out.println(x++); // 10 (11)  
+        System.out.println(++x); // 12  
+        System.out.println(x--); // 12 (11)  
+        System.out.println(--x); // 10  
+    }  
+}
+```
+
+**Output:**
+```
+10
+12
+12
+10
+```
+
+### Java Unary Operator Example 2: `++` and `--`
+
+#### File Name: `OperatorExample2.java`
+
+```java
+public class OperatorExample2 {    
+    public static void main(String args[]) {    
+        int a = 10;    
+        int b = 10;    
+        System.out.println(a++ + ++a); // 10+12=22    
+        System.out.println(b++ + b++); // 10+11=21    
+    }    
+}    
+```
+
+**Output:**
+```
+22
+21
+```
+
+## Java Arithmetic Operators
+
+Java arithmetic operators are used to perform addition, subtraction, multiplication, and division.
+
+### Java Arithmetic Operator Example
+
+#### File Name: `OperatorExample4.java`
+
+```java
+public class OperatorExample4 {    
+    public static void main(String args[]) {    
+        int a = 10;    
+        int b = 5;    
+        System.out.println(a + b); // 15    
+        System.out.println(a - b); // 5    
+        System.out.println(a * b); // 50    
+        System.out.println(a / b); // 2    
+        System.out.println(a % b); // 0    
+    }    
+}    
+```
+
+**Output:**
+```
+15
+5
+50
+2
+0
+```
+
+## Java Left Shift Operator
+
+The Java left shift operator `<<` shifts all bits in a value to the left.
+
+### Java Left Shift Operator Example
+
+#### File Name: `OperatorExample6.java`
+
+```java
+public class OperatorExample6 {  
+    public static void main(String args[]) {  
+        System.out.println(10 << 2); // 40  
+        System.out.println(10 << 3); // 80  
+        System.out.println(20 << 2); // 80  
+        System.out.println(15 << 4); // 240  
+    }  
+}
+```
+
+**Output:**
+```
+40
+80
+80
+240
+```
+
+## Java Right Shift Operator
+
+The Java right shift operator `>>` moves the bits to the right.
+
+### Java Right Shift Operator Example
+
+#### File Name: `OperatorExample7.java`
+
+```java
+public class OperatorExample7 {  
+    public static void main(String args[]) {  
+        System.out.println(10 >> 2); // 2  
+        System.out.println(20 >> 2); // 5  
+        System.out.println(20 >> 3); // 2  
+    }  
+}
+```
+
+**Output:**
+```
+2
+5
+2
+```
+
+## Java Ternary Operator
+
+The Java ternary operator is a one-line replacement for `if-then-else` statements.
+
+### Java Ternary Operator Example
+
+#### File Name: `OperatorExample12.java`
+
+```java
+public class OperatorExample12 {    
+    public static void main(String args[]) {    
+        int a = 2;    
+        int b = 5;    
+        int min = (a < b) ? a : b;    
+        System.out.println(min);    
+    }    
+}    
+```
+
+**Output:**
+```
+2
+```
+
+## Java Assignment Operator
+
+Java assignment operators assign values to variables.
+
+### Java Assignment Operator Example
+
+#### File Name: `OperatorExample14.java`
+
+```java
+public class OperatorExample14 {  
+    public static void main(String args[]) {  
+        int a = 10;  
+        int b = 20;  
+        a += 4; // a = a + 4 (a = 10 + 4)  
+        b -= 4; // b = b - 4 (b = 20 - 4)  
+        System.out.println(a);  
+        System.out.println(b);  
+    }  
+}  
+```
+
+**Output:**
+```
+14
+16
+```
+
+## Conclusion
+
+Operators are a fundamental part of Java programming. Understanding different types of operators and their precedence is crucial for writing efficient Java code. This guide provides a comprehensive overview and practical examples to help you get started with operators in Java.

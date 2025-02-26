@@ -1,0 +1,105 @@
+---
+title: "Java Regular Expressions"
+---
+
+## What is a Regular Expression?
+
+A regular expression is a sequence of characters that forms a search pattern. When you search for data in a text, you can use this search pattern to describe what you are searching for.
+
+A regular expression can be a single character or a more complicated pattern.
+
+Regular expressions can be used to perform all types of text search and text replace operations.
+
+Java does not have a built-in Regular Expression class, but we can import the `java.util.regex` package to work with regular expressions. The package includes the following classes:
+
+- **Pattern Class** - Defines a pattern (to be used in a search)
+- **Matcher Class** - Used to search for the pattern
+- **PatternSyntaxException Class** - Indicates a syntax error in a regular expression pattern
+
+## Example
+
+Find out if there are any occurrences of the word "Coding75" in a sentence:
+
+```java
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+  public static void main(String[] args) {
+    Pattern pattern = Pattern.compile("Coding75", Pattern.CASE_INSENSITIVE);
+    Matcher matcher = pattern.matcher("Visit Coding75!");
+    boolean matchFound = matcher.find();
+    if(matchFound) {
+      System.out.println("Match found");
+    } else {
+      System.out.println("Match not found");
+    }
+  }
+}
+```
+
+**Output:**
+```
+Match found
+```
+
+## Example Explained
+
+- The word "Coding75" is being searched for in a sentence.
+- The `Pattern.compile()` method is used to create the pattern.
+  - The first parameter specifies the pattern to search for.
+  - The second parameter (`Pattern.CASE_INSENSITIVE`) makes the search case-insensitive (optional).
+- The `matcher()` method searches for the pattern in the string and returns a `Matcher` object.
+- The `find()` method returns `true` if the pattern is found; otherwise, it returns `false`.
+
+## Flags
+
+Flags in the `compile()` method change how the search is performed:
+
+- **`Pattern.CASE_INSENSITIVE`** - Ignores letter case when searching.
+- **`Pattern.LITERAL`** - Treats special characters as ordinary characters.
+- **`Pattern.UNICODE_CASE`** - Used with `CASE_INSENSITIVE` to ignore case in Unicode characters.
+
+## Regular Expression Patterns
+
+The first parameter of the `Pattern.compile()` method is the pattern, which defines what to search for.
+
+### Brackets
+
+Brackets are used to find a range of characters:
+
+| Expression | Description |
+|------------|-------------|
+| `[abc]` | Find one character from the options between the brackets |
+| `[^abc]` | Find one character NOT between the brackets |
+| `[0-9]` | Find one character from the range 0 to 9 |
+
+### Metacharacters
+
+Metacharacters are characters with a special meaning:
+
+| Metacharacter | Description |
+|--------------|-------------|
+| `|` | Find a match for any one of the patterns separated by `|` (e.g., `cat|dog|fish`) |
+| `.` | Find just one instance of any character |
+| `^` | Matches at the beginning of a string (e.g., `^Hello`) |
+| `$` | Matches at the end of a string (e.g., `World$`) |
+| `\d` | Find a digit |
+| `\s` | Find a whitespace character |
+| `\b` | Find a match at the beginning or end of a word (e.g., `\bWORD` or `WORD\b`) |
+| `\uxxxx` | Find the Unicode character specified by `xxxx` |
+
+## Quantifiers
+
+Quantifiers define quantities:
+
+| Quantifier | Description |
+|-----------|-------------|
+| `n+` | Matches any string that contains at least one `n` |
+| `n*` | Matches any string that contains zero or more occurrences of `n` |
+| `n?` | Matches any string that contains zero or one occurrence of `n` |
+| `n{x}` | Matches any string that contains exactly `x` occurrences of `n` |
+| `n{x,y}` | Matches any string that contains between `x` and `y` occurrences of `n` |
+| `n{x,}` | Matches any string that contains at least `x` occurrences of `n` |
+
+This guide provides a basic understanding of Java Regular Expressions, their usage, and common patterns.

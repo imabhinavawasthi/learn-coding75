@@ -1,0 +1,72 @@
+## Difference Between String and StringBuffer
+
+| No. | String | StringBuffer |
+|----|--------|--------------|
+| 1 | The String class is immutable. | The StringBuffer class is mutable. |
+| 2 | String is slow and consumes more memory when we concatenate too many strings because every time it creates a new instance. | StringBuffer is fast and consumes less memory when concatenating strings. |
+| 3 | String class overrides the `equals()` method of Object class, allowing content comparison. | StringBuffer class doesn't override the `equals()` method. |
+| 4 | String class is slower while performing concatenation operations. | StringBuffer class is faster while performing concatenation operations. |
+| 5 | String class uses the String constant pool. | StringBuffer uses heap memory. |
+
+### Performance Test of String and StringBuffer
+
+```java
+public class ConcatTest {  
+    public static String concatWithString() {  
+        String t = "Java";  
+        for (int i = 0; i < 10000; i++) {  
+            t = t + "Tpoint";  
+        }  
+        return t;  
+    }  
+    public static String concatWithStringBuffer() {  
+        StringBuffer sb = new StringBuffer("Java");  
+        for (int i = 0; i < 10000; i++) {  
+            sb.append("Tpoint");  
+        }  
+        return sb.toString();  
+    }  
+    public static void main(String[] args) {  
+        long startTime = System.currentTimeMillis();  
+        concatWithString();  
+        System.out.println("Time taken by Concatenating with String: " + (System.currentTimeMillis() - startTime) + "ms");  
+        startTime = System.currentTimeMillis();  
+        concatWithStringBuffer();  
+        System.out.println("Time taken by Concatenating with StringBuffer: " + (System.currentTimeMillis() - startTime) + "ms");  
+    }  
+}  
+```
+**Output:**
+```
+Time taken by Concatenating with String: 578ms
+Time taken by Concatenating with StringBuffer: 0ms
+```
+
+### String and StringBuffer HashCode Test
+
+```java
+public class InstanceTest {  
+    public static void main(String args[]) {  
+        System.out.println("Hashcode test of String:");  
+        String str = "java";  
+        System.out.println(str.hashCode());  
+        str = str + "tpoint";  
+        System.out.println(str.hashCode());  
+   
+        System.out.println("Hashcode test of StringBuffer:");  
+        StringBuffer sb = new StringBuffer("java");  
+        System.out.println(sb.hashCode());  
+        sb.append("tpoint");  
+        System.out.println(sb.hashCode());  
+    }  
+}  
+```
+**Output:**
+```
+Hashcode test of String:
+3254818
+229541438
+Hashcode test of StringBuffer:
+118352462
+118352462
+```

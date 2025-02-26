@@ -1,0 +1,83 @@
+---
+title: "Immutable String in Java"
+---
+
+# Immutable String in Java
+
+A `String` is an unavoidable type of variable while writing any application program. String references are used to store various attributes like username, password, etc. In Java, `String` objects are immutable. Immutable simply means unmodifiable or unchangeable.
+
+Once a `String` object is created, its data or state can't be changed, but a new `String` object is created.
+
+## Example: Understanding Immutability
+
+### `Testimmutablestring.java`
+
+```java
+class Testimmutablestring {  
+ public static void main(String args[]) {  
+   String s = "Sachin";  
+   s.concat(" Tendulkar"); // concat() method appends the string at the end  
+   System.out.println(s); // will print Sachin because strings are immutable objects  
+ }  
+}
+```
+
+### Output:
+
+```
+Sachin
+```
+
+Now it can be understood by the diagram given below. Here `Sachin` is not changed, but a new object is created with `Sachin Tendulkar`. That is why `String` is known as immutable.
+
+## Assigning New Reference
+
+As seen in the example above, two objects are created, but the `s` reference variable still refers to "Sachin", not "Sachin Tendulkar".
+
+However, if we explicitly assign it to the reference variable, it will refer to "Sachin Tendulkar".
+
+### `Testimmutablestring1.java`
+
+```java
+class Testimmutablestring1 {  
+ public static void main(String args[]) {  
+   String s = "Sachin";  
+   s = s.concat(" Tendulkar");  
+   System.out.println(s);  
+ }  
+}
+```
+
+### Output:
+
+```
+Sachin Tendulkar
+```
+
+In this case, `s` points to "Sachin Tendulkar". Please note that the `Sachin` object is still not modified.
+
+## Why String Objects Are Immutable in Java?
+
+Java uses the concept of String literal. Suppose there are 5 reference variables, all referring to one object "Sachin". If one reference variable changes the value of the object, it will affect all reference variables. That is why `String` objects are immutable in Java.
+
+### Features Making `String` Objects Immutable:
+
+#### 1. ClassLoader:
+
+A `ClassLoader` in Java uses a `String` object as an argument. If the `String` object were modifiable, its value might change, causing the class that is supposed to be loaded to be different. To avoid this misinterpretation, `String` is immutable.
+
+#### 2. Thread Safety:
+
+As `String` objects are immutable, we don't have to handle synchronization when sharing an object across multiple threads.
+
+#### 3. Security:
+
+Immutable `String` objects prevent unauthorized modifications, making applications more secure. For example, in banking software, the username and password cannot be modified by an intruder because `String` objects are immutable.
+
+#### 4. Efficient Heap Space Usage:
+
+The immutability of `String` minimizes memory usage in the heap. When declaring a new `String` object, the JVM checks whether the value already exists in the String pool. If it does, the same value is assigned to the new object, optimizing heap space utilization.
+
+## Why Is `String` Class Final in Java?
+
+The `String` class is declared `final` to prevent overriding its methods. This ensures that new `String` objects retain the same behavior and features as existing ones.

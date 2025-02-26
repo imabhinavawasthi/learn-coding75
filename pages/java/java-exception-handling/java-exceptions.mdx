@@ -1,0 +1,42 @@
+## Java Exceptions - Try...Catch
+
+### Java Exceptions
+When executing Java code, different errors can occur: coding errors, invalid input, or other unforeseen issues.
+
+When an error occurs, Java stops execution and throws an exception.
+
+### Try and Catch
+The `try` statement defines a block of code to test for errors, and the `catch` statement defines a block to handle those errors.
+
+### Example
+```java
+public class Main {
+  public static void main(String[] args) {
+    try {
+      int[] myNumbers = {1, 2, 3};
+      System.out.println(myNumbers[10]);
+    } catch (Exception e) {
+      System.out.println("Something went wrong.");
+    }
+  }
+}
+```
+
+### Finally
+The `finally` statement executes code after `try...catch`, regardless of the result.
+
+### Example
+```java
+public class Main {
+  public static void main(String[] args) {
+    try {
+      int[] myNumbers = {1, 2, 3};
+      System.out.println(myNumbers[10]);
+    } catch (Exception e) {
+      System.out.println("Something went wrong.");
+    } finally {
+      System.out.println("The 'try catch' is finished.");
+    }
+  }
+}
+```

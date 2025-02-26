@@ -1,0 +1,186 @@
+---
+title: "Java StringBuffer Class"
+---
+
+
+## Java StringBuffer Class
+
+Java `StringBuffer` class is used to create mutable (modifiable) String objects. The `StringBuffer` class in Java is similar to the `String` class except that it is mutable, meaning it can be changed.
+
+> **Note:** Java `StringBuffer` class is thread-safe, meaning multiple threads cannot access it simultaneously. It ensures order and safety.
+
+## Important Constructors of `StringBuffer` Class
+
+| Constructor | Description |
+|------------|-------------|
+| `StringBuffer()` | Creates an empty String buffer with an initial capacity of 16. |
+| `StringBuffer(String str)` | Creates a String buffer with the specified string. |
+| `StringBuffer(int capacity)` | Creates an empty String buffer with the specified capacity. |
+
+## Important Methods of `StringBuffer` Class
+
+| Modifier and Type | Method | Description |
+|------------------|--------|-------------|
+| `public synchronized StringBuffer` | `append(String s)` | Appends the specified string to this string. Overloaded with append(char), append(boolean), append(int), append(float), append(double), etc. |
+| `public synchronized StringBuffer` | `insert(int offset, String s)` | Inserts the specified string at the given position. Overloaded with insert(int, char), insert(int, boolean), insert(int, int), etc. |
+| `public synchronized StringBuffer` | `replace(int startIndex, int endIndex, String str)` | Replaces the string from `startIndex` to `endIndex`. |
+| `public synchronized StringBuffer` | `delete(int startIndex, int endIndex)` | Deletes the string from `startIndex` to `endIndex`. |
+| `public synchronized StringBuffer` | `reverse()` | Reverses the string. |
+| `public int` | `capacity()` | Returns the current capacity. |
+| `public void` | `ensureCapacity(int minimumCapacity)` | Ensures the capacity is at least equal to `minimumCapacity`. |
+| `public char` | `charAt(int index)` | Returns the character at the specified position. |
+| `public int` | `length()` | Returns the length of the string. |
+| `public String` | `substring(int beginIndex)` | Returns the substring from `beginIndex`. |
+| `public String` | `substring(int beginIndex, int endIndex)` | Returns the substring from `beginIndex` to `endIndex`. |
+
+## What is a Mutable String?
+
+A string that can be modified or changed is known as a **mutable string**. `StringBuffer` and `StringBuilder` classes are used for creating mutable strings.
+
+### 1 `StringBuffer` Class `append()` Method
+
+The `append()` method concatenates the given argument with this `String`.
+
+```java
+class StringBufferExample {  
+    public static void main(String args[]) {  
+        StringBuffer sb = new StringBuffer("Hello ");  
+        sb.append("Java"); // Now original string is changed  
+        System.out.println(sb); // Prints Hello Java  
+    }  
+}  
+```
+
+**Output:**
+```
+Hello Java
+```
+
+### 2 `StringBuffer insert()` Method
+
+The `insert()` method inserts the given String at the specified position.
+
+```java
+class StringBufferExample2 {  
+    public static void main(String args[]) {  
+        StringBuffer sb = new StringBuffer("Hello ");  
+        sb.insert(1, "Java");  
+        System.out.println(sb); // Prints HJavaello  
+    }  
+}  
+```
+
+**Output:**
+```
+HJavaello
+```
+
+### 3 `StringBuffer replace()` Method
+
+The `replace()` method replaces the given String from the specified `beginIndex` to `endIndex`.
+
+```java
+class StringBufferExample3 {  
+    public static void main(String args[]) {  
+        StringBuffer sb = new StringBuffer("Hello");  
+        sb.replace(1, 3, "Java");  
+        System.out.println(sb); // Prints HJavalo  
+    }  
+}  
+```
+
+**Output:**
+```
+HJavalo
+```
+
+### 4 `StringBuffer delete()` Method
+
+The `delete()` method deletes the String from `beginIndex` to `endIndex`.
+
+```java
+class StringBufferExample4 {  
+    public static void main(String args[]) {  
+        StringBuffer sb = new StringBuffer("Hello");  
+        sb.delete(1, 3);  
+        System.out.println(sb); // Prints Hlo  
+    }  
+}  
+```
+
+**Output:**
+```
+Hlo
+```
+
+### 5 `StringBuffer reverse()` Method
+
+The `reverse()` method reverses the current String.
+
+```java
+class StringBufferExample5 {  
+    public static void main(String args[]) {  
+        StringBuffer sb = new StringBuffer("Hello");  
+        sb.reverse();  
+        System.out.println(sb); // Prints olleH  
+    }  
+}  
+```
+
+**Output:**
+```
+olleH
+```
+
+### 6 `StringBuffer capacity()` Method
+
+The `capacity()` method returns the current capacity of the buffer. The default capacity is `16`, and if exceeded, it increases by `(old capacity * 2) + 2`.
+
+```java
+class StringBufferExample6 {  
+    public static void main(String args[]) {  
+        StringBuffer sb = new StringBuffer();  
+        System.out.println(sb.capacity()); // Default 16  
+        sb.append("Hello");  
+        System.out.println(sb.capacity()); // Now 16  
+        sb.append("Java is my favourite language");  
+        System.out.println(sb.capacity()); // Now (16*2)+2 = 34  
+    }  
+}  
+```
+
+**Output:**
+```
+16
+16
+34
+```
+
+### 7 `StringBuffer ensureCapacity()` Method
+
+The `ensureCapacity()` method ensures that the given capacity is the minimum required.
+
+```java
+class StringBufferExample7 {  
+    public static void main(String args[]) {  
+        StringBuffer sb = new StringBuffer();  
+        System.out.println(sb.capacity()); // Default 16  
+        sb.append("Hello");  
+        System.out.println(sb.capacity()); // Now 16  
+        sb.append("Java is my favourite language");  
+        System.out.println(sb.capacity()); // Now (16*2)+2 = 34  
+        sb.ensureCapacity(10); // No change  
+        System.out.println(sb.capacity()); // Still 34  
+        sb.ensureCapacity(50); // Now (34*2)+2 = 70  
+        System.out.println(sb.capacity()); // Now 70  
+    }  
+}  
+```
+
+**Output:**
+```
+16
+16
+34
+34
+70

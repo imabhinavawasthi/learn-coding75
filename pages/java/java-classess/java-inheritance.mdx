@@ -1,0 +1,49 @@
+## Java Inheritance
+
+### Java Inheritance (Subclass and Superclass)
+
+In Java, it is possible to inherit attributes and methods from one class to another. We group the "inheritance concept" into two categories:
+
+- **Subclass (child)** - the class that inherits from another class
+- **Superclass (parent)** - the class being inherited from
+
+To inherit from a class, use the `extends` keyword.
+
+#### Example
+
+```java
+class Vehicle {
+  protected String brand = "Ford"; // Vehicle attribute
+  public void honk() { // Vehicle method
+    System.out.println("Tuut, tuut!");
+  }
+}
+
+class Car extends Vehicle {
+  private String modelName = "Mustang"; // Car attribute
+  public static void main(String[] args) {
+    Car myCar = new Car();
+    myCar.honk();
+    System.out.println(myCar.brand + " " + myCar.modelName);
+  }
+}
+```
+
+Did you notice the `protected` modifier in `Vehicle`? If it was set to `private`, the `Car` class would not be able to access it.
+
+### Why And When To Use "Inheritance"?
+- It is useful for code reusability: reuse attributes and methods of an existing class when you create a new class.
+
+### The `final` Keyword
+
+If you don't want other classes to inherit from a class, use the `final` keyword:
+
+```java
+final class Vehicle {
+  ...
+}
+
+class Car extends Vehicle {
+  ...
+}
+```

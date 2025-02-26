@@ -1,0 +1,31 @@
+## Java Arrays
+
+### Declaring an Array
+Arrays are used to store multiple values in a single variable instead of declaring separate variables for each value.
+```java
+String[] cars;
+```
+To insert values, use curly braces:
+```java
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+int[] myNum = {10, 20, 30, 40};
+```
+
+### Accessing Elements
+Access an element using its index:
+```java
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+System.out.println(cars[0]); // Outputs Volvo
+```
+
+### Modifying Elements
+Modify an array element by its index:
+```java
+cars[0] = "Opel";
+```
+
+### Finding Array Length
+Use the `length` property to get the number of elements:
+```java
+System.out.println(cars.length); // Outputs 4
+```

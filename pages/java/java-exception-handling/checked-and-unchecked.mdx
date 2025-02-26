@@ -1,0 +1,111 @@
+## Java Checked vs Unchecked Exceptions
+
+In Java, Exceptions are unwanted or unexpected events that occur during the execution of a program, i.e., at runtime, disrupting the normal flow of the program’s instructions. In Java, there are two types of exceptions:
+
+- **Checked Exception**: These exceptions are checked at compile time, forcing the programmer to handle them explicitly.
+- **Unchecked Exception**: These exceptions are checked at runtime and do not require explicit handling at compile time.
+
+### Difference Between Checked and Unchecked Exceptions
+
+| Feature             | Checked Exception | Unchecked Exception |
+|---------------------|------------------|----------------------|
+| **Behavior**        | Checked at compile time | Checked at runtime |
+| **Base class**      | Derived from `Exception` | Derived from `RuntimeException` |
+| **Cause**          | External factors like file I/O and database connection | Programming bugs like logical errors |
+| **Handling Requirement** | Must be handled using `try-catch` block or declared using `throws` keyword | No handling is required |
+| **Examples**       | `IOException`, `SQLException`, `FileNotFoundException` | `NullPointerException`, `ArrayIndexOutOfBoundsException` |
+
+---
+
+### Checked Exceptions In Java
+
+Checked exceptions are exceptions that are checked at compile time. If a method throws a checked exception, then the exception must be handled using a `try-catch` block or declared in the method signature using the `throws` keyword.
+
+#### Types of Checked Exceptions
+
+- **Fully Checked Exception**: A checked exception where all its child classes are also checked (e.g., `IOException`, `InterruptedException`).
+- **Partially Checked Exception**: A checked exception where some of its child classes are unchecked (e.g., `Exception`).
+
+Checked exceptions represent invalid conditions in areas outside the immediate control of the program (like memory, network, file system, etc.). Any checked exception is a subclass of `Exception`. Unlike unchecked exceptions, checked exceptions must be either caught by the caller or listed as part of the method signature using the `throws` keyword.
+
+#### Example:
+
+```java
+// Java Program to Illustrate Checked Exceptions
+// Where FileNotFoundException occurred
+import java.io.*;
+class Geeks {
+    public static void main(String[] args) throws IOException {
+        // Reading file from path in local directory
+        FileReader f = new FileReader("C:\\test\\a.txt");
+        BufferedReader b = new BufferedReader(f);
+        
+        // Printing first 3 lines of file "C:\test\a.txt"
+        for (int counter = 0; counter < 3; counter++)
+            System.out.println(b.readLine());
+        
+        // Closing file connections
+        f.close();
+    }
+}
+```
+
+#### Example: Handling Checked Exception
+
+```java
+// Handling Checked Exceptions
+import java.io.*;
+class Geeks {
+    public static void main(String[] args) throws IOException {
+        FileReader f = new FileReader("C:\\test\\a.txt");
+        BufferedReader fi = new BufferedReader(f);
+        
+        // Printing first 2 lines of file "C:\test\a.txt"
+        for (int i = 0; i < 2; i++)
+            System.out.println(fi.readLine());
+        
+        // Closing file connections
+        fi.close();
+    }
+}
+```
+
+> **Note**: If you’re running this code on Linux/macOS, use the correct path format, e.g., `/home/user/test/a.txt`.
+
+---
+
+### Unchecked Exceptions in Java
+
+Unchecked exceptions are exceptions that are not checked at compile time. In Java, exceptions under `Error` and `RuntimeException` classes are unchecked exceptions; everything else under `Throwable` is checked.
+
+Consider the following Java program. It compiles fine but throws `ArithmeticException` when run. The compiler allows it to compile because `ArithmeticException` is an unchecked exception.
+
+#### Example:
+
+```java
+// Java Program to Illustrate Unchecked Exceptions
+class Geeks {
+    public static void main(String args[]) {
+        int x = 0;
+        int y = 10;
+        int z = y / x; // Throws ArithmeticException at runtime
+    }
+}
+```
+
+#### Notes:
+
+- Unchecked exceptions are runtime exceptions that are not required to be caught or declared in a `throws` clause.
+- These exceptions are caused by programming errors, such as attempting to access an index out of bounds in an array or attempting to divide by zero.
+- Unchecked exceptions include all subclasses of the `RuntimeException` class, as well as the `Error` class and its subclasses.
+
+The separation into checked and unchecked exceptions sounded like a good idea at the time. However, over the years, it has introduced more boilerplate and less aesthetically pleasing code patterns than it solved real problems. The typical (and unfortunately quite cumbersome) pattern within the Java ecosystem is to hide (or wrap) the checked exception within an unchecked one.
+
+#### Example:
+
+```java
+try {
+    // Some I/O operation here
+} catch (final IOException ex) {
+    throw new RuntimeException("I/O operation failed", ex);
+}

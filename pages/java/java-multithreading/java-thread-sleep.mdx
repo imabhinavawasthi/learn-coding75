@@ -1,0 +1,111 @@
+## Java Thread.sleep() Method
+
+Thread class contains the `sleep()` method. There are two overloaded methods of `sleep()` present in the Thread Class: one with one argument and another with two arguments. The `sleep()` method is used to pause the execution of the current thread for a specific duration, after which the thread resumes execution.
+
+### Syntax
+
+There are two variations of the `sleep()` method in Java Thread:
+
+```java
+public static void sleep(long millis)
+public static void sleep(long millis, int nanos)
+```
+
+### Parameters
+- **millis**: Duration of time in milliseconds for which the thread will sleep.
+- **nanos**: Additional time in nanoseconds (range: 0 to 999999).
+
+### Exceptions
+- `InterruptedException`
+- `IllegalArgumentException`
+
+### Important Points
+- `Thread.sleep()` pauses the current thread’s execution.
+- Throws `InterruptedException` if another thread interrupts during sleep.
+- Actual sleep duration may vary based on system load.
+- Can be used for both main thread and custom threads.
+
+## Example 1: Using `Thread.sleep()` for Main Thread
+
+```java
+import java.io.*;
+import java.lang.Thread;
+
+class Geeks {
+    public static void main(String[] args) {
+        try {
+            for (int i = 0; i < 5; i++) {
+                Thread.sleep(1000); // Sleep for 1 second
+                System.out.print(i + " ");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+
+### Output
+```
+0 1 2 3 4
+```
+
+## Example 2: Using `Thread.sleep()` for a Custom Thread
+
+```java
+import java.lang.Thread;
+
+class MyThread extends Thread {
+    @Override
+    public void run() {
+        try {
+            for (int i = 0; i < 5; i++) {
+                Thread.sleep(1000);
+                System.out.print(i + " ");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public static void main(String[] args) {
+        MyThread obj = new MyThread();
+        obj.start();
+    }
+}
+```
+
+### Output
+```
+0 1 2 3 4
+```
+
+## Example 3: `IllegalArgumentException` When Sleep Time is Negative
+
+```java
+import java.lang.Thread;
+
+class Geeks {
+    public static void main(String[] args) {
+        try {
+            for (int i = 0; i < 5; i++) {
+                Thread.sleep(-100); // This will throw IllegalArgumentException
+                System.out.println(i);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+
+### Output
+```
+java.lang.IllegalArgumentException: timeout value is negative
+```
+
+## Additional Notes
+- The `sleep()` method with one parameter is a native method, meaning its implementation is done in another programming language.
+- The method with two parameters is implemented in Java.
+- Both `sleep()` methods are static and should be accessed using the `Thread` class.
+- Since both methods throw checked exceptions, exception handling is mandatory (using `throws` or `try-catch`).
