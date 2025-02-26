@@ -1,0 +1,36 @@
+## Difference Between final, finally, and finalize
+
+| Feature | final | finally | finalize |
+|---------|-------|---------|----------|
+| Definition | An access modifier used to restrict class, method, or variable | A block that executes important code whether an exception occurs or not | A method used to clean up resources before garbage collection |
+| Applicable To | Classes, methods, and variables | Try-catch block | Objects |
+| Functionality | Prevents modification, inheritance, or overriding | Ensures execution of important code | Performs cleanup before object destruction |
+| Execution | Executed when called | Always executed after try-catch | Executed before garbage collection |
+
+### Example of final:
+```java
+public class FinalExample {
+    final int age = 18;
+    void display() {
+        age = 55; // Compile-time error
+    }
+}
+```
+
+### Example of finally:
+```java
+try {
+    int data = 25 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Exception handled");
+} finally {
+    System.out.println("finally block always executes");
+}
+```
+
+### Example of finalize:
+```java
+protected void finalize() {
+    System.out.println("Called finalize method");
+}
+```

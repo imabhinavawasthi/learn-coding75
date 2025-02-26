@@ -1,0 +1,114 @@
+# Java Thread.start() vs Thread.run() Method
+
+In Java’s multi-threading concept, `start()` and `run()` are the two most important methods. Below are the main differences between `Thread.start()` and `Thread.run()` in Java.
+
+### Differences
+
+| Thread.start() | Thread.run() |
+|--------------|--------------|
+| Creates a new thread and executes `run()` on the newly created thread. | No new thread is created; `run()` executes on the calling thread. |
+| Cannot be invoked more than once (throws `java.lang.IllegalStateException`). | Can be invoked multiple times. |
+| Defined in `java.lang.Thread` class. | Defined in `java.lang.Runnable` interface and must be overridden in the implementing class. |
+
+### New Thread Creation
+When `start()` is called, a new thread is created, and `run()` is executed within it. If `run()` is called directly, no new thread is created; execution happens in the main thread.
+
+#### Example 1: Using `start()`
+```java
+class MyThread extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Current thread name: " + Thread.currentThread().getName());
+        System.out.println("run() method called");
+    }
+}
+
+class Geeks {
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.start();
+    }
+}
+```
+**Output:**
+```
+Current thread name: Thread-0
+run() method called
+```
+
+#### Example 2: Using `run()` directly
+```java
+class MyThread extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Current thread name: " + Thread.currentThread().getName());
+        System.out.println("run() method called");
+    }
+}
+
+class Geeks {
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.run();
+    }
+}
+```
+**Output:**
+```
+Current thread name: main
+run() method called
+```
+
+### Multiple Invocation
+Calling `start()` more than once throws an exception, while `run()` can be called multiple times.
+
+#### Example 1: Multiple calls to `start()`
+```java
+class MyThread extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Current thread name: " + Thread.currentThread().getName());
+        System.out.println("run() method called");
+    }
+}
+
+class Geeks {
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.start();
+        t.start();
+    }
+}
+```
+**Output:**
+```
+Current thread name: Thread-0
+run() method called
+Exception in thread "main" java.lang.IllegalThreadStateException
+```
+
+#### Example 2: Multiple calls to `run()`
+```java
+class MyThread extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Current thread name: " + Thread.currentThread().getName());
+        System.out.println("run() method called");
+    }
+}
+
+class Geeks {
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.run();
+        t.run();
+    }
+}
+```
+**Output:**
+```
+Current thread name: main
+run() method called
+Current thread name: main
+run() method called
+```

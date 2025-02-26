@@ -1,0 +1,46 @@
+## Java Jagged Arrays
+
+### What is a Jagged Array?
+A jagged array is an array of arrays where member arrays can be of different sizes. This allows for more flexible memory allocation.
+
+#### Example:
+```java
+int[][] arr = { {1, 2}, {3, 4, 5, 6}, {7, 8, 9} };
+```
+Here, the number of columns in each row is different.
+
+### Declaration and Initialization
+```java
+int[][] jaggedArray = new int[3][];  // Declaring a jagged array with 3 rows
+jaggedArray[0] = new int[2];  // 2 columns in the first row
+jaggedArray[1] = new int[4];  // 4 columns in the second row
+jaggedArray[2] = new int[3];  // 3 columns in the third row
+```
+
+### Alternative Ways to Initialize
+```java
+int[][] arr = { 
+    new int[] {10, 20, 30 ,40},
+    new int[] {50, 60, 70, 80, 90, 100},
+    new int[] {110, 120}
+};
+```
+
+### Looping Through a Jagged Array
+```java
+int[][] arr = { {1, 2}, {3, 4, 5, 6}, {7, 8, 9} };
+for (int i = 0; i < arr.length; i++) {
+    for (int j = 0; j < arr[i].length; j++) {
+        System.out.print(arr[i][j] + " ");
+    }
+    System.out.println();
+}
+```
+
+### Advantages of Jagged Arrays
+- **Dynamic Allocation:** Allows memory allocation at runtime.
+- **Space Utilization:** Saves memory when different row sizes are needed.
+- **Flexibility:** Useful for variable-length data storage.
+- **Improved Performance:** More compact memory layout for specific operations.
+
+Jagged arrays provide flexibility but should be used when necessary due to increased code complexity.

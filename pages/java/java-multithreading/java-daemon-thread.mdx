@@ -1,0 +1,209 @@
+## Java Daemon Thread
+
+In Java, daemon threads are low-priority threads that run in the background to perform tasks such as garbage collection or provide services to user threads. The life of a daemon thread depends on the mercy of user threads, meaning that when all user threads finish their execution, the Java Virtual Machine (JVM) automatically terminates the daemon thread.
+
+To put it simply, daemon threads serve user threads by handling background tasks and have no role other than supporting the main execution.
+
+Some examples of daemon threads in Java include garbage collection (gc) and finalizer. These threads work silently in the background, performing tasks that support the main execution without interfering with the user’s operations.
+
+### Properties of Java Daemon Thread
+
+| Aspect | Description |
+|--------|-------------|
+| **No Preventing JVM Exit** | Daemon threads cannot prevent the JVM from exiting when all user threads finish their execution. If all user threads complete their tasks, the JVM terminates itself, regardless of whether any daemon threads are running. |
+| **Automatic Termination** | If the JVM detects a running daemon thread, it terminates the thread and subsequently shuts it down. The JVM does not check if the daemon thread is actively running; it terminates it regardless. |
+| **Low Priority** | Daemon threads have the lowest priority among all threads in Java. |
+
+### Default Nature of Daemon Thread
+
+By default, the main thread is always a non-daemon thread. However, for all other threads, their daemon nature is inherited from their parent thread. If the parent thread is a daemon, the child thread is also a daemon, and if the parent thread is a non-daemon, the child thread is also a non-daemon.
+
+> **Note:** Whenever the last non-daemon thread terminates, all the daemon threads will be terminated automatically.
+
+### Methods of Daemon Thread
+
+#### 1. `setDaemon(boolean status)`
+
+This method marks the current thread as a daemon thread or user thread.
+
+```java
+public final void setDaemon(boolean on)
+```
+
+**Parameter:**
+- `on`: If true, marks this thread as a daemon thread.
+
+**Exceptions:**
+- `IllegalThreadStateException`: If the thread is already started.
+- `SecurityException`: If the current thread cannot modify this thread.
+
+#### Example:
+
+```java
+// Using setDaemon() Method
+
+// Class extending Thread Class
+class DaemonThread extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Running the Daemon Thread");
+    }
+}
+
+// Driver Class
+public class Geeks {
+    public static void main (String[] args) {
+        DaemonThread t1 = new DaemonThread();
+        t1.setDaemon(true);
+        t1.start();
+    }
+}
+```
+
+> **Note:** The JVM may shut down before the daemon thread executes. To prevent this, use `Thread.sleep()`.
+
+#### 2. `isDaemon()`
+
+This method checks whether the current thread is a daemon thread.
+
+```java
+public final boolean isDaemon()
+```
+
+**Returns:** `true` if the thread is a daemon thread, `false` otherwise.
+
+#### Example:
+
+```java
+// Usage of setDaemon() and isDaemon() method
+class DaemonThread extends Thread {
+    public DaemonThread(String name) {
+        super(name);
+    }
+
+    @Override
+    public void run() {
+        if (Thread.currentThread().isDaemon()) {
+            System.out.println(getName() + " is Daemon thread");
+        } else {
+            System.out.println(getName() + " is User thread");
+        }
+    }
+}
+
+// Driver Class
+public class Geeks {
+    public static void main(String[] args) {
+        DaemonThread t1 = new DaemonThread("t1");
+        DaemonThread t2 = new DaemonThread("t2");
+        DaemonThread t3 = new DaemonThread("t3");
+
+        t1.setDaemon(true);
+        t1.start();
+        t2.start();
+
+        t3.setDaemon(true);
+        t3.start();
+    }
+}
+```
+
+**Output:**
+```
+t1 is Daemon thread
+t2 is User thread
+```
+
+### Common Issues with Daemon Threads
+
+#### Case 1: Output Not Printed
+
+If the main thread finishes execution before the daemon thread starts, the daemon thread will not execute.
+
+##### **Solution:**
+Use `Thread.sleep()` to ensure JVM doesn't terminate immediately.
+
+```java
+// Class extending Thread Class
+class DaemonThread extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Running the Daemon Thread");
+    }
+}
+
+// Driver Class
+public class Geeks {
+    public static void main (String[] args) {
+        DaemonThread t1 = new DaemonThread();
+        t1.setDaemon(true);
+        t1.start();
+        
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Output:**
+```
+Running the Daemon Thread
+```
+
+#### Case 2: State Changed After Starting a Thread
+
+Calling `setDaemon(true)` after starting a thread will throw `IllegalThreadStateException`.
+
+##### **Solution:**
+Avoid calling `setDaemon(true)` after starting a thread. Alternatively, use a try-catch block to handle exceptions.
+
+```java
+// Usage of exception in Daemon Thread
+class DaemonThread extends Thread {
+    public DaemonThread(String name) {
+        super(name);
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Thread name: " + Thread.currentThread().getName());
+        System.out.println("Check if its DaemonThread: " + Thread.currentThread().isDaemon());
+    }
+}
+
+// Main Class
+public class Geeks {
+    public static void main(String[] args) {
+        DaemonThread t1 = new DaemonThread("t1");
+        DaemonThread t2 = new DaemonThread("t2");
+
+        try {
+            t1.start();
+            t1.setDaemon(true); // IllegalThreadStateException
+            t2.start();
+        } catch (IllegalThreadStateException e) {
+            System.out.println("Illegal Thread State Exception Thrown");
+        }
+    }
+}
+```
+
+**Output:**
+```
+Illegal Thread State Exception Thrown
+Thread name: t1
+Check if its DaemonThread: false
+```
+
+### Daemon vs User Threads
+
+| Feature | Daemon Threads | User Threads |
+|---------|---------------|-------------|
+| **Priority** | Low | Normal or High |
+| **JVM Behavior** | JVM exits when only daemon threads remain | JVM waits for user threads to complete |
+| **Usage** | Used for background tasks like garbage collection | Used for main program logic |
+
+Daemon threads provide essential background services, but they should not be relied upon for critical tasks.

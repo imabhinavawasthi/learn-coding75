@@ -3,9 +3,7 @@
     "checked-and-unchecked":"Checked vs Unchecked Exceptions",
     "try-catch-block":"Try & Catch Bolck",
     "final-finally-finallize":"Final, Finally, Finallize",
-    "throw-and-throws":"Throw and Throws In Java",
-    "null-pointer-exception":"Null Pointer Exceptions",
+    "throw-and-throws":"Throw vs Throws In Java",
     "java-regex":"Java RegEx",
-    "java-threads":"Java Threads",
     "java-lambda":"Java Lambda"
 }
