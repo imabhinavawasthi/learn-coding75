@@ -13,16 +13,16 @@
 ```java
 public class ConcatTest {  
     public static String concatWithString() {  
-        String t = "Java";  
+        String t = "Coding";  
         for (int i = 0; i < 10000; i++) {  
-            t = t + "Tpoint";  
+            t = t + "75";  
         }  
         return t;  
     }  
     public static String concatWithStringBuffer() {  
-        StringBuffer sb = new StringBuffer("Java");  
+        StringBuffer sb = new StringBuffer("Coding");  
         for (int i = 0; i < 10000; i++) {  
-            sb.append("Tpoint");  
+            sb.append("75");  
         }  
         return sb.toString();  
     }  
@@ -48,15 +48,15 @@ Time taken by Concatenating with StringBuffer: 0ms
 public class InstanceTest {  
     public static void main(String args[]) {  
         System.out.println("Hashcode test of String:");  
-        String str = "java";  
+        String str = "coding";  
         System.out.println(str.hashCode());  
-        str = str + "tpoint";  
+        str = str + "75";  
         System.out.println(str.hashCode());  
    
         System.out.println("Hashcode test of StringBuffer:");  
-        StringBuffer sb = new StringBuffer("java");  
+        StringBuffer sb = new StringBuffer("coding");  
         System.out.println(sb.hashCode());  
-        sb.append("tpoint");  
+        sb.append("75");  
         System.out.println(sb.hashCode());  
     }  
 }  
