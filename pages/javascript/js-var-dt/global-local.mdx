@@ -1,0 +1,108 @@
+---
+title: "Global and Local variables in JavaScript"
+date: "2024-08-20"
+---
+
+## Global and Local variables in JavaScript
+
+In JavaScript, understanding the difference between global and local variables is important for writing clean, maintainable, and error-free code. Variables can be declared with different scopes, affecting where and how they can be accessed.
+
+### Global Variables
+
+Global variables in JavaScript are those declared outside of any function or block scope. They are accessible from anywhere within the script, including inside functions and blocks. Variables declared without the `var`, `let`, or `const` keywords (prior to ES6) inside a function automatically become global variables.
+
+However, variables declared with `var`, `let`, or `const` inside a function are local to that function unless explicitly marked as global using `window` (in browser environments) or `global` (in Node.js).
+
+#### Key Characteristics of Global Variables:
+- **Scope**: Accessible throughout the entire script, including inside functions and blocks.
+- **Automatic Global Variables**: If a variable is declared inside a function without `var`, `let`, or `const`, it automatically becomes a global variable (a common source of bugs).
+
+### Local Variables
+
+Local variables are defined within functions in JavaScript. They are confined to the scope of the function that defines them and cannot be accessed from outside. Attempting to access local variables outside their defining function results in an error.
+
+#### Key Characteristics of Local Variables:
+- **Scope**: Limited to the function or block in which they are declared.
+- **Function-Specific**: Each function can have its own local variables, even if they share the same name.
+
+### How to use variables
+
+The scope of a variable or function determines what code has access to it:
+- Variables that are created inside a function are **local variables**, and local variables can only be referred to by the code within the function.
+- Variables created outside of functions are **global variables**, and the code in all functions has access to all global variables.
+- If you forget to code the `var` keyword in a variable declaration, the JavaScript engine assumes that the variable is global. This can cause debugging problems.
+- In general, it’s better to pass local variables from one function to another as parameters than it is to use global variables. That will make your code easier to understand with less chance of errors.
+
+### Example 1: Global Scope
+
+In this example, we will declare variables in the global scope so that they can be accessed anywhere in the program.
+
+```javascript
+let petName = 'Rocky' // Global variable
+myFunction()
+
+function myFunction() {
+    fruit = 'apple'; // Considered global
+    console.log(typeof petName + '- ' + 'My pet name is ' + petName)
+}
+
+console.log(
+    typeof petName +
+    '- ' +
+    'My pet name is ' +
+    petName +
+    'Fruit name is ' +
+    fruit)
+```
+
+#### Output
+```
+string- My pet name is Rocky
+string- My pet name is RockyFruit name is apple
+```
+
+#### Explanation
+We can see that the variable `petName` is declared in the global scope and is easily accessed inside functions. Also, `fruit` was declared inside the function without any keyword, so it was considered global and was accessible inside another function.
+
+### Example 2: Local Scope
+
+In this example, we will declare variables in the local scope and try to access them at different scopes.
+
+```javascript
+myfunction();
+anotherFunc();
+let petName;
+
+function myfunction() {
+    let petName = "Sizzer"; // local variable
+    console.log(petName);
+}
+
+function anotherFunc() {
+    let petName = "Tom"; // local variable
+    console.log(petName);
+}
+
+console.log(petName);
+```
+
+#### Output
+```
+Sizzer
+Tom
+undefined
+```
+
+#### Explanation
+We can see that the variable `petName` is declared in the global scope but not initialized. Also, the functions are accessing the inner variable where each function has its own value for the variable `petName`.
+
+### Where to use Which Variable
+
+It’s tempting to resort to global variables for their apparent simplicity, but they often lead to issues. Since any function can modify a global variable, it’s easy to unintentionally alter them or make errors like misspelling variable names, especially in larger applications. Debugging such issues can become cumbersome.
+
+In contrast, **local variables** offer a solution by reducing the risk of naming conflicts. Different functions can use identical names for local variables without causing clashes. This minimizes errors and debugging challenges. Therefore, except for a few specific cases, it’s advisable to encapsulate code within functions to ensure variables remain local.
+
+**Remember**:
+- Misspelling a variable name that’s already declared results in a new global variable being created.
+- To prevent this, always declare variables with keywords and ensure they’re declared before use in the code.
+- **Use local variables whenever possible.** Always use the `var`, `let`, or `const` keyword to declare a new variable before the variable is referred to by other statements.

@@ -1,0 +1,8 @@
+{
+    "loop":"Javscript Loop",
+    "for":"Javscript For Loop",
+    "while":"Javscript While Loop",
+    "for-in":"Javscript For In Loop",
+    "for-of":"Javscript For...of Loop",
+    "do-while":"Javscript Do..While Loop"
+}

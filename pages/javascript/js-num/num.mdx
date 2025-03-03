@@ -1,0 +1,222 @@
+---
+title: "JavaScript Numbers"
+date: "30 Jul, 2024"
+---
+
+JavaScript numbers are primitive data types, and unlike other programming languages, you don’t need to declare different numeric types like `int`, `float`, etc. JavaScript numbers are always stored in double-precision 64-bit binary format IEEE 754. This format stores numbers in 64 bits:
+
+- **0-51 bits** store the value (fraction)
+- **52-62 bits** store the exponent
+- **63rd bit** stores the sign
+
+## Numeric Types in JavaScript
+
+### 1. The Only Numeric Type
+JavaScript has only one numeric type: the double-precision 64-bit binary format IEEE 754, meaning it doesn’t differentiate between integers and floating-point numbers explicitly. Instead, it uses a unified approach for all numeric values.
+
+- Integers and floating-point numbers are both represented using this format.
+- The numeric precision is **53 bits**, allowing for an accurate representation of integer values ranging from `-2^53 + 1` to `2^53 – 1`.
+
+### 2. Scientific Notation
+JavaScript allows writing extra-large or extra-small numbers using scientific (exponent) notation.
+
+#### Example:
+```javascript
+let a  =  156e5;
+let b =   156e-5;
+console.log(a);
+console.log(b);
+```
+**Output:**
+```
+15600000
+0.00156
+```
+
+### 3. Integer Precision
+Integers (numbers without a period or exponent notation) are accurate up to **15 digits**.
+
+#### Example:
+```javascript
+let a = 999999999999999;
+let b = 9999999999999999;
+console.log(a);
+console.log(b);
+```
+**Output:**
+```
+999999999999999
+10000000000000000
+```
+
+### 4. Floating Point Precision
+Floating point arithmetic is not always **100% accurate** due to binary representation limitations.
+
+#### Example:
+```javascript
+let x = 0.22 + 0.12; // x will be 0.33999999999999997
+console.log(x);
+
+// To solve this problem, multiply and divide:
+let y = (0.22 * 10 + 0.12 * 10) / 10; // x will be 0.34
+console.log(y);
+```
+**Output:**
+```
+0.33999999999999997
+0.34
+```
+
+### 5. Adding Numbers and Strings
+JavaScript uses the `+` operator for both **addition** and **concatenation**.
+
+#### Example:
+```javascript
+// Adding two numbers
+let x = 10;
+let y = 15;
+let z = x + y;
+console.log(z);
+
+// Concatenating two strings
+let a = "10";
+let b = "30";
+let c  = a + b;
+console.log(c);
+```
+**Output:**
+```
+25
+1030
+```
+
+## Number Literals
+JavaScript supports various number literals:
+
+### 1. Decimal Numbers
+JavaScript has only one type of number, which can hold both integer and floating-point values.
+```javascript
+let a = 33;
+let b = 3.3;
+console.log(a);
+console.log(b);
+```
+**Output:**
+```
+33
+3.3
+```
+
+### 2. Octal Numbers
+Numbers starting with `0` and followed by digits **less than 8** are parsed as octal numbers.
+```javascript
+let x = 0562;
+console.log(x);
+```
+**Output:**
+```
+370
+```
+
+### 3. Binary Numbers
+They start with `0b` or `0B` followed by `0`s and `1`s.
+```javascript
+let x = 0b11;
+let y = 0B0111;
+console.log(x);
+console.log(y);
+```
+**Output:**
+```
+3
+7
+```
+
+### 4. Hexadecimal Numbers
+They start with `0x` or `0X` followed by `0123456789ABCDEF`.
+```javascript
+let x = 0xfff;
+console.log(x);
+```
+**Output:**
+```
+4095
+```
+
+## Number Coercion in JavaScript
+JavaScript automatically converts values to different types when needed.
+
+### 1. Undefined to NaN
+```javascript
+const result = undefined + 10;
+console.log(result); // NaN
+```
+**Output:**
+```
+NaN
+```
+
+### 2. Null to 0
+```javascript
+const total = null + 5;
+console.log(total); // 5
+```
+**Output:**
+```
+5
+```
+
+### 3. Boolean to Number
+```javascript
+const num1 = true + 10;
+const num2 = false + 10;
+console.log(num1);
+console.log(num2);
+```
+**Output:**
+```
+11
+10
+```
+
+### 4. String to Number
+```javascript
+const str1 = '42';
+const str2 = 'hello';
+const numFromString1 = Number(str1);
+const numFromString2 = Number(str2);
+console.log(numFromString1);
+console.log(numFromString2);
+```
+**Output:**
+```
+42
+NaN
+```
+
+## JavaScript Number Methods
+Here are some common `Number` methods in JavaScript:
+
+```javascript
+let x = 21;
+console.log(x.toString());
+console.log(x.toExponential());
+console.log(x.toPrecision(4));
+console.log(Number.isInteger(x));
+console.log(x.toLocaleString("bn-BD"));
+```
+**Output:**
+```
+21
+2.1e+1
+21.00
+true
+২১
+```
+
+## Facts About Numbers in JavaScript
+- **String Concatenation with Numbers**: Adding a string and a number results in a string.
+- **JavaScript numbers are primarily primitive values** but can also be objects using `new Number()`.
+- **Hexadecimal numbers**: Constants preceded by `0x` are interpreted as hexadecimal.
+- **JavaScript numbers are base 10 by default**, but the `toString()` method allows conversions to bases **2 to 36**.
+- **BigInt numbers**: JavaScript also has **BigInt** for integers of arbitrary length.

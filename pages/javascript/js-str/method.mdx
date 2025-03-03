@@ -1,0 +1,205 @@
+---
+title: "JavaScript String Methods"
+date: "14 Nov, 2024"
+---
+
+JavaScript strings are sequences of characters and are treated as primitive data types. In JavaScript, strings are automatically converted to string objects when using string methods on them. This process is called auto-boxing. The following are methods that we can call on strings.
+
+## String Methods
+
+### `slice()`
+Extracts a part of the string based on the given starting index and ending index and returns a new string.
+
+```js
+// Define a string variable 
+let A = 'Geeks for Geeks';
+
+// Use the slice() method to extract a substring
+let b = A.slice(0, 5);
+let c = A.slice(6, 9);
+let d = A.slice(10);
+
+// Output the value of variable
+console.log(b);
+console.log(c);
+console.log(d);
+```
+
+**Output:**
+```
+Geeks
+for
+Geeks
+```
+
+### `substring()`
+Returns the part of the given string from the start index to the end index. Indexing starts from zero (0).
+
+```js
+// Define a string variable
+let str = "Mind, Power, Soul";
+
+// Use the substring() method to extract a substring 
+let part = str.substring(6, 11);
+
+// Output the value of variable
+console.log(part);
+```
+
+**Output:**
+```
+Power
+```
+
+### `substr()`
+Returns the specified number of characters from the specified index from the given string.
+
+```js
+// Define a string variable 'str'
+let str = "Mind, Power, Soul";
+
+// Use the substr() method to extract a substring
+let part = str.substr(6, 5);
+
+// Output the value of variable
+console.log(part);
+```
+
+**Output:**
+```
+Power
+```
+
+### `replace()`
+Replaces a part of the given string with another string or a regular expression. The original string remains unchanged.
+
+```js
+// Define a string variable 'str' 
+let str = "Mind, Power, Soul";
+
+// Use the replace() method to replace the substring
+let part = str.replace("Power", "Space");
+
+// Output the resulting string after replacement
+console.log(part);
+```
+
+**Output:**
+```
+Mind, Space, Soul
+```
+
+### `replaceAll()`
+Replaces all occurrences of a specified string with another string or a regular expression.
+
+```js
+// Define a string variable 'str'
+let str = "Mind, Power, Power, Soul";
+
+// Use the replaceAll() method to replace all occurrences
+let part = str.replaceAll("Power", "Space");
+
+// Output the resulting string after replacement
+console.log(part);
+```
+
+**Output:**
+```
+Mind, Space, Space, Soul
+```
+
+### `toUpperCase()`
+Converts all the characters in the string to uppercase.
+
+```js
+// Define a string variable
+let geeks = 'stands-for-GeeksforGeeks';
+
+// Convert the string to uppercase
+console.log(geeks.toUpperCase());
+```
+
+**Output:**
+```
+STANDS-FOR-GEEKSFORGEEKS
+```
+
+### `toLowerCase()`
+Converts all the characters in the string to lowercase.
+
+```js
+// Define a string variable
+let geeks = 'stands-for-GeeksforGeeks';
+
+// Convert the string to lowercase
+console.log(geeks.toLowerCase());
+```
+
+**Output:**
+```
+stands-for-geeksforgeeks
+```
+
+### `trim()`
+Removes whitespace from both ends of a string.
+
+```js
+let gfg = 'GFG    ';
+let newGfg = gfg.trim();
+
+// Old length
+console.log(gfg.length);
+// New length
+console.log(newGfg.length);
+```
+
+**Output:**
+```
+7
+3
+```
+
+### `split()`
+Splits the string into an array of substrings.
+
+```js
+let geeks = 'stands-for-GeeksforGeeks';
+
+// Split string on '-'
+console.log(geeks.split('-'));
+```
+
+**Output:**
+```
+[ 'stands', 'for', 'GeeksforGeeks' ]
+```
+
+## More JS String Methods
+
+Below is a list of JavaScript string methods:
+
+| Method | Description |
+|--------|------------|
+| `at()` | Find the character at the specified index. |
+| `charAt()` | Returns the character at the given index of the string. |
+| `charCodeAt()` | Returns a Unicode value of the character at the specified index. |
+| `concat()` | Joins two or more strings together. |
+| `endsWith()` | Checks if the string ends with a specified value. |
+| `includes()` | Returns `true` if the string contains the specified characters. |
+| `indexOf()` | Finds the index of the first occurrence of the specified value. |
+| `lastIndexOf()` | Finds the index of the last occurrence of the specified value. |
+| `repeat()` | Returns a new string containing a specified number of copies of the string. |
+| `search()` | Searches for a match between a regular expression and the string. |
+| `slice()` | Extracts a section of the string and returns a new string. |
+| `split()` | Splits a string into an array of substrings. |
+| `startsWith()` | Checks if the string starts with the specified characters. |
+| `substring()` | Extracts characters between two specified indices. |
+| `toLowerCase()` | Converts the string to lowercase. |
+| `toUpperCase()` | Converts the string to uppercase. |
+| `trim()` | Removes whitespace from both ends of a string. |
+| `trimStart()` | Removes whitespace from the start of a string. |
+| `trimEnd()` | Removes whitespace from the end of a string. |
+| `valueOf()` | Returns the primitive value of a string object. |
+
+## Conclusion
+JavaScript strings are an essential part of JavaScript programming. Understanding and using these methods allows developers to efficiently manipulate strings in various ways. Mastering these methods will enhance your JavaScript skills and make string handling more effective.

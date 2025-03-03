@@ -1,0 +1,16 @@
+{
+    "js-basics":"JS Basics",
+    "js-var-dt":"JS Variables and Datatypes",
+    "js-ope":"JS Operators",
+    "js-sts":"JS Statements",
+    "js-loops":"JS Loops",
+    "js-obj":"JS Objects",
+    "js-func":"JS Functions",
+    "js-arr":"JS Arrays",
+    "js-str":"JS Strings",
+    "js-num":"JS Numbers",
+    "js-math":"JS Maths",
+    "js-map":"JS Map",
+    "js-set":"JS Set",
+    "js-adv":"JS Advance"
+}

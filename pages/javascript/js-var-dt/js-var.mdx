@@ -1,0 +1,146 @@
+---
+title: "JavaScript Var Statement"
+lastUpdated: "10 Feb, 2025"
+---
+
+## JavaScript Var Statement
+
+The `var` keyword is used to declare variables in JavaScript. It has been part of the language since its inception. When a variable is declared using `var`, it is function-scoped or globally-scoped, depending on where it is declared.
+
+### Syntax
+
+```javascript
+var variable = value;
+```
+
+It declares a variable using `var`, assigns it a value, and allows it to be re-declared or updated within its scope.
+
+## Features of `var` Keyword
+
+### 1. Function Scope
+
+Variables declared using `var` are function-scoped. This means they are accessible anywhere within the function they are declared, even before their declaration due to hoisting.
+
+```javascript
+function testVar() {
+    var x = 10;
+    console.log(x); // Output: 10
+}
+
+console.log(x); // Error: x is not defined
+```
+
+### 2. Global Scope
+
+If `var` is used outside of any function, it creates a global variable, accessible anywhere in the script.
+
+```javascript
+var globalVar = "I am global";
+console.log(globalVar); // Output: I am global
+```
+
+### 3. Re-declaration of Variables
+
+`var` allows you to re-declare variables within the same scope without throwing any errors, which can lead to unintended behavior.
+
+```javascript
+var a = 5;
+var a = 10;
+console.log(a); // Output: 10
+```
+
+### 4. Hoisting
+
+Variables declared with `var` are hoisted to the top of their scope, meaning the declaration part is moved to the top, but not the initialization.
+
+```javascript
+console.log(hoistedVar); // Output: undefined
+var hoistedVar = "Hoisted!";
+```
+
+### 5. No Block Scope
+
+Unlike `let` and `const`, `var` does not have block scope. Variables declared with `var` inside a block are accessible outside that block.
+
+```javascript
+if (true) {
+    var blockVar = "I am not block scoped";
+}
+console.log(blockVar); // Output: I am not block scoped
+```
+
+### 6. Global Object Property
+
+In browsers, variables declared with `var` in the global scope become properties of the `window` object.
+
+```javascript
+var globalVar = "Global";
+console.log(window.globalVar); // Output: Global
+```
+
+### 7. Performance Considerations
+
+Though modern JavaScript engines optimize the use of `var`, `let` and `const` are typically preferred for better predictability and readability.
+
+```javascript
+// Inefficient loop 
+var a = new Array(10).fill(0);
+console.time('Execution time');
+for (var i = 0; i < a.length; i++) {
+    console.log(i);
+}
+console.timeEnd('Execution time');
+
+// Optimized loop 
+var len = a.length;
+console.time('Execution time');
+for (var i = 0; i < len; i++) {
+    console.log(i);
+}
+console.timeEnd('Execution time');
+```
+
+### 8. Backward Compatibility
+
+The `var` keyword is fully supported in all versions of JavaScript, making it essential for maintaining older codebases.
+
+```javascript
+var oldBrowserSupport = "Works everywhere!";
+console.log(oldBrowserSupport); // Output: Works everywhere!
+```
+
+### 9. `var` Used with `setTimeout()`
+
+When used inside loops with `setTimeout()`, `var` can cause unexpected behavior due to its function scope.
+
+```javascript
+for (var i = 0; i <= 4; i++) {
+    setTimeout(() => {
+        console.log(i);
+    }, 1000);
+}
+```
+
+#### Fixing `var` Issues with `setTimeout()`
+
+Using `let` or an IIFE (Immediately Invoked Function Expression) can fix the issue:
+
+```javascript
+for (let i = 0; i <= 4; i++) {
+    setTimeout(() => {
+        console.log(i);
+    }, 1000);
+}
+```
+
+## Drawbacks of Using `var`
+
+- **No Block Scope**: `var` is function-scoped, meaning it is not limited to the block in which it is defined.
+- **Hoisting Can Cause Issues**: Variables declared with `var` are hoisted but initialized as `undefined`.
+- **Re-declaration Allowed**: `var` allows re-declaration within the same scope, which can overwrite existing variables.
+- **Attached to the Global Object**: `var` becomes a property of the `window` object in browsers, increasing the risk of name conflicts.
+- **Issues with Asynchronous Code**: When used inside loops with functions like `setTimeout()`, `var` creates unexpected behavior due to its function scope.
+
+## Conclusion
+
+While `var` is still valid and widely supported, it’s generally better to use `let` and `const` in modern code to avoid pitfalls like hoisting and lack of block scope. However, understanding `var` is indispensable for debugging and maintaining legacy JavaScript projects.

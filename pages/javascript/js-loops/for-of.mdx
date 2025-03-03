@@ -1,0 +1,203 @@
+---
+title: "JavaScript Loops"
+lastUpdated: "21 Nov, 2024"
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+# JavaScript While Loop
+
+The `while` loop executes a block of code as long as a specified condition is true. In JavaScript, this loop evaluates the condition before each iteration and continues running as long as the condition remains true.
+
+Here’s an example that prints numbers from 1 to 5:
+
+```javascript
+let count = 1;
+while (count <= 5) {
+  console.log(count);
+  count++;
+}
+```
+
+**Output:**
+```
+1
+2
+3
+4
+5
+```
+
+## Syntax
+```javascript
+while (condition) {
+    // Code block to be executed
+}
+```
+
+## Using While Loop to Traverse an Array
+
+```javascript
+let arr = [10, 20, 30, 40];
+let i = 0;
+while (i < arr.length) {
+  console.log(arr[i]);
+  i++;
+}
+```
+
+**Output:**
+```
+10
+20
+30
+40
+```
+
+## Do-While Loop
+A `do-while` loop is another type of loop in JavaScript that is similar to the `while` loop, but with one key difference: the `do-while` loop guarantees that the block of code inside the loop will be executed at least once, regardless of whether the condition is initially true or false.
+
+### Syntax
+```javascript
+do {
+    // Code block to be executed 
+} while (condition);
+```
+
+### Example: Counting from 1 to 5
+
+```javascript
+let count = 1;
+do {
+  console.log(count);
+  count++;
+} while (count <= 5);
+```
+
+**Output:**
+```
+1
+2
+3
+4
+5
+```
+
+## Comparison Between While and Do-While Loop
+| While Loop | Do-While Loop |
+|------------|--------------|
+| It is an **entry condition** looping structure. | It is an **exit condition** looping structure. |
+| The number of iterations depends on the condition mentioned in the `while` block. | Irrespective of the condition mentioned in the `do-while` block, there will be a minimum of 1 iteration. |
+| The block control condition is available at the **starting point** of the loop. | The block control condition is available at the **endpoint** of the loop. |
+
+# JavaScript for...of Loop
+
+The JavaScript `for...of` loop is a modern iteration statement introduced in ECMAScript 2015 (ES6).
+
+- Works for iterable objects such as arrays, strings, maps, sets, and more.
+- It is a better choice for traversing items of iterables compared to traditional `for` and `for...in` loops, especially when we have `break` or `continue` statements. If we just want to perform an operation on all items, we prefer `forEach()`.
+
+## 1. Iterating Over an Array using `for...of`
+
+```javascript
+const a = [1, 2, 3, 4, 5];
+
+for (const item of a) {
+    console.log(item);
+}
+```
+
+**Output:**
+```
+1
+2
+3
+4
+5
+```
+
+### Preferred Loops for Iterables
+- Use `for...of` if we need to use `continue` or `break` in the loop.
+- Use `forEach()` if we need to execute something for all elements without any condition.
+- Use `for...in` for iterating over object properties.
+
+## 2. Iterating Over a String using `for...of`
+
+```javascript
+const str = "Hello";
+
+for (const char of str) {
+    console.log(char);
+}
+```
+
+**Output:**
+```
+H
+e
+l
+l
+o
+```
+
+## 3. Iterating Over a Map using `for...of`
+
+```javascript
+const m = new Map([
+    ["name", "Akash"],
+    ["age", 25],
+    ["city", "Noida"]
+]);
+
+for (let [key, value] of m) {
+    console.log(`${key}: ${value}`);
+}
+```
+
+**Output:**
+```
+name: Akash
+age: 25
+city: Noida
+```
+
+## 4. Iterating Over a Set using `for...of`
+
+```javascript
+let s = new Set([1, 2, 3, 4, 5]);
+
+for (let val of s) {
+    console.log(val);
+}
+```
+
+**Output:**
+```
+1
+2
+3
+4
+5
+```
+
+## 5. Iterating Over an Object’s Properties using `for...of`
+While the `for...of` loop is not directly used to iterate over object properties, you can use it in combination with `Object.keys()`, `Object.values()`, or `Object.entries()` to achieve this.
+
+```javascript
+let person = {
+    name: "Akash",
+    age: 25,
+    city: "Noida"
+};
+
+for (let key of Object.keys(person)) {
+    console.log(`${key}: ${person[key]}`);
+}
+```
+
+**Output:**
+```
+name: Akash
+age: 25
+city: Noida
+```

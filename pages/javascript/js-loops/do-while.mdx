@@ -1,0 +1,142 @@
+---
+title: "JavaScript Loops"
+date: "30 Jul, 2024"
+---
+
+## JavaScript For In Loop
+
+The JavaScript `for…in` loop iterates over the properties of an object. It allows you to access each key or property name of an object.
+
+```javascript
+const car = {
+    make: "Toyota",
+    model: "Corolla",
+    year: 2020
+};
+
+for (let key in car) {
+    console.log(`${key}: ${car[key]}`);
+}
+```
+
+### Output
+```
+make: Toyota
+model: Corolla
+year: 2020
+```
+
+## Syntax
+```javascript
+for (key in object) {
+    // Code
+}
+```
+
+The `for…in` loop can also iterate over the properties of an array, but it is **not recommended**. `for..in` is mainly suitable for objects.
+
+For arrays, we should use the following loops:
+
+- **`for…of` Loop**: If we need to use `continue` or `break` inside the loop.
+- **`forEach()` Method**: If we need to execute something for all elements without any condition.
+
+### Example: Using `for…in` for Arrays (Not Recommended)
+```javascript
+const a = [1, 2, 3, 4, 5];
+
+for (const i in a) {
+    console.log(a[i]);
+}
+```
+
+### Output
+```
+1
+2
+3
+4
+5
+```
+
+## Important Facts About `for…in` Loop
+- The `for…in` loop is **not recommended** for arrays if maintaining index order is important.
+- The order of iteration in a `for…in` loop is **implementation-dependent**, meaning the array elements may not be accessed in the expected sequence.
+- The order in which object properties are iterated may not match the order in which they were defined in the object.
+
+---
+
+## JavaScript do…while Loop
+
+A `do…while` loop in JavaScript is a control structure where the code executes repeatedly based on a given boolean condition. One key difference is that a `do…while` loop guarantees that the code block will execute **at least once**, regardless of whether the condition is met initially.
+
+### Types of Loops
+- **Entry Controlled Loops**: The condition is tested before entering the loop body (e.g., `for` and `while` loops).
+- **Exit Controlled Loops**: The condition is tested after executing the loop body, ensuring at least one execution (e.g., `do…while` loop).
+
+### Syntax
+```javascript
+do {
+    // Statements
+} while (condition);
+```
+
+### Example 1: Using `do…while` Loop
+```javascript
+let test = 1;
+do {
+    console.log(test);
+    test++;
+} while (test <= 5);
+```
+
+### Output
+```
+1
+2
+3
+4
+5
+```
+
+### Difference Between `do…while` and `while` Loop
+Unlike the `while` loop, a `do…while` loop **always runs at least once**, even if the condition is false.
+
+### Example 2: Difference Between `do…while` and `while`
+```javascript
+let test = 1;
+do {
+    console.log(test);
+} while (test < 1);
+
+while (test < 1) {
+    console.log(test);
+}
+```
+
+### Output
+```
+1
+```
+
+#### Explanation
+- The `do…while` loop executes **once**, even though the condition is false.
+- The `while` loop checks the condition first and **does not execute** if the condition is false.
+
+### Comparison Table
+| `do…while` | `while` |
+|------------|--------|
+| Exit-controlled loop | Entry-controlled loop |
+| Executes at least once | May not execute at all |
+| Condition is checked at the end | Condition is checked at the beginning |
+
+### Important Note
+When writing loop conditions, always ensure there is a termination condition; otherwise, the loop may run infinitely and crash the browser.
+
+### Supported Browsers
+- Chrome
+- Edge
+- Safari
+- Firefox
+- Internet Explorer
+
+For more details, refer to our guide on JavaScript loop statements!

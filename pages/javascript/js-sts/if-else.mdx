@@ -1,0 +1,165 @@
+---
+title: "JavaScript if-else"
+lastUpdated: "31 May, 2024"
+---
+
+
+JavaScript `if-else` statement executes a block of code based on a condition. If the condition evaluates to `true`, the code inside the `if` block executes; otherwise, the code inside the `else` block, if present, executes.
+
+Such control statements are used to cause the flow of execution to advance and branch based on changes to the state of a program.
+
+## Example: If Statement
+
+<CodeBlock language="javascript">{`
+// JavaScript program to illustrate If statement
+let i = 10;
+
+if (i > 15) console.log("10 is less than 15");
+
+// This statement will be executed
+// as if considers one statement by default
+console.log("I am Not in if");
+`}</CodeBlock>
+
+### Output:
+```
+I am Not in if
+```
+
+## JavaScript’s Conditional Statements
+### Table of Content
+- JavaScript if-statement
+- JavaScript if-else statement
+- JavaScript nested-if statement
+- JavaScript if-else-if ladder statement
+
+We will understand each conditional statement, its syntax, flowchart, and examples.
+
+## JavaScript if-statement
+It is a conditional statement used to decide whether a certain statement or block of statements will be executed or not.
+
+### Syntax:
+```javascript
+if(condition) {
+   // Statements to execute if
+   // condition is true
+}
+```
+If we do not provide curly braces `{}` after `if(condition)`, then only the immediate statement is considered inside its block.
+
+## Example:
+<CodeBlock language="javascript">{`
+// JavaScript program to illustrate If statement
+let age = 19;
+
+if (age > 18)
+    console.log("Congratulations, You are eligible to drive");
+`}</CodeBlock>
+
+### Output:
+```
+Congratulations, You are eligible to drive
+```
+
+## JavaScript if-else Statement
+The `if` statement alone tells us that if a condition is true, it will execute a block of statements; otherwise, it won’t. The `else` statement allows executing a block of code when the condition is false.
+
+### Syntax:
+```javascript
+if (condition) {
+    // Executes this block if condition is true
+} else {
+    // Executes this block if condition is false
+}
+```
+
+## Example:
+<CodeBlock language="javascript">{`
+// JavaScript program to illustrate If-else statement
+let i = 10;
+
+if (i < 15)
+    console.log("i is less than 15");
+else
+    console.log("I am Not in if");
+`}</CodeBlock>
+
+### Output:
+```
+i is less than 15
+```
+
+## JavaScript nested-if Statement
+JavaScript allows us to nest `if` statements within `if` statements.
+
+### Syntax:
+```javascript
+if (condition1) {
+   // Executes when condition1 is true
+   if (condition2) {
+      // Executes when condition2 is true
+   }
+}
+```
+
+## Example:
+<CodeBlock language="javascript">{`
+// JavaScript program to illustrate nested-if statement
+let i = 10;
+
+if (i == 10) {  // First if statement
+    if (i < 15) {
+        console.log("i is smaller than 15");
+        if (i < 12)
+            console.log("i is smaller than 12 too");
+        else
+            console.log("i is greater than 15");
+    }
+}
+`}</CodeBlock>
+
+### Output:
+```
+i is smaller than 15
+i is smaller than 12 too
+```
+
+## JavaScript if-else-if Ladder Statement
+Here, a user can decide among multiple options. The `if` statements are executed from top to bottom.
+
+### Syntax:
+```javascript
+if (condition)
+    statement;
+else if (condition)
+    statement;
+else
+    statement;
+```
+
+## Example:
+<CodeBlock language="javascript">{`
+// JavaScript program to illustrate if-else-if ladder statement
+let i = 20;
+
+if (i == 10)
+    console.log("i is 10");
+else if (i == 15)
+    console.log("i is 15");
+else if (i == 20)
+    console.log("i is 20");
+else
+    console.log("i is not present");
+`}</CodeBlock>
+
+### Output:
+```
+i is 20
+```
+
+## Supported Browsers
+- Google Chrome
+- Edge
+- Firefox
+- Opera
+- Safari

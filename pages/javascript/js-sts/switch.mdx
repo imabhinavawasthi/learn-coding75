@@ -1,0 +1,51 @@
+## JavaScript switch Statement
+The `switch` statement evaluates an expression and executes a block of code based on matching cases.
+
+### Syntax:
+```javascript
+switch (expression) {
+    case value1:
+        // code block 1;
+        break;
+    case value2:
+        // code block 2;
+        break;
+    default:
+       // default code block;
+}
+```
+
+## Example:
+<CodeBlock language="javascript">{`
+// JavaScript program to illustrate switch statement
+let day = 3;
+let dayName;
+
+switch (day) {
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
+        break;
+    default:
+        dayName = "Invalid day";
+}
+
+console.log(dayName);
+`}</CodeBlock>
+
+### Output:
+```
+Wednesday
+```
+
+## Supported Browsers
+- Google Chrome
+- Edge
+- Firefox
+- Opera
+- Safari

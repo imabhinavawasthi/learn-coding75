@@ -1,0 +1,97 @@
+---
+title: "JavaScript Bitwise Operators"
+date: "2024-11-23"
+---
+
+In JavaScript, a number is stored as a 64-bit floating-point number but bitwise operations are performed on a 32-bit binary number. To perform a bit-operation, JavaScript converts the number into a 32-bit binary number (signed) and performs the operation and converts back the result to a 64-bit number.
+
+## List of Bitwise Operators with Explanation
+
+### 1. Bitwise AND Operator ( & )
+It is a binary operator i.e. accepts two operands. Bit-wise AND (&) returns 1 if both the bits are set (i.e. 1) and 0 in any other case.
+
+```javascript
+let x = 5; 
+let y = 3; 
+console.log(x & y);
+```
+
+| A | B | OUTPUT (A & B) |
+|---|---|--------------|
+| 0 | 0 | 0 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+### 2. Bitwise OR Operator ( | )
+It is a binary operator i.e. accepts two operands. Bit-wise OR ( | ) returns 1 if any of the operands is set (i.e. 1) and 0 in any other case.
+
+```javascript
+let x = 5; 
+let y = 3; 
+console.log(x | y);
+```
+
+| A | B | OUTPUT (A | B) |
+|---|---|--------------|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 1 |
+
+### 3. Bitwise XOR Operator ( ^ )
+It is a binary operator i.e. accepts two operands. Bit-wise XOR ( ^ ) returns 1 if both the operands are different and 0 in any other case.
+
+```javascript
+let x = 5; 
+let y = 3; 
+console.log(x ^ y);
+```
+
+| A | B | OUTPUT (A ^ B) |
+|---|---|--------------|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+
+### 4. Bitwise NOT Operator ( ~ )
+It is a unary operator i.e. accepts a single operand. Bit-wise NOT ( ~ ) flips the bits i.e 0 becomes 1 and 1 becomes 0.
+
+```javascript
+console.log(~10); 
+console.log(~-10);
+```
+
+| A | OUTPUT (~A) |
+|---|------------|
+| 0 | 1 |
+| 1 | 0 |
+
+### 5. Left Shift Operator ( << )
+It’s a binary operator i.e. it accepts two operands. The first operator specifies the number and the second operator specifies the number of bits to shift. Each bit is shifted towards the left and 0 bits are added from the right. The excess bits from the left are discarded.
+
+```javascript
+let a = 4; 
+console.log(a << 1); 
+console.log(a << 4);
+```
+
+### 6. Sign Propagating Right Shift Operator ( >> )
+It’s a binary operator i.e. it accepts two operands. The first operand specifies the number and the second operand specifies the number of bits to shift. Each bit is shifted towards the right, the overflowing bits are discarded. This is Sign Propagating as the bits are added from the left depending upon the sign of the number (i.e. 0 if positive and 1 if negative).
+
+```javascript
+let a = 4; 
+let b = -32;
+console.log(a >> 1); 
+console.log(b >> 4);
+```
+
+### 7. Zero Fill Right Shift Operator ( >>> )
+It’s a binary operator i.e. it accepts two operands. The first operand specifies the number and the second operand specifies the number of bits to shift. Each bit is shifted towards the right, the overflowing bits are discarded. 0 bit is added from the left so it’s zero-fill right shift.
+
+```javascript
+let a = 4; 
+let b = -1;
+console.log(a >>> 1); 
+console.log(b >>> 4);

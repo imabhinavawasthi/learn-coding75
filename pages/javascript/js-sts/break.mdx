@@ -1,0 +1,125 @@
+---
+title: "JavaScript Break Statement"
+date: "2024-11-19"
+---
+
+JavaScript `break` statement is used to terminate the execution of the loop or the switch statement when the condition is true.
+
+## In Switch Block (To come out of the block)
+
+```javascript
+const fruit = "Mango";
+
+switch (fruit) {
+    case "Apple":
+        console.log("Apple is healthy.");
+        break;
+    case "Mango":
+        console.log("Mango is delicious.");
+        break;
+    default:
+        console.log("No fruit chosen.");
+}
+```
+
+### Output
+```plaintext
+Mango is delicious.
+```
+
+## Why do we need to use break with Switch?
+
+In the below example, the fruit name is `Apple`, but the given output is for the two cases. This is because of the missing `break` statement in the case of `Apple`. The block will run for the next case as well until a `break` statement appears.
+
+```javascript
+const fruit = "Apple";
+
+switch (fruit) {
+    case "Apple":
+        console.log("Apple is healthy.");
+    case "Mango":
+        console.log("Mango is delicious.");
+        break;
+    default:
+        console.log("No fruit chosen.");
+}
+```
+
+### Output
+```plaintext
+Apple is healthy.
+Mango is delicious.
+```
+
+## In a For Loop (To come out of the Loop)
+
+```javascript
+for (let i = 1; i < 6; i++) {
+    if (i == 4) break;
+    console.log(i);
+}
+```
+
+### Output
+```plaintext
+1
+2
+3
+```
+
+## While and Do-While Loop Examples
+
+```javascript
+// Using break in a while loop
+let i = 1;
+while (i <= 5) {
+    console.log(i);
+    if (i === 3) {
+        break;
+    }
+    i++;
+}
+
+// Using break in a do-while loop
+let j = 1;
+do {
+    console.log(j);
+    if (j === 3) {
+        break;
+    }
+    j++;
+} while (j <= 5);
+```
+
+### Output
+```plaintext
+1
+2
+3
+1
+2
+3
+```
+
+## Break with Labels
+
+In JavaScript, we can use a `break` statement with a label to exit from a specific loop, even if it’s nested inside another loop. This is useful when you need to break out of a nested loop structure, and just using a simple `break` would only exit the innermost loop.
+
+```javascript
+outerLoop:
+for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+        if (i === 1 && j === 1) {
+            break outerLoop;  
+        }
+        console.log(`i: ${i}, j: ${j}`);
+    }
+}
+```
+
+### Output
+```plaintext
+i: 0, j: 0
+i: 0, j: 1
+i: 0, j: 2
+i: 1, j: 0

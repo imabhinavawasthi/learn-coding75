@@ -1,0 +1,38 @@
+# JavaScript Object Reference
+
+_Last Updated: 29 Aug, 2024_
+
+JavaScript Objects are the most important data type and form the building blocks for modern JavaScript. The “Object” class represents the JavaScript data types. Objects are quite different from JavaScript’s primitive data types (Number, String, Boolean, null, undefined, and symbol). It is used to store different types of key collections and complex entities. It can be created by using the `Object()` method or by using object initializer/literal syntax.
+
+## What are JavaScript Objects?
+JavaScript objects are collections of properties, where each property is defined as a key-value pair. They are used to model real-world entities and complex data structures.
+
+### Syntax:
+Objects can be created using either the object literal syntax `{}` or the `Object()` constructor.
+
+```javascript
+objectName.methodName()
+```
+
+### Example: Using function definition as property value and accessing with additional details.
+
+```javascript
+// Object creation
+let student = {
+    name: "Martin",
+    class: "12th",
+    section: "A",
+
+    studentDetails: function () {
+        return this.name + " " + this.class
+            + " " + this.section + " ";
+    }
+};
+
+// Display object data
+console.log("STUDENT " + student.studentDetails());
+```
+
+**Output:**
+```
+STUDENT Martin 12th A

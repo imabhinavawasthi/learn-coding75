@@ -1,0 +1,178 @@
+---
+title: "Objects in Javascript"
+date: "2025-01-10"
+---
+
+## Objects in JavaScript
+
+An object in JavaScript is a data structure used to store related data collections. It stores data as key-value pairs, where each key is a unique identifier for the associated value. Objects are dynamic, which means the properties can be added, modified, or deleted at runtime.
+
+There are two primary ways to create an object in JavaScript: **Object Literal** and **Object Constructor**.
+
+### 1. Creation using Object Literal
+The object literal syntax allows you to define and initialize an object with curly braces `{}`, setting properties as key-value pairs.
+
+<CodeBlock language="javascript" text={`let obj = {
+    name: "Sourav",
+    age: 23,
+    job: "Developer"
+};
+console.log(obj);`} />
+
+**Output:**
+```json
+{ name: 'Sourav', age: 23, job: 'Developer' }
+```
+
+### 2. Creation Using `new Object()` Constructor
+
+<CodeBlock language="javascript" text={`let obj = new Object();
+obj.name= "Sourav";
+obj.age= 23;
+obj.job= "Developer";
+
+console.log(obj);`} />
+
+**Output:**
+```json
+{ name: 'Sourav', age: 23, job: 'Developer' }
+```
+
+## Basic Operations on JavaScript Objects
+
+### 1. Accessing Object Properties
+You can access an object’s properties using either **dot notation** or **bracket notation**.
+
+<CodeBlock language="javascript" text={`let obj = { name: "Sourav", age: 23 };
+
+// Using Dot Notation
+console.log(obj.name);
+
+// Using Bracket Notation
+console.log(obj["age"]);`} />
+
+**Output:**
+```json
+Sourav
+23
+```
+
+### 2. Modifying Object Properties
+Properties in an object can be modified by reassigning their values.
+
+<CodeBlock language="javascript" text={`let obj = { name: "Sourav", age: 22 };
+console.log(obj);
+
+obj.age = 23;
+console.log(obj);`} />
+
+**Output:**
+```json
+{ name: 'Sourav', age: 22 }
+{ name: 'Sourav', age: 23 }
+```
+
+### 3. Adding Properties to an Object
+
+<CodeBlock language="javascript" text={`let obj = { model: "Tesla" };
+obj.color = "Red";
+
+console.log(obj);`} />
+
+**Output:**
+```json
+{ model: 'Tesla', color: 'Red' }
+```
+
+### 4. Removing Properties from an Object
+
+<CodeBlock language="javascript" text={`let obj = { model: "Tesla", color: "Red" };
+delete obj.color;
+
+console.log(obj);`} />
+
+**Output:**
+```json
+{ model: 'Tesla' }
+```
+
+### 5. Checking if a Property Exists
+
+<CodeBlock language="javascript" text={`let obj = { model: "Tesla" };
+console.log("color" in obj);
+console.log(obj.hasOwnProperty("model"));`} />
+
+**Output:**
+```json
+false
+true
+```
+
+### 6. Iterating Through Object Properties
+Use `for…in` loop to iterate through the properties of an object.
+
+<CodeBlock language="javascript" text={`let obj = { name: "Sourav", age: 23 };
+for (let key in obj) {
+    console.log(key + ": " + obj[key]);
+}`} />
+
+**Output:**
+```json
+name: Sourav
+age: 23
+```
+
+### 7. Merging Objects
+Objects can be merged using `Object.assign()` or the spread syntax `{ ...obj1, ...obj2 }`.
+
+<CodeBlock language="javascript" text={`let obj1 = { name: "Sourav" };
+let obj2 = { age: 23};
+
+let obj3 = { ...obj1, ...obj2 };
+console.log(obj3);`} />
+
+**Output:**
+```json
+{ name: 'Sourav', age: 23 }
+```
+
+### 8. Object Length
+You can find the number of properties in an object using `Object.keys()`.
+
+<CodeBlock language="javascript" text={`let obj = { name: "Sourav", age: 23 };
+console.log(Object.keys(obj).length);`} />
+
+**Output:**
+```json
+2
+```
+
+## Recognizing a JavaScript Object
+To check if a value is an object, use `typeof` and verify it’s not `null`.
+
+<CodeBlock language="javascript" text={`let obj = { name: "Sourav" };
+console.log(typeof obj === "object" && obj !== null);`} />
+
+**Output:**
+```json
+true
+```
+
+## Common Mistakes with JavaScript Objects
+Let’s dive into the differences between `{}` and `new Object()` in JavaScript, as this is an important concept when working with objects.
+
+### Key Differences Between `{}` and `new Object()`
+
+| Feature | `{}` (Object Literal) | `new Object()` (Object Constructor) |
+|---------|----------------------|----------------------------------|
+| Ease of Use | More concise and readable. | Less commonly used. |
+| Performance | Faster and more efficient. | Slightly slower due to the constructor call. |
+| Prototypal Inheritance | Directly inherits from `Object.prototype`. | Same, but adds an extra layer of abstraction. |
+| Customization | Literal syntax is sufficient for most use cases. | Useful only in rare scenarios. |
+
+### Why Is `{}` Preferred?
+- **Simpler Syntax**: The literal form is cleaner and easier to read.
+- **Performance**: `{}` skips the overhead of calling a constructor function.
+- **Fewer Errors**: Using `new Object()` may unintentionally override the constructor if the environment changes.
+
+Understanding objects in JavaScript is essential for effective programming. They enable you to create complex data structures and perform a variety of operations. For more advanced JavaScript tutorials and examples, explore our **JavaScript Tutorial** and **JavaScript Examples**.

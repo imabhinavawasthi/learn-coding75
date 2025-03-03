@@ -1,0 +1,115 @@
+---
+title: "JavaScript Statements"
+lastUpdated: "17 Jan, 2025"
+---
+
+JavaScript statements are programming instructions that a computer executes. A computer program is essentially a list of these “instructions” designed to perform tasks. In a programming language, such instructions are called statements.
+
+## Types of Statements
+
+### 1. Variable Declarations (`var`, `let`, `const`)
+In JavaScript, you can declare variables using `var`, `let`, or `const`. `let` and `const` are used in modern JavaScript for block-scoped variables, while `var` is function-scoped and generally considered outdated.
+
+<CodeBlock language="javascript">{`
+let name = "Mohan";   // Declaration with 'let'
+const age = 25;      // Declaration with 'const' (constant value)
+var isActive = true; // Declaration with 'var' (older version)
+`}</CodeBlock>
+
+### 2. Assignment Statement
+An assignment statement is used to assign a value to a variable. You can assign any type of value, including strings, numbers, and objects, using the assignment operator `=`.
+
+<CodeBlock language="javascript">{`
+let number = 10; // Assigning a number
+let message = "Hello, World!"; // Assigning a string
+`}</CodeBlock>
+
+### 3. Expression Statements
+An expression in JavaScript is any valid unit of code that resolves to a value. When an expression is executed, it can perform an action (e.g., calculation, function call) and return a result. An expression can also be used as a statement.
+
+<CodeBlock language="javascript">{`
+x = y + 10;  // Expression statement
+console.log(x); // Expression statement using a function call
+`}</CodeBlock>
+
+### 4. Control Flow Statements
+Control flow statements are used to control the order in which statements are executed in a program. Examples include `if`, `else`, `switch`, `while`, and `for` loops.
+
+<CodeBlock language="javascript">{`
+let number = 10;
+if (number > 5) {
+    console.log("Number is greater than 5");
+}
+`}</CodeBlock>
+
+### 5. Function Declarations
+A function declaration is a statement that defines a function in JavaScript. Functions are reusable blocks of code designed to perform specific tasks.
+
+<CodeBlock language="javascript">{`
+function greet(name) {
+    return "Hello, " + name;
+}
+
+console.log(greet("Alisha"));
+`}</CodeBlock>
+
+### 6. Return Statement
+The `return` statement is used to exit a function and optionally pass a value back to the calling code.
+
+<CodeBlock language="javascript">{`
+function add(x, y) {
+    return x + y;
+}
+let result = add(5, 3); // result will be 8
+`}</CodeBlock>
+
+### 7. Throw Statement
+The `throw` statement is used to create custom errors in JavaScript. It is often used in conjunction with `try…catch` to handle errors.
+
+<CodeBlock language="javascript">{`
+function checkAge(age) {
+    if (age < 18) {
+        throw new Error("Age must be 18 or older");
+    }
+}
+`}</CodeBlock>
+
+### 8. Try…Catch Statement
+The `try…catch` statement is used to handle exceptions in JavaScript. The code inside the `try` block is executed, and if an error occurs, the code inside the `catch` block will handle the error.
+
+<CodeBlock language="javascript">{`
+try {
+    let result = someUndefinedFunction(); // This will throw an error
+    console.log(result);
+} catch (error) {
+    console.error("An error occurred:", error.message);
+}
+`}</CodeBlock>
+
+### 9. Break and Continue Statements
+The `break` and `continue` statements are used within loops. `break` exits the loop, while `continue` skips to the next iteration.
+
+<CodeBlock language="javascript">{`
+for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        break;  // Exits the loop when i equals 5
+    }
+    console.log(i);
+}
+`}</CodeBlock>
+
+## Some commonly used keywords are:
+
+| Keyword   | Description |
+|-----------|------------|
+| `var`     | Used to declare a variable |
+| `let`     | Used to declare a block variable |
+| `const`   | Used to declare a block constant |
+| `if`      | Used to decide if a certain block will get executed or not |
+| `switch`  | Executes a block of code depending on different cases |
+| `for`     | Executes a block of statements till the condition is true |
+| `function`| Used to declare a function |
+| `return`  | Used to exit a function |
+| `try`     | Used to handle errors in a block of statements |
+| `break`   | Used to terminate a loop |
+| `continue`| Used to continue a loop |

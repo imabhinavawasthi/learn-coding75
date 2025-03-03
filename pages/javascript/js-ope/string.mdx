@@ -1,0 +1,145 @@
+# JavaScript String Operators
+_Last Updated : 23 Nov, 2024_
+
+JavaScript String Operators are used to manipulate and perform operations on strings. There are two operators which are used to modify strings in JavaScript. These operators help us to join one string to another string.
+
+## 1. Concatenate Operator
+Concatenate Operator in JavaScript combines strings using the ‘+’ operator and creates a new string.
+
+```javascript
+let s1 = "Geeks";
+let s2 = "forGeeks";
+let res = (s1 + s2);
+console.log(res);
+```
+
+**Output:**
+```
+GeeksforGeeks
+```
+
+## 2. Concatenate Assignment Operator
+We can modify one string by adding content of another one to it.
+
+```javascript
+let s1 = "Geeks";
+let s2 = "forGeeks";
+
+s1 += s2; 
+console.log(s1);
+```
+
+**Output:**
+```
+GeeksforGeeks
+```
+
+## 3. Comparison Operators
+
+### Equality (==) 
+Checks if two strings are equal (ignoring type).
+
+```javascript
+let s1 = "gfg";
+let s2 = "gfg";
+
+console.log(s1 == s2);
+```
+
+**Output:**
+```
+true
+```
+
+Here is an example to show that type checking is ignored.
+
+```javascript
+let s1 = "gfg"; // Primitive Type
+let s2 = new String("gfg"); // Object type
+
+console.log(s1 == s2); 
+```
+
+**Output:**
+```
+true
+```
+
+### Strict Equality (===) 
+Checks if two strings are equal in value and type both.
+
+```javascript
+let s1 = "gfg"; // Primitive Type
+let s2 = new String("gfg"); // Object type
+
+console.log(s1 === s2); // false
+```
+
+**Output:**
+```
+false
+```
+
+### Inequality (!=) 
+Checks if two strings are not equal (ignoring type).
+
+```javascript
+let s1 = "gfg";
+let s2 = "ggg";
+
+console.log(s1 != s2);
+```
+
+**Output:**
+```
+true
+```
+
+Here is an example to show that type checking is ignored.
+
+```javascript
+let s1 = "gfg"; // Primitive Type
+let s2 = new String("ggg"); // Object type
+
+console.log(s1 != s2); 
+```
+
+**Output:**
+```
+true
+```
+
+### Strict Inequality (!==) 
+Checks if two strings are equal in value and type both.
+
+```javascript
+let s1 = "gfg"; // Primitive Type
+let s2 = new String("ggg"); // Object type
+
+console.log(s1 !== s2); 
+```
+
+**Output:**
+```
+true
+```
+
+### Lexicographical Comparison (<, >, <=, >=) 
+Compares strings based on Unicode values.
+
+```javascript
+let s1 = "age";
+let s2 = "bat";
+
+console.log(s1 < s2);  // true
+console.log(s1 > s2);  // false
+console.log(s1 <= s2); // true
+console.log(s1 >= s2); // false
+```
+
+**Output:**
+```
+true
+false
+true
+false

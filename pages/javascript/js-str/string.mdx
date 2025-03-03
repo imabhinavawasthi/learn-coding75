@@ -1,0 +1,274 @@
+---
+title: "JavaScript Strings"
+date: "17 Nov, 2024"
+---
+
+## JavaScript Strings
+
+A JavaScript String is a sequence of characters, typically used to represent text.
+
+In JavaScript, there is no character type (similar to Python and different from C, C++, and Java), so a single character string is used when we need a character. Like Java and Python, strings in JavaScript are immutable.
+
+### Create using Literals – Recommended
+
+We can either use a single quote or a double quote to create a string. It is recommended to be consistent with your choice throughout your code.
+
+```javascript
+// Using Single Quote
+let s1 = 'abcd';
+console.log(s1);
+
+// Using Double Quote
+let s2 = "abcd";
+console.log(s2);
+```
+
+**Output:**
+```
+abcd
+abcd
+```
+
+### Create using Constructor
+
+The String Constructor is less common for direct string creation.
+
+```javascript
+let s = new String('abcd');
+console.log(s);
+```
+
+**Output:**
+```
+[String: 'abcd']
+```
+
+### Template Literals (String Interpolation)
+
+You can create strings using Template Literals. Template literals allow you to embed expressions within backticks (``) for dynamic string creation, making it more readable and versatile.
+
+```javascript
+let s1 = 'gfg';
+let s2 = `You are learning from ${s1}`;
+console.log(s2);
+```
+
+**Output:**
+```
+You are learning from gfg
+```
+
+### Empty String
+
+You can create an empty string by assigning either single or double quotes with no characters in between.
+
+```javascript
+let s1 = '';
+let s2 = "";
+console.log(s1);
+console.log(s2);
+```
+
+### Multiline Strings (ES6 and later)
+
+You can create a multiline string using backticks (`) with template literals.
+
+```javascript
+let s = `
+    This is a
+    multiline
+    string`;
+console.log(s);
+```
+
+**Output:**
+```
+    This is a
+    multiline
+    string
+```
+
+## Basic Operations on JavaScript Strings
+
+### 1. Finding the length of a String
+
+```javascript
+let s = 'JavaScript';
+let len = s.length;
+console.log("String Length: " + len);
+```
+
+**Output:**
+```
+String Length: 10
+```
+
+### 2. String Concatenation
+
+```javascript
+let s1 = 'Java';
+let s2 = 'Script';
+let res = s1 + s2;
+console.log("Concatenated String: " + res);
+```
+
+**Output:**
+```
+Concatenated String: JavaScript
+```
+
+### 3. Escape Characters
+
+```javascript
+const s1 = "'GfG' is a learning portal";
+const s2 = '"GfG" is a learning portal';
+const s3 = "\\GfG\\ is a learning portal";
+console.log(s1);
+console.log(s2);
+console.log(s3);
+```
+
+**Output:**
+```
+'GfG' is a learning portal
+"GfG" is a learning portal
+\GfG\ is a learning portal
+```
+
+### 4. Breaking Long Strings
+
+```javascript
+const s = "'GeeksforGeeks' is " + "a learning portal";
+console.log(s);
+```
+
+**Output:**
+```
+'GeeksforGeeks' is a learning portal
+```
+
+### 5. Find Substring of a String
+
+```javascript
+let s1 = 'JavaScript Tutorial';
+let s2 = s1.substring(0, 10);
+console.log(s2);
+```
+
+**Output:**
+```
+JavaScript
+```
+
+### 6. Convert String to Uppercase and Lowercase
+
+```javascript
+let s = 'JavaScript';
+let uCase = s.toUpperCase();
+let lCase = s.toLowerCase();
+console.log(uCase);
+console.log(lCase);
+```
+
+**Output:**
+```
+JAVASCRIPT
+javascript
+```
+
+### 7. String Search in JavaScript
+
+```javascript
+let s1 = 'def abc abc';
+let i = s1.indexOf('abc');
+console.log(i);
+```
+
+**Output:**
+```
+4
+```
+
+### 8. String Replace in JavaScript
+
+```javascript
+let s1 = 'Learn HTML at GfG';
+let s2 = s1.replace('HTML', 'JavaScript');
+console.log(s2);
+```
+
+**Output:**
+```
+Learn JavaScript at GfG
+```
+
+### 9. Trimming Whitespace from String
+
+```javascript
+let s1 = '    Learn JavaScript       ';
+let s2 = s1.trim();
+console.log(s2);
+```
+
+**Output:**
+```
+Learn JavaScript
+```
+
+### 10. Access Characters from String
+
+```javascript
+let s1 = 'Learn JavaScript';
+let s2 = s1[6];
+console.log(s2);
+s2 = s1.charAt(6);
+console.log(s2);
+```
+
+**Output:**
+```
+J
+J
+```
+
+### 11. String Comparison in JavaScript
+
+```javascript
+let str1 = "John";
+let str2 = new String("John");
+console.log(str1 == str2);
+console.log(str1.localeCompare(str2));
+```
+
+**Output:**
+```
+true
+0
+```
+
+### 12. Passing JavaScript String as Objects
+
+```javascript
+const str = new String("GeeksforGeeks");
+console.log(str);
+```
+
+**Output:**
+```
+[String: 'GeeksforGeeks']
+```
+
+### Are Strings Created by the `new` Keyword the Same as Normal Strings?
+
+```javascript
+const str1 = new String("GeeksforGeeks");
+const str2 = "GeeksforGeeks";
+console.log(str1 == str2);
+console.log(str1 === str2);
+```
+
+**Output:**
+```
+true
+false
+```

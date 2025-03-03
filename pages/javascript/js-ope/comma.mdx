@@ -1,0 +1,63 @@
+---
+title: "JavaScript Comma Operator"
+date: "2024-11-23"
+---
+
+JavaScript Comma Operator mainly evaluates its operands from left to right sequentially and returns the value of the rightmost operand.
+
+```javascript
+let x = (1, 2, 3);
+console.log(x); 
+```
+
+**Output:**
+```
+3
+```
+
+Here is another example to show that all expressions are actually executed.
+
+```javascript
+let a = 1, b = 2, c = 3;
+
+let res = (a++, b++, c++);
+
+console.log(res);
+console.log(a, b, c); 
+```
+
+**Output:**
+```
+3
+2 3 4
+```
+
+Here is an example with function calls.
+
+```javascript
+function Func1() {
+    console.log('one');
+    return 'one';
+}
+function Func2() {
+    console.log('two');
+    return 'two';
+}
+function Func3() {
+    console.log('three');
+    return 'three';
+}
+
+// Three expressions are given at one place
+let x = (Func1(), Func2(), Func3());
+
+console.log(x);
+```
+
+**Output:**
+```
+one
+two
+three
+three
+```

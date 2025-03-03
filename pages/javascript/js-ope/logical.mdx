@@ -1,0 +1,182 @@
+---
+title: "Logical Operators"
+lastUpdated: "13 Dec, 2024"
+---
+
+
+Logical operators in JavaScript are used to perform logical operations on values and return either `true` or `false`. These operators are commonly used in decision-making statements like `if` or `while` loops to control the flow of execution based on conditions.
+
+In JavaScript, there are basically three types of logical operators.
+
+## 1. Logical AND (`&&`) Operator
+
+The logical AND (`&&`) operator checks whether both operands are true. If both are true, the result is `true`. If any one or both operands are false, the result is `false`.
+
+<CodeBlock language="javascript">
+{`// Check if both conditions are true
+let age = 20;
+let idProof = true;
+
+// Logical AND checks both conditions
+if (age >= 18 && idProof) {
+  console.log("Allowed"); 
+} else {
+  console.log("Not Allowed");  
+}`}
+</CodeBlock>
+
+**Output:**
+```plaintext
+Allowed
+```
+
+It works with numbers as well, treating `0` as false and any non-zero value as true. It treats `false`, `0`, `-0`, `""`, `null`, `undefined`, `NaN` and `document.all` as false.
+
+In JavaScript, the `&&` operator doesn’t return `true` or `false` unless explicitly working with boolean values. Instead, it returns the actual value of the last operand evaluated:
+
+- If the first operand (`x`) is falsy (like `0`, `null`, `undefined`, `false`), it stops and returns that value.
+- If the first operand is truthy, it evaluates the second operand and returns its value.
+
+<CodeBlock language="javascript">
+{`// Logical AND with integers
+let x = 5;
+let y = 0;
+
+// 5 (true) && 0 (false)
+let res = x && y; 
+console.log(res); 
+
+// 5 (true) && 10 (true)
+res = x && 10;
+console.log(res); `}
+</CodeBlock>
+
+**Output:**
+```plaintext
+0
+10
+```
+
+## 2. Logical OR (`||`) Operator
+
+The logical OR (`||`) operator checks whether at least one of the operands is true. If either operand is true, the result is `true`. If both operands are false, the result is `false`.
+
+<CodeBlock language="javascript">
+{`// Check if at least one condition is true
+let age = 16;
+let hasGuardian = true;
+
+// Logical OR checks if either condition is true
+if (age >= 18 || hasGuardian) {
+  console.log("Allowed");
+} else {
+  console.log("Not Allowed");
+}`}
+</CodeBlock>
+
+**Output:**
+```plaintext
+Allowed
+```
+
+### Rules for `||`:
+
+- If the first operand is truthy, it stops and returns that value.
+- If the first operand is falsy, it evaluates the second operand and returns its value.
+
+### Truthy and Falsy Values in JavaScript
+
+- **Falsy values:** `false`, `0`, `null`, `undefined`, `NaN`, and `""` (empty string).
+- **Truthy values:** Anything not falsy.
+
+<CodeBlock language="javascript">
+{`// Logical OR (||) Operator
+let i = 1;
+let j = null;
+let k = undefined;
+let l = 0;
+
+console.log(j || k);
+console.log(i || l);
+
+console.log(Boolean(j || k));
+console.log(Boolean(i || l));`}
+</CodeBlock>
+
+**Output:**
+```plaintext
+undefined
+1
+false
+true
+```
+
+## 3. Logical NOT (`!`) Operator
+
+The logical NOT (`!`) operator inverts the boolean value of its operand. If the operand is `true`, it returns `false`. If the operand is `false`, it returns `true`.
+
+<CodeBlock language="javascript">
+{`let isAllowed = true;
+console.log(!isAllowed);`}
+</CodeBlock>
+
+**Output:**
+```plaintext
+false
+```
+
+<CodeBlock language="javascript">
+{`let isLoggedIn = false;
+
+if (!isLoggedIn) {
+  console.log("Log in!");
+} else {
+  console.log("Welcome back!");
+}`}
+</CodeBlock>
+
+**Output:**
+```plaintext
+Log in!
+```
+
+### Logical NOT Works for Non-Boolean Values
+
+Unlike `&&` and `||`, the logical NOT operator always results in `true` or `false`. It considers falsy values (mentioned above) as `false` and all other values as `true`.
+
+<CodeBlock language="javascript">
+{`let x = "Hello";
+console.log(!x);
+console.log(!!x);  
+
+let y = 20;
+console.log(!y);
+console.log(!!y);  `}
+</CodeBlock>
+
+**Output:**
+```plaintext
+false
+true
+false
+true
+```
+
+## 4. Nullish Coalescing (`??`) Operator
+
+The nullish coalescing operator (`??`) returns the right-hand operand when the left-hand operand is either `null` or `undefined`. Otherwise, it returns the left-hand operand.
+
+<CodeBlock language="javascript">
+{`let username = null;
+let defaultName = "Guest";
+console.log(username ?? defaultName);
+
+username = "Kartik";
+defaultName = "Guest";
+console.log(username ?? defaultName);`}
+</CodeBlock>
+
+**Output:**
+```plaintext
+Guest
+Kartik
