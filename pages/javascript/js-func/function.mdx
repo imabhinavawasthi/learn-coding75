@@ -1,0 +1,216 @@
+---
+title: "Functions in JavaScript"
+date: "2024-12-27"
+---
+
+# Functions in JavaScript
+
+Functions in JavaScript are reusable blocks of code designed to perform specific tasks. They allow you to organize, reuse, and modularize code. They can take inputs, perform actions, and return outputs.
+
+```javascript
+function sum(x, y) { 
+    return x + y; 
+}
+console.log(sum(6, 9));
+```
+
+**Output:**
+```
+15
+```
+
+## Function Syntax and Working
+
+A function definition is sometimes also termed a function declaration or function statement. Below are the rules for creating a function in JavaScript:
+
+- Begin with the keyword `function` followed by,
+- A user-defined function name (In the above example, the name is `sum`)
+- A list of parameters enclosed within parentheses and separated by commas (In the above example, parameters are `x` and `y`)
+- A list of statements composing the body of the function enclosed within curly braces `{}` (In the above example, the statement is `return x + y`).
+
+### Return Statement
+
+In some situations, we want to return some values from a function after performing some operations. In such cases, we make use of the `return`. This is an optional statement. In the above function, `sum()` returns the sum of two numbers as a result. 
+
+### Function Parameters
+
+Parameters are inputs passed to a function. In the above example, `sum()` takes two parameters, `x` and `y`.
+
+## Calling Functions
+
+After defining a function, the next step is to call it to make use of the function. We can call a function by using the function name separated by the value of parameters enclosed between the parenthesis.
+
+```javascript
+// Function Definition
+function welcomeMsg(name) {
+    return "Hello " + name + " welcome to GeeksforGeeks";
+}
+
+let nameVal = "User";
+
+// Calling the function
+console.log(welcomeMsg(nameVal));
+```
+
+**Output:**
+```
+Hello User welcome to GeeksforGeeks
+```
+
+## Why Functions?
+
+- Functions can be used multiple times, reducing redundancy.
+- Break down complex problems into manageable pieces.
+- Manage complexity by hiding implementation details.
+- Can call themselves to solve problems recursively.
+
+## Function Invocation
+
+The function code you have written will be executed whenever it is called.
+
+- Triggered by an event (e.g., a button click by a user).
+- When explicitly called from JavaScript code.
+- Automatically executed, such as in self-invoking functions.
+
+## Function Expression
+
+It is similar to a function declaration without the function name. Function expressions can be stored in a variable assignment. 
+
+```javascript
+const mul = function (x, y) {
+    return x * y;
+};
+console.log(mul(4, 5)); 
+```
+
+**Output:**
+```
+20
+```
+
+## Arrow Functions
+
+Arrow functions are a concise syntax for writing functions, introduced in ES6, and they do not bind their own `this` context.
+
+```javascript
+const a = ["Hydrogen", "Helium", "Lithium", "Beryllium"];
+
+const a2 = a.map(function (s) {
+    return s.length;
+});
+
+console.log("Normal way ", a2);
+
+const a3 = a.map((s) => s.length);
+
+console.log("Using Arrow Function ", a3);
+```
+
+**Output:**
+```
+Normal way  [ 8, 6, 7, 9 ]
+Using Arrow Function  [ 8, 6, 7, 9 ]
+```
+
+## Immediately Invoked Function Expression (IIFE)
+
+IIFE functions are executed immediately after their definition. They are often used to create isolated scopes.
+
+```javascript
+(function () {
+    console.log("This runs immediately!");
+})();
+```
+
+**Output:**
+```
+This runs immediately!
+```
+
+## Callback Functions
+
+A callback function is passed as an argument to another function and is executed after the completion of that function.
+
+```javascript
+function num(n, callback) {
+    return callback(n);
+}
+
+const double = (n) => n * 2;
+
+console.log(num(5, double));
+```
+
+**Output:**
+```
+10
+```
+
+## Anonymous Functions
+
+Anonymous functions are functions without a name. They are often used as arguments to other functions.
+
+```javascript
+setTimeout(function () {
+    console.log("Anonymous function executed!");
+}, 1000);
+```
+
+## Nested Functions
+
+Functions defined within other functions are called nested functions. They have access to the variables of their parent function.
+
+```javascript
+function outerFun(a) {
+    function innerFun(b) {
+        return a + b;
+    }
+    return innerFun;
+}
+
+const addTen = outerFun(10);
+console.log(addTen(5));
+```
+
+**Output:**
+```
+15
+```
+
+## Pure Functions
+
+Pure functions return the same output for the same inputs and do not produce side effects. They do not modify state outside their scope, such as modifying global variables, changing the state of objects passed as arguments, or performing I/O operations.
+
+```javascript
+function pureAdd(a, b) {
+    return a + b;
+}
+
+console.log(pureAdd(2, 3));
+```
+
+**Output:**
+```
+5
+```
+
+## Key Characteristics of Functions
+
+- **Parameters and Arguments:** Functions can accept parameters (placeholders) and be called with arguments (values).
+- **Return Values:** Functions can return a value using the `return` keyword.
+- **Default Parameters:** Default values can be assigned to function parameters.
+
+## Advantages of Functions in JavaScript
+
+- **Reusability:** Write code once and use it multiple times.
+- **Modularity:** Break complex problems into smaller, manageable pieces.
+- **Improved Readability:** Functions make code easier to understand.
+- **Maintainability:** Changes can be made in one place without affecting the entire codebase.
+
+## Choosing the Right Function Type
+
+- Use **function declarations** for regular reusable functions.
+- Use **arrow functions** for concise, one-line functions.
+- Use **IIFE** for code that runs immediately.
+- Use **callback functions** for asynchronous operations like API calls.
+- Use **pure functions** for predictable behavior without side effects.

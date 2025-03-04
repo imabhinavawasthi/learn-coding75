@@ -1,0 +1,71 @@
+---
+title: "JavaScript String Reference"
+lastUpdated: "10 Jul, 2024"
+---
+
+JavaScript strings are used for storing and manipulating text content. They can contain zero or more characters within single or double quotes, like `"Geeksforgeeks"` or `'Geeksforgeeks'`.
+
+## Syntax
+
+```js
+String(object)
+```
+
+### Example: String Length
+In this example, we will return the length of a string.
+
+```js
+function stringLength() {
+    const str = "GeeksforGeeks";
+    console.log("String Length: " + str.length);
+}
+
+stringLength();
+```
+
+**Output:**
+```
+String Length: 13
+```
+
+### Example: Date Object’s String Value
+This example demonstrates how to return the `Date()` object’s string value.
+
+```js
+// Date Object having date and time
+const currentDate = new Date();
+
+// date object's string value
+const currentDate_String = currentDate.toString();
+
+console.log("Date Object's String Value: " + currentDate_String);
+```
+
+**Output:**
+```
+Date Object's String Value: Wed Jul 10 2024 06:48:56 GMT+0000 (Coordinated Universal Time)
+```
+
+## JavaScript String Constructor
+In JavaScript, a constructor gets called when an object is created using the `new` keyword.
+
+| Constructor | Description | Example |
+|------------|-------------|---------|
+| `String()` | Convert the value of an object to a string. | Try |
+
+## JavaScript String Properties
+A JavaScript property is a member of an object that associates a key with a value. There is no static property in the string, only instance properties.
+
+### Instance Property
+An instance property is a property that has a new copy for every new instance of the class.
+
+| Instance Properties | Description | Example |
+|--------------------|-------------|---------|
+| `length` | Find out the size of that object | Try |
+| `constructor` | Return the string constructor function for the object. | Try |
+
+## JavaScript String Methods
+JavaScript methods are actions that can be performed on objects. There are two types of String methods in JavaScript:
+
+### Static Method
+If the method is called using the string class itself, then it is called a static method.

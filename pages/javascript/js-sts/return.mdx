@@ -1,0 +1,174 @@
+---
+title: "JavaScript Return Statement"
+lastUpdated: "07 Feb, 2025"
+---
+
+
+
+# JavaScript Return Statement
+
+The `return` statement in JavaScript is used to end the execution of a function and return a value to the caller. It is used to control function behavior and optimize code execution.
+
+## Syntax
+
+```javascript
+return [expression];
+```
+
+- **Expression Evaluation:** The expression inside the brackets is evaluated and returned to the caller.
+- **List of Results:** When returning multiple values, arrays or objects can be used to structure the data.
+
+## How does the Return Statement Work?
+The `return` statement stops function execution and returns a value to the caller. If no value is specified, the function returns `undefined` by default.
+
+```javascript
+function add(a, b) {
+    return a + b;
+}
+
+const res = add(5, 10);
+console.log(res);
+```
+
+**Output:**
+```
+15
+```
+In this example, the `return` statement returns the sum of `a` and `b` to the caller.
+
+## Using Return Without a Value
+If a `return` statement is used without a value, the function will return `undefined`.
+
+```javascript
+function noReturn() {
+    return;
+}
+
+console.log(noReturn());
+```
+
+**Output:**
+```
+undefined
+```
+
+## Returning Value from a Function
+You can return values from a function using the `return` statement, and these values can be of any type (number, string, object, etc.).
+
+```javascript
+function greet(name) {
+    return 'Hello, ' + name;
+}
+let message = greet('Pranjal');
+console.log(message);
+```
+
+**Output:**
+```
+Hello, Pranjal
+```
+
+## Exiting a Function Early
+The `return` statement can be used to exit from a function early when a condition is met, skipping the remaining code.
+
+```javascript
+function checkE(number) {
+    if (number % 2 !== 0) {
+        return false;
+    }
+    return true;
+}
+console.log(checkE(4));
+console.log(checkE(5));
+```
+
+**Output:**
+```
+true
+false
+```
+
+## Returning Objects, Arrays, and Functions
+You can return complex data structures, such as objects, arrays, or even other functions.
+
+```javascript
+function Person(name, age) {
+    return {
+        name: name,
+        age: age
+    };
+}
+let person = Person('Ishank', 30);
+console.log(person);
+```
+
+**Output:**
+```
+{ name: 'Ishank', age: 30 }
+```
+
+## Returning from Arrow Functions
+Arrow functions simplify returning values. If there is only one expression, the `return` keyword and curly braces can be omitted.
+
+```javascript
+const add = (a, b) => a + b;
+console.log(add(3, 4));
+```
+
+**Output:**
+```
+7
+```
+
+## Returning in Recursion
+The `return` statement is essential in recursive functions to pass values back at each step of the recursion.
+
+```javascript
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+console.log(factorial(5));
+```
+
+**Output:**
+```
+120
+```
+
+## No Return vs Return Undefined
+If a function doesn’t include a `return` statement, it returns `undefined` by default. However, explicitly using `return undefined` returns the value `undefined`.
+
+```javascript
+function noRet() {
+}
+console.log(noRet());
+```
+
+**Output:**
+```
+undefined
+```
+
+## Return Value Can Be Used in Expressions
+The value returned from a function can be directly used in other expressions or operations.
+
+```javascript
+function square(x) {
+    return x * x;
+}
+console.log(square(2) + 10);
+```
+
+**Output:**
+```
+14
+```
+
+## Best Practices for Using Return Statement
+- **Always return a value when needed:** Avoid implicit `undefined` returns unless intentional.
+- **Use return early:** Exit functions as soon as possible to improve readability.
+- **Return structured data:** Use objects or arrays to return multiple values efficiently.
+- **Avoid returning inside loops unnecessarily:** Optimize performance by minimizing unnecessary function exits.

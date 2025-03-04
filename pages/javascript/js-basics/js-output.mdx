@@ -1,0 +1,182 @@
+---
+title: "JavaScript Output"
+lastUpdated: "21 Aug, 2024"
+---
+
+JavaScript provides different methods to display output, such as `console.log()`, `alert()`, `document.write()`, and manipulating HTML elements directly. Each method has its specific use cases, whether for debugging, user notifications, or dynamically updating web content. Here we will explore various JavaScript output methods, demonstrating how and when to use them effectively.
+
+There are primarily multiple distinct methods for displaying output in JavaScript. Although there are other methods for output display, they are not advisable, so it is recommended to refrain from using alternative output approaches.
+
+## Table of Content
+
+1. [JavaScript innerHTML Property](#javascript-innerhtml-property)
+2. [JavaScript console.log() Method](#javascript-consolelog-method)
+3. [JavaScript document.write() Method](#javascript-documentwrite-method)
+4. [JavaScript window.alert() Method](#javascript-windowalert-method)
+5. [JavaScript window.print() Method](#javascript-windowprint-method)
+6. [JavaScript window.prompt() Method](#javascript-windowprompt-method)
+
+## JavaScript innerHTML Property
+The `innerHTML` property is used with HTML elements. JavaScript can select an element using the `document.getElementById(id)` method and then use `innerHTML` to display the output on the selected element.
+
+### Syntax:
+```js
+document.getElementById("id").innerHTML;
+```
+
+### Example:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Output</title>
+</head>
+<body>
+    <h2>Display Output using innerHTML Property</h2>
+    <p id="GFG"></p>
+    <script>
+        document.getElementById("GFG").innerHTML = "Hello Geeks!";
+    </script>
+</body>
+</html>
+```
+
+---
+
+## JavaScript console.log() Method
+The `console.log()` method is used for logging messages to the console, primarily for debugging purposes.
+
+### Syntax:
+```js
+console.log();
+```
+
+### Example:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Output</title>
+</head>
+<body>
+    <h2>Display Output using console.log() Method</h2>
+    <script>
+        console.log("Hello Geeks!");
+    </script>
+</body>
+</html>
+```
+
+---
+
+## JavaScript document.write() Method
+The `document.write()` method is used to write content directly to an HTML document while it is being parsed.
+
+**Note:** If used after the document is fully loaded, it will overwrite the entire page.
+
+### Syntax:
+```js
+document.write();
+```
+
+### Example:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Output</title>
+</head>
+<body>
+    <h2>Display Output using document.write() Method</h2>
+    <script>
+        document.write("Hello Geeks!");
+    </script>
+</body>
+</html>
+```
+
+---
+
+## JavaScript window.alert() Method
+The `window.alert()` method displays an alert box with a message and an OK button.
+
+### Syntax:
+```js
+window.alert();
+```
+
+**Note:** The `window` keyword is optional.
+
+### Example:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Output</title>
+</head>
+<body>
+    <h2>Display Output using window.alert() Method</h2>
+    <script>
+        window.alert("Hello Geeks!");
+    </script>
+</body>
+</html>
+```
+
+---
+
+## JavaScript window.print() Method
+The `window.print()` method opens the browser’s print dialog.
+
+### Syntax:
+```js
+window.print();
+```
+
+### Example:
+```html
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>JavaScript window.print() Method</h2>
+    <button onclick="window.print()">Click here to Print</button>
+</body>
+</html>
+```
+
+---
+
+## JavaScript window.prompt() Method
+The `window.prompt()` method displays a dialog box for user input and returns the entered text as a string.
+
+**Note:** This method captures user input but does not directly display output.
+
+### Syntax:
+```js
+window.prompt();
+```
+
+### Example:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Output</title>
+</head>
+<body>
+    <h2>Display prompt box for user input</h2>
+    <script>
+        let userInput = window.prompt("Please Enter your Input");
+        if (userInput !== null) {
+            window.alert("Hello, " + userInput + "!");
+        } else {
+            window.alert("You clicked Cancel or closed the prompt.");
+        }
+    </script>
+</body>
+</html>
+```
+
+---
+
+Understanding JavaScript output methods is crucial for creating interactive and dynamic web applications. By using `console.log()` for debugging, `alert()` for notifications, `document.write()` for direct document writing, and manipulating HTML elements, you can efficiently control and present data. Experiment with these techniques to improve your JavaScript skills and enhance your web development projects!

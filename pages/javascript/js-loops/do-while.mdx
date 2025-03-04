@@ -1,0 +1,76 @@
+
+## JavaScript do…while Loop
+
+A `do…while` loop in JavaScript is a control structure where the code executes repeatedly based on a given boolean condition. One key difference is that a `do…while` loop guarantees that the code block will execute **at least once**, regardless of whether the condition is met initially.
+
+### Types of Loops
+- **Entry Controlled Loops**: The condition is tested before entering the loop body (e.g., `for` and `while` loops).
+- **Exit Controlled Loops**: The condition is tested after executing the loop body, ensuring at least one execution (e.g., `do…while` loop).
+
+### Syntax
+```javascript
+do {
+    // Statements
+} while (condition);
+```
+
+### Example 1: Using `do…while` Loop
+```javascript
+let test = 1;
+do {
+    console.log(test);
+    test++;
+} while (test <= 5);
+```
+
+### Output
+```
+1
+2
+3
+4
+5
+```
+
+### Difference Between `do…while` and `while` Loop
+Unlike the `while` loop, a `do…while` loop **always runs at least once**, even if the condition is false.
+
+### Example 2: Difference Between `do…while` and `while`
+```javascript
+let test = 1;
+do {
+    console.log(test);
+} while (test < 1);
+
+while (test < 1) {
+    console.log(test);
+}
+```
+
+### Output
+```
+1
+```
+
+#### Explanation
+- The `do…while` loop executes **once**, even though the condition is false.
+- The `while` loop checks the condition first and **does not execute** if the condition is false.
+
+### Comparison Table
+| `do…while` | `while` |
+|------------|--------|
+| Exit-controlled loop | Entry-controlled loop |
+| Executes at least once | May not execute at all |
+| Condition is checked at the end | Condition is checked at the beginning |
+
+### Important Note
+When writing loop conditions, always ensure there is a termination condition; otherwise, the loop may run infinitely and crash the browser.
+
+### Supported Browsers
+- Chrome
+- Edge
+- Safari
+- Firefox
+- Internet Explorer
+
+For more details, refer to our guide on JavaScript loop statements!

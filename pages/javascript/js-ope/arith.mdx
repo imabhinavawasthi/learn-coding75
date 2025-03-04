@@ -1,0 +1,278 @@
+# JavaScript Arithmetic Operators
+
+_Last Updated: 22 Nov, 2024_
+
+JavaScript Arithmetic Operators operate upon numerical values and return a numerical value.
+
+## Addition (+) Operator
+The addition operator takes two numerical operands and gives their numerical sum. It also concatenates two strings or numbers.
+
+```javascript
+// Number + Number => Addition 
+let x = 1 + 2;
+console.log(x);
+
+// Number + String => Concatenation
+let y = 5 + "hello"; 
+console.log(y);
+```
+
+**Output:**
+```
+3
+5hello
+```
+
+## Subtraction (-) Operator
+The subtraction operator gives the difference between two operands in the form of a numerical value.
+
+```javascript
+// Number - Number => Subtraction 
+let x = 10 - 7;
+console.log(x);
+
+let y = "Hello" - 1; 
+console.log(y);
+```
+
+**Output:**
+```
+3
+NaN
+```
+
+## Multiplication (*) Operator
+The multiplication operator gives the product of operands where one operand is a multiplicand and another is a multiplier.
+
+```javascript
+// Number * Number => Multiplication
+let x = 3 * 3;
+let y = -4 * 4; 
+console.log(x);
+console.log(y);
+
+let a = Infinity * 0;
+let b = Infinity * Infinity;
+console.log(a);
+console.log(b);
+let z = 'hi' * 2; 
+console.log(z);
+```
+
+**Output:**
+```
+9
+-16
+NaN
+Infinity
+NaN
+```
+
+## Division (/) Operator
+The division operator provides the quotient of its operands where the right operand is the divisor and the left operand is the dividend.
+
+```javascript
+// Number / Number => Division
+let x = 5 / 2;
+let y = 1.0 / 2.0;
+console.log(x);
+console.log(y);
+
+let a = 3.0 / 0;
+let b = 4.0 / 0.0;
+console.log(a);
+console.log(b);
+let z = 2.0 / -0.0;
+console.log(z);
+```
+
+**Output:**
+```
+2.5
+0.5
+Infinity
+Infinity
+-Infinity
+```
+
+## Modulus (%) Operator
+The modulus operator returns the remainder left over when a dividend is divided by a divisor.
+
+```javascript
+// Number % Number => Modulus of the number
+let x = 9 % 5;
+let y = -12 % 5;
+let z = 1 % -2;
+let a = 5.5 % 2;
+let b = -4 % 2;
+let c = NaN % 2;
+
+console.log(x);
+console.log(y);
+console.log(z);
+console.log(a);
+console.log(b);
+console.log(c);
+```
+
+**Output:**
+```
+4
+-2
+1
+1.5
+-0
+NaN
+```
+
+## Exponentiation (**) Operator
+The exponentiation operator raises the first operand to the power of the second operand.
+
+```javascript
+// Number ** Number => Exponential of the number
+let y = -(4 ** 2);
+let z = 2 ** 5;
+let a = 3 ** 3;
+let b = 3 ** 2.5; 
+let c = 10 ** -2;
+let d = 2 ** 3 ** 2; 
+let e = NaN ** 2;
+
+console.log(y);
+console.log(z);
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+console.log(e);
+```
+
+**Output:**
+```
+-16
+32
+27
+15.588457268119896
+0.01
+512
+NaN
+```
+
+## Increment (++) Operator
+The increment operator adds one to its operand and returns a value.
+
+```javascript
+// Postfix 
+let a = 2;
+b = a++;
+
+// Prefix
+let x = 5;
+y = ++x;
+
+console.log(a);
+console.log(b);
+console.log(x);
+console.log(y);
+```
+
+**Output:**
+```
+3
+2
+6
+6
+```
+
+## Decrement (--) Operator
+The decrement operator subtracts one from its operand and returns a value.
+
+```javascript
+// Prefix
+let a = 2;
+b = --a;
+
+// Postfix 
+let x = 3;
+y = x--;
+
+console.log(a);
+console.log(b);
+console.log(x);
+console.log(y);
+```
+
+**Output:**
+```
+1
+1
+2
+3
+```
+
+## Unary Negation (-) Operator
+This unary operator negates its operand.
+
+```javascript
+let a = 3;
+b = -a;
+
+let x = "3";
+y = -x;
+
+console.log(a);
+console.log(b);
+console.log(x);
+console.log(y);
+```
+
+**Output:**
+```
+3
+-3
+3
+-3
+```
+
+## Unary Plus (+) Operator
+This operator converts non-numbers into numbers.
+
+```javascript
+let a = +4;
+let b = +'2';   
+let c = +true;  
+let x = +false; 
+let y = +null;
+
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(x);
+console.log(y);
+```
+
+**Output:**
+```
+4
+2
+1
+0
+0
+```
+
+## Arithmetic Operators List
+
+| OPERATOR | USAGE | OPERATION |
+|----------|-------|-----------|
+| Addition | a + b | Adds two numbers or concatenates strings |
+| Subtraction | a - b | Finds the difference between two operands |
+| Multiplication | a * b | Multiplies two numbers |
+| Division | a / b | Finds the quotient of two operands |
+| Modulus | a % b | Finds the remainder of two operands |
+| Exponentiation | a ** b | Raises left operand to the power of the right operand |
+| Increment | a++ / ++a | Increases operand by one |
+| Decrement | a-- / --a | Decreases operand by one |
+| Unary Plus | +a | Converts NaN to a number |
+| Unary Negation | -a | Converts operand to negative |
+
+For a complete reference, check our [JavaScript Operators Complete Reference](#). For a quick overview, visit our [JavaScript Cheat Sheet](#).

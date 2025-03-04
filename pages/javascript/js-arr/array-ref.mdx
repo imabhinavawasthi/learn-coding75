@@ -1,0 +1,41 @@
+# JavaScript Array Reference
+
+_Last Updated: 16 Jan, 2024_
+
+JavaScript Array is used to store multiple elements in a single variable. It can hold various data types, including numbers, strings, objects, and even other arrays. It is often used when we want to store a list of elements and access them by a single variable.
+
+## Syntax
+```javascript
+const arr = ["Item1", "Item2", "Item3", ...];
+```
+
+### Example: Creating an array and copying its items to another array, and displaying the copied items.
+
+```javascript
+// Create and initialize an array 
+let courses = ["HTML", "CSS", "JavaScript", "React"]; 
+  
+// Display the array items 
+console.log(courses); 
+   
+// Create a new empty array 
+let newArray = []; 
+   
+// forEach loop to push elements 
+// into new array 
+courses.forEach(function (course) { 
+    newArray.push(course); 
+}); 
+   
+// Display the new array of items 
+console.log(newArray); 
+```
+
+**Output:**
+```javascript
+[ 'HTML', 'CSS', 'JavaScript', 'React' ]
+[ 'HTML', 'CSS', 'JavaScript', 'React' ]
+```
+
+## JavaScript Array Constructor
+In JavaScript, a constructor gets called when an object is created using the `new` keyword.

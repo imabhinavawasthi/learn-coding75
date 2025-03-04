@@ -1,0 +1,168 @@
+# Creating Objects in JavaScript
+
+An object in JavaScript is a collection of key-value pairs, where keys are strings (properties) and values can be any data type. Objects can be created using object literals, constructors, or classes. Properties are defined with key-value pairs, and methods are functions defined within the object, enabling encapsulation and organization of data and behavior.
+
+## Table of Content
+
+- Creating object with a constructor
+- Using object literals
+- Creating object with Object.create() method
+- Using ES6 classes
+
+## Creating Object with a Constructor
+
+One of the easiest ways to instantiate an object in JavaScript. A constructor is a function, and with the help of the `new` keyword, the constructor function allows the creation of multiple objects of the same type.
+
+### Example: Using a Constructor
+
+```js
+
+function Vehicle(name, maker, engine) {
+    this.name = name;
+    this.maker = maker;
+    this.engine = engine;
+}
+
+let car = new Vehicle('GT', 'BMW', '1998cc');
+// Property accessors
+console.log(car.name);
+console.log(car.maker);
+console.log(car['engine']);
+```
+
+**Output:**
+```
+GT
+BMW
+1998cc
+```
+
+### Explanation:
+- **Class Components:** A class in OOP has parameters and member functions, encapsulating attributes and behaviors.
+- **Constructor Function:** In a class method, parameters (e.g., `name`, `maker`, `engine`) use `this` to differentiate between class attributes and argument values.
+- **Object Creation:** Create an object (e.g., `car`) from the class, initialize it, and call its methods to use the class functionality.
+
+---
+
+## Using Object Literals
+
+Using object literals to create objects in JavaScript involves defining an object directly with key-value pairs inside curly braces `{}`. This method is concise and straightforward.
+
+### Example: Object Literals
+
+```js
+// Creating js objects with object literal
+let car = {
+    name: 'GT',
+    maker: 'BMW',
+    engine: '1998cc'
+};
+// Property accessor
+console.log(car.name); // dot notation
+console.log(car['maker']); // bracket notation
+```
+
+**Output:**
+```
+GT
+BMW
+```
+
+### Adding More Properties to an Existing Object
+
+```js
+let car = {
+    name: 'GT',
+    maker: 'BMW',
+    engine: '1998cc'
+};
+// Adding property to the object
+car.brakesType = 'All Disc';
+console.log(car);
+```
+
+**Output:**
+```
+{ name: 'GT', maker: 'BMW', engine: '1998cc', brakesType: 'All Disc' }
+```
+
+### Adding Methods to an Object
+
+```js
+// Adding methods to the car object
+let car = {
+    name: 'GT',
+    maker: 'BMW',
+    engine: '1998cc',
+    start: function() {
+        console.log('Starting the engine...');
+    }
+};
+car.start();
+
+// Adding method stop() later to the object
+car.stop = function() {
+    console.log('Applying Brake...');  
+}
+car.stop();
+```
+
+**Output:**
+```
+Starting the engine...
+Applying Brake...
+```
+
+---
+
+## Creating Object with `Object.create()` Method
+
+The `Object.create()` method in JavaScript creates a new object using an existing object as its prototype.
+
+### Example: Using `Object.create()`
+
+```js
+const coder = {
+    isStudying: false,
+    printIntroduction: function() {
+        console.log(`My name is ${this.name}. Am I studying?: ${this.isStudying}`);
+    }
+};
+const me = Object.create(coder);
+me.name = 'Mukul';
+me.isStudying = true;
+me.printIntroduction();
+```
+
+**Output:**
+```
+My name is Mukul. Am I studying?: true
+```
+
+---
+
+## Using ES6 Classes
+
+Using ES6 classes to create objects in JavaScript involves defining a class with a constructor to initialize properties and methods. Objects are then instantiated from the class using the `new` keyword.
+
+### Example: Using ES6 Classes
+
+```js
+// Using ES6 classes
+class Vehicle {
+  constructor(name, maker, engine) {
+    this.name = name;
+    this.maker = maker;
+    this.engine = engine;
+  }
+}
+
+let car1 = new Vehicle('GT', 'BMW', '1998cc');
+
+console.log(car1.name);  // GT
+```
+
+**Output:**
+```
+GT
+```
