@@ -1,0 +1,190 @@
+---
+title: "Introduction to Object Oriented Programming in JavaScript"
+date: "2023-05-24"
+---
+
+As JavaScript is widely used in Web Development, in this article we will explore some of the Object Oriented mechanisms supported by JavaScript to get the most out of it. Some of the common interview questions in JavaScript on OOPS include:
+
+- How is Object-Oriented Programming implemented in JavaScript? 
+- How does it differ from other languages? 
+- Can you implement Inheritance in JavaScript?
+
+There are certain features or mechanisms which make a Language Object-Oriented like:
+
+## OOPs Concept in JavaScript
+
+- Object
+- Classes
+- Encapsulation
+- Abstraction
+- Inheritance
+- Polymorphism
+
+Let’s dive into the details of each one of them and see how they are implemented in JavaScript.
+
+### Object
+
+An Object is a unique entity that contains properties and methods. For example, “a car” is a real-life Object, which has some characteristics like color, type, model, and horsepower and performs certain actions like driving. The characteristics of an Object are called Properties, and the actions are called Methods. An Object is an instance of a class. Objects are everywhere in JavaScript; almost every element is an Object, whether it is a function, array, or string.
+
+> **Note:** A Method in JavaScript is a property of an object whose value is a function.
+
+The object can be created in two ways in JavaScript:
+
+#### Object Literal
+
+```js
+// Defining object
+let person = {
+    first_name: 'Mukul',
+    last_name: 'Latiyan',
+    
+    // Method
+    getFunction: function () {
+        return (`The name of the person is ${this.first_name} ${this.last_name}`);
+    },
+    
+    // Object within object
+    phone_number: {
+        mobile: '12345',
+        landline: '6789'
+    }
+};
+console.log(person.getFunction());
+console.log(person.phone_number.landline);
+```
+
+#### Object Constructor
+
+```js
+// Using a constructor
+function Person(first_name, last_name) {
+    this.first_name = first_name;
+    this.last_name = last_name;
+}
+
+// Creating new instances of person object
+let person1 = new Person('Mukul', 'Latiyan');
+let person2 = new Person('Rahul', 'Avasthi');
+ 
+console.log(person1.first_name);
+console.log(`${person2.first_name} ${person2.last_name}`);
+```
+
+> **Note:** The JavaScript `Object.create()` method creates a new object using an existing object as the prototype of the newly created object.
+
+```js
+// Object.create() example
+const coder = {
+    isStudying: false,
+    printIntroduction: function () {
+        console.log(`My name is ${this.name}. Am I studying?: ${this.isStudying}.`);
+    }
+};
+
+const me = Object.create(coder);
+me.name = 'Mukul';
+me.isStudying = true;
+me.printIntroduction();
+```
+
+### Classes
+
+Classes are blueprints of an Object. A class can have many Objects because the class is a template while Objects are instances of the class or the concrete implementation.
+
+> **Note:** JavaScript is a prototype-based Object-Oriented Language, meaning it doesn’t have classes in the traditional sense but instead defines behaviors using constructor functions and prototypes.
+
+```js
+// Defining class using ES6
+class Vehicle {
+    constructor(name, maker, engine) {
+        this.name = name;
+        this.maker = maker;
+        this.engine = engine;
+    }
+    getDetails() {
+        return (`The name of the bike is ${this.name}.`);
+    }
+}
+
+// Creating objects
+let bike1 = new Vehicle('Hayabusa', 'Suzuki', '1340cc');
+let bike2 = new Vehicle('Ninja', 'Kawasaki', '998cc');
+
+console.log(bike1.name);
+console.log(bike2.maker);
+console.log(bike1.getDetails());
+```
+
+### Encapsulation
+
+Encapsulation is the process of wrapping properties and functions within a single unit.
+
+```js
+// Encapsulation example
+class Person {
+    constructor(name, id) {
+        this.name = name;
+        this.id = id;
+    }
+    add_Address(add) {
+        this.add = add;
+    }
+    getDetails() {
+        console.log(`Name is ${this.name}, Address is: ${this.add}`);
+    }
+}
+ 
+let person1 = new Person('Mukul', 21);
+person1.add_Address('Delhi');
+person1.getDetails();
+```
+
+### Inheritance
+
+Inheritance is a concept where some properties and methods of an Object are reused by another Object.
+
+```js
+// Inheritance example
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    toString() {
+        return (`Name of person: ${this.name}`);
+    }
+}
+
+class Student extends Person {
+    constructor(name, id) {
+        super(name);
+        this.id = id;
+    }
+    toString() {
+        return (`${super.toString()}, Student ID: ${this.id}`);
+    }
+}
+
+let student1 = new Student('Mukul', 22);
+console.log(student1.toString());
+```
+
+### Polymorphism
+
+Polymorphism allows a method in a child class to have the same name and signature as that of a parent class.
+
+```js
+class Animal {
+    speak() {
+        console.log("Animal speaks");
+    }
+}
+class Dog extends Animal {
+    speak() {
+        console.log("Dog barks");
+    }
+}
+let pet = new Dog();
+pet.speak();
+```
+
+JavaScript is best known for web page development but is also used in a variety of non-browser environments.

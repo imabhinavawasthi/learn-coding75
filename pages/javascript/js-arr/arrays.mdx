@@ -1,0 +1,251 @@
+## JavaScript Arrays
+
+An array is a special variable, which can hold more than one value:
+
+```javascript
+const cars = ["Saab", "Volvo", "BMW"];
+```
+
+### Why Use Arrays?
+If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:
+
+```javascript
+let car1 = "Saab";
+let car2 = "Volvo";
+let car3 = "BMW";
+```
+
+However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300?
+
+The solution is an array!
+
+An array can hold many values under a single name, and you can access the values by referring to an index number.
+
+### Creating an Array
+Using an array literal is the easiest way to create a JavaScript Array.
+
+#### Syntax:
+```javascript
+const array_name = [item1, item2, ...];
+```
+
+It is a common practice to declare arrays with the `const` keyword.
+
+#### Example:
+```javascript
+const cars = ["Saab", "Volvo", "BMW"];
+```
+
+Spaces and line breaks are not important. A declaration can span multiple lines:
+
+```javascript
+const cars = [
+  "Saab",
+  "Volvo",
+  "BMW"
+];
+```
+
+You can also create an array and then provide the elements:
+
+```javascript
+const cars = [];
+cars[0]= "Saab";
+cars[1]= "Volvo";
+cars[2]= "BMW";
+```
+
+### Using the JavaScript Keyword `new`
+
+The following example also creates an Array and assigns values to it:
+
+```javascript
+const cars = new Array("Saab", "Volvo", "BMW");
+```
+
+The two examples above do exactly the same. There is no need to use `new Array()`.
+
+For simplicity, readability, and execution speed, use the array literal method.
+
+### Accessing Array Elements
+
+You access an array element by referring to the index number:
+
+```javascript
+const cars = ["Saab", "Volvo", "BMW"];
+let car = cars[0];
+```
+
+**Note:** Array indexes start with `0`. `[0]` is the first element. `[1]` is the second element.
+
+### Changing an Array Element
+
+This statement changes the value of the first element in cars:
+
+```javascript
+cars[0] = "Opel";
+```
+
+### Converting an Array to a String
+
+The JavaScript method `toString()` converts an array to a string of (comma-separated) array values.
+
+```javascript
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+```
+
+### Accessing the Full Array
+
+With JavaScript, the full array can be accessed by referring to the array name:
+
+```javascript
+const cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("demo").innerHTML = cars;
+```
+
+### Arrays are Objects
+
+Arrays are a special type of object. The `typeof` operator in JavaScript returns "object" for arrays.
+
+```javascript
+const person = ["John", "Doe", 46];
+```
+
+### Array Elements Can Be Objects
+
+JavaScript variables can be objects. Arrays are special kinds of objects.
+
+```javascript
+myArray[0] = Date.now;
+myArray[1] = myFunction;
+myArray[2] = myCars;
+```
+
+### Array Properties and Methods
+
+The real strength of JavaScript arrays is the built-in array properties and methods:
+
+```javascript
+cars.length   // Returns the number of elements
+cars.sort()   // Sorts the array
+```
+
+### The `length` Property
+
+```javascript
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let length = fruits.length;
+```
+
+### Accessing the First and Last Array Element
+
+```javascript
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let firstFruit = fruits[0];
+let lastFruit = fruits[fruits.length - 1];
+```
+
+### Looping Array Elements
+
+Using a `for` loop:
+
+```javascript
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let text = "<ul>";
+for (let i = 0; i < fruits.length; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+```
+
+Using `forEach()` function:
+
+```javascript
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let text = "<ul>";
+fruits.forEach(value => text += "<li>" + value + "</li>");
+text += "</ul>";
+```
+
+### Adding Array Elements
+
+Using `push()`:
+
+```javascript
+const fruits = ["Banana", "Orange", "Apple"];
+fruits.push("Lemon");
+```
+
+Using the `length` property:
+
+```javascript
+const fruits = ["Banana", "Orange", "Apple"];
+fruits[fruits.length] = "Lemon";
+```
+
+### Associative Arrays (Not Supported)
+
+```javascript
+const person = [];
+person["firstName"] = "John";
+person["lastName"] = "Doe";
+person["age"] = 46;
+```
+
+Using named indexes makes JavaScript redefine the array to an object.
+
+### When to Use Arrays vs. Objects
+
+- Use **arrays** when element names are **numbers**.
+- Use **objects** when element names are **strings**.
+
+### `new Array()` Constructor
+
+Prefer using `[]` over `new Array()`.
+
+```javascript
+const points = [];
+const points = new Array(40, 100, 1, 5, 25, 10);
+```
+
+Using `new Array(40)` creates an array with **40 undefined elements** instead of a single element with the value `40`.
+
+### Recognizing an Array
+
+Using `Array.isArray()`:
+
+```javascript
+Array.isArray(fruits);
+```
+
+Using `instanceof`:
+
+```javascript
+(fruits instanceof Array);
+```
+
+### Nested Arrays and Objects
+
+```javascript
+const myObj = {
+  name: "John",
+  age: 30,
+  cars: [
+    {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+    {name:"BMW", models:["320", "X3", "X5"]},
+    {name:"Fiat", models:["500", "Panda"]}
+  ]
+};
+```
+
+Looping through nested arrays:
+
+```javascript
+for (let i in myObj.cars) {
+  console.log(myObj.cars[i].name);
+  for (let j in myObj.cars[i].models) {
+    console.log(myObj.cars[i].models[j]);
+  }
+}
+```

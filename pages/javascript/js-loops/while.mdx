@@ -1,0 +1,89 @@
+---
+title: "JavaScript While Loop"
+lastUpdated: "19 Nov, 2024"
+---
+
+# JavaScript While Loop
+
+The `while` loop executes a block of code as long as a specified condition is true. In JavaScript, this loop evaluates the condition before each iteration and continues running as long as the condition remains true.
+
+Here’s an example that prints numbers from 1 to 5:
+
+```javascript
+let count = 1;
+while (count <= 5) {
+  console.log(count);
+  count++;
+}
+```
+
+**Output:**
+```
+1
+2
+3
+4
+5
+```
+
+## Syntax
+```javascript
+while (condition) {
+    // Code block to be executed
+}
+```
+
+## Using While Loop to Traverse an Array
+
+```javascript
+let arr = [10, 20, 30, 40];
+let i = 0;
+while (i < arr.length) {
+  console.log(arr[i]);
+  i++;
+}
+```
+
+**Output:**
+```
+10
+20
+30
+40
+```
+
+## Do-While Loop
+A `do-while` loop is another type of loop in JavaScript that is similar to the `while` loop, but with one key difference: the `do-while` loop guarantees that the block of code inside the loop will be executed at least once, regardless of whether the condition is initially true or false.
+
+### Syntax
+```javascript
+do {
+    // Code block to be executed 
+} while (condition);
+```
+
+### Example: Counting from 1 to 5
+
+```javascript
+let count = 1;
+do {
+  console.log(count);
+  count++;
+} while (count <= 5);
+```
+
+**Output:**
+```
+1
+2
+3
+4
+5
+```
+
+## Comparison Between While and Do-While Loop
+| While Loop | Do-While Loop |
+|------------|--------------|
+| It is an **entry condition** looping structure. | It is an **exit condition** looping structure. |
+| The number of iterations depends on the condition mentioned in the `while` block. | Irrespective of the condition mentioned in the `do-while` block, there will be a minimum of 1 iteration. |
+| The block control condition is available at the **starting point** of the loop. | The block control condition is available at the **endpoint** of the loop. |

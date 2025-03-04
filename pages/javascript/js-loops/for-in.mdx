@@ -1,0 +1,64 @@
+---
+title: "JavaScript For In Loop"
+date: "20 Nov, 2024"
+---
+
+## JavaScript For In Loop
+
+The JavaScript `for…in` loop iterates over the properties of an object. It allows you to access each key or property name of an object.
+
+```javascript
+const car = {
+    make: "Toyota",
+    model: "Corolla",
+    year: 2020
+};
+
+for (let key in car) {
+    console.log(`${key}: ${car[key]}`);
+}
+```
+
+### Output
+```
+make: Toyota
+model: Corolla
+year: 2020
+```
+
+## Syntax
+```javascript
+for (key in object) {
+    // Code
+}
+```
+
+The `for…in` loop can also iterate over the properties of an array, but it is **not recommended**. `for..in` is mainly suitable for objects.
+
+For arrays, we should use the following loops:
+
+- **`for…of` Loop**: If we need to use `continue` or `break` inside the loop.
+- **`forEach()` Method**: If we need to execute something for all elements without any condition.
+
+### Example: Using `for…in` for Arrays (Not Recommended)
+```javascript
+const a = [1, 2, 3, 4, 5];
+
+for (const i in a) {
+    console.log(a[i]);
+}
+```
+
+### Output
+```
+1
+2
+3
+4
+5
+```
+
+## Important Facts About `for…in` Loop
+- The `for…in` loop is **not recommended** for arrays if maintaining index order is important.
+- The order of iteration in a `for…in` loop is **implementation-dependent**, meaning the array elements may not be accessed in the expected sequence.
+- The order in which object properties are iterated may not match the order in which they were defined in the object.

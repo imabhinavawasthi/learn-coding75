@@ -1,0 +1,145 @@
+---
+title: "JavaScript For Loop"
+date: "19 Nov, 2024"
+---
+
+## JavaScript For Loop
+
+JavaScript `for` loop is a control flow statement that allows code to be executed repeatedly based on a condition. It consists of three parts: initialization, condition, and increment/decrement.
+
+```javascript
+// for loop begins when x=2
+// and runs till x <= 4
+for (let x = 2; x <= 4; x++) {
+    console.log("Value of x:" + x);
+}
+```
+
+### Output
+```
+Value of x:2
+Value of x:3
+Value of x:4
+```
+
+### For loop to print table of a number
+```javascript
+let x = 5;
+for (let i = 1; i <= 10; i++) {
+  console.log(x * i); 
+}
+```
+
+### Output
+```
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+```
+
+### For loop to print elements of an array
+```javascript
+let arr = [10, 20, 30, 40];
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]); 
+}
+```
+
+### Output
+```
+10
+20
+30
+40
+```
+
+## Syntax of For Loop in JavaScript
+A `for` loop in JavaScript repeatedly executes a block of code as long as a specified condition is true. It includes initialization, condition checking, and iteration steps, making it efficient for controlled, repetitive tasks.
+
+### Syntax:
+```javascript
+for (statement 1 ; statement 2 ; statement 3){
+    // code here...
+}
+```
+- **Statement 1**: Initialization of the counter (executed once before the loop starts).
+- **Statement 2**: Condition check before each iteration.
+- **Statement 3**: Increment or decrement of the counter (executed after each loop iteration).
+
+## Statement 1: Initializing Counter Variable
+
+Statement 1 initializes the counter variable. This variable tracks the number of iterations. It can be initialized inside or outside the loop.
+
+```javascript
+let x = 2;
+
+for (; x <= 4; x++) {
+    console.log("Value of x:" + x);
+}
+```
+
+### Output
+```
+Value of x:2
+Value of x:3
+Value of x:4
+```
+
+## Statement 2: Testing Condition
+
+This statement checks the condition before each iteration. If true, the loop executes; otherwise, it stops. If omitted, the loop runs indefinitely unless manually stopped.
+
+```javascript
+let x = 2;
+for (; ; x++) {
+    console.log("Value of x:" + x);
+    break;
+}
+```
+
+### Output
+```
+Value of x:2
+```
+
+## Statement 3: Updating Counter Variable
+
+This statement updates the counter variable. It is optional and can be placed inside the loop body instead.
+
+```javascript
+const subjects = ["Maths", "Science", "Polity", "History"];
+let i = 0;
+let len = subjects.length;
+let gfg = "";
+for (; i < len;) {
+    gfg += subjects[i];
+    // Counter can be incremented inside the loop
+    i++;
+}
+console.log(gfg);
+```
+
+### Output
+```
+MathsSciencePolityHistory
+```
+
+## More Loops in JavaScript
+JavaScript offers different types of loops:
+
+| Loop          | Description |
+|--------------|------------|
+| `for` loop   | Repeats a block of code a specific number of times. |
+| `while` loop | Executes a block of code as long as a specified condition is true. |
+| `do-while` loop | Executes a block of code at least once, then repeats while the condition is true. |
+| `for…of` loop | Iterates over the values of iterable objects (arrays, strings, etc.). |
+| `for…in` loop | Iterates over the enumerable properties of an object. |
+
+Learn and master JavaScript with practice questions. JavaScript Exercises provides many JavaScript exercises to help you improve your skills.

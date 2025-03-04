@@ -1,0 +1,156 @@
+---
+title: "\"use strict\" in JavaScript"
+date: "2024-12-03"
+---
+
+# "use strict" in JavaScript
+
+In JavaScript, `"use strict"` is a directive that enables strict mode, introduced in ECMAScript 5 (ES5) to assist in writing safer and more error-free code. `"use strict"` tells the JavaScript engine to run the code in strict mode, applying stricter rules for JavaScript coding.
+
+## What is "use strict" in JavaScript?
+
+`"use strict"` is a literal expression that enables strict mode for JavaScript. It is added at the top of a JavaScript file, function, or block to enforce stricter coding rules.
+
+### Syntax
+
+To enable strict mode, add `"use strict";` at the top of a script or function:
+
+```javascript
+"use strict";
+console.log("Strict mode is enabled");
+
+function myFunction() {
+    "use strict";
+    let x = 3.14;
+    console.log(x);
+}
+```
+
+## Why Use Strict Mode?
+
+Strict mode was introduced to address JavaScript’s problematic features and encourage developers to write safer, optimized code.
+
+### 1. Avoids Accidental Global Variables
+
+```javascript
+"use strict";
+x = 10; // Throws an error because 'x' is not declared
+```
+
+### 2. Eliminates Silent Errors
+
+```javascript
+"use strict";
+Object.defineProperty(this, "PI", { value: 3.14159, writable: false });
+PI = 3.14; // Throws an error
+```
+
+### 3. Disallows Duplicates in Function Parameters
+
+```javascript
+"use strict";
+function sum(a, a, c) { 
+    // Syntax error in strict mode
+    return a + a + c;
+}
+```
+
+### 4. Prevents `this` from Defaulting to the Global Object
+
+```javascript
+"use strict";
+function showThis() {
+    console.log(this); // Logs 'undefined'
+}
+showThis();
+```
+
+### 5. Avoids Deletion of Non-Deletable Properties
+
+```javascript
+"use strict";
+delete Object.prototype; // Throws an error
+```
+
+## How to Use "use strict" Mode?
+
+Strict mode can be enabled globally or within a function.
+
+### Global Strict Mode
+
+```javascript
+"use strict";
+let name = "Sourav";
+```
+
+### Local Strict Mode (Per Function)
+
+```javascript
+function display() {
+    "use strict";
+    let message = "Hello, World!";
+    console.log(message);
+}
+```
+
+## Common Errors in Strict Mode
+
+### 1. Mistyping a Variable Name
+
+```javascript
+"use strict";
+x = 3.14; // Throws an error
+```
+
+### 2. Using a Variable Without Declaring It
+
+```javascript
+"use strict";
+x = { p1: 10, p2: 20 }; // Throws an error
+```
+
+### 3. Deleting a Variable or Object
+
+```javascript
+"use strict";
+let x = 3.14;
+delete x; // Throws an error
+```
+
+### 4. Duplicating a Parameter Name
+
+```javascript
+"use strict";
+function x(p1, p1) {}; // Throws an error
+```
+
+### 5. Octal Numeric Literals
+
+```javascript
+"use strict";
+let x = 010; // Throws an error
+```
+
+### 6. Escape Characters
+
+```javascript
+"use strict";
+let x = \010; // Throws an error
+```
+
+## Limitations and Compatibility Considerations
+
+- **Not Retroactive:** Adding `"use strict";` does not affect previously executed code.
+- **Old Browsers:** In older browsers that do not support strict mode, the directive is ignored, ensuring backward compatibility.
+- **Module Scripts:** In ES6 modules, strict mode is enabled by default.
+
+## When Not to Use Strict Mode?
+
+- **Working with Third-Party Code:** If libraries are not built for strict mode, enabling it may introduce errors.
+- **Quick Prototyping:** Strict mode may slow down rapid development by enforcing rules.
+
+## Conclusion
+
+Strict mode in JavaScript, introduced in ECMAScript 5, enforces stricter parsing and error handling. It eliminates silent errors, enhances performance, disables unsafe features, and future-proofs code. Using `"use strict"` ensures more secure, optimized, and debuggable JavaScript code.
+
+---

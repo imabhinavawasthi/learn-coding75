@@ -1,0 +1,9 @@
+{
+    "js-ope":"Javascript Operators",
+    "ope-prece":"Operator Precedence",
+    "arith":"Javascript Arithmetic Operators",
+    "assign":"Javascript Assignment Operators",
+    "comma":"Javascript Comma Operators",
+    "unary":"Javascript Unary Operators",
+    "instanceof":"Javascript in and instanceof Operators"
+}

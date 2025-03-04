@@ -1,0 +1,63 @@
+---
+title: "JavaScript Map Reference"
+date: "2023-12-29"
+---
+
+## JavaScript Map Reference
+
+JavaScript Map is a collection of elements where each element is stored as a key-value pair. Map objects can hold both objects and primitive values as either key or value. When we iterate over the map object, it returns the key-value pair in the same order as inserted.
+
+### You can create a JavaScript Map by:
+
+- Passing an Array to `new Map()`
+- Creating a Map and using `Map.set()`
+
+### Passing an Array to `new Map()`
+
+Example: In this example, an array of key-value pairs is passed to the `Map` constructor to create a `Map`. Each sub-array `[key, value]` represents a key-value pair.
+
+```javascript
+// Create a Map by passing an Array of key-value pairs to the Map constructor
+const arrayMap = new Map([
+    ['key1', 'value1'],
+    ['key2', 'value2'],
+    ['key3', 'value3']
+]);
+ 
+// Accessing values in the Map
+console.log(arrayMap.get('key1'));  // Output: "value1"
+console.log(arrayMap.get('key2'));  // Output: "value2"
+console.log(arrayMap.get('key3'));  // Output: "value3"
+```
+
+#### Output
+```
+value1
+value2
+value3
+```
+
+### Create a Map and use `Map.set()`
+
+Example: In this example, an empty `Map` is created, and then key-value pairs are added using the `Map.set()` method. This approach is useful when you want to dynamically build a `Map` during runtime.
+
+```javascript
+// Create an empty Map and use Map.set() to add key-value pairs
+const setMap = new Map();
+ 
+// Adding key-value pairs using Map.set()
+setMap.set('name', 'John');
+setMap.set('age', 25);
+setMap.set('city', 'New York');
+ 
+// Accessing values in the Map
+console.log(setMap.get('name'));  // Output: "John"
+console.log(setMap.get('age'));   // Output: 25
+console.log(setMap.get('city'));  // Output: "New York"
+```
+
+#### Output
+```
+John
+25
+New York
