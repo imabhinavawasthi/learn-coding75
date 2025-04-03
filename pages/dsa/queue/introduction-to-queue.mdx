@@ -1,0 +1,68 @@
+# Introduction to Queue Data Structure
+
+A **queue** is a linear data structure that follows the **First In, First Out (FIFO)** principle. This means that the first element added is the first one removed, just like a line of people waiting for tickets—whoever arrives first gets served first.
+
+## Key Concepts
+
+- **Front:** The position of the first element in the queue, which will be removed next.
+- **Rear:** The position of the last element in the queue, where new elements are added.
+- **Size:** The current number of elements in the queue.
+- **Capacity:** The maximum number of elements the queue can hold.
+
+## Queue Operations
+
+`enqueue()`: Add an element
+
+1. Check if the queue is full.
+2. If not, move the rear pointer to the next position.
+3. Insert the new element at the rear.
+
+`dequeue()`: Remove an element
+
+1. Check if the queue is empty.
+2. If not, remove the element at the front.
+3. Move the front pointer to the next element.
+
+`peek()`: Get the front element without removing it.\
+`size()`: Get the number of elements in the queue.\
+`isEmpty()`: Check if the queue is empty.\
+`isFull()`: Check if the queue is full.\
+
+## Implementing a Queue
+
+Queues can be implemented using:
+
+- **Arrays** (fixed size, may cause overflow)
+- **Linked Lists** (dynamic size, no overflow)
+
+### Time Complexity of Operations
+
+| Operation | Time Complexity | Space Complexity |
+| --------- | --------------- | ---------------- |
+| Enqueue   | O(1)            | O(1)             |
+| Dequeue   | O(1)            | O(1)             |
+| Peek      | O(1)            | O(1)             |
+| Size      | O(1)            | O(1)             |
+| isEmpty   | O(1)            | O(1)             |
+| isFull    | O(1)            | O(1)             |
+
+## Types of Queues
+
+1. **Simple Queue:** Follows FIFO; elements are added at the rear and removed from the front.
+2. **Double-Ended Queue (Deque):** Allows insertion and deletion from both ends.
+   - **Input Restricted Queue:** Input only from one end, deletion from both ends.
+   - **Output Restricted Queue:** Input from both ends, deletion only from one end.
+3. **Circular Queue:** The last position is connected back to the first, allowing reuse of spaces.
+4. **Priority Queue:** Elements are processed based on priority.
+   - **Ascending Priority Queue:** Smallest priority element is removed first.
+   - **Descending Priority Queue:** Largest priority element is removed first.
+
+## Real-World Applications of Queues
+
+Queues are used in many practical scenarios, including:
+
+- **Task Scheduling:** Managing processes in a CPU.
+- **Printer Queues:** Handling multiple print requests in order.
+- **Network Buffers:** Managing data packets in routers and switches.
+- **Breadth-First Search (BFS):** Used in graph traversal algorithms.
+- **Call Centers:** Handling customer service requests in order.

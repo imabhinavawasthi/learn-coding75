@@ -1,0 +1,321 @@
+## Introduction to Binary Tree
+
+A **Binary Tree** is a non-linear and hierarchical data structure where each node has at most two children, referred to as the **left child** and the **right child**. The topmost node in a binary tree is called the **root**, and the bottom-most nodes are called **leaves**.
+
+## Representation of Binary Tree
+
+Each node in a Binary Tree consists of three parts:
+
+- **Data**
+- **Pointer to the left child**
+- **Pointer to the right child**
+
+## Binary Tree Representation
+
+### Create/Declare a Node of a Binary Tree
+
+Syntax to declare a Node of a Binary Tree in different languages:
+
+```cpp
+// 1: Using struct
+struct Node {
+    int data;
+    Node* left, * right;
+
+    Node(int key) {
+        data = key;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+
+// 2: Using class
+class Node {
+public:
+    int data;
+    Node* left, * right;
+
+    Node(int key) {
+        data = key;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+```
+
+## Example: Creating a Binary Tree
+
+Here’s an example of creating a Binary Tree with four nodes (2, 3, 4, 5):
+
+```cpp
+#include <iostream>
+using namespace std;
+
+struct Node{
+    int data;
+    Node *left, *right;
+    Node(int d){
+        data = d;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+
+int main(){
+    // Initialize and allocate memory for tree nodes
+    Node* firstNode = new Node(2);
+    Node* secondNode = new Node(3);
+    Node* thirdNode = new Node(4);
+    Node* fourthNode = new Node(5);
+
+    // Connect binary tree nodes
+    firstNode->left = secondNode;
+    firstNode->right = thirdNode;
+    secondNode->left = fourthNode;
+
+    return 0;
+}
+```
+
+In the above code, we have created four tree nodes: `firstNode`, `secondNode`, `thirdNode`, and `fourthNode` with values 2, 3, 4, and 5 respectively.
+
+After creating these nodes, we connect them to form the tree structure:
+
+- Connect `secondNode` to the left of `firstNode` → `firstNode->left = secondNode`
+- Connect `thirdNode` to the right of `firstNode` → `firstNode->right = thirdNode`
+- Connect `fourthNode` to the left of `secondNode` → `secondNode->left = fourthNode`
+
+## Terminologies in Binary Tree
+
+- **Nodes**: Fundamental part of a binary tree, where each node contains data and links to two child nodes.
+- **Root**: The topmost node in a tree, serving as the starting point.
+- **Parent Node**: A node that has one or more child nodes.
+- **Child Node**: A node that is a descendant of another node.
+- **Leaf Node**: A node that does not have any children (both left and right pointers are `nullptr`).
+- **Internal Node**: A node that has at least one child.
+- **Depth of a Node**: The number of edges from a node to the root.
+- **Height of a Binary Tree**: The number of nodes from the deepest leaf node to the root.
+
+## Properties of Binary Tree
+
+- The maximum number of nodes at level **L** of a binary tree is **2^L**.
+- The maximum number of nodes in a binary tree of height **H** is **2^H - 1**.
+- Total number of leaf nodes = total number of nodes with 2 children + 1.
+- In a Binary Tree with **N** nodes, the minimum possible height is **log₂(N+1)**.
+- A Binary Tree with **L** leaves has at least **⌊ log₂L ⌋ + 1** levels.
+
+## Types of Binary Trees
+
+### Based on Number of Children
+
+- **Full Binary Tree**
+- **Degenerate Binary Tree**
+- **Skewed Binary Tree**
+
+### Based on Completion of Levels
+
+- **Complete Binary Tree**
+- **Perfect Binary Tree**
+- **Balanced Binary Tree**
+
+### Based on Node Values
+
+- **Binary Search Tree (BST)**
+- **AVL Tree**
+- **Red-Black Tree**
+- **B-Tree**
+- **B+ Tree**
+- **Segment Tree**
+
+## Operations On Binary Tree
+
+Following is a list of common operations that can be performed on a binary tree:
+
+### 1. Traversal in Binary Tree
+
+Traversal in Binary Tree involves visiting all the nodes of the binary tree. Tree Traversal algorithms can be classified broadly into two categories: **DFS** and **BFS**.
+
+#### Depth-First Search (DFS) Algorithms
+
+DFS explores as far down a branch as possible before backtracking. It is implemented using recursion. The main traversal methods in DFS for binary trees are:
+
+- **Preorder Traversal (current-left-right)**: Visits the node first, then left subtree, then right subtree.
+- **Inorder Traversal (left-current-right)**: Visits left subtree, then the node, then the right subtree.
+- **Postorder Traversal (left-right-current)**: Visits left subtree, then right subtree, then the node.
+
+#### Breadth-First Search (BFS) Algorithm
+
+BFS explores all nodes at the present depth before moving on to nodes at the next depth level. It is typically implemented using a queue. BFS in a binary tree is commonly referred to as **Level Order Traversal**.
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* left, * right;
+
+    Node(int d) {
+        data = d;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+
+// In-order DFS: Left, Root, Right
+void inOrderDFS(Node* node) {
+    if (node == nullptr) return;
+    inOrderDFS(node->left);
+    cout << node->data << " ";
+    inOrderDFS(node->right);
+}
+
+// Pre-order DFS: Root, Left, Right
+void preOrderDFS(Node* node) {
+    if (node == nullptr) return;
+    cout << node->data << " ";
+    preOrderDFS(node->left);
+    preOrderDFS(node->right);
+}
+
+// Post-order DFS: Left, Right, Root
+void postOrderDFS(Node* node) {
+    if (node == nullptr) return;
+    postOrderDFS(node->left);
+    postOrderDFS(node->right);
+    cout << node->data << " ";
+}
+
+void BFS(Node* root) {
+    if (root == nullptr) return;
+    queue<Node*> q;
+    q.push(root);
+    while (!q.empty()) {
+        Node* node = q.front();
+        q.pop();
+        cout << node->data << " ";
+        if (node->left != nullptr) q.push(node->left);
+        if (node->right != nullptr) q.push(node->right);
+    }
+}
+
+int main() {
+    Node* root = new Node(2);
+    root->left = new Node(3);
+    root->right = new Node(4);
+    root->left->left = new Node(5);
+
+    cout << "In-order DFS: ";
+    inOrderDFS(root);
+
+    cout << "\nPre-order DFS: ";
+    preOrderDFS(root);
+
+    cout << "\nPost-order DFS: ";
+    postOrderDFS(root);
+
+    cout << "\nLevel order: ";
+    BFS(root);
+
+    return 0;
+}
+```
+
+### Output
+
+```
+In-order DFS: 5 3 2 4
+Pre-order DFS: 2 3 5 4
+Post-order DFS: 5 3 4 2
+Level order: 2 3 4 5
+```
+
+### 2. Insertion in Binary Tree
+
+Insertion in a binary tree involves adding a new node. Since there is no specific ordering of elements in a binary tree, insertions are typically done level-wise using BFS.
+
+```cpp
+Node* insert(Node* root, int key) {
+    if (root == nullptr) {
+        root = new Node(key);
+        return root;
+    }
+    queue<Node*> q;
+    q.push(root);
+
+    while (!q.empty()) {
+        Node* temp = q.front();
+        q.pop();
+        if (temp->left == nullptr) {
+            temp->left = new Node(key);
+            break;
+        } else {
+            q.push(temp->left);
+        }
+        if (temp->right == nullptr) {
+            temp->right = new Node(key);
+            break;
+        } else {
+            q.push(temp->right);
+        }
+    }
+    return root;
+}
+```
+
+### 3. Searching in Binary Tree
+
+Searching involves looking for a node with a specific value using traversal methods like DFS or BFS.
+
+```cpp
+bool searchDFS(Node *root, int value) {
+    if (root == nullptr) return false;
+    if (root->data == value) return true;
+    return searchDFS(root->left, value) || searchDFS(root->right, value);
+}
+```
+
+### 4. Deletion in Binary Tree
+
+Deletion involves finding the node, replacing it with the last node, and removing the last node.
+
+```cpp
+Node* deleteNode(Node* root, int val) {
+    if (root == nullptr) return nullptr;
+    queue<Node*> q;
+    q.push(root);
+    Node* target = nullptr;
+    while (!q.empty()) {
+        Node* curr = q.front();
+        q.pop();
+        if (curr->data == val) {
+            target = curr;
+            break;
+        }
+        if (curr->left) q.push(curr->left);
+        if (curr->right) q.push(curr->right);
+    }
+    if (target == nullptr) return root;
+    delete target;
+    return root;
+}
+```
+
+## Complexity Analysis of Binary Tree Operations
+
+| Operation              | Time Complexity | Auxiliary Space |
+| ---------------------- | --------------- | --------------- |
+| In-Order Traversal     | O(n)            | O(n)            |
+| Pre-Order Traversal    | O(n)            | O(n)            |
+| Post-Order Traversal   | O(n)            | O(n)            |
+| Insertion (Unbalanced) | O(n)            | O(n)            |
+| Searching (Unbalanced) | O(n)            | O(n)            |
+| Deletion (Unbalanced)  | O(n)            | O(n)            |
+
+## Applications of Binary Tree
+
+- Hierarchical data representation
+- Huffman Coding for data compression
+- Priority Queues
+- Caching mechanisms
+- Decision trees in Machine Learning
