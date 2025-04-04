@@ -1,7 +1,7 @@
 JavaScript Objects
 Last Updated : 30 Jul, 2024
 
-In our previous article on Introduction to Object Oriented Programming in JavaScript, we explored common OOP terminology and how they do or don’t exist in JavaScript. In this article, objects are discussed in detail.
+In the previous article, we learned about basic Object-Oriented Programming (OOP) terms and how they apply in JavaScript. In this article, we’ll take a closer look at objects and understand them in more detail.
 
 ## Creating Objects
 
@@ -19,7 +19,7 @@ let obj = {
 ```
 
 ### Constructed Form
-The constructed form uses either an object constructor function or the `new` keyword to create an empty object and then adds properties one by one.
+The constructed way to create an object uses a constructor function or the new keyword. It first makes an empty object, then you add properties to it step by step.
 
 #### Object Constructor Function
 In this approach, a function is explicitly created to take required values as parameters and assign them as properties of the object.
@@ -41,12 +41,12 @@ obj.key2 = value2;
 ```
 
 ### Differences Between Object Literals and Constructed Form
-Both methods create the same type of object. However, object literals allow defining multiple key-value pairs at once, making them more convenient. The constructed form requires adding properties one by one.
+Both ways make the same kind of object. But using object literals is easier because you can add all the key-value pairs at once. The constructed form needs you to add each property one by one.
 
-**Note:** It is uncommon to use the constructed form over object literals for creating objects. Therefore, object literals will be used in most examples.
+**Note:** Using the constructed form to create objects is not very common. That’s why most examples will use object literals instead.
 
 ## Built-In Objects
-JavaScript provides several built-in objects. These are functions that act as constructors to create objects of particular sub-types:
+JavaScript has some built-in objects that help you create specific types of objects. These built-in functions act like blueprints for making things like dates, numbers, or strings.
 
 - `String`
 - `Number`
@@ -79,7 +79,7 @@ Primitives are immutable values. JavaScript coerces a string primitive into a `S
 
 ## Content of Objects
 
-JavaScript objects consist of key-value pairs known as **properties**. The key represents the property name, while the value can be a primitive, another object, or a function.
+In JavaScript, objects are made up of key-value pairs. The key is the name of the property, and the value can be a number, text, another object, or even a function.
 
 ```javascript
 objectName.objectProperty = propertyValue;
@@ -142,7 +142,11 @@ let myObj = {
 
     // Define function directly
     byWhom: function() {
+<<<<<<< HEAD
         console.log(" - Coding75.com");
+=======
+        console.log(" - Coding75.org");
+>>>>>>> 6c9caef (content Overview Complete)
     }
 };
 
@@ -153,7 +157,11 @@ myObj.byWhom();
 ### Output
 ```
 Hello There!
+<<<<<<< HEAD
  - Coding75.com
+=======
+ - Coding75.org
+>>>>>>> 6c9caef (content Overview Complete)
 ```
 
 ## Important Points

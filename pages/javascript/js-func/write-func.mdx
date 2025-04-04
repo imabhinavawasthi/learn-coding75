@@ -3,9 +3,7 @@ title: "How to write a function in JavaScript?"
 lastUpdated: "15 May, 2024"
 ---
 
-JavaScript functions serve as reusable blocks of code that can be called from anywhere within your application. They eliminate the need to repeat the same code, promoting code reusability and modularity. By breaking down a large program into smaller, manageable functions, programmers can enhance code organization and maintainability.
-
-Functions are one of JavaScript’s core building elements. In JavaScript, a function is comparable to a procedure—a series of words that performs a task or calculates a value—but for a process to qualify as a function, it must accept some input and produce an output with a clear link between the input and the result. To utilize a function, it must be defined in some place within the scope from which it will be called.
+JavaScript functions are reusable blocks of code that help avoid repetition and keep programs organized. They break down large tasks into smaller parts, making code easier to manage and understand. A function takes input, processes it, and returns an output. To use a function, it must be defined within the scope where it will be called.
 
 ## Function Definition
 A Function Definition or function statement starts with the `function` keyword and continues with the following:
@@ -22,7 +20,7 @@ function name(arguments) {
 ```
 
 ## Function Calling
-Function Calling at a later point in the script, simply type the function’s name. By default, all JavaScript functions can utilize argument objects. Each parameter’s value is stored in an argument object. The argument object is similar to an array. Its values may be accessed using an index, much like an array. It does not, however, provide array methods.
+To call a function later in the script, simply type its name followed by parentheses. JavaScript functions automatically have an arguments object, which stores all passed parameters. It works like an array, allowing values to be accessed using an index, but it doesn’t support array methods.
 
 ```javascript
 function welcome() {
@@ -39,11 +37,15 @@ welcome to Coding75
 ```
 
 ## Function Arguments
-A function can contain one or more arguments that are sent by the calling code and can be utilized within the function. Because JavaScript is a dynamically typed programming language, a Function Argument can have any data type as a value.
+A function can take one or more arguments from the calling code and use them inside the function. Since JavaScript is dynamically typed, function arguments can hold values of any data type.
 
 ```javascript
 function welcome(name) {
+<<<<<<< HEAD
     console.log("Hey " + name + " welcome to Coding75");
+=======
+    console.log("Hey " + name + " welcome to Coding75!");
+>>>>>>> 6c9caef (content Overview Complete)
 }
 
 // Passing arguments
@@ -52,7 +54,11 @@ welcome("Rohan");
 
 ### Output:
 ```
+<<<<<<< HEAD
 Hey Rohan welcome to Coding75
+=======
+Hey Rohan welcome to Coding75!
+>>>>>>> 6c9caef (content Overview Complete)
 ```
 
 ## Return Value
@@ -61,7 +67,11 @@ A return statement is an optional part of a JavaScript function. If you wish to 
 ```javascript
 function welcome() {
     // Return statement
+<<<<<<< HEAD
     return "Welcome to Coding75";
+=======
+    return "Welcome to Coding75!";
+>>>>>>> 6c9caef (content Overview Complete)
 }
 
 console.log(welcome());
@@ -69,7 +79,11 @@ console.log(welcome());
 
 ### Output:
 ```
+<<<<<<< HEAD
 Welcome to Coding75
+=======
+Welcome to Coding75!
+>>>>>>> 6c9caef (content Overview Complete)
 ```
 
 ## Function Expression
@@ -77,16 +91,28 @@ We may assign a function to a variable and then utilize that variable as a funct
 
 ```javascript
 let welcome = function () {
+<<<<<<< HEAD
     return "Welcome to Coding75";
 };
 
 let hello = welcome();
 console.log(hello);
+=======
+    return "Welcome to Coding75!";
+};
+
+let greet = welcome();
+console.log(greet);
+>>>>>>> 6c9caef (content Overview Complete)
 ```
 
 ### Output:
 ```
+<<<<<<< HEAD
 Welcome to Coding75
+=======
+Welcome to Coding75!
+>>>>>>> 6c9caef (content Overview Complete)
 ```
 
 ## Types Of Functions in JavaScript
@@ -145,11 +171,19 @@ The browser executes the invoked function expression as soon as it detects it. A
 
 ```javascript
 let msg = (function() {
+<<<<<<< HEAD
     return "Welcome to Coding75";
+=======
+    return "Welcome to Coding75!";
+>>>>>>> 6c9caef (content Overview Complete)
 })();
 console.log(msg);
 ```
 
 ### Output:
 ```
+<<<<<<< HEAD
 Welcome to Coding75
+=======
+Welcome to Coding75!
+>>>>>>> 6c9caef (content Overview Complete)

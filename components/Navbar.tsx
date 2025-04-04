@@ -29,6 +29,9 @@ const Navbar = () => {
               <Link href="/java" className="hover:text-foreground/80 text-sm">
                 Java
               </Link>
+              <Link href="/javascript" className="hover:text-foreground/80 text-sm">
+                Javascript
+              </Link>
             </ul>
           </nav>
         </div>

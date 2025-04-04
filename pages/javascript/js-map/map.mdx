@@ -3,7 +3,7 @@ title: "Map in JS"
 date: "11 Feb, 2025"
 ---
 
-A **Map** is a data structure that stores key-value pairs, where each key is unique. It is similar to an object but has some advantages:
+A Map is a data structure that holds unique key-value pairs. Unlike objects, it maintains the insertion order and allows any data type as keys, making it more flexible in certain cases.
 
 - Inserts keys in the order they were added.
 - Allows keys of any type, not just strings and symbols.
@@ -19,7 +19,11 @@ The `Map()` constructor allows two ways to create a Map in JavaScript:
 ```js
 let myMap = new Map();
 let anotherMap = new Map([
+<<<<<<< HEAD
     ['name', 'Coding75'],
+=======
+    ['name', 'Atlas'],
+>>>>>>> 6c9caef (content Overview Complete)
     ['age', 30],
     ['city', 'Noida']
 ]);
@@ -28,7 +32,11 @@ console.log(anotherMap);
 
 ### Output
 ```js
+<<<<<<< HEAD
 Map(3) { 'name' => 'Coding75', 'age' => 30, 'city' => 'Noida' }
+=======
+Map(3) { 'name' => 'Atlas', 'age' => 30, 'city' => 'Noida' }
+>>>>>>> 6c9caef (content Overview Complete)
 ```
 
 ## Properties of JavaScript Map
@@ -47,7 +55,11 @@ Map(3) { 'name' => 'Coding75', 'age' => 30, 'city' => 'Noida' }
 const myMap = new Map();
 
 // 1. set(key, value)
+<<<<<<< HEAD
 myMap.set('name', 'Coding75');
+=======
+myMap.set('name', 'Atlas');
+>>>>>>> 6c9caef (content Overview Complete)
 myMap.set('age', 25);
 myMap.set(1, 'One'); 
 
@@ -83,8 +95,13 @@ console.log(myMap);
 
 ### Output
 ```js
+<<<<<<< HEAD
 Map(3) { 'name' => 'Coding75', 'age' => 25, 1 => 'One' }
 GFG
+=======
+Map(3) { 'name' => 'Atlas', 'age' => 25, 1 => 'One' }
+Atlas
+>>>>>>> 6c9caef (content Overview Complete)
 25
 One
 undefined
@@ -92,7 +109,11 @@ true
 false
 true
 false
+<<<<<<< HEAD
 Map(2) { 'name' => 'Coding75', 1 => 'One' }
+=======
+Map(2) { 'name' => 'Atlas', 1 => 'One' }
+>>>>>>> 6c9caef (content Overview Complete)
 Map(0) {}
 0
 2

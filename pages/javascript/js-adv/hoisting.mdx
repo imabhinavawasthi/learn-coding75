@@ -55,7 +55,7 @@ function greet() {
 ```
 
 ## 4. Function Expression Hoisting
-Function expressions are treated like variable declarations. The variable itself is hoisted, but the function expression is not assigned until the line of execution. This means calling the function before its assignment will result in an error.
+In JavaScript, function expressions are treated like variables. This means they are hoisted, but their value (the function definition) is not assigned until the code runs that line.
 
 ```javascript
 hello(); // TypeError: hello is not a function
