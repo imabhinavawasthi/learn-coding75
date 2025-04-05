@@ -3,98 +3,6 @@ title: "JavaScript Loops"
 lastUpdated: "21 Nov, 2024"
 ---
 
-# JavaScript While Loop
-
-The `while` loop executes a block of code as long as a specified condition is true. In JavaScript, this loop evaluates the condition before each iteration and continues running as long as the condition remains true.
-
-Here’s an example that prints numbers from 1 to 5:
-
-```javascript
-let count = 1;
-while (count <= 5) {
-  console.log(count);
-  count++;
-}
-```
-
-**Output:**
-```
-1
-2
-3
-4
-5
-```
-
-## Syntax
-```javascript
-while (condition) {
-    // Code block to be executed
-}
-```
-
-## Using While Loop to Traverse an Array
-
-```javascript
-let arr = [10, 20, 30, 40];
-let i = 0;
-while (i < arr.length) {
-  console.log(arr[i]);
-  i++;
-}
-```
-
-**Output:**
-```
-10
-20
-30
-40
-```
-
-## Do-While Loop
-A do-while loop in JavaScript works like a while loop but always executes the code at least once, even if the condition is false initially. It then keeps running as long as the condition is true.
-
-### Syntax
-```javascript
-do {
-    // Code block to be executed 
-} while (condition);
-```
-
-### Example: Counting from 1 to 5
-
-```javascript
-let count = 1;
-do {
-  console.log(count);
-  count++;
-} while (count <= 5);
-```
-
-**Output:**
-```
-1
-2
-3
-4
-5
-```
-
-## Comparison Between While and Do-While Loop
-| While Loop | Do-While Loop |
-|------------|--------------|
-| It is an **entry condition** looping structure. | It is an **exit condition** looping structure. |
-| The number of iterations depends on the condition mentioned in the `while` block. | Irrespective of the condition mentioned in the `do-while` block, there will be a minimum of 1 iteration. |
-| The block control condition is available at the **starting point** of the loop. | The block control condition is available at the **endpoint** of the loop. |
-
-# JavaScript for...of Loop
-
-The JavaScript `for...of` loop is a modern iteration statement introduced in ECMAScript 2015 (ES6).
-
-- Works for iterable objects such as arrays, strings, maps, sets, and more.
-- It is a better choice for traversing items of iterables compared to traditional `for` and `for...in` loops, especially when we have `break` or `continue` statements. If we just want to perform an operation on all items, we prefer `forEach()`.
-
 ## 1. Iterating Over an Array using `for...of`
 
 ```javascript
@@ -199,3 +107,10 @@ name: Akash
 age: 25
 city: Noida
 ```
+
+# JavaScript for...of Loop
+
+The JavaScript `for...of` loop is a modern iteration statement introduced in ECMAScript 2015 (ES6).
+
+- Works for iterable objects such as arrays, strings, maps, sets, and more.
+- It is a better choice for traversing items of iterables compared to traditional `for` and `for...in` loops, especially when we have `break` or `continue` statements. If we just want to perform an operation on all items, we prefer `forEach()`.
