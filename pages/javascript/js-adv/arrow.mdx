@@ -33,16 +33,29 @@ The `add` function is an arrow function that takes two parameters `a` and `b`, a
 An arrow function without parameters is defined using empty parentheses `()`. This is useful when you need a function that doesn’t require any arguments.
 
 ```javascript
-const gfg = () => {
-    console.log("Hi from GeekforGeeks!");
+<<<<<<< HEAD
+const Coding75 = () => {
+    console.log("Hi from Coding75!");
 };
 
-gfg();
+Coding75();
+=======
+const greet = () => {
+    console.log("Hello from JavaScript!");
+};
+
+greet();
+>>>>>>> 6c9caef (content Overview Complete)
 ```
 
 **Output:**
+
 ```
-Hi from GeekforGeeks!
+<<<<<<< HEAD
+Hi from Coding75!
+=======
+Hello from JavaScript!
+>>>>>>> 6c9caef (content Overview Complete)
 ```
 
 ## 2. Arrow Function with Single Parameter
@@ -64,11 +77,19 @@ console.log(square(4));
 Arrow functions with multiple parameters simplify writing concise function expressions in JavaScript.
 
 ```javascript
-const gfg = (x, y, z) => {
+<<<<<<< HEAD
+const C75 = (x, y, z) => {
     console.log(x + y + z);
 };
 
-gfg(10, 20, 30);
+C75(10, 20, 30);
+=======
+const sum = (x, y, z) => {
+    console.log(x + y + z);
+};
+
+sum(10, 20, 30);
+>>>>>>> 6c9caef (content Overview Complete)
 ```
 
 **Output:**
@@ -81,16 +102,26 @@ gfg(10, 20, 30);
 Arrow functions support default parameters, allowing predefined values if no argument is passed.
 
 ```javascript
-const gfg = (x, y, z = 30) => {
+<<<<<<< HEAD
+const c75 = (x, y, z = 30) => {
     console.log(x + " " + y + " " + z);
 };
 
-gfg(10, 20);
+c75(10, 20);
+=======
+const greet = (name = "Guest") => {
+    console.log(`Hello, ${name}!`);
+};
+
+greet("Alice");  // Output: Hello, Alice!
+greet(); 
+>>>>>>> 6c9caef (content Overview Complete)
 ```
 
 **Output:**
 ```
-10 20 30
+Output: Hello, Alice!
+Output: Hello, Guest!
 ```
 
 ## 5. Return Object Literals

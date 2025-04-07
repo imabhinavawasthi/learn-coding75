@@ -3,7 +3,7 @@ title: "Different Ways of Writing Functions in JavaScript"
 lastUpdated: "20 Sep, 2024"
 ---
 
-A JavaScript function is a block of code designed to perform a specific task. Functions are only executed when they are called (or “invoked”). JavaScript provides different ways to define functions, each with its own syntax and use case.
+A JavaScript function is a block of code that performs a specific task and runs only when it is called (invoked). Functions help make code organized, reusable, and efficient. JavaScript provides multiple ways to define functions, such as function declarations, function expressions, and arrow functions. Each method has its own syntax and use case, allowing developers to write clean and efficient code.
 
 Below are the ways of writing functions in JavaScript:
 
@@ -15,7 +15,7 @@ Below are the ways of writing functions in JavaScript:
 - Key Differences: Function Declaration vs. Function Expression
 
 ## 1. Function Declaration
-A Function Declaration is the traditional way to define a function. It starts with the `function` keyword, followed by the function name and any parameters the function needs.
+A Function Declaration is a common way to define a function using the function keyword, followed by a name and optional parameters. It is hoisted, meaning it can be called before its definition.
 
 Example: Below is an example that illustrates the use of Function Declaration.
 
@@ -73,7 +73,7 @@ console.log(add(3, 2));
 ```
 This shortens the code to a single line compared to other approaches. In a single line of code, the function returns implicitly.
 
-**Note:** When there is a need to include multiple lines of code, we use brackets. Also, when there are multiple lines of code in the bracket, we should write `return` explicitly to return the value from the function.
+**Note:** When a function has multiple lines of code, we use curly brackets {} to enclose them. If the function needs to return a value, we must use the return statement explicitly inside the brackets.
 
 Example: This is an example with multiple lines of code in an arrow function.
 

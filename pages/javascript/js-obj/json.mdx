@@ -2,7 +2,7 @@
 
 _Last Updated: 02 Dec, 2024_
 
-JSON (JavaScript Object Notation) is a handy way to share data. It’s easy for both people and computers to understand. In JavaScript, JSON helps organize data into simple objects. Let’s explore how JSON works and why it’s so useful for exchanging information.
+JSON stands for JavaScript Object Notation. It’s a simple way to store and share data. Both humans and computers can read it easily. In JavaScript, JSON is used to organize and exchange data in a clean and structured format.
 
 ```javascript
 const jsonData = { 
@@ -81,7 +81,11 @@ earbuds
 To convert a JSON text to a JavaScript object, you can use the `JSON.parse()` method.
 
 ```javascript
-const jsonString = '{"name": "GFG", "age": 30}';
+<<<<<<< HEAD
+const jsonString = '{"name": "Coders", "age": 30}';
+=======
+const jsonString = '{"name": "Rahul", "age": 30}';
+>>>>>>> 6c9caef (content Overview Complete)
 const jsonObject = JSON.parse(jsonString);
 console.log(jsonObject.name); 
 console.log(jsonObject.age); 
@@ -89,5 +93,9 @@ console.log(jsonObject.age);
 
 **Output:**
 ```
-GFG
+<<<<<<< HEAD
+Coders
+=======
+Rahul
+>>>>>>> 6c9caef (content Overview Complete)
 30
