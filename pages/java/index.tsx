@@ -1,7 +1,6 @@
 // components/JavaLanding.jsx
 import React from 'react';
 import { useRouter } from 'next/router';
-import { FaJava, FaCogs, FaLaptopCode, FaRocket } from 'react-icons/fa';
 
 const JavaLanding = () => {
   const router = useRouter();
@@ -15,7 +14,11 @@ const JavaLanding = () => {
       {/* Hero Content */}
       <div className="z-10 text-center max-w-4xl">
         <div className="flex justify-center mb-4 text-orange-400 text-6xl">
-          <FaJava />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+            alt="Java Icon"
+            className="w-16 h-16"
+          />
         </div>
 
         <h1 className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-orange-400 via-white to-red-500 bg-clip-text text-transparent">
@@ -40,23 +43,40 @@ const JavaLanding = () => {
         </div>
 
         {/* Java Highlights */}
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-300">
-          <div className="bg-[#1a1a1a] p-4 rounded-lg border border-orange-500/30 flex flex-col items-center">
-            <FaCogs className="text-orange-400 text-2xl mb-2" />
-            <p>Object-Oriented Programming</p>
-          </div>
-          <div className="bg-[#1a1a1a] p-4 rounded-lg border border-orange-500/30 flex flex-col items-center">
-            <FaLaptopCode className="text-red-400 text-2xl mb-2" />
-            <p>Platform Independent (JVM)</p>
-          </div>
-          <div className="bg-[#1a1a1a] p-4 rounded-lg border border-orange-500/30 flex flex-col items-center">
-            <FaRocket className="text-orange-300 text-2xl mb-2" />
-            <p>Robust & Secure</p>
-          </div>
-        </div>
+<div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-300">
+  <div className="bg-[#1a1a1a] p-4 rounded-lg border border-orange-500/30 flex flex-col items-center">
+    <img
+      src="https://img.icons8.com/fluency/48/000000/settings.png"
+      alt="OOP Icon"
+      className="w-8 h-8 mb-2"
+    />
+    <p>Object-Oriented Programming</p>
+  </div>
+  <div className="bg-[#1a1a1a] p-4 rounded-lg border border-orange-500/30 flex flex-col items-center">
+  <img
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+    alt="JVM Icon"
+    className="w-10 h-10 mb-2"
+  />
+    <p>Platform Independent (JVM)</p>
+  </div>
+  <div className="bg-[#1a1a1a] p-4 rounded-lg border border-orange-500/30 flex flex-col items-center">
+    <img
+      src="https://img.icons8.com/emoji/48/000000/rocket-emji.png"
+      alt="Rocket Icon"
+      className="w-8 h-8 mb-2"
+    />
+    <p>Robust & Secure</p>
+  </div>
+</div>
+
 
         {/* CTA Button */}
-        <button className="mt-12 px-8 py-3 bg-gradient-to-r from-orange-500 to-red-600 hover:scale-105 transition-all duration-300 text-white font-bold rounded-full shadow-lg" onClick={() => router.push('/java/java-syllabus')}>
+        <button
+          type="button"
+          className="mt-12 px-8 py-3 bg-gradient-to-r from-orange-500 to-red-600 hover:scale-105 transition-all duration-300 text-white font-bold rounded-full shadow-lg"
+          onClick={() => router.push('/java/java-syllabus')}
+        >
           Start Learning Java
         </button>
       </div>
