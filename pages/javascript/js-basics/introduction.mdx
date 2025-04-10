@@ -1,0 +1,110 @@
+---
+title: "Introduction to JavaScript"
+lastUpdated: "21 Jan, 2025"
+---
+
+JavaScript is a powerful and flexible programming language used to create interactive websites. It works with HTML and CSS to make web pages dynamic and user-friendly.
+
+## JavaScript Characteristics
+
+- JavaScript is a single-threaded language that executes one task at a time.
+- It is an interpreted language, meaning it executes code line by line.
+- The data type of a variable is decided at runtime, making JavaScript dynamically typed.
+
+## "Hello, World!" Program in Browser Console
+
+A "Hello, World!" program is the easiest way to begin learning any programming language. In JavaScript, you can display "Hello, World!" in different ways.
+
+
+
+```html
+<html>
+<head></head>
+<body>
+    <h1>Check the console for the message!</h1>
+    <script>
+        // This is our first JavaScript program
+        console.log("Hello, World!");
+    </script>
+</body>
+</html>
+```
+
+### Explanation
+- The `<script>` tag is used to include JavaScript code inside an HTML document.
+- `console.log()` prints messages to the browser’s developer console.
+
+To learn more about it, follow the article – **JavaScript Hello World**.
+
+## "Hello, World!" Program in Server Console
+
+JavaScript can also print messages directly to a terminal without embedding it into HTML. Create an `index.js` file and add the following code:
+
+```js
+/* 
+This is a multi-line comment. 
+It can span several lines.
+*/
+console.log("Hello, World!"); // Prints Hello, World! to the console
+```
+
+### Explanation
+- `console.log()`: Used to print messages to the console.
+- **Comments in the Code:**
+  - Multi-line Comment: `/* */` is used for multi-line comments.
+  - Single-line Comment: `//` is used for inline comments.
+
+To learn more about comments, follow the article – **Comments in JavaScript**.
+
+## Key Features of JavaScript
+
+- **Client-Side Scripting:** Runs on the browser for faster response time.
+- **Versatile:** Used for various tasks, from calculations to server-side applications.
+- **Event-Driven:** Responds to user actions (clicks, keystrokes) in real-time.
+- **Asynchronous:** Handles tasks like fetching data from servers without freezing the UI.
+- **Rich Ecosystem:** Numerous libraries and frameworks like React, Angular, and Vue.js.
+
+## Client-Side and Server-Side Nature of JavaScript
+
+- **Client-Side:** Controls the browser, manipulates the DOM, and handles user events. Popular libraries: AngularJS, ReactJS, VueJS.
+- **Server-Side:** Interacts with databases, files, and generates responses. Node.js and Express.js enable JavaScript on the server side.
+
+## Programming Paradigms
+
+- **Imperative Programming:** Focuses on *how* to perform tasks (e.g., procedural, object-oriented programming, `async/await`).
+- **Declarative Programming:** Focuses on *what* should be done (e.g., arrow functions, JSX in React).
+
+## Applications of JavaScript
+
+- **Web Development:** Adds interactivity with frameworks like AngularJS.
+- **Web Applications:** Used in dynamic apps like Google Maps with APIs and React.
+- **Server Applications:** Node.js enables full-stack JavaScript development.
+- **Game Development:** JavaScript with HTML5 and EaseJS supports interactive games.
+- **Smartwatches:** PebbleJS enables JavaScript-based smartwatch applications.
+
+## Limitations of JavaScript
+
+- **Security Risks:** Vulnerable to Cross-Site Scripting (XSS) attacks.
+- **Performance:** Slower than compiled languages for complex tasks.
+- **Complexity:** Requires an understanding of both client and server-side scripting.
+- **Weak Error Handling and Type Checking:** Weakly typed, leading to potential issues.
+
+## Why is JavaScript a Lightweight Language?
+
+JavaScript is lightweight due to:
+- Low CPU usage and minimal syntax.
+- No explicit data types, making it easy to learn.
+- Faster execution in browsers compared to heavier languages like Java or Dart.
+- Efficient performance with Node.js.
+
+## Is JavaScript Compiled or Interpreted?
+
+JavaScript is both compiled and interpreted. The V8 engine optimizes performance using Just-In-Time (JIT) compilation.
+
+### JIT Compilation Process
+1. **Interpretation:** Code is initially interpreted line-by-line.
+2. **Hot Code Detection:** Frequently executed code is identified.
+3. **Compilation:** "Hot" code is compiled into optimized machine code.
+4. **Execution:** The compiled machine code runs directly for improved speed.
+
+JIT compilation balances between interpretation (for quick startup) and compilation (for faster execution).

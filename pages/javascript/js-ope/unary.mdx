@@ -1,0 +1,201 @@
+## JavaScript Unary Operators
+
+_Last Updated : 25 Nov, 2024_
+
+JavaScript Unary Operators work on a single operand and perform various operations, like incrementing/decrementing, evaluating data type, negation of a value, etc.
+
+### Unary Plus (+) Operator
+The unary plus (`+`) converts an operand into a number, if possible. It is commonly used to ensure numerical operations on variables that may contain numeric strings. If the operand is a string that represents a valid number, it will be converted to a number. Otherwise, it will evaluate to `NaN` (Not-a-Number).
+
+```javascript
+let s1 = "12";
+
+// Using unary plus to convert string to number
+let x = +s1;
+console.log(x);
+
+// Here we are using typeof operator
+console.log(typeof (x))
+
+// "Coding75" cannot be converted to a number
+let s2 = +"Coding75";
+console.log(s2);
+```
+
+**Output:**
+```
+12
+number
+NaN
+```
+
+### Unary Minus (-) Operator
+The Unary Negation (`-`) operator is used to convert its operand to a negative number if it isn’t already a negative number.
+
+```javascript
+let s1 = "12";
+
+// Unary negation, negates the value of number
+let x = -s1;
+console.log(x);
+
+// Unary negation, tries to convert 'Coding75' to a number
+let s2 = -Coding75s";
+console.log(s2);
+```
+
+**Output:**
+```
+-12
+NaN
+```
+
+### Unary Increment (++) Operator
+The unary increment operator (`++`) adds 1 to its operand’s value and evaluates to the updated value. It can be used as a postfix or prefix operator.
+
+**Postfix:** In postfix, the current value of the variable is used in the expression, and then the variable’s value is incremented by 1.
+
+**Prefix:** In prefix, the variable’s value is first incremented by 1, and then the updated value is used in the expression.
+
+```javascript
+// Case 1: Postfix
+let x = 12;
+let y = x++;
+console.log(x);
+console.log(y);
+
+// Case 2: Prefix
+x = 10;
+y = ++x;
+console.log(x);
+console.log(y);
+```
+
+**Output:**
+```
+13
+12
+11
+11
+```
+
+### Unary Decrement (–) Operator
+The unary decrement operator (`--`) subtracts 1 from its operand’s value and evaluates it to the updated value, and we can use it as a postfix or prefix operator.
+
+```javascript
+let x = 8;
+let y = x--;
+console.log(x);
+console.log(y);
+
+x = 15;
+y = --x;
+console.log(x);
+console.log(y);
+```
+
+**Output:**
+```
+7
+8
+14
+14
+```
+
+### Logical NOT (!) Operator
+The logical NOT (`!`) is a unary operator that negates the Boolean value of an operand, converting `true` to `false` and `false` to `true`.
+
+```javascript
+let x = false;
+let y = !x;
+console.log(y);
+
+x = true;
+y = !x;
+console.log(y);
+```
+
+**Output:**
+```
+true
+false
+```
+
+### Bitwise NOT (~) Operator
+The bitwise NOT (`~`) is a unary operator that inverts all the bits of its operand, converting each `0` to `1` and each `1` to `0`.
+
+```javascript
+let x = 10;
+
+// Bitwise NOT, inverts all bits of 'num'
+let y = ~x;
+console.log(y);
+```
+
+**Output:**
+```
+-11
+```
+
+### typeof Operator
+The JavaScript `typeof` operator returns the data type of its operand in the form of a string. The operand can be any object, function, or variable.
+
+```javascript
+let x = 18;
+let s = "Coding75";
+let isTrue = true;
+let obj = { name: "Aman", age: 21 };
+let undefinedVar;
+
+console.log(typeof x);
+console.log(typeof s);
+console.log(typeof isTrue);
+console.log(typeof obj);
+console.log(typeof undefinedVar);
+```
+
+**Output:**
+```
+number
+string
+boolean
+object
+undefined
+```
+
+### delete Operator
+The `delete` operator in JavaScript removes a property from an object. If no other references exist, the property’s memory is automatically released.
+
+```javascript
+let person = {
+    name: "Ankit",
+    age: 21,
+    city: "Noida"
+};
+
+console.log(person);
+
+delete person.age;
+
+console.log(person);
+```
+
+**Output:**
+```
+{ name: 'Ankit', age: 21, city: 'Noida' }
+{ name: 'Ankit', city: 'Noida' }
+```
+
+### void Operator
+The `void` operator evaluates the given expression and then returns `undefined`.
+
+```javascript
+function myFunction() {
+    return void 0;
+}
+console.log(myFunction());
+```
+
+**Output:**
+```
+undefined

@@ -1,0 +1,153 @@
+---
+title: "Different Ways of Writing Functions in JavaScript"
+lastUpdated: "20 Sep, 2024"
+---
+
+A JavaScript function is a block of code that runs only when called (invoked). It performs a specific task and helps make code reusable. JavaScript offers multiple ways to define functions, each with its own syntax and purpose.
+
+Below are the ways of writing functions in JavaScript:
+
+## Table of Content
+
+- Function Declaration
+- Function Expression
+- Arrow Functions
+- Key Differences: Function Declaration vs. Function Expression
+- Function States in JavaScript
+
+## 1. Function Declaration
+A Function Declaration is a standard way to define a function using the function keyword, followed by a name and optional parameters. It can be called before its definition due to hoisting.
+
+Example: Below is an example that illustrates the use of Function Declaration.
+
+```javascript
+// Function declaration 
+function add(a, b) {         
+    console.log(a + b);
+}
+
+// Calling a function
+add(2, 3);
+```
+
+### Output:
+```
+5
+```
+After defining a function, we call it whenever the function is required.
+
+## 2. Function Expression
+Function Expression is another way to define a function. Here, the function is defined inside a variable, and the function’s value (its returned value) is stored in that variable.
+
+Example: Below is an example that illustrates the use of Function Expression.
+
+```javascript
+// Function Expression
+const add = function (a, b) {
+    console.log(a + b);
+}
+
+// Calling function
+add(2, 3);
+```
+
+### Output:
+```
+5
+```
+Here, the whole function is an expression, and the returned value is stored in the variable. We use the variable name to call the function.
+
+## 3. Arrow Functions
+Arrow Functions were introduced in ES6 (a newer version of JavaScript). They provide a shorter syntax for writing functions. Instead of using the `function` keyword, you use an arrow (`=>`).
+
+Example: Below is an example that illustrates the use of the Arrow Function.
+
+```javascript
+// Single line of code
+let add = (a, b) => a + b;
+console.log(add(3, 2));
+```
+
+### Output:
+```
+5
+```
+This shortens the code to a single line compared to other approaches. In a single line of code, the function returns implicitly.
+
+**Note:** When there is a need to include multiple lines of code, we use brackets. Also, when there are multiple lines of code in the bracket, we should write `return` explicitly to return the value from the function.
+
+Example: This is an example with multiple lines of code in an arrow function.
+
+```javascript
+// Multiple lines of code
+const great = (a, b) => {
+    if (a > b)
+        return "a is greater";
+    else
+        return "b is greater";
+};
+console.log(great(3, 5));
+```
+
+### Output:
+```
+b is greater
+```
+
+## Key Differences: Function Declaration vs. Function Expression
+- **Function Declaration:** The function is defined and can be called anywhere in the code (even before it’s defined, due to something called “hoisting”).
+- **Function Expression:** The function is defined as part of an expression (usually assigned to a variable), and it can only be called after the line where it’s defined.
+
+## 4. Function States in JavaScript
+### Function Declaration
+```javascript
+function Person() {
+    name = "Vikash";
+    age = "22";
+}
+```
+
+### Function Expression
+```javascript
+// Function declaration
+function person() { }
+let person = person();
+ 
+console.log(person);
+ 
+function person1(name) {
+    return name;
+}
+ 
+let person1 = person1("Aayush");
+console.log(person1);
+```
+
+### Output:
+```
+undefined
+Aayush
+```
+
+An `undefined` will print because the function doesn’t return any value, whereas the second function returns the name value, which is why the name is printed in the second line.
+
+### Function Constructor
+```javascript
+// Creating the function
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+ 
+// Calling the function 
+let person = new Person("Vikash", 22);
+ 
+console.log(person.name);
+console.log(person.age);
+```
+
+### Output:
+```
+Vikash
+22
+```

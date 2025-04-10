@@ -1,0 +1,206 @@
+---
+title: "JavaScript this Keyword"
+date: "2025-01-18"
+---
+
+# JavaScript `this` Keyword
+
+The `this` keyword in JavaScript refers to the object to which it belongs. Its value is determined by how a function is called, making it a dynamic reference. The `this` keyword is a powerful and fundamental concept used to access properties and methods of an object, allowing for more flexible and reusable code.
+
+## Example
+
+```javascript
+const person = {
+<<<<<<< HEAD
+    name: "Coding75",
+=======
+    name: "JavaScript Hub",
+>>>>>>> 6c9caef (content Overview Complete)
+    greet() {
+        return `Welcome To, ${this.name}`;
+    }
+};
+console.log(person.greet());
+```
+
+**Output:**
+```text
+<<<<<<< HEAD
+Welcome To, Coding75
+=======
+Welcome To, JavaScript Hub
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+## Using `this` in a Method
+
+In the context of an object method in JavaScript, the `this` keyword refers to the object itself, allowing access to its properties and methods within the method’s scope.
+
+```javascript
+const person = {
+    name: 'John',
+    age: 30,
+    greet() {
+        console.log('Hello, my name is ' + this.name + ' and I am ' + this.age + ' years old.');
+    }
+};
+
+person.greet();
+```
+
+**Output:**
+```text
+Hello, my name is John and I am 30 years old.
+```
+
+## Using `this` in a Function
+
+In a JavaScript function, the behavior of the `this` keyword varies depending on how the function is invoked.
+
+### Syntax:
+```javascript
+function exampleFunction() {
+  console.log(this); // Refers to the current execution context
+}
+```
+
+```javascript
+function greet() {
+    console.log('Hello, my name is ' + this.name);
+}
+
+const person = {
+    name: 'Amit',
+    sayHello: greet
+};
+const anotherPerson = {
+    name: 'Jatin'
+};
+
+person.sayHello();
+greet.call(anotherPerson);
+```
+
+**Output:**
+```text
+Hello, my name is undefined
+Hello, my name is Amit
+Hello, my name is Jatin
+```
+
+## Using `this` Alone (Global Context)
+
+When used alone in JavaScript, the behavior of the `this` keyword depends on whether the code is running in strict mode or not.
+
+```javascript
+console.log(this);
+```
+
+**Output:**
+```text
+{}
+```
+
+## Implicit Binding
+
+When we call a function as a method of the object, the `this` keyword refers to the calling object.
+
+```javascript
+const person = {
+    name: "Ram",
+    age: 22,
+    greet: function () {
+        return `Hello ${this.name}, you are ${this.age} years old`;
+    }
+};
+console.log(person.greet());
+```
+
+**Output:**
+```text
+Hello Ram, you are 22 years old
+```
+
+## Explicit Binding
+
+When we explicitly bind the `this` keyword using the `call()`, `bind()`, or `apply()` method, the `this` reference changes to the object passed to these methods.
+
+```javascript
+function ageVerify() {
+    console.log(this.age >= 18 ? "Yes you can drive" : "No you cannot drive");
+}
+
+const per1 = { age: 20 };
+const per2 = { age: 16 };
+
+ageVerify.call(per1);
+ageVerify.call(per2);
+```
+
+**Output:**
+```text
+Yes you can drive
+No you cannot drive
+```
+
+## Default Binding
+
+When the `this` keyword is used in the global scope, it is set to the window object.
+
+```javascript
+const age = 22;
+function verifyAge() {
+    return this.age;
+}
+console.log(verifyAge());
+```
+
+**Output:**
+```text
+undefined
+```
+
+## Arrow Function Binding
+
+When `this` is used in an arrow function, it has lexical scope, so it inherits `this` from its surrounding context.
+
+```javascript
+const person = {
+    name: "ram",
+    age: 22,
+    greet: () => {
+        return `Hello, you are ${this.age} years old`;
+    }
+};
+console.log(person.greet());
+```
+
+**Output:**
+```text
+Hello, you are undefined years old
+```
+
+## Summary of `this` Keyword Behavior
+
+- When used within a method of an object, `this` points to that object.
+- When used by itself, `this` points to the global object.
+- Within a function, `this` typically points to the global object.
+- In a function under strict mode, `this` becomes `undefined`.
+- During an event, `this` points to the element that triggered the event.
+- Methods such as `call()`, `apply()`, and `bind()` can reassign `this` to any desired object.
+
+### The Precedence Order of `this` Keyword
+1. JavaScript `bind()` Method
+2. JavaScript `call()` and `apply()` Method
+3. JavaScript Object Method
+4. JavaScript Global Scope
+
+The `this` keyword in JavaScript dynamically refers to the object executing a function or method. Its context varies:
+- In methods, it points to the object itself.
+- In the global scope, it points to the global object (like `window`).
+- In strict mode, it is `undefined`.
+- It can be reassigned with `call()`, `apply()`, or `bind()`.  
+
+---
+
+This `.mdx` file properly formats the content with JavaScript code blocks and Markdown syntax for better readability and structuring.

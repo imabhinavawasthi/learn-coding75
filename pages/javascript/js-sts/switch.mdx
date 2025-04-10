@@ -1,0 +1,207 @@
+## JavaScript switch Statement
+
+_Last Updated: 21 Nov, 2024_
+
+The JavaScript `switch` statement evaluates an expression and executes a block of code based on matching cases. It provides an alternative to long `if-else` chains, improving readability and maintainability, especially when handling multiple conditional branches.
+
+### Switch Statement Example
+Here, we will print the day name on day 3.
+
+```javascript
+let day = 3;
+let dayName;
+
+switch (day) {
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
+        break;
+    case 4:
+        dayName = "Thursday";
+        break;
+    case 5:
+        dayName = "Friday";
+        break;
+    case 6:
+        dayName = "Saturday";
+        break;
+    case 7:
+        dayName = "Sunday";
+        break;
+    default:
+        dayName = "Invalid day";
+}
+
+console.log(dayName); // Output: Wednesday
+```
+
+**Output:**
+```
+Wednesday
+```
+
+### Explanation
+- `day` is set to `3`.
+- The `switch` statement evaluates `day`.
+- Since `day` is `3`, the `case 3` block is executed, assigning "Wednesday" to `dayName`.
+- The `break` statement ends the `switch` statement, preventing execution from continuing into other cases.
+
+### Switch Statement Syntax
+```javascript
+switch (expression) {
+    case value1:
+        // code block 1;
+        break;
+    case value2:
+        // code block 2;
+        break;
+    ...
+    default:
+        // default code block;
+}
+```
+
+- `expression` is the value that you want to compare.
+- `case value1`, `case value2`, etc., represent the possible values of the expression.
+- `break` statement terminates the `switch` statement. Without it, execution will continue into the next case.
+- `default` specifies the code to run if none of the cases match the expression.
+
+### How Switch Statement Works
+1. **Evaluation**: The expression inside the `switch` statement is evaluated once.
+2. **Comparison**: The value of the expression is compared with each case label (using strict equality `===`).
+3. **Execution**: If a match is found, the corresponding code block following the matching case label is executed. If no match is found, execution jumps to the `default` case (if present) or continues with the next statement after the `switch` block.
+4. **Break Statement**: After executing a code block, the `break` statement terminates the `switch` statement, preventing execution from falling through to subsequent cases. If `break` is omitted, execution will continue to the next case (known as “fall-through”).
+5. **Default Case**: The `default` case is optional. If no match is found, the code block under `default` is executed.
+
+### Example: Checking Grade using Switch Case
+```javascript
+let grade = 'B';
+let result;
+
+switch (grade) {
+    case 'A':
+        result = "A (Excellent)";
+        break;
+    case 'B':
+        result = "B (Average)";
+        break;
+    case 'C':
+        result = "C (Below than average)";
+        break;
+    default:
+        result = "No Grade";
+}
+
+console.log(result);
+```
+
+**Output:**
+```
+B (Average)
+```
+
+### Explanation
+- `grade` is assigned the value `'B'`.
+- The `switch` statement evaluates `grade`.
+- Since `grade` is `'B'`, the code block following `case 'B':` is executed.
+- The `result` variable is assigned the string "B (Average)".
+- The `break` statement terminates the `switch` statement.
+- `result` is logged to the console, which outputs "B (Average)".
+
+### Break Keyword
+The `break` keyword is used to terminate the execution of a loop or a `switch` statement.
+
+### default Keyword
+The `default` keyword is used within a `switch` statement as a fallback option when none of the `case` expressions match the value being evaluated. It acts similarly to the `else` statement in an `if...else` chain, providing a default action to take when no other specific cases match.
+
+#### Position of default case does not matter
+Regardless of its placement, the `default` case only gets executed if none of the other case conditions are met. So, putting it at the beginning, middle, or end doesn’t change the core logic (unless you’re using a less common technique called fall-through).
+
+#### Example: Printing the Default Case
+```javascript
+let day = 8;
+let dayName;
+
+switch (day) {
+    default:
+        dayName = "Invalid day";
+        break;
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
+        break;
+    case 4:
+        dayName = "Thursday";
+        break;
+    case 5:
+        dayName = "Friday";
+        break;
+    case 6:
+        dayName = "Saturday";
+        break;
+    case 7:
+        dayName = "Sunday";
+        break;
+}
+
+console.log(dayName);
+```
+
+**Output:**
+```
+Invalid day
+```
+
+### Common Code Blocks in Switch Statements
+In some cases, we need to use the same code for multiple `switch` cases. Let’s see an example of how to do it:
+
+#### Common Code Blocks Example
+Here, we will use the same code block for two different `switch` cases.
+
+```javascript
+let grade = 'A';
+let result;
+
+switch (grade) {
+    case 'A':
+        result = "Grade is excellent";
+        break;
+    case 'B':
+        result = "Grade is good";
+        break;
+    case 'C':
+        result = "Grade is Average ";
+        break;
+    case 'D':
+        result = "Grade is Poor";
+        break;
+    default:
+        result = "NO grades achieved";
+}
+
+console.log(result);
+```
+
+**Output:**
+```
+Grade is excellent
+```
+
+### Explanation
+- `grade` is assigned the value `'A'`.
+- The `switch` statement evaluates the value of `grade`.
+- Since `grade` matches `'A'`, the code block following `case 'A':` is executed, setting `result` to "Grade is excellent".
+- The `break` statement terminates the `switch` statement.
+- `result` is logged to the console, which outputs "Grade is excellent".
+
+**Note:** If multiple `switch` cases match a value, the first matching case is executed.

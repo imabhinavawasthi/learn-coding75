@@ -1,0 +1,160 @@
+---
+title: "Iterate over Set in JavaScript"
+date: "2024-11-11"
+---
+
+
+We will iterate over set elements in JavaScript. A set is a collection of unique elements, meaning no element can appear more than once in a set.
+
+Below are the approaches to iterate over set elements in JavaScript:
+
+## Approach 1: Using for…of Loop
+
+The `for…of` loop iterates over iterable objects (like Array, Map, Set, arguments object, etc.), invoking a custom iteration hook with statements to be executed for each distinct property.
+
+```javascript
+const mySet = new Set();
+
+mySet.add("Virat");
+mySet.add("Rohit");
+mySet.add("Rahul");
+
+for (const value of mySet) {
+    console.log(value);
+}
+```
+
+#### Output
+```javascript
+Virat
+Rohit
+Rahul
+```
+
+## Approach 2: Using forEach() Method
+
+The `Set.forEach()` method calls the provided function once for each element of the Set. The provided function may perform any kind of operation on the elements of the given Set.
+
+```javascript
+const Data = new Set();
+
+Data.add("Delhi");
+Data.add("Noida");
+Data.add("Gurgaon");
+
+Data.forEach(function (value) {
+    console.log(value);
+});
+```
+
+#### Output
+```javascript
+Delhi
+Noida
+Gurgaon
+```
+
+## Approach 3: Using Array.from() and for Loop
+
+In this approach, we use `Array.from()` to convert the Set into an array and then iterate using a `for` loop.
+
+```javascript
+// Initialize a Set object
+let myset = new Set();
+
+// Insert new elements
+myset.add(3);
+myset.add(2);
+myset.add(9);
+myset.add(6);
+
+console.log(myset);
+
+const myArray = Array.from(myset);
+for (let i = 0; i < myArray.length; i++) {
+    console.log(myArray[i]);
+}
+```
+
+#### Output
+```javascript
+Set(4) { 3, 2, 9, 6 }
+3
+2
+9
+6
+```
+
+## Approach 4: Using Lodash _.forEach() Method
+
+In this example, we use the Lodash `_.forEach()` method to iterate over a Set.
+
+```javascript
+// Requiring the lodash library 
+const _ = require("lodash");
+const Data = new Set();
+
+Data.add("Delhi");
+Data.add("Noida");
+Data.add("Gurgaon");
+
+// Use of _.forEach() method 
+_.forEach(Data, function (value) {
+    console.log(value);
+});
+```
+
+#### Output
+```javascript
+Delhi
+Noida
+Gurgaon
+```
+
+## Approach 5: Using Spread Operator
+
+The spread operator `...` can be used to expand elements of an iterable like a Set into an array. This array can then be iterated using `forEach()`.
+
+```javascript
+function iterateSet() {
+    const mySet = new Set();
+    mySet.add("London");
+    mySet.add("Paris");
+    mySet.add("New York");
+
+    [...mySet].forEach(value => {
+        console.log(value);
+    });
+}
+
+iterateSet();
+```
+
+#### Output
+```javascript
+London
+Paris
+New York
+```
+
+## Approach 6: Using Set.values() Method
+
+The `Set.values()` method returns a new Iterator object that contains the values for each element in the Set in insertion order. You can use a `for…of` loop to iterate over these values.
+
+```javascript
+const mySet = new Set();
+mySet.add("Blue");
+mySet.add("Green");
+mySet.add("Red");
+
+for (let value of mySet.values()) {
+    console.log(value);
+}
+```
+
+#### Output
+```javascript
+Blue
+Green
+Red
+```

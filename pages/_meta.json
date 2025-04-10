@@ -18,5 +18,9 @@
   "java": {
     "title": "Java",
     "type": "page"
+  },
+  "javascript":{
+    "title": "Javascript",
+    "type": "page"
   }
 }

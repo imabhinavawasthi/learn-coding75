@@ -1,0 +1,173 @@
+JavaScript Objects
+Last Updated : 30 Jul, 2024
+
+In the previous article, we learned about basic Object-Oriented Programming (OOP) terms and how they apply in JavaScript. In this article, we’ll take a closer look at objects and understand them in more detail.
+
+## Creating Objects
+
+In JavaScript, objects can be created using two different methodologies: **Literal Form** and **Constructed Form**.
+
+### Literal Form
+The literal form uses object literals, which are collections of key-value pairs enclosed within curly braces `{}`.
+
+```javascript
+let obj = {
+    key1: value1,
+    key2: value2,
+    // ...
+};
+```
+
+### Constructed Form
+The constructed way to create an object uses a constructor function or the new keyword. It first makes an empty object, then you add properties to it step by step.
+
+#### Object Constructor Function
+In this approach, a function is explicitly created to take required values as parameters and assign them as properties of the object.
+
+```javascript
+function Obj(value1, value2) {
+    this.key1 = value1;
+    this.key2 = value2;
+}
+```
+
+#### Using `new` Keyword
+The `new` keyword is used with a constructor method or a built-in constructor method (such as `Object`, `Date`, `String`, etc.) to create a new instance of an object in memory.
+
+```javascript
+let obj = new Object();
+obj.key1 = value1;
+obj.key2 = value2;
+```
+
+### Differences Between Object Literals and Constructed Form
+Both ways make the same kind of object. But using object literals is easier because you can add all the key-value pairs at once. The constructed form needs you to add each property one by one.
+
+**Note:** Using the constructed form to create objects is not very common. That’s why most examples will use object literals instead.
+
+## Built-In Objects
+JavaScript has some built-in objects that help you create specific types of objects. These built-in functions act like blueprints for making things like dates, numbers, or strings.
+
+- `String`
+- `Number`
+- `Boolean`
+- `Object`
+- `Function`
+- `Array`
+- `Date`
+- `RegExp`
+- `Error`
+
+### Example: Differentiating Between Objects and Primitives
+
+```javascript
+// Create string primitive.
+let strPrimitive = "Coding75";
+console.log(typeof strPrimitive); // "string"
+console.log(strPrimitive instanceof String); // false
+
+// Use the built-in String function as constructor.
+let strObject = new String("Coding75");
+console.log(typeof strObject); // "object"
+console.log(strObject instanceof String); // true
+
+// Inspect the object sub-type
+console.log(Object.prototype.toString.call(strObject)); // [object String]
+```
+
+Primitives are immutable values. JavaScript coerces a string primitive into a `String` object when necessary. However, using primitives is preferred due to internal coercion.
+
+## Content of Objects
+
+In JavaScript, objects are made up of key-value pairs. The key is the name of the property, and the value can be a number, text, another object, or even a function.
+
+```javascript
+objectName.objectProperty = propertyValue;
+```
+
+### Example: Defining Object Properties
+
+```javascript
+let myObj = {
+    // Integer Property
+    int_prop: 5,
+
+    // String Property
+    str_prop: "Coding75",
+
+    // Object Property (Date)
+    obj_prop: new Date(),
+
+    // Object Property
+    inner_obj: {
+        int_prop: 6
+    },
+
+    // Function Property
+    func_prop: function() {
+        console.log("Welcome to Coding75!");
+    }
+};
+
+console.log(myObj.int_prop);
+console.log(myObj.str_prop);
+console.log(myObj.obj_prop.toLocaleTimeString());
+console.log(myObj.inner_obj.int_prop);
+myObj.func_prop();
+```
+
+### Output
+```
+5
+Coding75
+5:47:55 PM
+6
+Welcome to Coding75!
+```
+
+Functions associated with objects are called **methods**. Unlike standalone functions, methods reference the object using the `this` keyword.
+
+## Defining Global Variables in Objects
+A function can be explicitly defined and then assigned to an object property, making it a method.
+
+```javascript
+// Define Function Explicitly
+function toGreet() {
+    console.log("Hello There!");
+}
+
+let myObj = {
+    // Assign function to property
+    greet: toGreet,
+
+    // Define function directly
+    byWhom: function() {
+<<<<<<< HEAD
+        console.log(" - Coding75.com");
+=======
+        console.log(" - Coding75.org");
+>>>>>>> 6c9caef (content Overview Complete)
+    }
+};
+
+myObj.greet();
+myObj.byWhom();
+```
+
+### Output
+```
+Hello There!
+<<<<<<< HEAD
+ - Coding75.com
+=======
+ - Coding75.org
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+## Important Points
+
+- `Date` values can only be created using their constructed object form.
+- Objects, arrays, functions, and regular expressions (`RegExp`) are all objects, regardless of their creation method.
+- The constructed form provides more customization but is generally not necessary.
+
+This concludes our discussion on JavaScript objects. Next, we will explore more advanced object-related topics.

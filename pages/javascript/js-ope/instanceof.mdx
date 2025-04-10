@@ -1,0 +1,85 @@
+# JavaScript in and instanceof Operators
+_Last Updated : 25 Nov, 2024_
+
+JavaScript Relational Operators are used to compare their operands and determine the relationship between them. They return a Boolean value (true or false) based on the comparison result.
+
+## JavaScript in Operator
+The `in` operator in JavaScript checks if a specified property exists in an object or if an element exists in an array. It returns a Boolean value.
+
+```javascript
+let languages = ["HTML", "CSS", "JavaScript"];
+
+// true (index 1 exists in the array)
+console.log(1 in languages);
+
+// false (index 3 doesn't exist in the array)
+console.log(3 in languages); 
+```
+
+**Output:**
+```
+true
+false
+```
+
+```javascript
+const Data = {
+    name: "Rahul",
+    age: 21,
+    city: "Noida"
+};
+
+// true ("name" property exists in the object)
+console.log("name" in Data);
+
+// false ("address" property doesn't exist in the object)
+console.log("address" in Data);
+```
+
+**Output:**
+```
+true
+false
+```
+
+## JavaScript instanceof Operator
+The `instanceof` operator in JavaScript tests if an object is an instance of a particular class or constructor, returning a Boolean value.
+
+```javascript
+let languages = ["HTML", "CSS", "JavaScript"];
+
+console.log(languages instanceof Array);
+console.log(languages instanceof Object);
+console.log(languages instanceof String);
+console.log(languages instanceof Number);
+```
+
+**Output:**
+```
+true
+true
+false
+false
+```
+
+```javascript
+let myString = new String();
+let myDate = new Date();
+
+console.log(myString instanceof Object);
+console.log(myString instanceof Date);
+console.log(myString instanceof String);
+console.log(myDate instanceof Date);
+console.log(myDate instanceof Object);
+console.log(myDate instanceof String);
+```
+
+**Output:**
+```
+true
+false
+true
+true
+true
+false
+```

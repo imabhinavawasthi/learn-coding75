@@ -1,0 +1,176 @@
+---
+title: "JavaScript Loops"
+lastUpdated: "26 Dec, 2024"
+---
+
+
+
+# JavaScript Loops
+
+Loops in JavaScript are used to reduce repetitive tasks by repeatedly executing a block of code as long as a specified condition is true. This makes code more concise and efficient.
+
+Suppose we want to print ‘Hello World’ five times. Instead of manually writing the print statement repeatedly, we can use a loop to automate the task and execute it based on the given condition.
+
+```javascript
+for (let i = 0; i < 5; i++) {
+    console.log("Hello Coders!");
+}
+```
+
+**Output:**
+```
+Hello Coders!
+Hello Coders!
+Hello Coders!
+Hello Coders!
+Hello Coders!
+```
+
+Let’s now discuss the different types of loops available in JavaScript.
+
+## 1. JavaScript for Loop
+The `for` loop repeats a block of code a specific number of times. It contains initialization, condition, and increment/decrement in one line.
+
+### Syntax
+```javascript
+for (initialization; condition; increment/decrement) {
+    // Code to execute
+}
+```
+
+```javascript
+for (let i = 1; i <= 3; i++) {
+    console.log("Count:", i);
+}
+```
+
+**Output:**
+```
+Count: 1
+Count: 2
+Count: 3
+```
+
+### How it works:
+- Initializes the counter variable (`let i = 1`).
+- Tests the condition (`i <= 3`); runs while true.
+- Executes the loop body and increments the counter (`i++`).
+
+## 2. JavaScript while Loop
+The `while` loop executes as long as the condition is true. It can be thought of as a repeating `if` statement.
+
+### Syntax
+```javascript
+while (condition) {
+    // Code to execute
+}
+```
+
+```javascript
+let i = 0;
+while (i < 3) {
+    console.log("Number:", i);
+    i++;
+}
+```
+
+**Output:**
+```
+Number: 0
+Number: 1
+Number: 2
+```
+
+### How it works:
+- Initializes the variable (`let i = 0`).
+- Runs the loop body while the condition (`i < 3`) is true.
+- Increments the counter after each iteration (`i++`).
+
+## 3. JavaScript do-while Loop
+The `do-while` loop is similar to the `while` loop except it executes the code block at least once before checking the condition.
+
+### Syntax
+```javascript
+do {
+    // Code to execute
+} while (condition);
+```
+
+```javascript
+let i = 0;
+do {
+    console.log("Iteration:", i);
+    i++;
+} while (i < 3);
+```
+
+**Output:**
+```
+Iteration: 0
+Iteration: 1
+Iteration: 2
+```
+
+### How it works:
+- Executes the code block first.
+- Checks the condition (`i < 3`) after each iteration.
+
+## 4. JavaScript for-in Loop
+The `for...in` loop is used to iterate over the properties of an object. It only iterates over keys of an object that have their enumerable property set to `true`.
+
+### Syntax
+```javascript
+for (let key in object) {
+    // Code to execute
+}
+```
+
+```javascript
+const obj = { name: "Ashish", age: 25 };
+for (let key in obj) {
+    console.log(key, ":", obj[key]);
+}
+```
+
+**Output:**
+```
+name : Ashish
+age : 25
+```
+
+### How it works:
+- Iterates over the keys of the object.
+- Accesses both keys and values.
+
+## 5. JavaScript for-of Loop
+The `for...of` loop is used to iterate over iterable objects like arrays, strings, or sets. It directly iterates the value and has a more concise syntax than the `for` loop.
+
+### Syntax
+```javascript
+for (let value of iterable) {
+    // Code to execute
+}
+```
+
+```javascript
+let a = [1, 2, 3, 4, 5];
+for (let val of a) {
+    console.log(val);
+}
+```
+
+**Output:**
+```
+1
+2
+3
+4
+5
+```
+
+## Choosing the Right Loop
+- **Use `for` loop** when the number of iterations is known.
+- **Use `while` loop** when the condition depends on dynamic factors.
+- **Use `do-while` loop** to ensure the block executes at least once.
+- **Use `for...in` loop** to iterate over object properties.
+- **Use `for...of` loop** for iterating through iterable objects.

@@ -1,0 +1,282 @@
+---
+title: "Important Array Methods of JavaScript"
+date: "2025-01-24"
+---
+
+
+# Important Array Methods of JavaScript
+
+JavaScript arrays are powerful tools for managing collections of data. They come with a wide range of built-in methods that allow developers to manipulate, transform, and interact with array elements.
+
+## Table of Content
+
+1. [JavaScript push() Method](#javascript-push-method)
+2. [JavaScript pop() Method](#javascript-pop-method)
+3. [JavaScript shift() Method](#javascript-shift-method)
+4. [unshift() Method](#unshift-method)
+5. [JavaScript indexOf() Method](#javascript-indexof-method)
+6. [JavaScript includes() Method](#javascript-includes-method)
+7. [JavaScript concat() Method](#javascript-concat-method)
+8. [JavaScript forEach() Method](#javascript-foreach-method)
+9. [JavaScript sort() Method](#javascript-sort-method)
+10. [JavaScript map() Method](#javascript-map-method)
+11. [JavaScript reduce() Method](#javascript-reduce-method)
+12. [JavaScript filter() Method](#javascript-filter-method)
+13. [JavaScript find() & findIndex() Method](#javascript-find-findindex-method)
+14. [JavaScript slice() & splice() Method](#javascript-slice-splice-method)
+15. [JavaScript some() and every() Method](#javascript-some-every-method)
+16. [JavaScript Array reverse() Method](#javascript-array-reverse-method)
+
+## JavaScript push() Method
+
+The `push()` method adds one or more elements to the end of an array and returns the new length.
+
+```js
+let a = ['Hello', 'Coding75', 'JS'];
+a.push('React');
+console.log(a);
+```
+
+**Output:**
+
+```js
+[ 'Hello', 'Coding75', 'JS', 'React' ]
+```
+
+## JavaScript pop() Method
+
+The `pop()` method removes the last element from an array and returns it.
+
+```js
+<<<<<<< HEAD
+let a = ["Hello", "Coding75", "JS"];
+=======
+let a = ["Hello", "TOC", "JS"];
+>>>>>>> 6c9caef (content Overview Complete)
+let ele = a.pop();
+console.log(ele);
+console.log(a);
+```
+
+**Output:**
+
+```js
+JS
+<<<<<<< HEAD
+[ 'Hello', 'Coding75' ]
+=======
+[ 'Hello', 'TOC' ]
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+## JavaScript shift() Method
+
+The `shift()` method removes the first element from an array and returns it.
+
+```js
+<<<<<<< HEAD
+let a = ["Hello", "Coding75", "JS"];
+=======
+let a = ["Hello", "TOC", "JS"];
+>>>>>>> 6c9caef (content Overview Complete)
+let ele = a.shift();
+console.log(ele);
+console.log(a);
+```
+
+**Output:**
+
+```js
+Hello
+<<<<<<< HEAD
+[ 'Coding75', 'JS' ]
+=======
+[ 'TOC', 'JS' ]
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+## unshift() Method
+
+The `unshift()` method adds elements to the beginning of an array.
+
+```js
+<<<<<<< HEAD
+let a = ["Hello", "Coding75", "JS"];
+=======
+let a = ["Hello", "TOC", "JS"];
+>>>>>>> 6c9caef (content Overview Complete)
+a.unshift("React");
+console.log(a);
+```
+
+**Output:**
+
+```js
+<<<<<<< HEAD
+[ 'React', 'Hello', 'Coding75', 'JS' ]
+=======
+[ 'React', 'Hello', 'TOC', 'JS' ]
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+## JavaScript indexOf() Method
+
+The `indexOf()` method returns the first index of a specified element in an array.
+
+```js
+<<<<<<< HEAD
+let a = ["Hello", "Coding75", "JS"];
+console.log(a.indexOf('Coding75'));
+=======
+let a = ["Hello", "TOC", "JS"];
+console.log(a.indexOf('TOC'));
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+**Output:**
+
+```js
+1
+```
+
+## JavaScript includes() Method
+
+The `includes()` method checks whether an array contains a specific element.
+
+```js
+<<<<<<< HEAD
+let a = ["Hello", "Coding75", "JS"];
+console.log(a.includes("Coding75"));
+=======
+let a = ["Hello", "TOC", "JS"];
+console.log(a.includes("TOC"));
+>>>>>>> 6c9caef (content Overview Complete)
+console.log(a.includes("React"));
+```
+
+**Output:**
+
+```js
+true
+false
+```
+
+## JavaScript concat() Method
+
+The `concat()` method merges two arrays into a new array.
+
+```js
+<<<<<<< HEAD
+let a1 = ["Hello", "Coding75", "Js"];
+=======
+let a1 = ["Hello", "TOC", "Js"];
+>>>>>>> 6c9caef (content Overview Complete)
+let a2 = ["React"];
+let newArr = a1.concat(a2);
+console.log(newArr);
+```
+
+**Output:**
+
+```js
+<<<<<<< HEAD
+[ 'Hello', 'Coding75', 'Js', 'React' ]
+=======
+[ 'Hello', 'TOC', 'Js', 'React' ]
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+## JavaScript forEach() Method
+
+The `forEach()` method executes a function once per array element.
+
+```js
+let a = ["Hello", "TOC", "JS"];
+a.forEach(function (element) {
+    console.log(element)
+});
+```
+
+**Output:**
+
+```js
+Hello
+TOC
+JS
+```
+
+## JavaScript sort() Method
+
+The `sort()` method sorts elements in an array in ascending order.
+
+```js
+<<<<<<< HEAD
+let a = ["Hello", "Coding75", "JS"];
+=======
+let a = ["Hello", "TOC", "JS"];
+>>>>>>> 6c9caef (content Overview Complete)
+a.sort();
+console.log(a);
+```
+
+**Output:**
+
+```js
+<<<<<<< HEAD
+[ 'Coding75', 'Hello', 'JS' ]
+=======
+[ 'TOC', 'Hello', 'JS' ]
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+## JavaScript map() Method
+
+The `map()` method creates a new array by applying a function to each element.
+
+```js
+let a1 = [1, 2, 3, 4, 5];
+let a2 = a1.map(elem => elem * 5);
+console.log(a2);
+```
+
+**Output:**
+
+```js
+[ 5, 10, 15, 20, 25 ]
+```
+
+## JavaScript reduce() Method
+
+The `reduce()` method applies a function to reduce the array to a single value.
+
+```js
+let a1 = [1, 2, 3, 4, 5];
+let sum = a1.reduce((acc, elem) => acc + elem, 0);
+console.log(sum);
+```
+
+**Output:**
+
+```js
+15
+```
+
+## JavaScript filter() Method
+
+The `filter()` method filters elements based on a condition.
+
+```js
+let a1 = [1, 2, 3, 4, 5];
+let a2 = a1.filter(elem => elem % 2 === 0);
+console.log(a2);
+```
+
+**Output:**
+
+```js
+[ 2, 4 ]
+```
+
+---
+
+This document contains detailed explanations of various JavaScript array methods with code examples and outputs.

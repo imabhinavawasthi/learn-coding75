@@ -1,0 +1,99 @@
+---
+title: "JavaScript Comments"
+lastUpdated: "15 Nov, 2024"
+---
+
+## JavaScript Comments
+
+Comments are used to explain your code and make it easier to understand. They are ignored by JavaScript and do not affect how the code runs.
+
+### 1. Single Line Comments
+A single-line comment in JavaScript starts with //. Anything after // on that line is ignored by JavaScript and does not get executed.
+
+```javascript
+// A single line comment  
+console.log("Hello Coders!");    
+```
+
+**Output:**
+```
+Hello Coders!
+```
+
+### 2. Multi-line Comments
+A multiline comment begins with `/*` and ends with `*/`
+
+```javascript
+/* It is multi line comment.  
+It will not be displayed upon 
+execution of this code */  
+
+console.log("Multiline comment in javascript");  
+```
+
+**Output:**
+```
+Multiline comment in javascript
+```
+
+## JavaScript Comments in HTML
+
+**Prerequisite:** [How to Add JavaScript in HTML Document?](#)
+
+The syntax of comments remains the same when we write inside the HTML `<script>` tag.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        // Printing Hello World
+        document.write('Hello World');
+    </script>
+</body>
+</html>
+```
+
+## JavaScript Comments to Prevent Execution
+
+We can use `//` or `/*…*/` to change the JavaScript code execution using comments. JavaScript Comments are used to prevent code execution and are considered suitable for testing the code.
+
+```javascript
+function add() {
+    let x = 10;
+    let y = 20;
+    let z = x + y;
+    // console.log(x + y);
+    console.log(z);
+}
+
+add();
+```
+
+**Output:**
+```
+30
+```
+
+### Example 2: Multi-line comments to prevent execution of addition code and perform subtraction operations.
+
+```javascript
+function sub() {
+    let x = 10;
+    let y = 20;
+    /* let z = x + y;
+    console.log(z); */
+
+    let z = x - y;
+    console.log(z);
+}
+
+sub();
+```
+
+**Output:**
+```
+-10

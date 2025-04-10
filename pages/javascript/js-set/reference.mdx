@@ -1,0 +1,143 @@
+---
+title: "JavaScript Set Reference"
+date: "2024-07-10"
+---
+
+import React from 'react';
+
+JavaScript Set is a collection of unique items, meaning no element can be repeated. Elements of a set are iterated in insertion order. A Set can store any type of value, whether primitive or objects.
+
+## Syntax
+
+```javascript
+new Set()
+```
+
+### Example: Creating a Set
+
+```javascript
+const mySet = new Set();
+
+mySet.add("California");
+mySet.add("India");
+mySet.add("California");
+mySet.add(10);
+mySet.add(10);
+
+const myObject = { a: 1, a: 5 };
+mySet.add(myObject);
+
+console.log(mySet);
+```
+
+#### Output
+```javascript
+Set(4) { 'California', 'India', 10, { a: 5 } }
+```
+
+## JavaScript Set Constructor
+
+| Constructor | Description |
+|------------|-------------|
+| `Set()` | Creates a set of unique values of any type, whether primitive values or object references. |
+
+## JavaScript Set Properties
+
+| Instance Property | Description |
+|-------------------|-------------|
+| `size` | Returns the size of the set. |
+| `constructor` | Used to create a new instance of a set. |
+
+## JavaScript Set Methods
+
+| Instance Method | Description |
+|----------------|-------------|
+| `add(value)` | Adds an element to the set. |
+| `clear()` | Removes all elements from the set. |
+| `delete(value)` | Deletes the specified element if it exists in the set. |
+| `entries()` | Returns an iterator for each element of the set. |
+| `forEach()` | Applies a function on each element of the set. |
+| `has(value)` | Checks if a particular element exists in the set. |
+| `values()` | Returns an iterator that contains all elements of the set. |
+| `keys()` | Same as `values()` method. |
+
+## Comparison with JavaScript Arrays
+
+- **Uniqueness:** Sets ensure all values are unique, whereas arrays can have duplicate values.
+- **Performance:** Sets provide better performance for membership testing and uniqueness checks.
+
+## Examples and Use Cases
+
+### 1. Creating a Set
+
+```javascript
+const set1 = new Set(['apple', 'banana', 'cherry']);
+console.log(set1);
+```
+
+#### Output
+```javascript
+Set(3) { 'apple', 'banana', 'cherry' }
+```
+
+### 2. Adding and Deleting Elements
+
+```javascript
+const set2 = new Set();
+set2.add(1);
+set2.add(5);
+set2.add(5); // Duplicate element will not be added
+set2.add('Hello');
+console.log(set2); 
+set2.delete(5);
+console.log(set2);
+```
+
+#### Output
+```javascript
+Set(3) { 1, 5, 'Hello' }
+Set(2) { 1, 'Hello' }
+```
+
+### 3. Checking for Element Existence
+
+```javascript
+const set3 = new Set(['a', 'b', 'c']);
+console.log(set3.has('a'));
+console.log(set3.has('z'));
+```
+
+#### Output
+```javascript
+true
+false
+```
+
+### 4. Iterating Over a Set
+
+```javascript
+const set4 = new Set([1, 2, 3, 4]);
+for (let item of set4) {
+  console.log(item);
+}
+```
+
+#### Output
+```javascript
+1
+2
+3
+4
+```
+
+### 5. Removing Duplicates from an Array
+
+```javascript
+const numbers = [1, 2, 2, 3, 4, 4, 5];
+const uniqueNumbers = [...new Set(numbers)];
+console.log(uniqueNumbers);
+```
+
+#### Output
+```javascript
+[ 1, 2, 3, 4, 5 ]

@@ -1,0 +1,168 @@
+# Creating Objects in JavaScript
+
+In JavaScript, an object is a way to store related data together. It holds information in key-value pairs, where each key is a name (like "name" or "age"), and each value can be anything—like a number, string, or even a function. You can create objects in different ways, such as using curly braces (object literal), a constructor function, or a class. When a function is part of an object, it’s called a method. Objects help keep your code organized and easy to manage.
+
+## Table of Content
+
+- Creating object with a constructor
+- Using object literals
+- Creating object with Object.create() method
+- Using ES6 classes
+
+## Creating Object with a Constructor
+
+One simple way to create objects in JavaScript is by using a constructor function. When you use the new keyword with a constructor, it lets you make multiple objects with the same structure and properties.
+
+### Example: Using a Constructor
+
+```js
+
+function Vehicle(name, maker, engine) {
+    this.name = name;
+    this.maker = maker;
+    this.engine = engine;
+}
+
+let car = new Vehicle('GT', 'BMW', '1998cc');
+// Property accessors
+console.log(car.name);
+console.log(car.maker);
+console.log(car['engine']);
+```
+
+**Output:**
+```
+GT
+BMW
+1998cc
+```
+
+### Explanation:
+- **Class Components:** A class in OOP has parameters and member functions, encapsulating attributes and behaviors.
+- **Constructor Function:** In a class method, parameters (e.g., `name`, `maker`, `engine`) use `this` to differentiate between class attributes and argument values.
+- **Object Creation:** Create an object (e.g., `car`) from the class, initialize it, and call its methods to use the class functionality.
+
+---
+
+## Using Object Literals
+
+Using object literals to create objects in JavaScript involves defining an object directly with key-value pairs inside curly braces `{}`. This method is concise and straightforward.
+
+### Example: Object Literals
+
+```js
+// Creating js objects with object literal
+let car = {
+    name: 'GT',
+    maker: 'BMW',
+    engine: '1998cc'
+};
+// Property accessor
+console.log(car.name); // dot notation
+console.log(car['maker']); // bracket notation
+```
+
+**Output:**
+```
+GT
+BMW
+```
+
+### Adding More Properties to an Existing Object
+
+```js
+let car = {
+    name: 'GT',
+    maker: 'BMW',
+    engine: '1998cc'
+};
+// Adding property to the object
+car.brakesType = 'All Disc';
+console.log(car);
+```
+
+**Output:**
+```
+{ name: 'GT', maker: 'BMW', engine: '1998cc', brakesType: 'All Disc' }
+```
+
+### Adding Methods to an Object
+
+```js
+// Adding methods to the car object
+let car = {
+    name: 'GT',
+    maker: 'BMW',
+    engine: '1998cc',
+    start: function() {
+        console.log('Starting the engine...');
+    }
+};
+car.start();
+
+// Adding method stop() later to the object
+car.stop = function() {
+    console.log('Applying Brake...');  
+}
+car.stop();
+```
+
+**Output:**
+```
+Starting the engine...
+Applying Brake...
+```
+
+---
+
+## Creating Object with `Object.create()` Method
+
+The `Object.create()` method in JavaScript creates a new object using an existing object as its prototype.
+
+### Example: Using `Object.create()`
+
+```js
+const coder = {
+    isStudying: false,
+    printIntroduction: function() {
+        console.log(`My name is ${this.name}. Am I studying?: ${this.isStudying}`);
+    }
+};
+const me = Object.create(coder);
+me.name = 'Mukul';
+me.isStudying = true;
+me.printIntroduction();
+```
+
+**Output:**
+```
+My name is Mukul. Am I studying?: true
+```
+
+---
+
+## Using ES6 Classes
+
+In JavaScript (using ES6), you can create objects by defining a class. The class has a constructor to set properties, and you can add methods too. To make an object from the class, you just use the new keyword.
+
+### Example: Using ES6 Classes
+
+```js
+// Using ES6 classes
+class Vehicle {
+  constructor(name, maker, engine) {
+    this.name = name;
+    this.maker = maker;
+    this.engine = engine;
+  }
+}
+
+let car1 = new Vehicle('GT', 'BMW', '1998cc');
+
+console.log(car1.name);  // GT
+```
+
+**Output:**
+```
+GT
+```

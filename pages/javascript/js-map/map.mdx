@@ -1,0 +1,142 @@
+---
+title: "Map in JS"
+date: "11 Feb, 2025"
+---
+
+A Map is a data structure that holds unique key-value pairs. Unlike objects, it maintains the insertion order and allows any data type as keys, making it more flexible in certain cases.
+
+- Inserts keys in the order they were added.
+- Allows keys of any type, not just strings and symbols.
+- Provides better performance when dealing with large datasets.
+
+## Creating a Map
+
+The `Map()` constructor allows two ways to create a Map in JavaScript:
+
+1. Passing an Array to `new Map()`.
+2. Creating a Map and using `Map.set()`.
+
+```js
+let myMap = new Map();
+let anotherMap = new Map([
+<<<<<<< HEAD
+    ['name', 'Coding75'],
+=======
+    ['name', 'Atlas'],
+>>>>>>> 6c9caef (content Overview Complete)
+    ['age', 30],
+    ['city', 'Noida']
+]);
+console.log(anotherMap);
+```
+
+### Output
+```js
+<<<<<<< HEAD
+Map(3) { 'name' => 'Coding75', 'age' => 30, 'city' => 'Noida' }
+=======
+Map(3) { 'name' => 'Atlas', 'age' => 30, 'city' => 'Noida' }
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+## Properties of JavaScript Map
+
+- **set(key, val)** : Adds or updates an element with a specified key and value.
+- **get(key)** : Returns the value associated with the specified key.
+- **has(key)** : Returns a boolean indicating whether an element with the specified key exists.
+- **delete(key)** : Removes the element with the specified key.
+- **clear()** : Removes all elements from the Map.
+- **size** : Returns the number of key-value pairs in the Map.
+
+### Example demonstrating all common operations on a Map
+
+```js
+// Create a new Map
+const myMap = new Map();
+
+// 1. set(key, value)
+<<<<<<< HEAD
+myMap.set('name', 'Coding75');
+=======
+myMap.set('name', 'Atlas');
+>>>>>>> 6c9caef (content Overview Complete)
+myMap.set('age', 25);
+myMap.set(1, 'One'); 
+
+console.log(myMap);
+
+// 2. get(key)
+console.log(myMap.get('name')); 
+console.log(myMap.get('age')); 
+console.log(myMap.get(1)); 
+console.log(myMap.get('invalidKey')); 
+
+// 3. has(key)
+console.log(myMap.has('name'));
+console.log(myMap.has('address')); 
+console.log(myMap.has(1)); 
+
+// 4. delete(key)
+myMap.delete('age');
+console.log(myMap.has('age')); 
+console.log(myMap);
+
+// 5. clear()
+myMap.clear();
+console.log(myMap); // Output: Map {}
+
+console.log(myMap.size); 
+
+myMap.set('a', 1);
+myMap.set('b', 2);
+console.log(myMap.size); 
+console.log(myMap);
+```
+
+### Output
+```js
+<<<<<<< HEAD
+Map(3) { 'name' => 'Coding75', 'age' => 25, 1 => 'One' }
+GFG
+=======
+Map(3) { 'name' => 'Atlas', 'age' => 25, 1 => 'One' }
+Atlas
+>>>>>>> 6c9caef (content Overview Complete)
+25
+One
+undefined
+true
+false
+true
+false
+<<<<<<< HEAD
+Map(2) { 'name' => 'Coding75', 1 => 'One' }
+=======
+Map(2) { 'name' => 'Atlas', 1 => 'One' }
+>>>>>>> 6c9caef (content Overview Complete)
+Map(0) {}
+0
+2
+Map(2) { 'a' => 1, 'b' => 2 }
+```
+
+## Advantages of Using Maps:
+
+- **Key order**: Maps remember the insertion order of the keys.
+- **Performance**: Inserting and retrieving elements from a Map are generally faster than objects, especially when the number of elements is large.
+- **Any type of key**: Unlike objects, Map keys can be of any data type, including functions, objects, and primitive types.
+
+## DSA Problems On Map
+
+- Most Frequent Element
+- Count distinct elements in every window of size K
+- Check if two arrays are equal or not
+- 2 Sum – Count Pairs with target sum
+- Count all pairs with absolute difference equal to K
+- Check If Array Pair Sums Divisible by K
+- Max distance between two occurrences in array
+- Subarray with Given Sum – Handles Negative Numbers
+- Remove minimum elements such that no common elements exist in two arrays
+- 3 Sum – Count all triplets with target sum
+- Longest Subarray with Sum Divisible by K
+- Longest Subarray having Majority Elements Greater than K

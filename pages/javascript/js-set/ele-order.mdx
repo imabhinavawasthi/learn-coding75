@@ -1,0 +1,78 @@
+---
+title: "How are elements ordered in a Set in JavaScript?"
+date: "2023-05-22"
+---
+
+In JavaScript, a new object called `Set` was introduced in the ES6 version. The `Set` object is similar to `Map`, but the major difference is that elements in the `Set` are unique, and repeated addition of the same type of elements is not possible. A `Set` can store any type of value, whether primitive or objects. The elements of a `Set` are iterable and always iterated in the insertion order.
+
+## Ordered Elements in a Set
+
+The elements of a `Set` are ordered, meaning they can be accessed or iterated in the order of their insertion.
+
+### Syntax
+
+```javascript
+new Set([iterable]);
+```
+
+## Example 1: Basic Set Object Iteration
+
+In this example, we create a basic `Set` object and iterate over its elements to see the order.
+
+```javascript
+let sample = new Set();
+sample.add("Hello");
+sample.add("Coders");
+sample.add("How");
+sample.add("Are");
+sample.add("You");
+
+let data = sample.values();
+for (let val of data) {
+    console.log(val);
+}
+```
+
+### Output
+
+```
+Hello
+Coders
+How
+Are
+You
+```
+
+## Example 2: Using an Iterator to Access Set Elements
+
+In this example, we use an iterator to access the elements of `Set` and verify the order of elements.
+
+```javascript
+let sample = new Set();
+sample.add("Hello");
+sample.add("Coders");
+sample.add("How");
+sample.add("Are");
+sample.add("You");
+
+let getit = sample[Symbol.iterator]();
+console.log(getit.next());
+console.log(getit.next());
+console.log(getit.next());
+console.log(getit.next());
+console.log(getit.next());
+```
+
+### Output
+
+```
+{value: 'Hello', done: false}
+{value: 'Coders', done: false}
+{value: 'How', done: false}
+{value: 'Are', done: false}
+{value: 'You', done: false}
+```
+
+### Explanation
+
+We can easily verify that the elements in the `Set` follow the same order in which they are inserted.

@@ -1,0 +1,58 @@
+---
+title: "Continue Statement"
+lastUpdated: "19 Nov, 2024"
+---
+
+
+
+# Continue Statement
+
+The `continue` statement in JavaScript is used to break the iteration of the loop and follow with the next iteration.
+
+## Example of continue to print only odd Numbers smaller than 10
+
+```javascript
+for (let i = 0; i < 10; i++) {
+    if (i % 2 == 0) continue;
+    console.log(i);
+}
+```
+
+**Output:**
+```
+1
+3
+5
+7
+9
+```
+
+## How Does Continue Work?
+If `continue` is used in a `for` loop, the control flow jumps to the test expression after skipping the current iteration.
+
+### Continue vs Break
+The major difference between the `continue` and `break` statement is that the `break` statement breaks out of the loop completely while `continue` is used to break one iteration and move to the next.
+
+## How does the continue statement work for while loop? 
+With `continue`, the current iteration of the loop is skipped, and control flow resumes in the next iteration of the `while` loop.
+
+### Using Continue in While Loop
+In the example below, the condition is checked, and if `continue` is encountered, the next iteration of the loop starts.
+
+```javascript
+let i = 0;
+while (i < 11) {
+    i++;
+    if (i % 2 == 0) continue;
+    console.log(i);
+}
+```
+
+**Output:**
+```
+1
+3
+5
+7
+9
+11

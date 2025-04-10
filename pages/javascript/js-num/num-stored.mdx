@@ -1,0 +1,110 @@
+---
+title: "How Numbers Are Stored in JavaScript"
+lastUpdated: "22 May, 2023"
+---
+
+
+In this article, we’ll learn how numbers are stored in JavaScript. Like other programming languages, all data in a computer is stored as binary (0s and 1s) because that’s the only format computers can understand and process.
+
+## Number Storage in JavaScript
+
+In JavaScript, there’s mainly one number type called Number, but it can represent both integers and floats (decimal numbers). These are handled differently behind the scenes based on how they’re used in calculations.
+### Storing of Integer Numbers
+
+Integer numbers are further divided into:
+
+- **Signed Integers**
+- **Unsigned Integers**
+
+Unsigned integers use a simple binary format.
+
+```js
+let a = 4;
+let b = 78;
+console.log(a.toString(2)); // "100"
+console.log(b.toString(2)); // "1001110"
+```
+
+### Signed Magnitude Representation
+
+To store signed numbers, the leftmost bit is used as a sign bit: `0` for positive and `1` for negative numbers.
+
+```js
+let a = 6;  // 000110
+let b = -6; // 100110 (Signed Magnitude Representation)
+```
+
+### One’s Complement Representation
+
+One’s complement toggles all bits (0s to 1s and vice versa).
+
+```js
+let num = 24; // 011000 (Binary Representation)
+let onesComplement = ~num; // 100111 (One's Complement)
+console.log(onesComplement);
+```
+
+### Two’s Complement Representation
+
+Two’s complement is obtained by adding `1` to the one’s complement.
+
+```js
+let num = 24; // 011000 (Binary Representation)
+let twosComplement = ~num + 1; // 101000 (Two’s Complement)
+console.log(twosComplement);
+```
+
+### Storing Floating Point Numbers
+
+Floating point numbers are stored in three parts:
+
+- **Sign Bit**: Indicates positive (`0`) or negative (`1`).
+- **Exponent**: Difference between the real binary number and its normalized form.
+- **Mantissa**: Fraction part of the floating-point number’s normalized form.
+
+#### Single vs Double Precision
+
+| Type   | Sign Bit | Exponent | Mantissa |
+|--------|----------|-----------|-----------|
+| Single | 1 bit   | 8 bits    | 23 bits   |
+| Double | 1 bit   | 11 bits   | 52 bits   |
+
+#### Example: Scientific Notation Representation
+
+```js
+// Binary Representation of 101.101 in Scientific Notation
+// Normalized form: 1.01101 * 2^2
+let signBit = 0;
+let exponent = 2;
+let mantissa = "01101";
+console.log({ signBit, exponent, mantissa });
+```
+
+### Problems with Floating Point Numbers in JavaScript
+
+Floating point numbers may not always give accurate results.
+
+```js
+let x = 0.1;
+let y = 0.2;
+console.log(x + y); // Output: 0.30000000000000004
+```
+
+#### Associativity Issue in Floating Point Numbers
+
+```js
+let x = 0.1;
+let y = 0.2;
+let z = 0.3;
+console.log((x + y) + z); // 0.6000000000000001
+console.log(x + (y + z)); // 0.6
+```
+
+### Conclusion
+
+- **Unsigned Integers** are stored in simple binary format.
+- **Signed Integers** use **Two’s Complement** representation.
+- **Floating-Point Numbers** follow **IEEE 754 (Single or Double Precision)**.
+- **Floating-Point Arithmetic** can cause rounding issues due to binary limitations.
+
+Understanding these concepts helps in writing efficient and accurate numerical computations in JavaScript.

@@ -1,0 +1,189 @@
+---
+title: "How to write a function in JavaScript?"
+lastUpdated: "15 May, 2024"
+---
+
+JavaScript functions are reusable blocks of code that help avoid repetition and keep programs organized. They break down large tasks into smaller parts, making code easier to manage and understand. A function takes input, processes it, and returns an output. To use a function, it must be defined within the scope where it will be called.
+
+## Function Definition
+A Function Definition or function statement starts with the `function` keyword and continues with the following:
+
+- Function’s name.
+- A list of function arguments contained in parenthesis and separated by commas.
+- Statements are enclosed in curly brackets.
+
+### Syntax:
+```javascript
+function name(arguments) {
+   // JavaScript statements
+}
+```
+
+## Function Calling
+To call a function later in the script, simply type its name followed by parentheses. JavaScript functions automatically have an arguments object, which stores all passed parameters. It works like an array, allowing values to be accessed using an index, but it doesn’t support array methods.
+
+```javascript
+function welcome() {
+    console.log("welcome to Coding75");
+}
+
+// Function calling
+welcome();
+```
+
+### Output:
+```
+welcome to Coding75
+```
+
+## Function Arguments
+A function can take one or more arguments from the calling code and use them inside the function. Since JavaScript is dynamically typed, function arguments can hold values of any data type.
+
+```javascript
+function welcome(name) {
+<<<<<<< HEAD
+    console.log("Hey " + name + " welcome to Coding75");
+=======
+    console.log("Hey " + name + " welcome to Coding75!");
+>>>>>>> 6c9caef (content Overview Complete)
+}
+
+// Passing arguments
+welcome("Rohan");
+```
+
+### Output:
+```
+<<<<<<< HEAD
+Hey Rohan welcome to Coding75
+=======
+Hey Rohan welcome to Coding75!
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+## Return Value
+A return statement is an optional part of a JavaScript function. If you wish to return a value from a function, you must do this. The return value should be the final statement of a function.
+
+```javascript
+function welcome() {
+    // Return statement
+<<<<<<< HEAD
+    return "Welcome to Coding75";
+=======
+    return "Welcome to Coding75!";
+>>>>>>> 6c9caef (content Overview Complete)
+}
+
+console.log(welcome());
+```
+
+### Output:
+```
+<<<<<<< HEAD
+Welcome to Coding75
+=======
+Welcome to Coding75!
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+## Function Expression
+We may assign a function to a variable and then utilize that variable as a function in JavaScript. This is known as a function expression.
+
+```javascript
+let welcome = function () {
+<<<<<<< HEAD
+    return "Welcome to Coding75";
+};
+
+let hello = welcome();
+console.log(hello);
+=======
+    return "Welcome to Coding75!";
+};
+
+let greet = welcome();
+console.log(greet);
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+### Output:
+```
+<<<<<<< HEAD
+Welcome to Coding75
+=======
+Welcome to Coding75!
+>>>>>>> 6c9caef (content Overview Complete)
+```
+
+## Types Of Functions in JavaScript
+
+### 1. Named function
+A Named function is one that we write in code and then use whenever we need it by referencing its name and providing it with some parameters. Named functions come in handy when we need to call a function several times to give various values to it or run it multiple times.
+
+```javascript
+function add(a, b) {
+    return a + b;
+}
+console.log(add(5, 4));
+```
+
+### Output:
+```
+9
+```
+
+### 2. Anonymous function
+We can define a function in JavaScript without giving it a name. This nameless function is referred to as the Anonymous function. A variable must be assigned to an anonymous function.
+
+```javascript
+let add = function (a, b) {
+    return a + b;
+};
+console.log(add(5, 4));
+```
+
+### Output:
+```
+9
+```
+
+### 3. Nested Functions
+A function in JavaScript can contain one or more inner functions. These Nested Functions fall within the purview of the outer function. The inner function has access to the variables and arguments of the outer function. However, variables declared within inner functions cannot be accessed by outer functions.
+
+```javascript
+function msg(firstName) {
+    function hey() {
+        console.log("Hey " + firstName);
+    }
+    return hey();
+}
+
+msg("Ravi");
+```
+
+### Output:
+```
+Hey Ravi
+```
+
+### 4. Immediately Invoked Function Expression (IIFE)
+The browser executes the invoked function expression as soon as it detects it. An IIFE has the advantage of running instantly where it is situated in the code and producing direct output. That is, it is unaffected by code that occurs later in the script and can be beneficial.
+
+```javascript
+let msg = (function() {
+<<<<<<< HEAD
+    return "Welcome to Coding75";
+=======
+    return "Welcome to Coding75!";
+>>>>>>> 6c9caef (content Overview Complete)
+})();
+console.log(msg);
+```
+
+### Output:
+```
+<<<<<<< HEAD
+Welcome to Coding75
+=======
+Welcome to Coding75!
+>>>>>>> 6c9caef (content Overview Complete)

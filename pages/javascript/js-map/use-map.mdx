@@ -1,0 +1,108 @@
+---
+title: "What is JavaScript Map and How to Use It?"
+date: "08 Jul, 2024"
+---
+
+## What is Map?
+
+A Map in JavaScript stores key-value pairs, allowing keys to be of any data type. Unlike objects, it maintains the insertion order and provides built-in methods to add, get, delete, and iterate over elements efficiently.
+
+## Syntax
+```js
+new Map();
+new Map([iterable_objects]);
+```
+
+**Return type**: It returns a new map object.
+
+**Parameters**: An array or iterable object.
+
+## Example: Creating and Using a Map
+
+In this example, we create a Map named `company` with key-value pairs. The `print` function logs each value followed by its corresponding key using `company.forEach(print)`.
+
+```js
+const company = new Map([
+<<<<<<< HEAD
+    ["name", "Coding75"],
+=======
+    ["name", "Rahul"],
+>>>>>>> 6c9caef (content Overview Complete)
+    ["no_of_employee", 200],
+    ["category", "education"]
+]);
+function print(key, values) {
+    console.log(values + "=>" + key);
+}
+company.forEach(print);
+```
+
+### Output
+```js
+<<<<<<< HEAD
+name=>Coding75
+=======
+name=>Rahul
+>>>>>>> 6c9caef (content Overview Complete)
+no_of_employee=>200
+category=>education
+```
+
+## Example: Iterating Over a Map Using forEach()
+
+In this example, we create a Map named `company` and populate it with key-value pairs. The `print` function logs each value followed by its corresponding key using `company.forEach(print)`.
+
+```js
+const company = new Map();
+<<<<<<< HEAD
+company.set("name", "Coding75");
+=======
+company.set("name", "Rahul");
+>>>>>>> 6c9caef (content Overview Complete)
+company.set("no_of_employee", 200);
+company.set("category", "education");
+function print(key, values) {
+    console.log(values + "=>" + key);
+}
+company.forEach(print);
+```
+
+### Output
+```js
+<<<<<<< HEAD
+name=>Coding75
+=======
+name=>Rahul
+>>>>>>> 6c9caef (content Overview Complete)
+no_of_employee=>200
+category=>education
+```
+
+## JavaScript Map Properties
+
+A **JavaScript property** is a member of an object that associates a key with a value.
+
+### Instance Properties
+
+| Property     | Description |
+|-------------|-------------|
+| `constructor` | It is used to return the constructor function of Map. |
+| `size` | Returns the number of keys and value pairs stored in a map. |
+
+## JavaScript Map Methods
+
+JavaScript methods are actions that can be performed on objects.
+
+### Instance Methods
+
+| Method | Description |
+|--------|-------------|
+| `clear()` | Removes all the elements from a map and makes it empty. |
+| `delete()` | Deletes the specified element among all the elements present in the map. |
+| `entries()` | Returns an iterator object containing all `[key, value]` pairs of each element in the map. |
+| `forEach()` | Executes a given function over each key-value pair in the map. |
+| `get()` | Returns a specific element among all the elements present in a map. |
+| `has()` | Checks whether an element with a specified key exists in a map or not. |
+| `keys()` | Returns an iterator object of keys from a given map object. |
+| `set()` | Adds key-value pairs to a Map object. |
+| `values()` | Returns a new iterator object that contains the value of each element present in the Map. |

@@ -1,0 +1,249 @@
+---
+title: "JavaScript Assignment Operators"
+lastUpdated: "21 Nov, 2024"
+---
+
+## JavaScript Assignment Operators
+
+Assignment operators are used to assign values to variables in JavaScript.
+
+```javascript
+// Let's take some variables
+x = 10;
+y = 20;
+
+x = y; // Here, x is equal to 20
+
+console.log(x);
+console.log(y);
+```
+
+**Output:**
+```
+20
+20
+```
+
+## More Assignment Operators
+
+There are many assignment operators, as shown in the table below:
+
+| Operator Name | Shorthand Operator | Meaning |
+|--------------|------------------|---------|
+| Addition Assignment | `a += b` | `a = a + b` |
+| Subtraction Assignment | `a -= b` | `a = a - b` |
+| Multiplication Assignment | `a *= b` | `a = a * b` |
+| Division Assignment | `a /= b` | `a = a / b` |
+| Remainder Assignment | `a %= b` | `a = a % b` |
+| Exponentiation Assignment | `a **= b` | `a = a ** b` |
+| Left Shift Assignment | `a <<= b` | `a = a << b` |
+| Right Shift Assignment | `a >>= b` | `a = a >> b` |
+| Bitwise AND Assignment | `a &= b` | `a = a & b` |
+| Bitwise OR Assignment | `a |= b` | `a = a | b` |
+| Bitwise XOR Assignment | `a ^= b` | `a = a ^ b` |
+| Logical AND Assignment | `a &&= b` | `x && (x = y)` |
+| Logical OR Assignment | `a ||= b` | `x || (x = y)` |
+| Nullish Coalescing Assignment | `a ??= b` | `x ?? (x = y)` |
+
+### Addition Assignment Operator (`+=`)
+
+```javascript
+let a = 2;
+const b = 3;
+
+console.log(a); // Expected output: 2
+console.log(a = b + 1); // Expected output: 4
+```
+
+**Output:**
+```
+2
+4
+```
+
+### Subtraction Assignment Operator (`-=`)
+
+```javascript
+let foo = 4;
+console.log(foo -= 1); // Expected output: 3
+```
+
+**Output:**
+```
+3
+```
+
+### Multiplication Assignment Operator (`*=`)
+
+```javascript
+let foo = 4;
+console.log(foo *= 2); // Expected output: 8
+```
+
+**Output:**
+```
+8
+```
+
+### Division Assignment Operator (`/=`)
+
+```javascript
+let yoo = 10;
+const moo = 2;
+
+console.log(yoo /= moo); // Expected output: 5
+console.log(yoo /= 0); // Expected output: Infinity
+```
+
+**Output:**
+```
+5
+Infinity
+```
+
+### Remainder Assignment Operator (`%=`)
+
+```javascript
+let yoo = 50;
+console.log(yoo %= 10); // Expected output: 0
+```
+
+**Output:**
+```
+0
+```
+
+### Exponentiation Assignment Operator (`**=`)
+
+```javascript
+let num = 5;
+console.log(num **= 3); // Expected output: 125
+```
+
+**Output:**
+```
+125
+```
+
+### Left Shift Assignment Operator (`<<=`)
+
+```javascript
+let yoo = 5;
+console.log(yoo <<= 2); // Expected output: 20 (Binary: 10100)
+```
+
+**Output:**
+```
+20
+```
+
+### Right Shift Assignment Operator (`>>=`)
+
+```javascript
+let yoo = 5;
+console.log(yoo >>= 2); // Expected output: 1 (Binary: 001)
+```
+
+**Output:**
+```
+1
+```
+
+### Bitwise AND Assignment Operator (`&=`)
+
+```javascript
+let yoo = 5;
+console.log(yoo &= 2); // Expected output: 0 (Binary: 000)
+```
+
+**Output:**
+```
+0
+```
+
+### Bitwise OR Assignment Operator (`|=`)
+
+```javascript
+let yoo = 5;
+console.log(yoo |= 2); // Expected output: 7 (Binary: 111)
+```
+
+**Output:**
+```
+7
+```
+
+### Bitwise XOR Assignment Operator (`^=`)
+
+```javascript
+let yoo = 5;
+console.log(yoo ^= 2); // Expected output: 7 (Binary: 111)
+```
+
+**Output:**
+```
+7
+```
+
+### Logical AND Assignment Operator (`&&=`)
+
+```javascript
+let name = { firstName: "Ram", lastName: "" };
+
+console.log(name.firstName);
+name.firstName &&= "Shyam";
+console.log(name.firstName);
+
+console.log(name.lastName);
+name.lastName &&= "Kumar";
+console.log(name.lastName);
+```
+
+**Output:**
+```
+Ram
+Shyam
+
+Kumar
+```
+
+### Logical OR Assignment Operator (`||=`)
+
+```javascript
+let name = { firstName: "Ram", lastName: "" };
+
+console.log(name.firstName);
+name.firstName ||= "Shyam";
+console.log(name.firstName);
+
+console.log(name.lastName);
+name.lastName ||= "Kumar";
+console.log(name.lastName);
+```
+
+**Output:**
+```
+Ram
+Ram
+
+Kumar
+```
+
+### Nullish Coalescing Assignment Operator (`??=`)
+
+```javascript
+let x = 12;
+let y = null;
+let z = 13;
+
+x ??= z;
+y ??= z;
+
+console.log(x); // Expected output: 12
+console.log(y); // Expected output: 13
+```
+
+**Output:**
+```
+12
+13

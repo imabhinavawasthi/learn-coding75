@@ -1,0 +1,115 @@
+---
+title: "How to create a Number object using JavaScript?"
+date: "30 May, 2023"
+---
+
+## How to create a Number object using JavaScript?
+
+In this article, we’ll learn how to create a Number object in JavaScript. It helps us work with numbers like 20 or 0.25 using the built-in Number object.
+
+Usually, we don't need to create number objects ourselves. The Number() function is used to convert different values into numbers. Also, regular numbers like integers are primitive values and don’t have built-in methods.
+
+### Syntax:
+
+```javascript
+let n = new Number(val);
+```
+
+**Parameter:** This method takes one parameter that is converted to any JavaScript variable.
+
+**Return Value:** The Number() function in JavaScript tries to convert any value into a number. If it can’t, it returns NaN, which means “Not a Number.” Even though numbers are primitive values, JavaScript can treat them like objects when needed.
+
+### Normally declaring a number:
+
+```html
+<script>
+    a = 10; // integer value
+    b = 1.25; // float value
+</script>
+```
+
+### Example: Creating a number object
+
+```javascript
+// creating a number object
+let num = Number("10");
+console.log(num == 10); // true
+```
+
+**Output:**
+
+```
+True
+```
+
+## Properties Of JavaScript Number:
+
+- **Number.MAX_VALUE**: It’s the maximum possible value a JavaScript number can have `(2^53 – 1)` OR `1.7976931348623157e+308`.
+- **Number.MIN_VALUE**: It’s the smallest positive value a JavaScript number can have `5e-324`.
+- **Number.NAN**: It returns `NaN` (Not a Number).
+- **Number.NEGATIVE_INFINITY**: It’s a particular value that represents negative infinity. It has a lower value than `MIN_VALUE`.
+- **Number.POSITIVE_INFINITY**: It’s a particular value that represents positive infinity. It has a greater value than `MAX_VALUE`.
+
+### Example 1: Maximum possible value
+
+```javascript
+let num = Number.MAX_VALUE;
+console.log(num);
+```
+
+**Output:**
+
+```
+1.7976931348623157e+308
+```
+
+### Example 2: Smallest possible value
+
+```javascript
+let num = Number.MIN_VALUE;
+console.log(num);
+```
+
+**Output:**
+
+```
+5e-324
+```
+
+### Example 3: Not a Number (`NaN`)
+
+```javascript
+let num = Number.NaN;
+console.log(num);
+```
+
+**Output:**
+
+```
+NaN
+```
+
+### Example 4: Negative Infinity
+
+```javascript
+let num = Number.NEGATIVE_INFINITY;
+console.log(num);
+```
+
+**Output:**
+
+```
+-Infinity
+```
+
+### Example 5: Positive Infinity
+
+```javascript
+let num = Number.POSITIVE_INFINITY;
+console.log(num);
+```
+
+**Output:**
+
+```
+Infinity

@@ -1,0 +1,99 @@
+# JavaScript `const`
+
+_Last Updated: 12 Feb, 2025_
+
+The `const` keyword in JavaScript is a modern way to declare variables, introduced in ECMAScript 6 (ES6). It is used to declare variables whose values need to remain constant throughout the lifetime of the application.
+
+`const` is block-scoped, similar to `let`, and is useful for ensuring immutability in your code. Unlike `let`, the primary feature of `const` is that it cannot be reassigned once it has been initialized.
+
+## Syntax
+
+```javascript
+const variable = value;
+```
+
+`const` is used to declare a variable and assign a value to it.
+After initialization, the value of a `const` variable cannot be reassigned.
+
+## Key Features of `const`
+
+### 1. Block Scope
+Variables declared with `const` are block-scoped, meaning they are accessible only within the block, statement, or expression in which they are defined.
+
+```javascript
+if (true) {
+    const x = 10;
+    console.log(x); // Output: 10
+}
+console.log(x); // ReferenceError: x is not defined
+```
+
+### 2. No Reassignment
+Variables declared with `const` cannot be reassigned after their initial declaration. Attempting to do so results in a `TypeError`.
+
+```javascript
+const y = 20;
+y = 30; // TypeError: Assignment to constant variable.
+```
+
+### 3. Must Be Initialized
+Unlike `let`, a `const` variable must be initialized at the time of declaration. Declaring a `const` variable without assigning a value will throw a `SyntaxError`.
+
+```javascript
+const z; // SyntaxError: Missing initializer in const declaration
+```
+
+### 4. Immutable Binding, Not Value
+`const` makes the variable binding immutable, but if the value is an object or array, you can still modify its properties or contents.
+
+```javascript
+const obj = { name: "Pranjal" };
+obj.name = "Nanda";
+console.log(obj.name); // Output: Nanda
+
+const arr = [1, 2, 3];
+arr.push(4);
+console.log(arr); // Output: [1, 2, 3, 4]
+```
+
+### 5. No Redeclaration
+Variables declared with `const` cannot be redeclared within the same scope, similar to `let`.
+
+```javascript
+const a = 10;
+const a = 20; // SyntaxError: Identifier 'a' has already been declared
+```
+
+### 6. Suitable for Constants
+The `const` keyword is ideal for defining constants or variables whose values should not change during the program’s execution.
+
+```javascript
+const PI = 3.14159;
+const MAX_USERS = 100;
+PI = 10; // TypeError: Assignment to constant variable.
+```
+
+### 7. Safer with Functions
+Using `const` with functions ensures that the function reference cannot be reassigned, though the function itself can still be executed normally.
+
+```javascript
+const greet = () => console.log("Hello, world!");
+greet();
+
+greet = () => console.log("Hi!"); // TypeError: Assignment to constant variable.
+```
+
+### 8. Integration with Modern JavaScript
+`const` aligns with modern JavaScript practices, supporting features like destructuring and modules for cleaner, maintainable code.
+
+```javascript
+const { name, age } = { name: "Meenal", age: 28 };
+console.log(name, age); // Output: Meenal 28
+```
+
+## Interesting Facts about `const`
+- **Block-scoped:** Like `let`, `const` is block-scoped, meaning it is only accessible within the block, statement, or expression where it is defined.
+- **Immutable Binding:** A `const` variable cannot be reassigned once it is initialized, providing a guarantee of immutability for the binding (not the value itself).
+- **Objects and Arrays:** While the binding of a `const` variable is immutable, the contents of objects and arrays assigned to `const` can still be modified.
+- **Hoisting:** Variables declared with `const` are hoisted to the top of their block but cannot be accessed until they are initialized, resulting in a “temporal dead zone” error if accessed before assignment.
+- **Used with Destructuring:** `const` can be used in object and array destructuring, allowing you to easily unpack values from an object or array into individual variables.

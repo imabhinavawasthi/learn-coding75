@@ -1,0 +1,71 @@
+---
+title: "Set in JavaScript"
+date: "2025-02-11"
+---
+
+
+A Set in JavaScript is used to store a unique collection of items, meaning no duplicates are allowed.
+
+Sets internally use a hash table which makes search, insert, and delete operations faster than arrays. Please note that a hash table data structure allows these operations to be performed on average in constant time.
+
+- Set maintains insertion order. When we access items, we get them in the same order as inserted.
+- Only Unique Keys are allowed. If we insert the same key with a different value, it overwrites the previous one.
+- A Set can be created either empty or by providing an iterable like an array or string.
+
+### Example Usage
+
+```javascript
+// using an array
+let s1 = new Set([10, 30, 30, 40, 40]);
+console.log(s1);
+let s2 = new Set(["gfg", "gfg", "geeks"]);
+console.log(s2);
+
+// using string
+let s3 = new Set("fooooooood");
+console.log(s3);
+
+// an empty set
+let s4 = new Set();
+console.log(s4);
+```
+
+#### Output
+```javascript
+Set(3) { 10, 30, 40 }
+Set(2) { 'C75', 'Coding75' }
+Set(3) { 'f', 'o', 'd' }
+Set(0) {}
+```
+
+## Key Characteristics of Sets:
+
+- **Unique Values**: A Set cannot contain duplicate values.
+- **Ordered**: Sets maintain the insertion order of elements.
+- **Iterable**: Sets can be iterated using loops or methods like `forEach`.
+- **No Indexing**: Unlike arrays, Sets do not support indexing.
+
+## Methods of Set in JavaScript
+
+- `Set.add(value)`: Adds the new element with a specified value at the end of the Set object.
+- `Set.delete(value)`: Deletes an element with the specified value from the Set object. 
+- `Set.clear()`: Removes all the elements from the Set. 
+- `Set.entries()`: Returns an iterator object which contains an array having the entries of the Set, in the insertion order. 
+- `Set.has(value)`: Returns `true` if the specified value is present in the Set object. 
+- `Set.values()`: Returns all the values from the Set in the same insertion order.
+- `Set.keys()`: Also returns all the values from the Set in the insertion order. 
+- `Set.forEach(callback)`: Executes the given function once for every element in the Set, in the insertion order.
+- `Set.prototype[@@iterator]()` : Returns a Set iterator function, which is `values()` function by default.
+
+## DSA Problems On Set In JavaScript
+
+- **Union of Two Arrays**
+- **Intersection of Two Arrays**
+- **Distinct Elements in an Array**
+- **Check for Disjoint Arrays or Sets**
+- **Check if an Array is a Subset of Another**
+- **Duplicate within K Distance in an Array**
+- **2 Sum – Check for Pair with Target Sum**
+- **Only Repeating Element From 1 To n-1**
+- **Longest Consecutive Sequence**
+- **Smallest Subarray with k Distinct Numbers**

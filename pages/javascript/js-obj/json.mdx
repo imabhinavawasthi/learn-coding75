@@ -1,0 +1,101 @@
+# JavaScript JSON Objects
+
+_Last Updated: 02 Dec, 2024_
+
+JSON stands for JavaScript Object Notation. It’s a simple way to store and share data. Both humans and computers can read it easily. In JavaScript, JSON is used to organize and exchange data in a clean and structured format.
+
+```javascript
+const jsonData = { 
+    "key1" : "value1",
+    // ...
+};
+
+const person = {
+  "name": "John",
+  "age": 30,
+  "city": "New York"
+};
+```
+
+### Explanation:
+- `{ }` – Curly braces define the object.
+- `"name"`, `"age"`, `"city"` - These are the keys (properties) of the object. Keys are always strings.
+- `"John"`, `30`, `"New York"` - These are the corresponding values associated with each key.
+- `:` - Colon separates keys and values.
+- `,` - Comma separates different key-value pairs within the object.
+
+## Accessing JSON Object Values
+The object values can be accessed by using the dot (`.`) notation. We can also access objects by using bracket (`[]`) notation.
+
+```javascript
+let myOrder, i;
+
+// Object is created with name myOrder
+myOrder = {
+    "name_of_the_product": "Earbuds",
+    "cost": "799",
+    "warranty": "1 year "
+};
+
+// Accessing for particular detail from object myOrder
+i = myOrder.name_of_the_product;
+
+// It prints the detail of name of the product
+console.log(i);
+```
+
+**Output:**
+```
+Earbuds
+```
+
+## Looping through JSON Object
+Looping can be done in two ways:
+
+1. Looping of an object can be done by using a property `for-in` loop.
+2. For looping an object, we can even use brackets (`[]`) in the `for-in` loop property.
+
+```javascript
+let myOrder, a;
+
+myOrder = {
+    "name_of_product": "earbuds",
+    "cost": "799",
+    "warranty": "1 year"
+};
+
+for (a in myOrder) {
+    // Accessing object in looping using bracket notation
+    console.log(myOrder[a]);
+}
+```
+
+**Output:**
+```
+earbuds
+799
+1 year
+```
+
+## Converting a JSON Text to a JavaScript Object
+To convert a JSON text to a JavaScript object, you can use the `JSON.parse()` method.
+
+```javascript
+<<<<<<< HEAD
+const jsonString = '{"name": "Coders", "age": 30}';
+=======
+const jsonString = '{"name": "Rahul", "age": 30}';
+>>>>>>> 6c9caef (content Overview Complete)
+const jsonObject = JSON.parse(jsonString);
+console.log(jsonObject.name); 
+console.log(jsonObject.age); 
+```
+
+**Output:**
+```
+<<<<<<< HEAD
+Coders
+=======
+Rahul
+>>>>>>> 6c9caef (content Overview Complete)
+30

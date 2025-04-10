@@ -1,0 +1,79 @@
+---
+title: "Operator Precedence in JavaScript"
+lastUpdated: "28 Dec, 2023"
+---
+
+## Operator Precedence in JavaScript
+
+Operator precedence refers to the priority given to operators while parsing a statement that has more than one operator performing operations in it. Operators with higher priorities are resolved first. But as one goes down the list, the priority decreases and hence their resolution.
+
+- `*` and `/` have higher precedence than `+` and `-`
+
+### Precedence and Associativity
+
+The associativity represents which operator has to be solved first while going from left to right if two or more operators have the same precedence in the expression.
+
+#### Example:
+```javascript
+2 + 3 * 4 / 3 // 6
+```
+The precedence of the multiply (`*`) and divide (`/`) operators is the same, but due to left-to-right associativity, the multiply operator will be resolved first, resulting in `6`.
+
+## Operator Precedence and Associativity Table
+
+The operator precedence and associativity table can help determine the precedence of an operator relative to others. As one goes down the table, the precedence of these operators decreases. Operators listed under the same precedence level share the same priority and associativity.
+
+| Precedence | Operator | Description | Associativity | Example |
+|------------|----------|-------------|---------------|---------|
+| 1 | `()` | Grouping | – | `(1+2)` |
+| 2 | `.` | Member | Left to Right | `obj.function` |
+| 2.1 | `[]` | Member | Left to Right | `brand["carName"]` |
+| 2.2 | `new` | Create | – | `new Date("July 27, 2023")` |
+| 2.3 | `()` | Function Call | – | `myFun()` |
+| 3 | `++` | Postfix increment | N/A | `i++` |
+| 3.1 | `--` | Postfix decrement | N/A | `i--` |
+| 4 | `++` | Prefix increment | Right to Left | `++i` |
+| 4.1 | `--` | Prefix decrement | N/A | `--i` |
+| 4.2 | `!` | Logical NOT | N/A | `!(x === y)` |
+| 4.3 | `typeof` | Type | N/A | `typeof a` |
+| 5 | `**` | Exponentiation | Right to Left | `4**2` |
+| 6 | `*` | Multiplication | Left to Right | `2 * 3` |
+| 6.1 | `/` | Division | – | `18 / 9` |
+| 6.2 | `%` | Remainder | – | `4 % 2` |
+| 7 | `+` | Addition | Left to Right | `2 + 4` |
+| 7.1 | `-` | Subtraction | – | `4 - 2` |
+| 8 | `<<` | Left shift | Left to Right | `y << 2` |
+| 8.1 | `>>` | Right shift | – | `y >> 2` |
+| 8.2 | `>>>` | Unsigned right shift | – | `y >>> 2` |
+| 9 | `<` | Less than | Left to Right | `3 < 4` |
+| 9.1 | `<=` | Less than or equal to | – | `3 <= 4` |
+| 9.2 | `>` | Greater than | – | `4 > 3` |
+| 9.3 | `>=` | Greater than or equal to | – | `4 >= 3` |
+| 9.4 | `in` | In | – | `'PI' in Math` |
+| 9.5 | `instanceof` | Instance of | – | `A instanceof B` |
+| 10 | `==` | Equality | Left to Right | `x == y` |
+| 10.1 | `!=` | Inequality | – | `x != y` |
+| 10.2 | `===` | Strictly equal | – | `x === y` |
+| 10.3 | `!==` | Strictly unequal | – | `x !== y` |
+| 11 | `&` | Bitwise AND | Left to Right | `x & y` |
+| 12 | `^` | Bitwise XOR | Left to Right | `x ^ y` |
+| 13 | `|` | Bitwise OR | Left to Right | `x | y` |
+| 14 | `&&` | Logical AND | Left to Right | `x && y` |
+| 15 | `||` | Logical OR | Left to Right | `x || y` |
+| 16 | `? :` | Conditional | Right to Left | `(x > y) ? x : y` |
+| 17 | `=` | Assignment | Right to Left | `x = 5` |
+| 17.1 | `+=` | Addition assignment | – | `x += 5 // x = x + 5` |
+| 17.2 | `-=` | Subtraction assignment | – | `x -= 5 // x = x - 5` |
+| 17.3 | `*=` | Multiplication assignment | – | `x *= 5 // x = x * 5` |
+| 17.4 | `/=` | Division assignment | – | `x /= 5 // x = x / 5` |
+| 17.5 | `%=` | Modulo assignment | – | `x %= 5 // x = x % 5` |
+| 17.6 | `<<=` | Left shift assignment | – | `x <<= 5 // x = x << 5` |
+| 17.7 | `>>=` | Right shift assignment | – | `x >>= 5 // x = x >> 5` |
+| 17.8 | `>>>=` | Unsigned right shift assignment | – | `x >>>= 5 // x = x >>> 5` |
+| 17.9 | `&=` | Bitwise AND assignment | – | `x &= 5 // x = x & 5` |
+| 17.10 | `^=` | Bitwise XOR assignment | – | `x ^= 5 // x = x ^ 5` |
+| 17.11 | `|=` | Bitwise OR assignment | – | `x |= 5 // x = x | 5` |
+| 18 | `yield` | Pause function | Right to Left | `yield x` |
+| 19 | `,` | Comma | Left to Right | `x, y` |
+
+This table provides a structured view of how JavaScript resolves operators in expressions.

@@ -1,0 +1,244 @@
+---
+title: "JavaScript Syntax"
+lastUpdated: "12 Aug, 2024"
+---
+
+JavaScript syntax is the set of rules that define how we write and structure JavaScript code. It includes elements like statements, variables, functions, operators, and control flow (such as loops and conditions). Following these rules ensures that the code runs correctly and efficiently.
+
+## Syntax
+
+```javascript
+console.log("Basic Print method in JavaScript");
+```
+
+JavaScript syntax refers to the set of rules that determines how JavaScript programs are constructed:
+
+```javascript
+// Variable declaration
+let c, d, e;
+
+// Assign value to the variable
+c = 5; 
+
+// Compute value of variables
+d = c;
+e = c / d;
+```
+
+## JavaScript Values
+
+There are two types of values defined in JavaScript Syntax:
+
+- **Fixed Values**: These are known as the literals.
+- **Variable Values**: These are called variables.
+
+These are the features of JavaScript which have some predefined syntax:
+
+## Table of Content
+
+- JavaScript Literals
+- JavaScript Variables
+- JavaScript Operators
+- JavaScript Expressions
+- JavaScript Keywords
+- JavaScript Comments
+- JavaScript Data Types
+- JavaScript Functions
+- JavaScript Identifiers
+
+## JavaScript Literals
+
+Syntax Rules for the JavaScript fixed values are:
+
+- JavaScript Numbers can be written with or without decimals.
+- JavaScript Strings are text that can be written in single or double quotes.
+
+```javascript
+let num1 = 50;
+let num2 = 50.05;
+
+let str1 = "Coding";
+let str2 = 'Coding75';
+
+console.log(num1);
+console.log(num2);
+console.log(str1);
+console.log(str2);
+```
+
+**Output:**
+```
+50
+50.05
+Coding
+Coding75
+```
+
+## JavaScript Variables
+
+A JavaScript variable is the simple name of the storage location where data is stored. There are two types of variables in JavaScript:
+
+- **Local Variables**: Declared inside a block or function.
+- **Global Variables**: Declared outside a function or with a window object.
+
+Example:
+
+```javascript
+// Declare a variable and initialize it
+let Name = "Apple";
+
+// Function definition
+function MyFunction() {
+    let num = 45;
+    console.log(Name);
+    console.log(num);
+}
+
+// Function call
+MyFunction();
+```
+
+**Output:**
+```
+Apple
+45
+```
+
+## JavaScript Operators
+
+JavaScript operators are symbols used to compute values. Arithmetic operators (+, -, *, /) are used to compute values, while assignment operators (=, +=, %=) assign values to variables.
+
+Example:
+
+```javascript
+// Variable Declarations
+let x, y, sum;
+
+// Assign values to variables
+x = 3;
+y = 23;
+
+// Add two numbers
+sum = x + y;
+console.log(sum);
+```
+
+**Output:**
+```
+26
+```
+
+## JavaScript Expressions
+
+A JavaScript Expression is a combination of values, operators, and variables used to compute values.
+
+Example:
+
+```javascript
+let x, y, num, sum;
+x = 20;
+y = 30;
+num = x / 2;
+sum = x + y;
+console.log(num + "\n" + sum);
+```
+
+**Output:**
+```
+10
+50
+```
+
+## JavaScript Keywords
+
+The keywords are reserved words that have special meanings in JavaScript.
+
+```javascript
+let a, b;
+function GFG() {};
+```
+
+## JavaScript Comments
+
+Comments are ignored by the JavaScript compiler, improving code readability.
+
+Example:
+
+```javascript
+let x, y, sum;
+x = 20;
+y = 30;
+/* Expression to add two numbers */
+sum = x + y;
+console.log(sum);
+```
+
+**Output:**
+```
+50
+```
+
+## JavaScript Data Types
+
+JavaScript provides different data types:
+
+```javascript
+let txt = "GeeksforGeeks";
+let a = 5, b = 5;
+console.log(a === b); // true
+let places = ["Coding", "Computer", "Hello"];
+let Student = {
+    firstName: "Johnny",
+    lastName: "Diaz",
+    age: 35,
+    mark: "blueEYE"
+};
+```
+
+## JavaScript Functions
+
+JavaScript functions are reusable blocks of code.
+
+```javascript
+function func() {
+    let num = 45;
+    console.log(num);
+}
+func();
+```
+
+**Output:**
+```
+45
+```
+
+## JavaScript Identifiers
+
+JavaScript Identifiers are names used for variables, functions, and keywords. They must begin with:
+
+- A letter (A-Z or a-z)
+- A dollar sign ($)
+- An underscore (_)
+
+Example:
+
+```javascript
+let firstName = "Coding";
+let firstname = 100;
+console.log(firstName);
+console.log(firstname);
+```
+
+**Output:**
+```
+Coding
+100
+```
+
+## JavaScript Camel Case
+
+JavaScript prefers camelCase for naming identifiers.
+
+```javascript
+let firstName;
+let lastName;
