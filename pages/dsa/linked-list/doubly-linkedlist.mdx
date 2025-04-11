@@ -1,0 +1,129 @@
+---
+title: "Doubly Linked List"
+---
+
+# Doubly Linked List
+
+A **Doubly Linked List** is a type of linked list where each node is connected to both its next and previous node. This makes it easier to move forward and backward in the list. It is more flexible than a **Singly Linked List**, but it requires extra memory for storing the additional pointer.
+
+## Node Structure
+
+Each node in a **Doubly Linked List** has three parts:
+
+- **Data**: The value stored in the node.
+- **Next Pointer**: Points to the next node in the list.
+- **Previous Pointer**: Points to the previous node in the list.
+
+### Example of a Node in C++:
+
+```cpp
+struct Node {
+    int data;   // Stores the value
+    Node* prev; // Points to the previous node
+    Node* next; // Points to the next node
+
+    Node(int d) {
+       data = d;
+       prev = next = nullptr;
+    }
+};
+```
+
+By linking nodes together using both next and prev pointers, we can efficiently traverse the list in **both** directions.
+
+## Operations in a Doubly Linked List
+
+### 1. Traversal
+
+**Traversal** means moving through the list to access its elements.
+
+#### Steps to Traverse:
+
+1. **Forward Traversal**:
+   - Start from the **head**.
+   - Print or process each node’s data.
+   - Move to the next node using `current = current->next`.
+   - Stop when `current == NULL`.
+2. **Backward Traversal** (Optional):
+   - Start from the **tail**.
+   - Process each node’s data.
+   - Move to the previous node using `current = current->prev`.
+   - Stop when `current == NULL`.
+
+### 2. Finding the Length
+
+To find how many nodes are in the list:
+
+1. Start from the **head**.
+2. Use a counter and set it to **0**.
+3. Traverse the list while increasing the counter for each node.
+4. Stop when `current == NULL`.
+5. The counter value is the **length of the list**.
+
+### 3. Insertion
+
+Adding a new node requires adjusting the **next** and **prev** pointers.
+
+#### a) Inserting at the Beginning
+
+1. Create a new node.
+2. Set its **next** pointer to the current **head**.
+3. Update the **prev** pointer of the old head.
+4. Update **head** to the new node.
+
+#### b) Inserting at the End
+
+1. Create a new node.
+2. If the list is empty, set it as the head.
+3. Otherwise, traverse to the **last node**.
+4. Set the last node’s **next** to the new node.
+5. Set the new node’s **prev** to the last node.
+
+#### c) Inserting at a Specific Position
+
+1. Create a new node.
+2. Find the **node after which** you want to insert.
+3. Adjust pointers to insert the new node in between two existing nodes.
+
+### 4. Deletion
+
+Removing a node requires adjusting the **next** and **prev** pointers properly.
+
+#### a) Deleting the First Node
+
+1. Store the current **head**.
+2. Move **head** to the next node.
+3. Update the new head’s **prev** pointer to `NULL`.
+4. Delete the old head.
+
+#### b) Deleting the Last Node
+
+1. Traverse to the **last node**.
+2. Update the second-last node’s **next** pointer to `NULL`.
+3. Delete the last node.
+
+#### c) Deleting a Node at a Specific Position
+
+1. Find the node that needs to be deleted.
+2. Update its previous node’s **next** pointer.
+3. Update its next node’s **prev** pointer.
+4. Delete the node.
+
+## Advantages of a Doubly Linked List
+
+**Efficient two-way traversal**: You can move both **forward** and **backward**.
+**Easy insertion and deletion**: No need to traverse the list completely.
+**Useful for complex data structures**: Can be used in stacks, queues, and **undo-redo** functionalities.
+
+## Disadvantages of a Doubly Linked List
+
+**More memory usage**: Each node needs extra memory for storing the **prev** pointer.
+**Slightly more complex**: Requires careful pointer management.
+
+## Applications of Doubly Linked List
+
+- **Undo/Redo Functionality**: In text editors, web browsers, etc.
+- **Cache Implementation**: Quick insertion and deletion of elements.
+- **Browser History**: Allows navigating back and forward.
+- **Music Players**: Managing playlists efficiently.
+- **Deque (Double-Ended Queue)**: Fast insertion and deletion at both ends.

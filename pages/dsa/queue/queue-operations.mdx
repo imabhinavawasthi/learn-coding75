@@ -1,0 +1,205 @@
+## Basic Operations on Queue
+
+Some of the basic operations for Queue in Data Structure are:
+
+- **`enqueue()`** – Insertion of elements to the queue.
+- **`dequeue()`** – Removal of elements from the queue.
+- **`peek()`** or **`front()`** – Acquires the data element available at the front node of the queue without deleting it.
+- **`rear()`** – This operation returns the element at the rear end without removing it.
+- **`isFull()`** – Validates if the queue is full.
+- **`isEmpty()`** – Checks if the queue is empty.
+- **`size()`** – This operation returns the size of the queue i.e., the total number of elements it contains.
+
+## Queue Data Structure
+
+### Operation 1: `enqueue()`
+
+Inserts an element at the end of the queue i.e., at the rear end.
+
+#### Steps to `enqueue` data into a queue:
+
+1. Check if the queue is full.
+2. If the queue is full, return overflow error and exit.
+3. If the queue is not full, increment the rear pointer to point to the next empty space.
+4. Add the data element to the queue location, where the rear is pointing.
+5. Return success.
+
+#### Implementation:
+
+```c
+void queueEnqueue(int data) {
+    // Check if the queue is full
+    if (capacity == rear) {
+        printf("\nQueue is full\n");
+        return;
+    }
+
+    // Insert element at the rear
+    else {
+        queue[rear] = data;
+        rear++;
+    }
+    return;
+}
+```
+
+**Complexity Analysis:**
+
+- Time Complexity: **O(1)**
+- Space Complexity: **O(N)**
+
+### Operation 2: `dequeue()`
+
+Removes and returns an element that is at the front end of the queue.
+
+#### Steps to `dequeue`:
+
+1. Check if the queue is empty.
+2. If the queue is empty, return the underflow error and exit.
+3. If the queue is not empty, access the data where the front is pointing.
+4. Increment the front pointer to point to the next available data element.
+5. Return success.
+
+#### Implementation:
+
+```c
+void queueDequeue() {
+    // If queue is empty
+    if (front == rear) {
+        printf("\nQueue is empty\n");
+        return;
+    }
+
+    // Shift all the elements from index 2 till rear to the left by one
+    else {
+        for (int i = 0; i < rear - 1; i++) {
+            queue[i] = queue[i + 1];
+        }
+
+        // Decrement rear
+        rear--;
+    }
+    return;
+}
+```
+
+**Complexity Analysis:**
+
+- Time Complexity: **O(1)**
+- Space Complexity: **O(N)**
+
+### Operation 3: `front()`
+
+Returns the element at the front end without removing it.
+
+#### Implementation:
+
+```c
+int front(Queue* queue) {
+    if (isEmpty(queue))
+        return INT_MIN;
+    return queue->arr[queue->front];
+}
+```
+
+**Complexity Analysis:**
+
+- Time Complexity: **O(1)**
+- Space Complexity: **O(N)**
+
+### Operation 4: `rear()`
+
+Returns the element at the rear end without removing it.
+
+#### Implementation:
+
+```c
+int rear(Queue* queue) {
+    if (isEmpty(queue))
+        return INT_MIN;
+    return queue->arr[queue->rear];
+}
+```
+
+**Complexity Analysis:**
+
+- Time Complexity: **O(1)**
+- Space Complexity: **O(N)**
+
+---
+
+### Operation 5: `isEmpty()`
+
+Checks whether the queue is empty.
+
+#### Implementation:
+
+```c
+bool isEmpty() {
+    if (front == -1)
+        return true;
+    else
+        return false;
+}
+```
+
+**Complexity Analysis:**
+
+- Time Complexity: **O(1)**
+- Space Complexity: **O(N)**
+
+---
+
+### Operation 6: `isFull()`
+
+Checks whether the queue is full.
+
+#### Implementation:
+
+```c
+bool isFull() {
+    if (front == 0 && rear == MAX_SIZE - 1) {
+        return true;
+    }
+    return false;
+}
+```
+
+**Complexity Analysis:**
+
+- Time Complexity: **O(1)**
+- Space Complexity: **O(N)**
+
+---
+
+### Operation 7: `size()`
+
+Returns the size of the queue, i.e., the total number of elements it contains.
+
+#### Implementation:
+
+```cpp
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main() {
+    queue<int> myqueue;
+    myqueue.push(1);
+    myqueue.push(8);
+    myqueue.push(3);
+    myqueue.push(6);
+    myqueue.push(2);
+
+    // Queue becomes 1, 8, 3, 6, 2
+
+    cout << myqueue.size();
+
+    return 0;
+}
+```
+
+**Complexity Analysis:**
+
+- Time Complexity: **O(1)**
+- Space Complexity: **O(N)**

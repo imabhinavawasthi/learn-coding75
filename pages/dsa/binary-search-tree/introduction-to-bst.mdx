@@ -1,0 +1,44 @@
+# Introduction to Binary Search Tree (BST)
+
+A **Binary Search Tree (BST)** is a special type of binary tree that maintains a specific order among its nodes, which allows for efficient searching, insertion, and deletion operations.
+
+## Properties of a BST
+
+A BST follows these properties:
+
+- The **left subtree** of a node contains only nodes with keys **less than** the node’s key.
+- The **right subtree** of a node contains only nodes with keys **greater than** the node’s key.
+- Both the left and right subtrees must also be **binary search trees**.
+
+## Advantages of BST
+
+- **Efficient Searching**: Search operations take O(log n) time in a balanced BST.
+- **Ordered Structure**: BST maintains elements in a sorted order, which is useful for in-order traversal.
+- **Flexible Insertion & Deletion**: Nodes can be inserted or deleted while maintaining order.
+
+## Operations in a BST
+
+### 1. Search Operation
+To find a value in a BST:
+- Start from the root.
+- If the value is **less than** the root, search in the **left subtree**.
+- If the value is **greater than** the root, search in the **right subtree**.
+- Repeat until the value is found or the subtree becomes null.
+
+### 2. Insertion Operation
+- Start from the root.
+- Find the appropriate position based on BST rules.
+- Insert the new node while maintaining BST properties.
+
+### 3. Deletion Operation
+Deletion in a BST has three cases:
+1. **Node with no children**: Simply remove the node.
+2. **Node with one child**: Replace the node with its child.
+3. **Node with two children**: Replace the node with its **inorder successor** or **predecessor**.
+
+## Applications of BST
+- **Database Indexing**: BSTs are used for indexing large datasets.
+- **Auto-Suggestions**: BSTs help in predictive text algorithms.
+- **Symbol Tables**: Used in compilers and interpreters.
+- **Sorting & Searching Algorithms**: Many efficient algorithms rely on BST structure.
+

@@ -1,0 +1,138 @@
+---
+title: "Introduction to Arrays"
+---
+
+# Introduction to Arrays
+
+Arrays are a fundamental data structure that store multiple elements of the same type in contiguous memory locations. They offer an efficient way to manage collections of data.
+
+## Key Terminologies
+
+- **Array Index**: Each element in an array is identified by an index, starting from 0.
+- **Array Element**: Individual items stored in an array, accessed using their respective index.
+- **Array Length**: The total number of elements an array can hold.
+
+## Memory Representation
+
+Arrays store elements sequentially in memory, which allows for quick access and efficient manipulation.
+
+## Declaring an Array
+
+Array declarations vary across programming languages. Below are some C++ examples:
+
+```cpp
+// Integer array
+int arr[5];
+
+// Character array
+char arr[10];
+
+// Floating-point array
+float arr[20];
+```
+
+## Initializing an Array
+
+An array can be initialized at the time of declaration:
+
+```cpp
+int arr[] = {1, 2, 3, 4, 5};
+char arr[5] = {'a', 'b', 'c', 'd', 'e'};
+float arr[10] = {1.4, 2.0, 24, 5.0, 0.0};
+```
+
+## Why Use Arrays?
+
+Managing multiple variables individually can be inefficient. Arrays provide a structured way to store and manipulate large amounts of data efficiently.
+
+## Types of Arrays
+
+### Based on Size
+
+#### 1. Fixed-Size Arrays
+
+Fixed-size arrays have a predefined length that cannot be modified after allocation.
+
+```cpp
+// Compile-time fixed-size array
+int arr[5];
+
+// Initialized fixed-size array
+int arr2[5] = {1, 2, 3, 4, 5};
+
+// Dynamically allocated array
+int *arr = new int[5];
+```
+
+#### 2. Dynamic Arrays
+
+Dynamic arrays can grow or shrink during runtime, offering flexibility.
+
+```cpp
+#include <vector>
+vector<int> v; // Dynamic integer array
+```
+
+### Based on Dimensions
+
+#### 1. One-Dimensional Arrays (1D)
+
+A 1D array stores elements in a linear sequence.
+
+#### 2. Multi-Dimensional Arrays
+
+Multi-dimensional arrays can represent complex structures like tables.
+
+**Two-Dimensional Array (2D Matrix)**
+
+```cpp
+int matrix[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+```
+
+**Three-Dimensional Array (3D)**
+
+```cpp
+int array3D[2][2][2] = {{{1,2}, {3,4}}, {{5,6}, {7,8}}};
+```
+
+## Array Operations
+
+### 1. Traversal
+
+Iterating through an array to access its elements.
+
+```cpp
+int arr[] = {10, 20, 30, 40, 50};
+for (int i = 0; i < 5; i++) {
+    cout << arr[i] << " ";
+}
+```
+
+### 2. Insertion
+
+Adding an element at a specific position requires shifting elements.
+
+```cpp
+int arr[6] = {10, 20, 30, 40, 50};
+int pos = 2, value = 25;
+
+// Shift elements
+for (int i = 5; i > pos; i--) {
+    arr[i] = arr[i - 1];
+}
+arr[pos] = value;
+```
+
+### 3. Deletion
+
+Removing an element requires shifting remaining elements.
+
+```cpp
+int arr[5] = {10, 20, 30, 40, 50};
+int pos = 2;
+
+// Shift elements
+for (int i = pos; i < 4; i++) {
+    arr[i] = arr[i + 1];
+}
+```

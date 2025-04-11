@@ -1,0 +1,91 @@
+# **Understanding Stack in Data Structures**
+
+A **stack** is a way of organizing data where the last item added is the first one removed. This is called the **LIFO (Last In, First Out) principle**.
+
+## Real-Life Examples of Stack
+
+To understand this better, think of:
+
+- **A stack of plates** – You add new plates on top and remove them from the top.
+- **A shuttlecock box** – The first shuttlecock you put in is at the bottom, and the last one added is the first to come out.
+
+## How Stack Works
+
+Since a stack follows the LIFO rule, all actions (adding and removing elements) happen from the **same end**.
+
+## Types of Stack
+
+#### 1. Fixed Size Stack
+
+- Has a set size and cannot grow or shrink.
+- If it’s full, adding more elements causes an **overflow error**.
+- If it’s empty, trying to remove an element causes an **underflow error**.
+
+#### 2. Dynamic Size Stack
+
+- Can **grow** and **shrink** automatically.
+- Uses a **linked list** to allow resizing as needed.
+
+## Basic Operations on a Stack
+
+To work with a stack, we use these operations:
+
+- **push()** – Adds an element to the stack.
+- **pop()** – Removes the top element.
+- **top()** – Gets the top element without removing it.
+- **isEmpty()** – Checks if the stack is empty.
+- **isFull()** – Checks if the stack is full.
+
+## How Stack Operations Work
+
+### Push (Adding an Element)
+
+```javascript
+function push(stack, element, capacity) {
+  if (stack.length === capacity) {
+    console.log("Stack Overflow");
+    return;
+  }
+  stack.push(element);
+}
+```
+
+### Pop (Removing an Element)
+
+```javascript
+function pop(stack) {
+  if (stack.length === 0) {
+    console.log("Stack Underflow");
+    return;
+  }
+  return stack.pop();
+}
+```
+
+### Top (Viewing the Top Element)
+
+```javascript
+function top(stack) {
+  if (stack.length === 0) {
+    console.log("Stack is empty");
+    return;
+  }
+  return stack[stack.length - 1];
+}
+```
+
+### isEmpty (Checking if Stack is Empty)
+
+```javascript
+function isEmpty(stack) {
+  return stack.length === 0;
+}
+```
+
+### isFull (Checking if Stack is Full)
+
+```javascript
+function isFull(stack, capacity) {
+  return stack.length === capacity;
+}
+```

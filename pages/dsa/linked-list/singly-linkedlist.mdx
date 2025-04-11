@@ -1,0 +1,135 @@
+---
+title: "Singly Linked List"
+---
+
+## Singly Linked List
+
+A **singly linked list** is a type of data structure that consists of nodes. Each node has:
+
+1. **Data** – Stores some value.
+2. **Next Pointer** – Points to the next node in the list.
+
+The last node in the list has its next pointer set to **NULL**, meaning it's the end of the list. Linked lists allow easy insertion and deletion of elements.
+
+## Node Structure
+
+In a singly linked list, each **node** contains:
+
+- **Data** – Holds a value.
+- **Next** – A pointer to the next node in the list.
+
+Here’s how a node is defined in C++:
+
+```cpp
+struct Node {
+    int data;    // Stores value
+    Node* next;  // Points to the next node
+
+    Node(int data) {
+        this->data = data;
+        this->next = nullptr;  // Initially, next is NULL
+    }
+};
+```
+
+## 1. Traversing a Singly Linked List
+
+**Traversal** means moving through each node in the list and performing operations like printing values.
+
+### Steps:
+
+1. Start at the head node.
+2. Use a loop to move through each node until you reach NULL.
+3. Process the node (e.g., print its data).
+4. Move to the next node.
+
+## 2. Searching in a Singly Linked List
+
+Searching means finding a specific value in the list.
+
+### Steps:
+
+1. Start at the head.
+2. Compare the data in each node with the target value.
+3. If found, return **true**.
+4. If the end is reached without finding the value, return **false**.
+
+## 3. Finding the Length of a Singly Linked List
+
+The **length** is the total number of nodes in the list.
+
+### Steps:
+
+1. Start at the head.
+2. Use a counter to count nodes.
+3. Move through the list, increasing the counter for each node.
+4. Stop when you reach NULL and return the count.
+
+## 4. Inserting a Node
+
+There are three ways to **insert a new node**:
+
+### a) Insert at the Beginning
+
+1. Create a new node.
+2. Point the new node’s **next** to the current head.
+3. Update the head to the new node.
+
+### b) Insert at the End
+
+1. Create a new node.
+2. If the list is empty, set the head to the new node.
+3. Otherwise, find the last node.
+4. Set the last node’s **next** to the new node.
+
+### c) Insert at a Specific Position
+
+1. Create a new node.
+2. Traverse to the (position - 1)th node.
+3. Adjust pointers to insert the new node.
+
+## 5. Deleting a Node
+
+There are three ways to **delete a node**:
+
+### a) Delete from the Beginning
+
+1. If the list is empty, return.
+2. Store the head node in a temporary variable.
+3. Move the head to the next node.
+4. Delete the old head node.
+
+### b) Delete from the End
+
+1. If the list is empty, return.
+2. If only one node exists, delete it and set the head to NULL.
+3. Otherwise, find the second-last node.
+4. Set its **next** to NULL, removing the last node.
+
+### c) Delete from a Specific Position
+
+1. Traverse to the (position - 1)th node.
+2. Store the node to be deleted.
+3. Adjust pointers to skip that node.
+4. Delete the stored node.
+
+## 6. Modifying a Node
+
+To **update a node’s value**:
+
+1. Traverse to the required position.
+2. If the position is valid, change the node’s data.
+3. Otherwise, return an error.
+
+## 7. Reversing a Singly Linked List
+
+Reversing changes the direction of pointers so the last node becomes the head.
+
+### Steps:
+
+1. Use three pointers: `prev = NULL`, `current = head`, and `next = NULL`.
+2. Loop through the list:
+   - Store `next = current->next`.
+   - Reverse `current->next = prev`.
+   - Move `prev` and `current` forward.
+3. Set `head = prev`.

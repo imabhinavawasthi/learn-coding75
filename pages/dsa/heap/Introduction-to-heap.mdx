@@ -1,0 +1,206 @@
+## Introduction
+
+A **heap** is a specialized binary tree data structure used in **DSA** to efficiently manage **priority queues**. In this guide, we will explore the basics of heaps, their types, properties, and operations with examples in various programming languages.
+
+## What is a Heap?
+
+A **heap** is a binary tree where:
+
+- In a **Max-Heap**, each parent node is greater than or equal to its children.
+- In a **Min-Heap**, each parent node is less than or equal to its children.
+- The largest or smallest element is always at the **root**.
+
+## Types of Heaps
+
+### 1. Max-Heap
+
+A **Max-Heap** ensures the largest value is always at the root.
+
+#### Example:
+
+```
+        50
+       /  \
+     30    20
+    /  \   /  \
+   15  10 8    5
+```
+
+### 2. Min-Heap
+
+A **Min-Heap** ensures the smallest value is always at the root.
+
+#### Example:
+
+```
+        5
+       /  \
+     10    15
+    /  \   /  \
+   30  20 50   40
+```
+
+## Properties of Heaps
+
+### 1. Complete Binary Tree
+
+- All levels are fully filled except the last.
+- The last level is filled **from left to right**.
+
+### 2. Heap Order Property
+
+- **Max-Heap**: Parent node is **greater than or equal** to its children.
+- **Min-Heap**: Parent node is **less than or equal** to its children.
+
+## Heapify Operations
+
+### 1. Up-Heapify (Bubble-Up)
+
+Used after inserting a new element to maintain the heap property.
+
+#### Steps:
+
+1. Insert the element at the end.
+2. Compare with its parent.
+3. Swap if necessary.
+4. Repeat until the heap property is restored.
+
+### 2. Down-Heapify (Bubble-Down)
+
+Used after deleting the root element.
+
+#### Steps:
+
+1. Replace the root with the last element.
+2. Remove the last element.
+3. Compare the new root with its children.
+4. Swap with the appropriate child if necessary.
+5. Repeat until the heap property is restored.
+
+## Basic Heap Operations
+
+### 1. Insertion
+
+- Insert at the end.
+- Use **Up-Heapify** to maintain heap property.
+
+### 2. Deletion (Extract-Min/Extract-Max)
+
+- Remove the root element.
+- Replace with the last element.
+- Use **Down-Heapify** to maintain heap property.
+
+### 3. Peek (Get-Min/Get-Max)
+
+- Retrieves the **root** element without removing it.
+- **O(1) complexity**.
+
+## Array Representation of Heaps
+
+A **heap** can be stored as an **array**:
+
+- **Root** at index `0`.
+- **Left Child** at `2i + 1`.
+- **Right Child** at `2i + 2`.
+- **Parent** at `(i - 1) // 2`.
+
+#### Example:
+
+**Heap:** `[50, 30, 20, 15, 10, 8, 5]`
+
+## Heap Implementation in Python
+
+```python
+class MaxHeap:
+    def __init__(self):
+        self.heap = []
+
+    def insert(self, val):
+        self.heap.append(val)
+        self._heapify_up(len(self.heap) - 1)
+
+    def delete(self):
+        if len(self.heap) > 1:
+            self._swap(0, len(self.heap) - 1)
+            max_val = self.heap.pop()
+            self._heapify_down(0)
+        elif self.heap:
+            max_val = self.heap.pop()
+        else:
+            max_val = None
+        return max_val
+
+    def _heapify_up(self, index):
+        parent = (index - 1) // 2
+        if index > 0 and self.heap[index] > self.heap[parent]:
+            self._swap(index, parent)
+            self._heapify_up(parent)
+
+    def _heapify_down(self, index):
+        largest = index
+        left = 2 * index + 1
+        right = 2 * index + 2
+
+        if left < len(self.heap) and self.heap[left] > self.heap[largest]:
+            largest = left
+        if right < len(self.heap) and self.heap[right] > self.heap[largest]:
+            largest = right
+        if largest != index:
+            self._swap(index, largest)
+            self._heapify_down(largest)
+
+    def _swap(self, i, j):
+        self.heap[i], self.heap[j] = self.heap[j], self.heap[i]
+
+# Example usage:
+heap = MaxHeap()
+heap.insert(10)
+heap.insert(20)
+heap.insert(5)
+print(heap.heap)  # Output: [20, 10, 5]
+print(heap.delete())  # Output: 20
+print(heap.heap)  # Output: [10, 5]
+```
+
+## Applications of Heap
+
+### 1. **Priority Queues**
+
+- Used in **task scheduling** and **event simulation**.
+
+### 2. **Heap Sort**
+
+- Sorting algorithm with **O(n log n)** complexity.
+
+### 3. **Graph Algorithms**
+
+- **Dijkstra's Algorithm** (Shortest path)
+- **Prim's Algorithm** (Minimum spanning tree)
+
+### 4. **Median Maintenance**
+
+- Keeps track of the **median** in dynamic data sets.
+
+### 5. **Kth Largest/Smallest Element**
+
+- Efficiently finds the **kth largest/smallest** element.
+
+### 6. **Interval Scheduling**
+
+- Used in **meeting room scheduling** and **task assignments**.
+
+## Advantages of Heap
+
+**Efficient** insertion & deletion (**O(log n)**)
+**Memory-efficient** storage
+**Fast access** to min/max elements
+
+## Disadvantages of Heap
+
+**Inefficient search** operations (**O(n)**)
+**Not sorted**
+**Complex implementation & maintenance**
+
+---
+
+This guide covers everything you need to understand heaps in data structures. 🚀

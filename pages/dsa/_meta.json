@@ -1,4 +1,26 @@
 {
   "introduction": "Introduction",
-  "arrays": "Arrays"
+  "arrays": "Arrays",
+  "linked-list": "Linked List",
+  "stack": "Stack",
+  "queue": "Queue",
+  "binary-tree": "Binary Tree",
+  "binary-search-tree": "Binary Search Tree",
+  "heap": "Heap",
+  "vector": "Vector",
+  "2d-array": "2D Array",
+  "searching-sorting": "Searching & Sorting",
+  "character-array": "Character Array",
+  "strings": "Strings",
+  "pointers": "Pointers",
+  "recursion": "Recursion",
+  "backtracking-dnc": "Backtracking",
+  "oops": "Object-Oriented Programming (OOPs)",
+  "hashmaps": "Hashmaps",
+  "Tries": "Tries",
+  "dynamic-programming": "Dynamic Programming",
+  "graphs": "Graphs",
+  "greedy-algorithms": "Greedy Algorithms",
+  "sliding-window-technique": "Sliding Window Technique",
+  "bit-manipulation": "Bit Manipulation"
 }

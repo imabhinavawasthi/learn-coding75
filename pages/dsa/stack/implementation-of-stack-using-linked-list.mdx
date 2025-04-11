@@ -1,0 +1,136 @@
+# Implementing a Stack Using a Singly Linked List
+
+A **stack** is a data structure that follows the **Last In, First Out (LIFO)** principle, meaning the last item added is the first one removed. We can implement a stack using a **singly linked list**, which allows the stack to grow and shrink dynamically without worrying about a fixed size.
+
+## How It Works
+
+In a singly linked list, each **node** contains:
+
+- **Data** (the value stored in the node)
+- **A pointer to the next node** in the list
+
+The **top** pointer keeps track of the first node in the stack, where push and pop operations happen.
+
+### Why Use a Linked List Instead of an Array?
+
+- **Dynamic Size:** The stack can grow or shrink as needed.
+- **No Overflow:** Unlike arrays, which have a fixed size, a linked list stack does not run out of space as long as memory is available.
+- **Efficient Memory Usage:** Unlike doubly linked lists, singly linked lists use less memory because they only store one pointer per node.
+
+## Stack Operations
+
+### `push()`: Add an element to the stack
+
+1. Create a new node with the given data.
+2. Set the new node's `next` pointer to the current `top` node.
+3. Update `top` to the new node.
+
+### `pop()`: Remove the top element
+
+1. Check if the stack is empty.
+2. If not, save the current `top` node in a temporary variable.
+3. Move `top` to the next node.
+4. Free the memory of the removed node.
+
+### `peek()`: Get the top element
+
+1. Check if the stack is empty.
+2. If not, return the value of the `top` node.
+
+### `display()`: Show all elements in the stack
+
+1. Start from the `top` node.
+2. Traverse the list and print each node's value.
+
+## C++ Implementation
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+    Node(int new_data) {
+        data = new_data;
+        next = nullptr;
+    }
+};
+
+class Stack {
+    Node* top;
+public:
+    Stack() { top = nullptr; }
+    bool isEmpty() { return top == nullptr; }
+
+    void push(int new_data) {
+        Node* new_node = new Node(new_data);
+        new_node->next = top;
+        top = new_node;
+    }
+
+    void pop() {
+        if (isEmpty()) {
+            cout << "\nStack Underflow";
+            return;
+        }
+        Node* temp = top;
+        top = top->next;
+        delete temp;
+    }
+
+    int peek() {
+        if (isEmpty()) {
+            cout << "\nStack is empty";
+            return -1;
+        }
+        return top->data;
+    }
+};
+
+int main() {
+    Stack st;
+    st.push(11);
+    st.push(22);
+    st.push(33);
+    st.push(44);
+
+    cout << "Top element is " << st.peek() << endl;
+
+    cout << "Removing two elements..." << endl;
+    st.pop();
+    st.pop();
+
+    cout << "Top element is " << st.peek() << endl;
+    return 0;
+}
+```
+
+### Output
+
+```
+Top element is 44
+Removing two elements...
+Top element is 22
+```
+
+### Time Complexity
+
+- **push()**: O(1)
+- **pop()**: O(1)
+- **peek()**: O(1)
+
+### Space Complexity
+
+- **O(N)**, where **N** is the number of elements in the stack.
+
+## Real-World Applications of Stacks
+
+Stacks are used in many applications where **LIFO** order is required:
+
+1. **Function Call Stack**: Stores function calls so the program can return to the previous function after execution.
+2. **Undo/Redo Operations**: Tracks changes in text editors and graphic design software.
+3. **Browser History**: Stores visited web pages, allowing users to navigate backward.
+4. **Expression Evaluation**: Used in compilers for arithmetic and logical expression evaluation.
+5. **Recursion Call Stack**: Helps manage function calls in recursive algorithms.

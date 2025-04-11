@@ -1,0 +1,43 @@
+## Linked List Implementation of Queue
+
+In this article, we discuss and implement the **Linked List** version of the **Queue** data structure. If the queue is empty, print `-1`.
+
+### Approach
+
+To solve this problem, we maintain two pointers:
+
+- **Front**: Points to the first item of the queue.
+- **Rear**: Points to the last item of the queue.
+
+#### Operations:
+
+1. **enQueue()**: Adds a new node after the rear and moves the rear to the next node.
+2. **deQueue()**: Removes the front node and moves the front to the next node.
+
+### Steps to Implement:
+
+1. **Create a class `QNode`** with the following:
+
+   - Data members: `int data` and `QNode* next`.
+   - A parameterized constructor that takes an integer `x` as a parameter, sets `data = x`, and initializes `next = NULL`.
+
+2. **Create a class `Queue`** with data members:
+
+   - `QNode* front`
+   - `QNode* rear`
+
+3. **Enqueue Operation** (`enqueue(x)`):
+
+   - Initialize `QNode* temp` with `data = x`.
+   - If `rear == NULL`:
+     - Set `front = temp` and `rear = temp` (Base Case).
+     - Return.
+   - Else:
+     - Set `rear->next = temp`.
+     - Move `rear` to `temp`.
+
+4. **Dequeue Operation** (`dequeue()`):
+   - If `front == NULL`, return (Base Case).
+   - Initialize `QNode* temp = front` and move `front` to `front->next`.
+   - If `front == NULL`, set `rear = NULL`.
+   - Delete `temp` from memory.
