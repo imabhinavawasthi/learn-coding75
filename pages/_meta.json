@@ -1,12 +1,9 @@
 {
-  "index": {
-    "title": "home",
-    "type": "page"
-  },
   "dsa": {
     "title": "DSA",
     "type": "page"
   },
+
   "cpp": {
     "title": "CPP",
     "type": "page"
@@ -19,7 +16,7 @@
     "title": "Java",
     "type": "page"
   },
-  "javascript":{
+  "learn-javascript": {
     "title": "Javascript",
     "type": "page"
   }
