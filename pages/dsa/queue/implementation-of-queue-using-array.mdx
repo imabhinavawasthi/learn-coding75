@@ -1,0 +1,62 @@
+## Queue Data Structure
+
+Similar to **Stack**, **Queue** is a linear data structure that follows a particular order in which the operations are performed for storing data. The order is **First In First Out (FIFO)**. One can imagine a queue as a line of people waiting to receive something in sequential order, which starts from the beginning of the line.
+
+It is an **ordered list** in which:
+
+- Insertions are done at one end, known as the **rear**.
+- Deletions are done from the other end, known as the **front**.
+
+A good example of a queue is any queue of consumers for a resource, where the consumer that came first is served first.
+
+The difference between **stack** and **queue** lies in element removal:
+
+- In a **stack**, the most recently added item is removed first (**LIFO - Last In First Out**).
+- In a **queue**, the least recently added item is removed first (**FIFO - First In First Out**).
+
+### Simple Array Implementation of Queue
+
+For implementing a queue, we only need to keep track of two variables: `front` and `size`. The **rear** can be determined as:
+
+```math
+rear = front + size - 1
+```
+
+#### Operations:
+
+- **Enqueue**: Insert at the end of the array (**O(1)** time complexity).
+- **Dequeue**: Remove from the beginning of the array, which requires shifting all elements back one position (**O(n)** time complexity).
+- If we insert at the beginning and delete from the end instead, insertion would become costly.
+
+#### Time Complexity Table:
+
+| Operations                        | Complexity |
+| --------------------------------- | ---------- |
+| Enqueue (insertion)               | **O(1)**   |
+| Dequeue (deletion)                | **O(n)**   |
+| Front (Get front)                 | **O(1)**   |
+| Rear (Get rear)                   | **O(1)**   |
+| IsFull (Check if queue is full)   | **O(1)**   |
+| IsEmpty (Check if queue is empty) | **O(1)**   |
+
+### Circular Array Implementation of Queue
+
+We can optimize queue operations to **O(1)** time using a **circular array implementation**.
+
+#### Concept:
+
+- The array is treated as a **circular buffer**.
+- **Front** and **rear** are moved using **modular arithmetic**.
+- When inserting an item, we increment `rear` using modular arithmetic.
+- When deleting an item, we increment `front` using modular arithmetic.
+
+#### Time Complexity Table:
+
+| Operations                        | Complexity |
+| --------------------------------- | ---------- |
+| Enqueue (insertion)               | **O(1)**   |
+| Dequeue (deletion)                | **O(1)**   |
+| Front (Get front)                 | **O(1)**   |
+| Rear (Get rear)                   | **O(1)**   |
+| IsFull (Check if queue is full)   | **O(1)**   |
+| IsEmpty (Check if queue is empty) | **O(1)**   |

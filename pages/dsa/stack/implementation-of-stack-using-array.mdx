@@ -1,0 +1,183 @@
+# Stack Implementation Using Arrays
+
+A **stack** is a linear data structure that follows the **LIFO (Last In, First Out) principle**. In this guide, we'll learn how to implement a stack using arrays.
+
+## How It Works
+
+To implement a stack using an array, follow these steps:
+
+1. **Initialize an array** to represent the stack.
+2. **Use the end of the array** as the top of the stack.
+3. Implement the following operations:
+   - **Push** (add an element to the end)
+   - **Pop** (remove an element from the end)
+   - **Peek** (check the last element)
+   - **isEmpty** (check if the stack is empty)
+   - **isFull** (check if the stack is full)
+
+## Stack Operations
+
+### Push Operation
+
+Adds an element to the stack.
+
+- If the stack is full, it results in an **Overflow** condition.
+- Otherwise, increase the `top` index and insert the element.
+
+### Pop Operation
+
+Removes an element from the stack.
+
+- If the stack is empty, it results in an **Underflow** condition.
+- Otherwise, remove the element from the `top` index and decrease `top`.
+
+### Peek Operation
+
+Returns the top element of the stack.
+
+- If the stack is empty, return a message saying "Stack is empty".
+- Otherwise, return the value at the `top` index.
+
+### isEmpty Operation
+
+Checks if the stack is empty.
+
+- If `top == -1`, return `true` (stack is empty).
+- Otherwise, return `false`.
+
+### isFull Operation
+
+Checks if the stack is full.
+
+- If `top == capacity - 1`, return `true` (stack is full).
+- Otherwise, return `false`.
+
+## Implementation Using a Fixed-Sized Array
+
+This implementation uses a fixed array size, requiring a predefined capacity.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Stack {
+    int top, capacity;
+    int *arr;
+
+public:
+    Stack(int cap) {
+        capacity = cap;
+        top = -1;
+        arr = new int[cap];
+    }
+
+    ~Stack() { delete[] arr; }
+
+    bool push(int x) {
+        if (top >= capacity - 1) {
+            cout << "Stack Overflow\n";
+            return false;
+        }
+        arr[++top] = x;
+        return true;
+    }
+
+    int pop() {
+        if (top < 0) {
+            cout << "Stack Underflow\n";
+            return 0;
+        }
+        return arr[top--];
+    }
+
+    int peek() {
+        if (top < 0) {
+            cout << "Stack is Empty\n";
+            return 0;
+        }
+        return arr[top];
+    }
+
+    bool isEmpty() { return top < 0; }
+};
+
+int main() {
+    Stack s(5);
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    cout << s.pop() << " popped from stack\n";
+    cout << "Top element is: " << s.peek() << endl;
+
+    cout << "Elements present in stack: ";
+    while (!s.isEmpty()) {
+        cout << s.peek() << " ";
+        s.pop();
+    }
+    return 0;
+}
+```
+
+### Output
+
+```
+30 popped from stack
+Top element is: 20
+Elements present in stack: 20 10
+```
+
+## Implementation Using a Dynamic-Sized Array
+
+This implementation allows the stack to grow dynamically using `vector` in C++.
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> s;
+
+    s.push_back(10);
+    s.push_back(20);
+    s.push_back(30);
+
+    cout << s.back() << " popped from stack\n";
+    s.pop_back();
+
+    cout << "Top element is: " << s.back() << endl;
+
+    cout << "Elements present in stack: ";
+    while (!s.empty()) {
+        cout << s.back() << " ";
+        s.pop_back();
+    }
+    return 0;
+}
+```
+
+## Comparison of Fixed vs Dynamic Arrays
+
+| Feature           | Fixed-Sized Array               | Dynamic-Sized Array                        |
+| ----------------- | ------------------------------- | ------------------------------------------ |
+| Size              | Fixed at initialization         | Grows as needed                            |
+| Memory Efficiency | More efficient if size is known | May waste memory due to resizing           |
+| Performance       | O(1) for push/pop               | O(1) amortized, but resizing can be costly |
+
+## Complexity Analysis
+
+- **Push:** O(1)
+- **Pop:** O(1)
+- **Peek:** O(1)
+- **isEmpty:** O(1)
+- **isFull:** O(1)
+
+## Advantages of Array Implementation
+
+- Simple and easy to implement.
+- No extra memory for pointers.
+
+## Disadvantages of Array Implementation
+
+- Fixed size (unless using a dynamic array like `vector`).
+- Resizing in dynamic arrays may cause performance overhead.

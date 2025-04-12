@@ -1,0 +1,90 @@
+# Types of Binary Trees
+
+## Types Based on the Number of Children
+
+### Full Binary Tree
+
+A **Full Binary Tree** is a binary tree in which every node has either 0 or 2 children. In other words, all non-leaf nodes must have exactly two children.
+
+A full binary tree is also referred to as a **proper binary tree**.
+
+### Degenerate (Pathological) Tree
+
+A **Degenerate Tree** is a binary tree where each internal node has only one child. Such trees perform similarly to a linked list in terms of efficiency.
+
+### Skewed Binary Tree
+
+A **Skewed Binary Tree** is a special case of a degenerate tree where all nodes are skewed either to the left or right, resulting in:
+
+- **Left-Skewed Binary Tree**
+- **Right-Skewed Binary Tree**
+
+## Types Based on Level Completion
+
+### Complete Binary Tree
+
+A **Complete Binary Tree** is a binary tree where:
+
+- Every level is fully filled except possibly the last level.
+- The last level has nodes as left as possible.
+
+### Perfect Binary Tree
+
+A **Perfect Binary Tree** is a binary tree where:
+
+- All internal nodes have exactly two children.
+- All leaf nodes are at the same level.
+
+A perfect binary tree of height `h` contains `2^(h+1) - 1` nodes.
+
+### Balanced Binary Tree
+
+A **Balanced Binary Tree** is a binary tree where the difference in height between the left and right subtrees of any node is at most **1**.
+
+Examples:
+
+- **AVL Tree** ensures balance by maintaining height differences of at most 1.
+- **Red-Black Tree** maintains balance by ensuring an equal number of black nodes in all root-to-leaf paths.
+
+## Special Types of Binary Trees
+
+### Binary Search Tree (BST)
+
+A **Binary Search Tree (BST)** follows these rules:
+
+- The left subtree contains only nodes with values **less** than the parent node.
+- The right subtree contains only nodes with values **greater** than the parent node.
+- The left and right subtrees must also be BSTs.
+
+### AVL Tree
+
+An **AVL Tree** is a self-balancing BST where the height difference between left and right subtrees of any node is at most **1**.
+
+### Red-Black Tree
+
+A **Red-Black Tree** is a self-balancing BST where:
+
+- Each node is colored **red or black**.
+- The tree remains balanced by ensuring specific properties related to the coloring and structure.
+- It guarantees O(log n) time complexity for insert, delete, and search operations.
+
+### B-Tree
+
+A **B-Tree** is a self-balancing tree optimized for disk storage and databases. It allows multiple keys per node and supports efficient insertion and deletion operations.
+
+### B+ Tree
+
+A **B+ Tree** is an extension of a B-Tree where:
+
+- All data elements are stored in **leaf nodes**.
+- Internal nodes only contain keys for **indexing**.
+- It enables faster **range queries** and sequential access.
+
+### Segment Tree
+
+A **Segment Tree** is a data structure used for range queries and modifications. It is mainly used for:
+
+- **Efficient range queries** (e.g., sum, min, max over an interval)
+- **Interval updates**
+
+Segment trees offer O(log n) query and update time complexity.
