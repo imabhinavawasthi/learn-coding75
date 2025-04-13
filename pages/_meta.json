@@ -3,13 +3,16 @@
     "title": "DSA",
     "type": "page"
   },
-
+  "learn-c": {
+    "title": "C",
+    "type": "page"
+  },
   "cpp": {
     "title": "CPP",
     "type": "page"
   },
-  "webdevelopment": {
-    "title": "Web Dev",
+  "python": {
+    "title": "Python",
     "type": "page"
   },
   "java": {
@@ -17,7 +20,31 @@
     "type": "page"
   },
   "learn-javascript": {
-    "title": "Javascript",
+    "title": "JavaScript",
+    "type": "page"
+  },
+  "operating-system": {
+    "title": "Operating System",
+    "type": "page"
+  },
+  "computer-network": {
+    "title": "Computer Network",
+    "type": "page"
+  },
+  "dbms": {
+    "title": "DBMS",
+    "type": "page"
+  },
+  "sql": {
+    "title": "SQL",
+    "type": "page"
+  },
+  "html": {
+    "title": "HTML",
+    "type": "page"
+  },
+  "css": {
+    "title": "CSS",
     "type": "page"
   }
 }
