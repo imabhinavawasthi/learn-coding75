@@ -1,0 +1,68 @@
+## Interface in OOPs
+
+An **interface** in object-oriented programming (OOP) is a blueprint of a class that defines a set of methods that must be implemented by any class that implements the interface. It specifies a contract that classes must adhere to, outlining the methods they must provide without specifying the implementation details.
+
+C++ does not provide the exact equivalent of Java interface. In C++, overriding a virtual function can only be done in a derived class of the class
+with the virtual function declaration, whereas in Java, the overrider for a method in an interface can be declared in a base class.
+
+It acts as a **contract**:  
+- It defines **what** methods a class must implement  
+- But **not how** they are implemented  
+
+Interfaces help achieve **abstraction** and **polymorphism** by allowing different classes to follow a common structure.
+
+---
+
+### Key Points:
+
+- Interfaces **only define method signatures**, not method bodies.
+- A class can **implement multiple interfaces** (supports multiple inheritance of type).
+- Promotes **decoupling** and **testability**.
+
+> **Note for C++:**  
+> C++ does not have native interface support like Java.  
+> Instead, **abstract classes** with only pure virtual functions act like interfaces.
+
+---
+
+### Interface Reference (With Examples):
+
+- [C++ (Abstract Classes as Interfaces)](https://www.javatpoint.com/interfaces-in-cpp)  
+- [Java Interface](https://www.programiz.com/java-programming/interfaces)  
+- [Python Interface](https://www.tutorialspoint.com/python/python_interfaces.htm)  
+
+---
+
+## Abstract Classes
+
+An **abstract class** is a class that cannot be instantiated directly and is designed to be inherited by other classes.
+
+It allows you to:
+- Define **abstract methods** (without implementation)
+- Provide **concrete methods** (with default implementations)
+- Serve as a **base** for subclasses, enforcing a shared structure and behavior
+
+---
+
+### Key Characteristics:
+
+1. Cannot be instantiated directly
+2. Can have **abstract methods** (must be implemented by subclass)
+3. Can have **concrete methods** (may be inherited or overridden)
+4. Can include member variables like regular classes
+5. Helps in organizing **common functionality** in a central location
+
+---
+
+### Abstract Classes vs Interfaces (Java):
+
+- **Abstract Class**: Can have constructors, variables, concrete and abstract methods  
+- **Interface**: Cannot have constructors, only method declarations (until Java 8, after which default/static methods are allowed)
+
+---
+
+### Abstract Classes Reference (With Examples):
+
+- [Java Abstract Classes & Methods](https://www.programiz.com/java-programming/abstract-classes-methods)  
+- [Java Interface vs Abstract Class (Baeldung)](https://www.baeldung.com/java-interface-vs-abstract-class)  
+- [Python Abstract Classes](https://www.scaler.com/topics/abstract-class-in-python/)

@@ -1,0 +1,32 @@
+# Keys in DBMS
+
+A **key** is a set of attributes that can uniquely identify each tuple in the given relation.
+
+### Types of Keys:
+1. **Primary Key**: A primary key uniquely identifies each record in a table. It must be unique and not null. There can be only one primary key per table.
+2. **Candidate Key**: Candidate keys are attributes or a combination of attributes that could potentially serve as a primary key because they satisfy the uniqueness and non-null requirements. A table may have multiple candidate keys.
+3. **Foreign Key**: A foreign key is a field in one table that refers to the primary key in another table. It establishes a relationship between two tables.
+4. **Super Key**: A super key is a set of one or more attributes that, taken collectively, uniquely identify each record in a table. It may contain more attributes than necessary to uniquely identify records.
+5. **Composite Key**: A composite key is a key composed of multiple attributes to uniquely identify records. Unlike primary keys, each individual attribute in a composite key may not be unique on its own, but the combination of attributes is unique.
+6. **Alternate Key**: Alternate keys are candidate keys that were not selected as the primary key. They could potentially serve as the primary key if the primary key is not available.
+
+---
+
+# Functional Dependency and Types of Functional Dependency
+
+**Functional dependency** is a concept in databases that describes the relationship between two attributes in a table.  
+It means that the value of one attribute uniquely determines the value of another attribute. In simpler terms, if you know the value of one attribute, you can predict the value of another attribute based on this relationship.
+
+### Types of Functional Dependency:
+1. **Trivial Functional Dependency**: Occurs when an attribute determines itself. For example, **A → A**.
+2. **Non-Trivial Functional Dependency**: Occurs when an attribute determines another attribute that is not itself. For example, **A → B**, where **B** is not equal to **A**.
+
+---
+
+# Decomposition of a Relation
+
+**Decomposition of a relation** refers to the process of splitting a single relation into two or more sub-relations.
+
+### Types of Decomposition:
+1. **Lossless Join Decomposition**: Ensures that no information is lost when decomposing a relation into smaller ones. The resulting sub-relations can be joined back together to obtain the original relation.
+2. **Lossy Join Decomposition**: A decomposition technique where joining the resulting sub-relations might lead to the loss of information, meaning that the original relation cannot be fully reconstructed.

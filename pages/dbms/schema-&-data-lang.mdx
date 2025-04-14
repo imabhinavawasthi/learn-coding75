@@ -1,0 +1,97 @@
+# What is Schema and Instances?
+
+The comprehensive design of the database is referred to as the **database schema**.  
+A schema serves as a structural description of data, typically remaining unchanged, while the data it describes may undergo frequent modifications.
+
+### Types of Schemas:
+- **Physical Schema**  
+- **Logical Schema**  
+- **View Schema** (also called **Subschemas**)
+
+---
+
+In DBMS, an **instance** refers to a snapshot or representation of the database at a specific moment in time.  
+It includes all the data currently stored in the database, along with the current state of any database structures, such as **indexes** or **constraints**.  
+An instance provides a view of the database as it exists at a particular point, capturing the data and structure at that moment.
+
+---
+
+# Data Models
+
+A **data model** is a conceptual framework for organizing and representing data in a database.  
+It defines the structure, relationships, constraints, and operations associated with the data.  
+There are several types of data models:
+
+---
+
+### 1. Entity-Relationship Model
+
+Represents data as **entities** (objects), their **attributes**, and the **relationships** between entities.  
+It is often used for designing databases before implementation in relational or other data models.
+
+---
+
+### 2. Relational Data Model
+
+Represents data as **tables** with **rows** and **columns**, emphasizing relationships between tables.  
+It is widely used in modern database systems, with **SQL** being the standard language for data manipulation.
+
+---
+
+### 3. Object-Oriented Data Model
+
+Treats data as **objects**, similar to object-oriented programming languages.  
+It supports **inheritance**, **encapsulation**, and **polymorphism**, providing more flexibility in representing complex data structures.
+
+---
+
+# Data Languages
+
+## 1. Data Definition Language (DDL)
+
+Used to define, modify, and manage the structure of database objects such as tables, views, indexes, and schemas.  
+**DDL commands** include:
+- **CREATE**  
+- **ALTER**  
+- **DROP**  
+- **TRUNCATE**  
+
+These commands allow users to create new database objects, modify existing ones, or remove them entirely.
+
+---
+
+## 2. Data Manipulation Language (DML)
+
+Used to manipulate data within the database.  
+**DML commands** include:
+- **SELECT**  
+- **INSERT**  
+- **UPDATE**  
+- **DELETE**  
+
+These commands enable users to retrieve, insert, modify, and delete data in database tables.
+
+---
+
+## 3. Data Control Language (DCL)
+
+Used to control access to data within the database.  
+**DCL commands** include:
+- **GRANT**  
+- **REVOKE**  
+
+These commands allow users to grant or revoke permissions on database objects such as tables, views, and procedures.
+
+---
+
+## 4. Transaction Control Language (TCL)
+
+Used to manage transactions within the database.  
+**TCL commands** include:
+- **COMMIT**  
+- **ROLLBACK**  
+- **SAVEPOINT**  
+
+These commands enable users to control the outcome and integrity of transactions.
+
+---

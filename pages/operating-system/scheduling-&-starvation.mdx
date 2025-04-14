@@ -1,0 +1,37 @@
+### CPU Scheduling Algorithms
+
+**CPU scheduling algorithms** are essential components of operating systems that determine the order in which processes are executed by the CPU. These algorithms aim to maximize CPU utilization, throughput, and fairness among processes. Common CPU scheduling algorithms include:
+
+- **First Come First Serve (FCFS):**  
+  The most straightforward scheduling algorithm that arranges processes based on their arrival times.
+
+- **Shortest Job First (SJF):**  
+  Prioritizes processes with the shortest burst time, scheduling them first.
+
+- **Shortest Remaining Time First (SRTF):**  
+  A preemptive version of SJF where jobs are scheduled based on their remaining time, allowing for interruptions.
+
+- **Round Robin (RR) Scheduling:**  
+  Each process gets a fixed time slice in a repeating sequence.
+
+- **Priority-Based Scheduling (Non-Preemptive):**  
+  Processes are scheduled according to their priorities, with the highest-priority process scheduled first. If two processes have equal priorities, scheduling  
+  follows their arrival times.
+
+- **Highest Response Ratio Next (HRRN):**  
+  Schedules processes based on the highest response ratio, which considers both waiting time and burst time. This algorithm helps prevent starvation.  
+  `Response Ratio = (Waiting Time + Burst Time) / Burst Time`
+
+- **Multilevel Queue Scheduling (MLQ):**  
+  Processes are sorted into different queues based on priority. High-priority processes are placed in the top-level queue, and lower-priority processes are scheduled only after completion of top-level processes.
+
+- **Multilevel Feedback Queue (MLFQ) Scheduling:**  
+  Allows processes to move between queues based on their CPU burst characteristics. If a process consumes excessive CPU time, it is moved to a lower-priority queue.
+
+---
+
+### Starvation and Aging
+
+In operating systems, when using scheduling methods like **Priority Scheduling** or **Shortest Job First Scheduling**, a problem called **Starvation** can occur. This happens when a process is unable to access the necessary resources for an extended time, leading to low-priority processes being blocked while high-priority processes proceed.
+
+To address this issue, there's a technique known as **Aging**. Aging helps prevent starvation by gradually increasing the priority of processes that have been waiting for resources for a long time. This ensures fairness in resource allocation, allowing low-priority processes to eventually access the resources they need for execution.

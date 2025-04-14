@@ -1,0 +1,20 @@
+### Thread
+
+A **thread** is a lightweight process and is the basic unit for CPU usage. A process can handle multiple tasks simultaneously by incorporating multiple threads.
+
+- A thread has its own **program counter**, **register set**, and **stack**.  
+- Threads within the same process share resources like the **code section**, **data section**, **files**, and **signals**.  
+- There are two types of threads:  
+  - **User threads** (Implemented by users)  
+  - **Kernel threads** (Implemented by the operating system)
+---
+
+### Process vs Thread
+
+| **Feature**        | **Process**                                                           | **Thread**                                                                     |
+|--------------------|------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| **Definition**      | An independent program with its own resources.                        | A lightweight unit within a process that shares resources.                      |
+| **Memory Space**    | Each process has a separate memory space.                             | Threads within the same process share the same memory space.                   |
+| **Communication**   | Requires Inter-Process Communication (IPC).                           | Easier communication as threads share the same memory space.                   |
+| **Isolation**       | Processes are isolated from each other.                               | Threads within the same process are not isolated.                              |
+| **Parallel Execution** | Processes can execute in parallel.                                | Threads within the same process may execute concurrently, depending on the system and programming model. |

@@ -1,0 +1,109 @@
+# Disk Management
+
+Disk management is a critical aspect of operating systems that involves efficient handling and organization of disk storage resources.  
+It encompasses various tasks, including disk partitioning, formatting, and implementing disk scheduling algorithms to optimize Input/Output (I/O) operations.
+
+## Disk Scheduling Algorithms
+
+Disk scheduling algorithms play a crucial role in optimizing disk I/O request processing and enhancing overall disk performance.  
+Here are some notable disk scheduling algorithms:
+
+### FCFS (First-Come, First-Served)
+
+- **Description**: Processes disk requests in the order they arrive.  
+- **Consideration**: Does not account for disk head position or request proximity, potentially causing delays with long seek times.
+
+### SSTF (Shortest Seek Time First)
+
+- **Description**: Chooses the request with the shortest seek time from the current disk head position.  
+- **Advantage**: Minimizes average seek time, improving overall disk access time.  
+- **Drawback**: May result in starvation for requests located farther away from the current position.
+
+### SCAN (Elevator Algorithm)
+
+- **Description**: Moves the disk head in one direction, servicing requests along the way, then changes direction upon reaching the end.  
+- **Advantage**: Provides fair service distribution, prevents starvation.  
+- **Drawback**: Longer response times for requests at far ends of the disk.
+
+### C-SCAN (Circular SCAN)
+
+- **Description**: Similar to SCAN but jumps to the other end of the disk without reversing direction.  
+- **Advantage**: Consistent response time for all requests.  
+- **Drawback**: May cause delays for requests arriving after the head has passed their location.
+
+### LOOK
+
+- **Description**: A variant of SCAN that only goes as far as the last request in its current direction, then reverses direction.  
+- **Advantage**: Reduces unnecessary traversal of the entire disk, improving response times.
+
+### C-LOOK (Circular LOOK)
+
+- **Description**: Similar to C-SCAN, jumps to the other end of the disk without servicing requests along the way.  
+- **Advantage**: Reduces seek time and improves disk throughput.
+
+> Each algorithm has its strengths and weaknesses, and the choice depends on specific system requirements and characteristics.
+
+---
+
+## Recap: Operating System Essentials in Short
+
+### 1. Processes, Threads, and Multiprocessing
+
+- **Processes**: Independent program instances.  
+- **Threads**: Smaller units within a process.  
+- **Multiprocessing**: Concurrent execution of multiple processes.
+
+### 2. Memory Management
+
+- **Fixed Partitioning**: Divides memory into fixed-sized partitions.  
+- **Dynamic Partitioning**: Allocates memory dynamically.  
+- **Paging**: Divides processes into fixed-sized pages.  
+- **Segmentation**: Divides processes into modules.  
+- **Page Fault**: Accessing a page not in physical memory.
+
+### 3. Replacement Algorithms
+
+- **FIFO**: Replaces oldest page.  
+- **Optimal**: Replaces least-used page.  
+- **LRU**: Replaces least recently used.
+
+### 4. Disk Scheduling Algorithms
+
+- **FCFS**: Processes requests in arrival order.  
+- **SSTF**: Services closest request first.  
+- **SCAN**: Moves head in one direction, reverses.  
+- **C-SCAN**: Circular SCAN with consistent response.  
+- **LOOK**: SCAN variant without unnecessary traversal.  
+- **C-LOOK**: Circular LOOK with improved throughput.
+
+### 5. Operating Systems
+
+- **Windows**: User-friendly, diverse software support.  
+- **macOS**: Sleek interface, Apple ecosystem.  
+- **Linux**: Open-source, customizable, stable.  
+- **Unix**: Powerful, foundational for Linux, macOS.  
+- **Android**: Open-source, mobile-focused.  
+- **iOS**: Apple's mobile operating system.
+
+### 6. Process Synchronization
+
+- **Critical Section**: Code portion with shared resources.  
+- **Requirements**: Mutual exclusion, progress, bounded waiting.  
+- **Mechanisms**: Locks, semaphores, read-write locks.
+
+### 7. Memory Management Approaches
+
+- **Fixed Partitioning**: Predetermined partition sizes.  
+- **Dynamic Partitioning**: Variable partition sizes.  
+- **Allocation Techniques**: First Fit, Best Fit, Worst Fit.
+
+### 8. Virtual Memory
+
+- Extends RAM with secondary storage.  
+- Allows running larger programs.  
+- Ensures memory protection.
+
+### 9. Fragmentation
+
+- **Internal**: Wastage within fixed-size allocation units.  
+- **External**: Wastage with variable-size allocation units.

@@ -1,0 +1,65 @@
+# Entity-Relationship Diagram
+
+An **ER diagram**, or **Entity Relationship diagram**, provides a visual depiction of the logical structure of a database.  
+- It illustrates the **constraints** and **relationships** between various components.  
+- An ER diagram typically consists of three primary components: **Entity Sets**, **Attributes**, and **Relationship Sets**.
+
+---
+
+**Stud_id**, **Col_id** is the primary key.  
+**Student**, **College** are entity sets of which (Stud_id, Stud name, Stud addr) and (Col_id, Col name) are attributes of respectively.  
+**Study In** is the relationship between **Student** and **College** entities.
+
+---
+
+### Entity Set
+
+It is a set of the same type of entities.  
+1. **Strong Entity Set**: In a strong entity set, the primary key exists. A primary key in an entity set is represented by underlining it.  
+2. **Weak Entity Set**: No primary key exists. It contains a partial key called **discriminator**.
+
+---
+
+### Relationship
+
+An association among entities.  
+It can be **unary**, **binary**, **ternary**, or **n-ary**.
+
+---
+
+### Cardinality Constraint
+
+Maximum number of relationship instances an entity set can take part in.  
+It can be:  
+- **One-to-one**
+- **One-to-many**
+- **Many-to-one**
+- **Many-to-many**
+
+---
+
+### Attributes
+
+Attributes are the descriptive characteristics possessed by each entity within an Entity Set.
+
+#### Types of Attributes:
+1. **Simple Attribute**: A single atomic value is associated with each instance of the attribute. For example, **"Age"** or **"Name"**.
+2. **Composite Attribute**: It comprises multiple simple attributes. For instance, an **"Address"** attribute may include **"Street"**, **"City"**, and **"Zip Code"** components.
+3. **Derived Attribute**: This attribute's value is derived or calculated from other attributes. For example, **"Age"** can be derived from the **"Date of Birth"**.
+4. **Single-valued Attribute**: It holds a single value for each instance of the entity. For instance, **"Height"** or **"Weight"**.
+5. **Multi-valued Attribute**: It can hold multiple values for each instance of the entity. For example, **"Phone Numbers"** or **"Skills"**.
+6. **Key Attribute**: It uniquely identifies each entity within an entity set. For example, **"ID"** or **"Employee Number"**.
+
+---
+
+# Extended ER Features
+
+**Extended Entity-Relationship (EER)** features in database management systems (DBMS) extend the capabilities of traditional **Entity-Relationship (ER)** models.  
+These features include:
+
+1. **Generalization**: Aggregates common attributes and relationships from multiple entities to form a **supertype**.
+2. **Specialization**: The process of defining subtypes based on a subset of attributes and relationships from a supertype.
+3. **Aggregation**: EER models allow entities and relationships to be aggregated into higher-level constructs known as **aggregates**.  
+This enables the modeling of complex relationships between groups of entities or relationships.
+
+---

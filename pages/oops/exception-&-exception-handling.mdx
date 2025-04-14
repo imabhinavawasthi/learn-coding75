@@ -1,0 +1,66 @@
+## Exceptions in OOP
+
+**Exceptions** are mechanisms for managing **unexpected or erroneous conditions** that arise during program execution.  
+They allow developers to gracefully **handle errors** without crashing the entire application.
+
+---
+
+### Why Use Exceptions?
+
+- To separate **error-handling code** from regular code.
+- To catch **runtime errors** and respond with defined behavior.
+- To make code more **robust and readable**.
+
+---
+
+### Common Exception Types
+
+Each programming language has its own exception hierarchy, but common types include:
+
+- **Syntax errors**
+- **Runtime errors**
+- **Logical errors**
+- **Custom exceptions** (user-defined)
+
+---
+
+### Exceptions Reference (With Examples):
+
+- [C++ Exception Types](https://www.programiz.com/cpp-programming/exception-handling)  
+- [Java Exception Types](https://www.educative.io/answers/what-are-different-types-of-exceptions-in-java)  
+- [Python Exception Types](https://www.programiz.com/python-programming/exceptions)  
+
+---
+
+## Exception Handling
+
+**Exception Handling** is the practice of catching and managing potential errors in a program to maintain smooth execution.
+
+---
+
+### How It Works
+
+- **try block**: Code that may raise an exception is placed here.
+- **catch block** (or **except** in Python): Contains code to execute if an exception occurs.
+- **finally block** (optional): Code that is always executed, whether or not an exception occurs.
+
+---
+
+### Benefits:
+
+- Prevents **abrupt termination** of the program.
+- Allows for **custom error responses**.
+- Helps build **fault-tolerant** and **user-friendly** software.
+
+---
+
+### Syntax Example (General Structure):
+
+```java
+try {
+    // code that may throw exception
+} catch (ExceptionType name) {
+    // code to handle the exception
+} finally {
+    // optional block that always executes
+}

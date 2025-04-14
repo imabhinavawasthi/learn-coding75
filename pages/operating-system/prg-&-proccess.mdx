@@ -1,0 +1,25 @@
+### Program
+
+A **program** is a set of instructions written in a programming language to perform a specific task. It exists as a static entity, typically stored on non-volatile storage like a disk, until loaded into memory for execution by the operating system.
+
+---
+
+### Process
+
+A **process** is a program under execution (which is currently running). The program counter (PC) shows the address of the next instruction in the executing process. Each process is identified and managed by a **Process Control Block (PCB)**.
+
+---
+
+### Process Scheduling
+
+Process scheduling in operating systems is the task of managing **CPU allocation** to different processes, determining **which process runs next**, and **when**. It's a critical function in **multiprogramming systems** where multiple processes share the CPU simultaneously.
+
+1. **Arrival Time** – Time at which the process arrives in the ready queue.  
+2. **Completion Time** – Time at which process completes its execution.  
+3. **Burst Time** – Time required by a process for CPU execution.  
+4. **Turn Around Time** – Time difference between completion time and arrival time.  
+   - `Turn Around Time = Completion Time - Arrival Time`  
+5. **Waiting Time (WT)** – Time difference between turn around time and burst time.  
+   - `Waiting Time = Turnaround Time - Burst Time`  
+
+---

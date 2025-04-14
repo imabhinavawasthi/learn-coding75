@@ -65,6 +65,7 @@ const Navbar = () => {
                     <li><Link href="/operating-system/introduction" className="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ease-in-out">Operating System</Link></li>
                     <li><Link href="/computer-network/introduction" className="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ease-in-out">Computer Network</Link></li>
                     <li><Link href="/dbms/introduction" className="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ease-in-out">DBMS</Link></li>
+                    <li><Link href="/oops/introduction" className="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ease-in-out">OOPS</Link></li>
                     <li><Link href="/sql/introduction" className="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ease-in-out">SQL</Link>
                     </li>
                   </ul>

@@ -1,4 +1,20 @@
 {
+  "operating-system": {
+    "title": "Operating System",
+    "type": "page"
+  },
+  "computer-network": {
+    "title":"Computer Network",
+    "type": "page"
+  },
+  "dbms": {
+    "title": "DBMS",
+    "type": "page"
+  },
+  "sql": {
+    "title": "SQL",
+    "type": "page"
+  },
   "dsa": {
     "title": "DSA",
     "type": "page"
@@ -11,32 +27,16 @@
     "title": "CPP",
     "type": "page"
   },
-  "python": {
-    "title": "Python",
-    "type": "page"
-  },
   "java": {
     "title": "Java",
     "type": "page"
   },
-  "learn-javascript": {
-    "title": "JavaScript",
+  "oops": {
+    "title": "OOPS",
     "type": "page"
   },
-  "operating-system": {
-    "title": "Operating System",
-    "type": "page"
-  },
-  "computer-network": {
-    "title": "Computer Network",
-    "type": "page"
-  },
-  "dbms": {
-    "title": "DBMS",
-    "type": "page"
-  },
-  "sql": {
-    "title": "SQL",
+  "python": {
+    "title": "Python",
     "type": "page"
   },
   "html": {
@@ -45,6 +45,10 @@
   },
   "css": {
     "title": "CSS",
+    "type": "page"
+  },
+  "learn-javascript": {
+    "title": "JavaScript",
     "type": "page"
   }
 }
