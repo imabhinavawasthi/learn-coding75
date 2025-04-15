@@ -1,0 +1,41 @@
+### Memory Management
+
+Memory Management in an operating system involves organizing and optimizing the use of a computer's memory. It includes allocating memory to different processes, ensuring they don't interfere with each other, and freeing up memory when it's no longer needed.
+
+---
+
+### Partition and Memory Allocation
+
+Let's talk about two ways of handling memory in computer systems:
+
+- **Fixed Partitioning**
+- **Dynamic Partitioning**
+
+#### Fixed Partitioning
+
+In fixed partitioning, the computer's memory is divided into fixed-sized sections, and each section is assigned to a specific task or process. Each section has a set amount of memory, and this allocation remains the same throughout the process's execution.
+
+-  Simple to implement  
+-  Can lead to **internal fragmentation**
+
+---
+
+#### Dynamic Partitioning
+
+Also called **variable partitioning**, dynamic partitioning improves on fixed partitioning by allowing the system to allocate and deallocate memory dynamically based on actual process needs.
+
+-  Better memory utilization  
+-  More complex to manage
+
+**Memory Allocation Algorithms:**
+
+- **First Fit:** Allocates the first block large enough for a process. Fast but may cause fragmentation.
+- **Best Fit:** Allocates the smallest suitable block. Reduces wasted space but may be slower.
+- **Worst Fit:** Allocates the largest block. Keeps larger blocks available for big processes.
+
+Each comes with trade-offs in speed, efficiency, and memory fragmentation.
+
+---
+
+
+

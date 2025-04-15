@@ -1,0 +1,66 @@
+## Encapsulation
+
+**Encapsulation** refers to the **bundling of data (attributes/properties)** and **methods (functions/procedures)** that operate on that data into a **single unit**, typically a class.
+
+It refers to the bundling of data (attributes or properties) and methods (functions or procedures) that operate on that data into a single unit,
+typically a class. This unit restricts access to the data from outside interference and misuse, and only exposes the necessary functionalities
+through well-defined interfaces. It means that all the data and methods are bound together and all the unnecessary details are hidden from the use
+
+It helps restrict access to internal data and only exposes the necessary functionality through **well-defined interfaces**.
+
+> In short: It hides internal object details from the outside world and only shows what’s essential.
+
+### Key Features of Encapsulation:
+
+1. **Data Hiding**  
+   - Restricting access to internal object members.
+2. **Data Binding**  
+   - Binding data and methods together in a class.
+
+### How to Implement:
+
+- Encapsulation is enforced using **access modifiers** (like `public`, `private`, `protected`).
+- Refer to **Access Modifiers** section for implementation:
+  > See: _Page 4_ for [C++ / Java / Python access modifier references](#access-modifiers)
+
+---
+
+## Polymorphism
+
+**Polymorphism** literally means "**many forms**".
+
+In OOP, it refers to the ability of different objects to **respond to the same method call** in **different ways**.  
+It allows for **flexible and extensible** code.
+
+Polymorphism, in simple terms, means "many forms." In object-oriented programming, it refers to the ability of different objects to respond to the
+same message or method call in different ways. This allows objects of different classes to be treated as objects of a common superclass, promoting flexibility and extensibility in code
+
+### Types of Polymorphism:
+
+#### 1. Compile-Time Polymorphism (Static Polymorphism)
+
+ Compile-time polymorphism, also called Static Polymorphism, occurs during the compilation phase of a program. In this type of polymorphism, the compiler determines the appropriate behavior or type for an entity based on its context in the code. By using method overloading and operator overloading, you can achieve compile-time polymorphism in your programs. The compiler determines which version of the method or operator to use based on the types and number of arguments provided, allowing for flexibility and code reuse.
+
+- Occurs during the **compilation phase**.
+- Implemented using:
+  - **Method Overloading**
+  - **Operator Overloading**
+- The **compiler determines** the method version to call based on argument types and counts.
+
+#### 2. Run-Time Polymorphism (Dynamic Polymorphism)
+
+Run-time polymorphism, also known as dynamic polymorphism, occurs when the appropriate method or behavior to execute is determined at
+run-time based on the actual type of the object being referred to. This is typically achieved through method overriding, where a subclass provides a specific implementation of a method that is already defined in its superclass.Run-time polymorphism, also known as dynamic polymorphism, is achieved through method overriding in object-oriented programming languages.
+
+- Occurs during **runtime**.
+- Implemented through:
+  - **Method Overriding**
+- A **subclass overrides** a method of its superclass to provide a specific behavior.
+
+### Polymorphism Reference (With Code Examples):
+
+- [C++](https://www.scaler.com/topics/cpp/polymorphism-in-cpp/)  
+- [Java](https://www.scaler.com/topics/java/polymorphism-in-java/)  
+- [Python](https://www.toppr.com/guides/python-guide/tutorials/python-oops/polymorphism-in-python-with-examples/)
+
+---

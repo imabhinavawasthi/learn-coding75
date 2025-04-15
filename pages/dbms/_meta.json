@@ -1,3 +1,10 @@
 {
-    "introduction":"Introduction to DBMS"
+    "introduction":"Introduction",
+    "database-&-dbms":"Database and DBMS",
+    "schema-&-data-lang":"Schema and Data language",
+    "er-diagram-&-features":"Entity Relationship and Features",
+    "key-&-decomposition":"Keys and Decomposition",
+    "normalization-&-transaction":"Normalization and Transaction",
+    "acid-properties-&-schedules":"Acid Properties and Schedules",
+    "serializability":"Serializability"
 }

@@ -1,0 +1,38 @@
+###  Virtual Memory
+
+**Virtual memory** is a memory management concept that extends a computer’s usable memory beyond its physical RAM capacity. It creates a **virtual address space** by combining **RAM** with **secondary storage** like a hard disk.
+
+- When the system runs out of physical memory, it temporarily moves some data to disk (called **paging**).
+- This enables the execution of larger programs and allows **multitasking** more effectively.
+- Virtual memory also supports **memory protection**, preventing processes from accessing each other’s memory directly.
+
+---
+
+###  Segmentation
+
+**Segmentation**: Segmentation is a memory management technique that divides processes into smaller segments or modules. Unlike paging, these segments do not need to be placed in contiguous memory locations, eliminating internal fragmentation. The length of each segment is determined based on the purpose of that segment within the user program.Segmentation was introduced to address issues with the paging technique. In paging, a function or code is divided into pages without considering the possibility of dividing related parts of the code. This results in the CPU having to load multiple pages into frames for the complete execution of related code.
+
+ **Why use Segmentation?**
+
+Unlike paging (which splits programs arbitrarily), segmentation maintains logical groupings, so:
+
+- Related code can be loaded more efficiently.
+- The system accesses program components more logically.
+
+---
+
+###  Fragmentation
+
+**Fragmentation** occurs when memory is used inefficiently, reducing available space and performance.Fragmentation refers to the inefficient use of memory, leading to reduced capacity and performance. This wastage occurs in two main forms: 
+
+ ####  Internal Fragmentation
+
+Internal Fragmentation: This type of fragmentation occurs in systems with fixed-size allocation units. It happens when allocated memory blocks are
+larger than the actual size of the data they hold. As a result, some space within the allocated block remains unused, contributing to internal
+fragmentation. This inefficiency can accumulate across multiple allocations,leading to a decrease in available memory for new processes.
+
+####  External Fragmentation
+
+**External Fragmentation**: Systems with variable-size allocation units experience external fragmentation. This phenomenon arises when free
+memory exists in non-contiguous chunks, making it challenging to allocate larger memory blocks. Despite the total available memory being sufficient,the scattered nature of free space limits the system's ability to accommodate processes with larger memory requirements. Over time, external fragmentation can result in inefficient memory utilization and impact overall system performance.
+

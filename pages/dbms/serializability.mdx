@@ -1,0 +1,48 @@
+# Serializability
+
+**Serializability** is a concept used to determine the correctness of **non-serial schedules** and ensure **database consistency**. It identifies which concurrent schedules are valid and preserve the integrity of the database.
+
+## 1. Serializable Schedules
+
+A **non-serial schedule** involving 'n' transactions is **serializable** if it is **equivalent to some serial schedule** of the same 'n' transactions.  
+Serializable schedules maintain:
+- Consistency  
+- Recoverability  
+- Cascadelessness  
+- Strictness
+
+### Types of Serializable Schedules
+
+#### Conflict Serializable
+A non-serial schedule that can be transformed into a serial schedule by **swapping non-conflicting operations**.
+
+#### View Serializable
+A schedule is **view serializable** if it is **view equivalent** to a serial schedule, i.e., it results in the **same final state** and **reads the same data values**.
+
+---
+
+## 2. Non-Serializable Schedules
+
+Schedules that **cannot be transformed into a serial schedule**. These may or may not be:
+- Consistent  
+- Recoverable
+
+### Irrecoverable Schedules
+If a transaction **reads data modified by another uncommitted transaction** and commits **before** the other transaction commits, it's called an **Irrecoverable Schedule**.
+
+### Recoverable Schedules
+If a transaction **delays its commit** until the transaction from which it read uncommitted data either **commits or rolls back**, it's called a **Recoverable Schedule**.
+
+---
+
+### Types of Recoverable Schedules
+
+#### 1. Cascading Schedule (Cascading Rollback / Cascading Abort)
+Occurs when the **failure of one transaction leads to rollback of several dependent transactions**.
+
+#### 2. Cascadeless Schedule
+Prevents cascading rollbacks by **disallowing reads from uncommitted transactions**.
+
+#### 3. Strict Schedule
+A stricter form of cascadeless schedules — **no transaction is allowed to read or write a data item until the last transaction that wrote it is committed or aborted**.
+

@@ -1,0 +1,62 @@
+# Normalization
+
+In DBMS, **database normalization** is the process of organizing and structuring the database to reduce redundancies and ensure data integrity through **lossless decomposition**.
+
+### Why Normalization is Necessary:
+1. Reduce redundancy  
+2. Ensure data integrity  
+3. Optimize storage and query performance
+
+---
+
+## Normal Forms
+
+### 1. First Normal Form (1NF)
+Ensures that each table has **atomic attributes**, meaning each attribute contains only indivisible values. No repeating groups or arrays are allowed.
+
+### 2. Second Normal Form (2NF)
+Requires that a table be in **1NF** and that all **non-key attributes are fully functionally dependent** on the entire primary key, eliminating partial dependencies.
+
+### 3. Third Normal Form (3NF)
+Requires a table to be in **2NF** and ensures that there are **no transitive dependencies**, meaning that non-key attributes are not dependent on other non-key attributes.
+
+### 4. Boyce-Codd Normal Form (BCNF)
+A relation is in **BCNF** if:
+- The relation is already in **3NF**.
+- For every non-trivial functional dependency `A → B` in the relation, `A` must be a **superkey** of the relation.
+
+---
+
+# Transaction
+
+In a DBMS, a **transaction** represents a unit of work performed against the database.  
+It is a sequence of one or more database operations (insert, update, delete, or select) that must be executed **atomically**, ensuring **data integrity** and **consistency**.
+
+### Common Operations in Transactions:
+1. **Read Operation**: Reads the value of a data item `A` from the database and stores it in a buffer in main memory.
+2. **Write Operation**: Writes the updated value of `A` from the buffer back to the database.
+
+---
+
+## Transaction States
+
+### 1. Active State
+- This represents the initial phase in the lifecycle of a transaction. During the active state, the transaction's instructions are being
+executed. Any modifications made by the transaction are temporarily stored in the buffer located in the main memory.
+
+### 2. Partially Committed State
+- Once the last instruction of the transaction has been executed, it transitions into a partially committed state. In this state, the transaction is considered partially committed, as all changes made by the transaction are still stored in the buffer located in the main memory. 
+
+### 3. Committed State
+- Once all the changes made by the transaction have been successfully stored in the database, it transitions into a committed state. At this stage, the transaction is considered fully committed, indicating that its modifications are now permanent and reflected in the database.
+
+### 4. Failed State
+- When a transaction is being executed in the active state or partially committed state and encounters a failure that prevents it from
+continuing execution, it transitions into a failed state.
+
+### 5. Aborted State
+- After the transaction has failed and entered a failed state, it becomes necessary to undo all the changes made by the transaction. To accomplish this, the transaction is rolled back, reverting any modifications it made to the database. Once the rollback process is complete, the transaction transitions into an aborted state
+
+### 6. Terminated State
+- This represents the final stage in the lifecycle of a transaction Once the transaction has entered either the committed state or the aborted state, it ultimately transitions into a terminated state, signifying the conclusion of its lifecycle.
+

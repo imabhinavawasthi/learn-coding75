@@ -1,0 +1,93 @@
+# Database
+
+A database is a structured collection of data organized for efficient storage,retrieval, and manipulation. It typically consists of tables, each containing rows and columns, where each row represents a record and each column represents a field or attribute. Databases are managed by database
+management systems (DBMS) and are used in various applications to store and manage information, such as customer data, inventory records, or
+financial transactions.
+
+# Database Management System
+
+A Database Management System (DBMS) is software designed to efficiently and securely manage databases. It provides an interface for users to interact with the database, allowing them to create, retrieve, update, and delete data. DBMS handles tasks such as data organization, storage, retrieval, indexing, security, and backup.  
+
+Examples of popular DBMS include **MySQL**, **Oracle Database**, **Microsoft SQL Server**, and **PostgreSQL**.
+
+---
+
+## Difference between File System and DBMS
+
+| Feature | File System | DBMS |
+|--------|-------------|------|
+| **Data Organization** | Data is stored in individual files with minimal structure | Organizes data into structured tables with rows and columns |
+| **Data Redundancy** | High chances of redundant data | Redundancy minimized using normalization |
+| **Data Integrity and Security** | Limited integrity checks and basic security | Strong constraints (e.g., primary/foreign keys), and robust access control |
+| **Concurrency Control** | Poor or no built-in concurrency handling | Supports transactions and locks for concurrent access |
+| **Data Retrieval & Manipulation** | Requires manual scripting for data operations | Supports complex queries using SQL |
+
+---
+
+## DBMS Application Architecture
+
+There are **three types of DBMS architectures**:
+
+### 1-Tier Architecture
+
+- Direct access between the user and the DBMS.
+- Client, server, and database reside on the same machine.
+- Commonly used in personal setups (e.g., learning SQL on a local server).
+- Not typically used in industry for production environments.
+
+---
+
+### 2-Tier Architecture
+
+- Follows a client-server model.
+- Client directly interacts with the database on the server using APIs like **ODBC** or **JDBC**.
+- Server handles tasks such as **query processing** and **transaction management**.
+- Client runs user interface and application logic.
+
+---
+
+### 3-Tier Architecture
+
+- Introduces an **application server** between client and database.
+- Client ↔ App Server ↔ Database
+- Application server handles business logic, query processing, and transaction control.
+- Common in **large-scale web applications** for better scalability and security.
+
+---
+
+## View of Data (Three Schema Architecture)
+
+In a DBMS, data is viewed at three levels of abstraction to simplify user interaction and enhance system design.
+
+### Objective:
+To allow **multiple users to access the same data with different views**, while storing the data only once.
+
+---
+
+### 1. Physical Level
+
+- Lowest level of abstraction.
+- Describes **how data is physically stored**.
+- Includes low-level storage details and the **physical schema**.
+- Covers aspects like **data compression**, **encryption**, **indexing**, and **storage allocation methods** (e.g., N-ary tree).
+
+---
+
+### 2. Logical / Conceptual Level
+
+- Describes **what data is stored** and the **relationships** among them.
+- Uses a **conceptual schema** for database structure.
+- Database Administrators (DBAs) use this level to design and manage the database.
+- Users at this level don't need to understand physical storage details.
+
+---
+
+### 3. View / External Level
+
+- Highest level of abstraction.
+- Provides **customized views** for different users or user groups.
+- Each **view schema** exposes only a part of the database relevant to the user.
+- Improves **security** and **usability** by hiding unnecessary details.
+- Multiple **subschemas** can exist for different user roles or departments.
+
+---

@@ -1,3 +1,13 @@
 {
-    "introduction":"Introduction to OS"
+    "introduction":"Introduction to OS",
+    "prg-&-proccess":"Program and Process",
+    "thread-&-process-thread":"Thread and Process Thread",
+    "multithread-&-processing":"Multithread and Processing",
+    "ipc-&-process-State":"IPC and Process State",
+    "scheduling-&-starvation":"Scheduling and Starvation",
+    "sync-&-deadlock":"Synchronization and Deadlock",
+    "memorymng-&-dynamic-practicing":"Memory Management and partition",
+    "paging-&-thrashing":"Paging and Thrashing",
+    "virtual-memory-&-fragmentation":"Virtual Memory and Fragmentation",
+    "disk-management-&-recap":"Disk Management and Recap"
 }

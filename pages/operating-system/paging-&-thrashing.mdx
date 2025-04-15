@@ -1,0 +1,94 @@
+### Paging
+
+Paging is a storage strategy in Operating Systems that involves bringing processes from **secondary storage** into the **main memory** as *pages*. The concept revolves around dividing:
+
+- Each **process** into *pages*
+- Main memory into *frames*
+
+Each page of a process is stored in one memory frame. Pages can be placed in different locations in memory, but the goal is to find **contiguous frames** (or holes) for better storage.
+
+>  Pages are loaded into memory only when needed — otherwise, they remain in secondary storage.
+
+---
+
+### Page Replacement Algorithms
+
+When a **page fault** occurs, the OS must decide which memory page to replace. Here are some common strategies:
+
+####  First-In-First-Out (FIFO)
+
+- Maintains a queue of pages based on the order they were loaded.
+- The **oldest** page (first in the queue) is replaced when needed.
+-  Simple  
+-  Not always optimal — might remove frequently used pages.
+
+---
+
+####  Optimal Page Replacement
+
+- Replaces the page **not needed for the longest time in the future**.
+-  Theoretically best (least number of page faults)
+-  Impractical in real systems — requires future knowledge.
+
+---
+
+####  Least Recently Used (LRU)
+
+- Replaces the page that hasn’t been used for the **longest time**.
+- Based on the idea that recently used pages are more likely to be used again.
+-  Reduces page faults
+-  Slightly more complex to implement
+
+---
+
+### Page Fault
+
+A page fault occurs when a running program attempts to access a memory page that is part of its virtual address space but is not currently loaded in the computer's physical memory. This triggers an interrupt at the hardware level.
+
+- Is in the virtual address space
+-  But **not currently in physical memory**
+
+This triggers a **hardware interrupt**, and the OS must fetch the missing page from secondary storage.
+
+---
+
+### Thrashing
+
+Thrashing is a condition in computer systems where a substantial amount of time and resources is consumed continuously swapping pages (Page
+Fault) between the computer's physical memory (RAM) and secondary storage, like a hard disk. This excessive paging activity results in the system
+being preoccupied with moving pages in and out of memory rather than performing useful tasks, leading to a significant decline in overall
+performance.
+
+-  The system spends **too much time swapping pages** in and out of memory.
+-  The CPU becomes busy handling page faults instead of executing instructions.
+
+This results in:
+
+-  Poor performance
+-  Wasted resources
+
+---
+
+### Demand Paging
+
+
+**Demand paging** is like fetching parts of a book only when you're about to read them, rather than bringing the entire book at once.
+
+Here's how it works:
+
+- **Access Attempt**: When a computer program wants to use a piece of information (page), it checks if it's already in memory — like a quick reference check.
+  
+- **Valid Page (In Memory)**: If the needed information is already in memory, great! The program continues running smoothly.
+
+- **Invalid Page (Page Fault)**: If the page is not in memory, it triggers a **page fault**, signaling: “Hey, I need this part!”
+
+- **Memory Reference Check**: The operating system verifies whether the requested information exists in **secondary storage**.
+
+- **Page-In Operation**: If valid, the OS loads that page into main memory from secondary storage.
+
+- **Restart Instruction**: The program is resumed from the exact point where it left off — now with the required page available.
+
+---
+
+So, demand paging helps the computer be efficient by only bringing in the necessary information when it's actually needed, making things smoother
+and saving memory space.
