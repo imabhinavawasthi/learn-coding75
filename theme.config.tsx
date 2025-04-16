@@ -25,7 +25,7 @@ function Logo() {
 const config: DocsThemeConfig = {
   logo: <Logo />,
   project: {
-    link: "https://github.com/shuding/nextra-docs-template",
+    link: "https://github.com/imabhinavawasthi",
   },
   chat: {
     link: "https://discord.com",

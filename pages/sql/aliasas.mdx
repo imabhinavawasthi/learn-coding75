@@ -1,0 +1,38 @@
+# SQL Aliases
+
+SQL aliases are used to give a table, or a column in a table, a temporary name.
+
+Aliases are often used to make column names more readable.
+
+An alias only exists for the duration of that query.
+
+An alias is created with the `AS` keyword.
+
+---
+
+## Example:
+
+```sql
+SELECT CustomerID AS ID
+FROM Customers;
+```
+# SQL Aliases
+
+An alias is a temporary name that you can assign to a table or a column within a query. It is mainly used to make column names or table names more readable, especially when the original names are long, complex, or unclear.
+
+---
+
+##  Key Points About Aliases:
+
+- **Temporary**: An alias only exists for the duration of the query. It does not modify the actual table or column name in the database.
+- **Readability**: Aliases make your SQL queries more readable and easier to understand.
+- **Creation**: Aliases are created using the `AS` keyword (optional in some cases).
+- **Usage**: Aliases can be applied to both tables and columns.
+
+---
+
+##  Why Use Aliases?
+
+- To simplify complex table or column names.
+- To make the results of queries more understandable.
+- To improve the readability of SQL queries, especially when working with multiple tables or joining tables.

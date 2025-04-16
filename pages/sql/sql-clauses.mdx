@@ -1,0 +1,63 @@
+# SQL Clauses
+
+SQL clauses are an essential part of SQL queries and help to filter, sort, and limit the data returned from a database. Some of the most commonly used SQL clauses are:
+
+# WHERE
+The `WHERE` clause is used to filter records that meet certain conditions.
+
+### Syntax:
+
+```sql
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+```
+
+# GROUP BY
+
+The **SQL `GROUP BY`** statement is used to arrange identical data into groups.
+
+- The `GROUP BY` statement is used with the **SQL `SELECT`** statement.
+- The `GROUP BY` statement follows the `WHERE` clause in a `SELECT` statement and precedes the `ORDER BY` clause.
+- The `GROUP BY` statement is often used with aggregation functions (like `COUNT()`, `SUM()`, `AVG()`, etc.).
+
+## Syntax
+
+```sql
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition
+GROUP BY column1, column2, ...
+ORDER BY column_name;
+```
+# HAVING
+
+- The **HAVING** clause is used to specify a search condition for a group or an aggregate.
+- **HAVING** is used in a `GROUP BY` clause. If you are not using `GROUP BY` clause, then you can use the **HAVING** function like a `WHERE` clause.
+
+## Syntax
+
+```sql
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition
+GROUP BY column1, column2
+HAVING condition
+ORDER BY column1, column2;
+
+```
+
+# ORDER BY
+
+- The **ORDER BY** clause sorts the result-set in ascending or descending order.
+- It sorts the records in ascending order by default. The `DESC` keyword is used to sort the records in descending order.
+
+## Syntax
+
+```sql
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition
+ORDER BY column1, column2 ... ASC | DESC;
+

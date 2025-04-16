@@ -42,19 +42,12 @@ function Hero() {
             </p>
             <div className="hidden md:flex relative items-center justify-center mt-8 md:mt-12 w-full">
               <Link
-                href="#"
+                href="/operating-system/introduction"
                 className="flex items-center justify-center w-max rounded-full border-t border-foreground/30 bg-white/20 backdrop-blur-lg px-2 py-1 md:py-2 gap-2 md:gap-8 shadow-3xl shadow-background/40 cursor-pointer select-none"
               >
                 <p className="text-foreground text-sm text-center md:text-base font-medium pl-4 pr-4 ">
                   Explore Docs
                 </p>
-                {/* <Button
-            size="sm"
-            className="rounded-full hidden lg:flex border border-foreground/20"
-          >
-            Get Started
-            <ArrowRight className="w-4 h-4 ml-1" />
-          </Button> */}
               </Link>
             </div>
           </div>

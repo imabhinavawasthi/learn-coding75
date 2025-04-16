@@ -1,0 +1,72 @@
+# SQL FOREIGN KEY Constraint
+
+The `FOREIGN KEY` constraint is used to prevent actions that would destroy links between tables.
+
+A `FOREIGN KEY` is a field (or collection of fields) in one table that refers to the `PRIMARY KEY` in another table.
+
+- The table with the foreign key is called the **child table**.
+- The table with the primary key is called the **referenced** or **parent table**.
+
+### Example: 
+
+#### Persons Table
+
+| PersonID | LastName | FirstName | Age |
+|----------|----------|-----------|-----|
+| 1        | Hansen   | Ola       | 30  |
+| 2        | Svendson | Tove      | 23  |
+| 3        | Pettersen| Kari      | 20  |
+
+#### Orders Table
+
+| OrderID | OrderNumber | PersonID |
+|---------|-------------|----------|
+| 1       | 77895       | 3        |
+| 2       | 44678       | 3        |
+| 3       | 22456       | 2        |
+| 4       | 24562       | 1        |
+
+Notice that the `"PersonID"` column in the `"Orders"` table points to the `"PersonID"` column in the `"Persons"` table.
+
+- The `"PersonID"` column in the `"Persons"` table is the **PRIMARY KEY**.
+- The `"PersonID"` column in the `"Orders"` table is a **FOREIGN KEY**.
+
+The `FOREIGN KEY` constraint prevents invalid data from being inserted into the foreign key column, because it must be one of the values contained in the parent table.
+
+---
+
+## SQL FOREIGN KEY on CREATE TABLE
+
+The following SQL creates a `FOREIGN KEY` on the `"PersonID"` column when the `"Orders"` table is created:
+
+**MySQL:**
+
+```sql
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+```
+
+## A Secondary Key (Foreign Key)
+
+A **secondary key** (more commonly referred to as a **foreign key** in SQL) is a field (or a combination of fields) in a table that is used to establish and enforce a link between the data in two tables.
+
+---
+
+###   Key Characteristics of a Foreign Key (Secondary Key):
+
+- **References Primary Key**: A foreign key is a column or a set of columns in one table that refers to the primary key of another table.
+- **Creates Relationship**: It helps establish a relationship between two tables, ensuring referential integrity.
+- **Allows Duplicates**: Unlike primary keys, foreign keys can have duplicate values. The foreign key does not need to be unique within its table.
+- **NULL Values**: Foreign keys can contain `NULL` values, depending on how they are defined in the table.
+- **Enforces Referential Integrity**: The foreign key ensures that the value in the foreign key column must match a value in the referenced table’s primary key or be `NULL`.
+
+---
+
+##   Why Use a Foreign Key (Secondary Key)?
+
+To maintain **data integrity** and establish **relationships** between tables. For example, it prevents orphan records in child tables and ensures that data in related tables is consistent.

@@ -1,0 +1,48 @@
+# SQL Subquery
+
+A **Subquery** is a query within another SQL query and is embedded within the `WHERE` clause.
+
+## Important Rules
+
+- A subquery can be placed in a number of SQL clauses like the `WHERE`, `FROM`, and `HAVING` clauses.
+- You can use a subquery with `SELECT`, `UPDATE`, `INSERT`, and `DELETE` statements along with operators like `=`, `<`, `>`, `>=`, `<=`, `IN`, `BETWEEN`, etc.
+- A subquery is a query within another query. The outer query is known as the **main query**, and the inner query is known as a **subquery**.
+- Subqueries are on the right side of the comparison operator.
+- A subquery is always enclosed in **parentheses**.
+- In the subquery, the `ORDER BY` command cannot be used. However, the `GROUP BY` command can be used to perform the same function as `ORDER BY`.
+
+# Subqueries with the INSERT Statement
+
+A **SQL subquery** can also be used with the `INSERT` statement. In this case, data returned from the subquery is used to insert into another table.
+
+- In the subquery, the selected data can be modified using any of the character or date functions.
+
+## Syntax
+
+```sql
+INSERT INTO table_name (column1, column2, column3, ...)
+SELECT * FROM table_name
+WHERE value_operator;
+
+# Subqueries with the UPDATE Statement
+
+A **SQL subquery** can be used in conjunction with the `UPDATE` statement. When a subquery is used with the `UPDATE` statement, either a single or multiple columns in a table can be updated.
+
+## Syntax
+
+```sql
+UPDATE table
+SET column_name = new_value
+WHERE value_operator (SELECT column_name FROM table_name WHERE condition);
+```
+
+# Subqueries with the DELETE Statement
+
+A **SQL subquery** can be used in conjunction with the `DELETE` statement, just like with other SQL statements.
+
+## Syntax
+
+```sql
+DELETE FROM table_name
+WHERE value_operator (SELECT column_name FROM table_name WHERE condition);
+

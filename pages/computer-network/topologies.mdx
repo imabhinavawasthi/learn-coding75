@@ -1,0 +1,118 @@
+# Network Topology
+
+Network Topology defines the layout of the network and how all the components are interconnected. It determines how the nodes (devices) and connections are arranged. There are two types of network topology:
+
+- **Physical Topology**: The physical arrangement of the nodes and cables in the network.
+- **Logical Topology**: How data flows logically within the network, regardless of the physical layout.
+
+## Types of Network Topology
+
+There are six main types of network topology:
+
+### 1. **Bus Topology**
+   In bus topology, all devices are connected to a single central cable, called the **bus**. Data is transmitted in one direction, and all devices receive the same signal. However, if the bus fails, the entire network can be affected.
+
+   ## Advantages of Bus Topology
+
+- **Low-Cost Cable**: In bus topology, nodes are directly connected to the cable without passing through a hub, making the initial installation cost low.
+- **Moderate Data Speeds**: Coaxial or twisted pair cables used in bus networks can support speeds up to 10 Mbps.
+- **Familiar Technology**: Bus topology is well-known, and both installation and troubleshooting techniques are commonly understood. Hardware components are also widely available.
+- **Limited Failure**: A failure in one node will not impact the operation of other nodes in the network.
+
+## Disadvantages of Bus Topology
+
+- **Extensive Cabling**: Although bus topology is simpler, it still requires a significant amount of cabling.
+- **Difficult Troubleshooting**: Specialized test equipment is needed to detect cable faults. Any fault in the cable can disrupt communication for all nodes on the network.
+- **Signal Interference**: If two nodes transmit messages simultaneously, the signals can collide, causing interference.
+- **Reconfiguration Difficulties**: Adding new devices to the network may slow it down due to the increased load.
+- **Attenuation**: Signal loss, known as attenuation, can occur over long distances, causing communication issues. Repeaters are often used to regenerate the signal.
+
+
+### 2. **Ring Topology**
+   In ring topology, each device is connected to two other devices, forming a closed loop or ring. Data travels in one direction around the ring. If one device or connection fails, the entire network can be disrupted.
+   ## Advantages of Ring Topology
+
+- **Network Management**: Faulty devices can be removed from the network without affecting the overall network operation.
+- **Product Availability**: There are many hardware and software tools available for network operation and monitoring.
+- **Cost**: Twisted pair cabling is inexpensive and easily available, which lowers the installation cost.
+- **Reliable**: Ring topology is more reliable because the communication system is not dependent on a single host computer.
+
+## Disadvantages of Ring Topology
+
+- **Difficult Troubleshooting**: Troubleshooting requires specialized test equipment, and a fault in the cable disrupts communication for all nodes in the network.
+- **Failure**: A breakdown in one station leads to the failure of the entire network, affecting all devices.
+- **Reconfiguration Difficulties**: Adding new devices can slow down the network and may require significant reconfiguration.
+- **Delay**: Communication delay increases with the number of nodes in the network. Adding new devices increases this delay.
+
+
+### 3. **Tree Topology**
+   Tree topology is a hybrid of star and bus topologies. It uses a central root node that branches out to other nodes. This structure allows for hierarchical organization but can be disrupted if the root node fails.
+   ## Advantages of Tree Topology
+
+- **Support for Broadband Transmission**: Tree topology is often used for broadband transmission, enabling signals to be sent over long distances without significant attenuation.
+- **Easily Expandable**: New devices can be added to the existing network with ease, making tree topology highly expandable.
+- **Easily Manageable**: The network is divided into segments (star networks), making management and maintenance simpler.
+- **Error Detection**: Error detection and correction are easier in tree topology due to its segmented nature.
+- **Limited Failure**: A failure in one station does not typically affect the entire network.
+- **Point-to-Point Wiring**: Each individual segment in the network uses point-to-point wiring, which simplifies troubleshooting for that segment.
+
+## Disadvantages of Tree Topology
+
+- **Difficult Troubleshooting**: If a fault occurs in any of the nodes, troubleshooting can be challenging due to the complexity of the connections.
+- **High Cost**: Devices required for broadband transmission can be expensive, raising the overall cost of the network.
+- **Failure**: Tree topology is dependent on the main bus cable. A failure in this central cable can damage the entire network.
+- **Reconfiguration Difficulties**: Adding new devices or reconfiguring the network can be challenging, especially if the network grows large.
+
+
+### 4. **Star Topology**
+   In star topology, all devices are connected to a central node (like a hub or switch). This topology is easy to manage, and if one device fails, it doesn't affect the rest of the network. However, if the central node fails, the entire network can go down.
+
+   ## Advantages of Star Topology
+
+- **Efficient Troubleshooting**: Troubleshooting is more efficient in star topology compared to bus topology. Since all stations are connected to a centralized hub, the network administrator can quickly identify and address issues at the central point.
+- **Network Control**: Complex network control features can be easily implemented, and any changes made in the network are automatically accommodated without affecting other devices.
+- **Limited Failure**: As each station is connected to the central hub with its own cable, a failure in one cable will not affect the entire network.
+- **Familiar Technology**: Star topology is well-known and uses widely available, cost-effective tools.
+- **Easily Expandable**: The network is easily expandable by adding new stations to the available open ports on the central hub.
+- **Cost-Effective**: Star topology networks are affordable due to the use of inexpensive coaxial cables.
+- **High Data Speeds**: Star topology can support high bandwidth, with Ethernet 100BaseT being a common example supporting speeds up to 100 Mbps.
+
+## Disadvantages of Star Topology
+
+- **Central Point of Failure**: If the central hub or switch fails, all connected nodes will be unable to communicate with each other, making the network reliant on the central point.
+- **Cable Routing**: In some cases, routing the cables becomes difficult when a significant amount of cabling is needed, which can make network installation complex.
+
+
+### 5. **Mesh Topology**
+   Mesh topology involves connecting each device to every other device in the network. This provides multiple paths for data to travel, offering redundancy and reliability. It's highly fault-tolerant but can be expensive and complex to implement.
+
+   ## Advantages of Mesh Topology
+
+- **Reliable**: Mesh topology networks are highly reliable, as the failure of any single link does not affect the communication between connected computers.
+- **Fast Communication**: Communication is fast between nodes, as there are multiple paths for data transmission.
+- **Easier Reconfiguration**: Adding new devices or making changes to the network won't disrupt communication between other devices in the network.
+
+## Disadvantages of Mesh Topology
+
+- **Cost**: Mesh topology involves a large number of connected devices, such as routers, and more transmission media compared to other topologies, making it costly to implement.
+- **Management**: Mesh networks can be large and complex, making them difficult to maintain and manage. Without proper monitoring, failures in communication links may go undetected.
+- **Efficiency**: High redundancy in connections can reduce the overall efficiency of the network, as multiple paths lead to unnecessary network traffic.
+
+
+### 6. **Hybrid Topology**
+   Hybrid topology is a combination of two or more different types of topologies. It combines the advantages of different topologies to meet specific needs. For example, a large enterprise network might use a combination of star and mesh topologies.
+
+   ## Advantages of Hybrid Topology
+
+- **Reliable**: If a fault occurs in any part of the network, it will not affect the functioning of the rest of the network.
+- **Scalable**: The size of the network can be easily expanded by adding new devices without affecting the functionality of the existing network.
+- **Flexible**: This topology is highly flexible and can be designed according to the specific requirements of the organization.
+- **Effective**: Hybrid topology can be designed in such a way that the strengths of the network are maximized, and the weaknesses are minimized.
+
+## Disadvantages of Hybrid Topology
+
+- **Complex Design**: The major drawback of hybrid topology is the difficulty in designing the architecture. The design process can be complex as it involves combining multiple topologies.
+- **Costly Hubs**: The hubs used in hybrid topology are more expensive than the ones used in other topologies, as they are often specialized.
+- **Costly Infrastructure**: The infrastructure cost is high because a hybrid network requires a significant amount of cabling, network devices, and other resources.
+
+

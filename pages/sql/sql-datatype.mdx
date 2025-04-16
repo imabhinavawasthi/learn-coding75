@@ -1,0 +1,125 @@
+# What is SQL Datatype?
+
+- **SQL Datatype** is used to define the **type of values** that a column can contain.
+- Every **column** in a database table must have a **name** and an associated **data type**.
+
+## Common SQL Data Types
+
+1. **Binary**  
+   Used to store binary data such as images or files.
+
+2. **Numeric**  
+   Represents numeric values like integers and floating-point numbers.  
+   Examples: `INT`, `FLOAT`, `DECIMAL`, `NUMERIC`
+
+3. **Exact Numeric**  
+   Used for precise numeric values.  
+   Examples: `DECIMAL(p, s)`, `NUMERIC(p, s)`
+
+4. **String**  
+   Used to store character data.  
+   Examples: `CHAR`, `VARCHAR`, `TEXT`
+
+5. **Date/Time**  
+   Used to store date and time information.  
+   Examples: `DATE`, `TIME`, `DATETIME`, `TIMESTAMP`
+
+   # SQL Commands
+
+- **SQL commands** are instructions used to **communicate with a database**.
+- They are used to **perform specific tasks**, such as querying data, managing tables, and controlling access.
+- SQL can perform various operations like:
+  - Creating tables
+  - Adding data to tables
+  - Modifying tables
+  - Dropping tables
+  - Setting user permissions
+
+## Types of SQL Commands
+
+There are **five main types** of SQL commands:
+
+1. **DDL (Data Definition Language)**  
+   - Defines database structure  
+   - Examples: `CREATE`, `ALTER`, `DROP`, `TRUNCATE`
+
+2. **DML (Data Manipulation Language)**  
+   - Manages data within tables  
+   - Examples: `INSERT`, `UPDATE`, `DELETE`
+
+3. **DCL (Data Control Language)**  
+   - Controls access to data  
+   - Examples: `GRANT`, `REVOKE`
+
+4. **TCL (Transaction Control Language)**  
+   - Manages transactions in the database  
+   - Examples: `COMMIT`, `ROLLBACK`, `SAVEPOINT`
+
+5. **DQL (Data Query Language)**  
+   - Retrieves data from the database  
+   - Example: `SELECT`
+
+# Data Definition Language (DDL)
+
+- **DDL** is used to **change the structure** of database tables.
+- It includes operations like **creating**, **deleting**, and **modifying** tables.
+- All DDL commands are **auto-committed**, meaning changes are **permanently saved** in the database once executed.
+
+## Common DDL Commands
+
+- `CREATE`
+- `ALTER`
+- `DROP`
+- `TRUNCATE`
+
+---
+
+# Data Manipulation Language (DML)
+
+- **DML commands** are used to **modify the database**.
+- They are responsible for making **changes to the data** stored in tables.
+- **DML commands are not auto-committed**, which means changes are **not saved permanently** until explicitly committed.
+- These changes can be **rolled back** if needed.
+
+## Common DML Commands
+
+- `INSERT`
+- `UPDATE`
+- `DELETE`
+
+# Data Control Language (DCL)
+
+- **DCL commands** are used to **grant or revoke access** and authority to users on the database.
+
+## Common DCL Commands
+
+- `GRANT`
+- `REVOKE`
+
+---
+
+# Transaction Control Language (TCL)
+
+- **TCL commands** are used to manage **transactions** in the database.
+- These commands are only used with **DML operations** like `INSERT`, `DELETE`, and `UPDATE`.
+- Since **DDL operations are auto-committed**, TCL commands **cannot be used** with them.
+
+## Common TCL Commands
+
+- `COMMIT`
+- `ROLLBACK`
+- `SAVEPOINT`
+
+---
+
+# Data Query Language (DQL)
+
+- **DQL** is used to **fetch data** from the database.
+- It mainly uses the **`SELECT`** command.
+
+## `SELECT` Command
+
+- Works like the **projection** operation in relational algebra.
+- It is used to **select attributes (columns)** based on a **condition** specified in the `WHERE` clause.
+
+

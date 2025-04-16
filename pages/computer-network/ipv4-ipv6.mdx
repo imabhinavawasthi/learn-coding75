@@ -1,0 +1,62 @@
+## IPv4 vs IPv6
+
+### What is IP?
+**IP** stands for **Internet Protocol**. An **IP address** is assigned to each device connected to a network to identify and communicate with the device. It defines the technical format of packets, facilitating communication between the source and destination devices. IP works in conjunction with TCP (Transmission Control Protocol) and is referred to as **TCP/IP**.
+
+### Types of IP Addresses:
+1. **IPv4 (Internet Protocol Version 4)**  
+2. **IPv6 (Internet Protocol Version 6)**
+
+### What is IPv4?
+**IPv4** is the **current and most commonly used version** of IP. It uses a **32-bit address**, typically written in four numbers separated by dots (periods), called **Octets**. Each octet contains a number in the range of 0-255, and the entire IPv4 address can represent **4,294,967,296 unique addresses**.
+
+#### Example:
+An IPv4 address could look like this: `66.94.29.13`.
+
+Each octet in this example (e.g., 66, 94, 29, 13) represents 8 bits, and the total of the 32 bits provides the full address.
+
+### Binary Representation:
+Although IPv4 addresses are written in decimal format, they are understood by computers in **binary form** (using only 0s and 1s). Each octet in the address corresponds to an 8-bit binary number.
+
+- Each bit in an octet can be either 0 or 1.
+- If the bit is 1, it contributes to the total number, otherwise, it does not.
+
+# What is IPv6?
+
+IPv6 is the next generation of IP addresses, designed to overcome the limitations of IPv4. While IPv4 provides around 4 billion addresses, it became clear that this number wouldn't be enough. IPv6 provides a much larger address space with several improvements over IPv4.
+
+## Key Differences between IPv4 and IPv6:
+- **IPv4** is a 32-bit address, producing about 4 billion unique addresses.
+- **IPv6** is a 128-bit hexadecimal address, allowing for a vastly larger address space.
+
+### IPv6 Features:
+- IPv6 contains a simple header compared to IPv4.
+- It provides a large address space that is sufficient for the future.
+- IPv6 supports various transition strategies for migration from IPv4 to IPv6:
+  - **Dual stacking**: Allows both IPv4 and IPv6 to coexist on the same device.
+  - **Tunneling**: Enables communication between IPv6 users and IPv4 networks.
+  - **Network Address Translation (NAT)**: Allows communication between hosts using different versions of IP.
+
+### IPv6 Address Space:
+IPv6 can produce over 340 undecillion (3.4 x 10^38) unique addresses due to its use of both numbers and letters in its hexadecimal address format.
+
+# IPv4 vs IPv6 Comparison
+
+| **Feature**                  | **IPv4**                                              | **IPv6**                                             |
+|------------------------------|-------------------------------------------------------|------------------------------------------------------|
+| **Address Length**            | IPv4 is a 32-bit address.                            | IPv6 is a 128-bit address.                          |
+| **Fields**                    | IPv4 is a numeric address that consists of 4 fields, separated by a dot (`.`). | IPv6 is an alphanumeric address with 8 fields, separated by a colon (`:`). |
+| **Classes**                   | IPv4 has 5 classes: A, B, C, D, and E.               | IPv6 does not have classes of IP addresses.          |
+| **Number of IP Addresses**    | IPv4 has a limited number of IP addresses.            | IPv6 has a vast number of IP addresses.              |
+| **VLSM (Variable Length Subnet Mask)** | Supports VLSM, meaning IPv4 can convert IP addresses into subnets of different sizes. | Does not support VLSM.                               |
+| **Address Configuration**     | Supports manual and DHCP configuration.              | Supports manual, DHCP, auto-configuration, and renumbering. |
+| **Address Space**             | Generates 4 billion unique addresses.                 | Generates 340 undecillion unique addresses.          |
+| **End-to-End Connection Integrity** | Unachievable in IPv4.                                | Achievable in IPv6.                                  |
+| **Security Features**         | Security depends on the application. IPv4 wasn't designed with security in mind. | IPv6 includes IPSEC for security purposes.           |
+| **Address Representation**    | IPv4 uses decimal representation.                     | IPv6 uses hexadecimal representation.               |
+| **Fragmentation**             | Fragmentation is done by senders and forwarding routers. | Fragmentation is done only by the sender.            |
+| **Packet Flow Identification**| Does not have a mechanism for packet flow identification. | Uses the flow label field in the header for packet flow identification. |
+| **Checksum Field**            | Contains a checksum field.                           | Does not contain a checksum field.                   |
+| **Transmission Scheme**       | Broadcasting.                                          | Multicasting, providing more efficient network operations. |
+| **Encryption and Authentication** | Does not provide encryption or authentication.       | Provides encryption and authentication.              |
+| **Number of Octets**          | Consists of 4 octets.                                 | Consists of 8 fields, each containing 2 octets, totaling 16 octets. |
