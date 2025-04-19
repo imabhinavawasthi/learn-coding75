@@ -1,0 +1,52 @@
+## CSS Box Model
+
+All HTML elements can be considered as **boxes**.
+
+### The CSS Box Model
+
+In CSS, the term **"box model"** is used when talking about **design and layout**.
+
+The CSS box model is essentially a box that wraps around every HTML element.  
+It consists of the following parts:
+
+1. **Content** – The actual content of the box (e.g., text, image)
+2. **Padding** – Clears an area around the content (inside the border)
+3. **Border** – A border that wraps around the padding and content
+4. **Margin** – Clears an area outside the border (creates space between elements)
+
+### Explanation of the Different Parts
+
+- **Content** – The content of the box, where text and images appear
+- **Padding** – Clears an area around the content. The padding is **transparent**
+- **Border** – A border that goes around the padding and content
+- **Margin** – Clears an area outside the border. The margin is **transparent**
+
+The **box model** allows us to:
+
+- Add a **border** around elements
+- Define **space between elements**
+### Example
+
+Demonstration of the **box model**:
+
+```css
+div {
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+```
+### Width and Height of an Element
+
+In order to set the `width` and `height` of an element correctly in all browsers, you need to understand how the **CSS Box Model** works.
+
+> **Important:**  
+> When you set the `width` and `height` properties of an element with CSS, you are only setting the size of the **content area**.
+
+To calculate the **total width and height** of an element, you must also include:
+
+- **Padding**
+- **Borders**
+
+This is crucial when designing layouts to ensure elements fit as expected.

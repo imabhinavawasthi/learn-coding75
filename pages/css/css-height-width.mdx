@@ -1,0 +1,51 @@
+## CSS Height, Width and Max-width
+
+The CSS `height` and `width` properties are used to set the height and width of an element.
+
+The CSS `max-width` property is used to set the maximum width of an element.
+
+> This element has a height of **50 pixels** and a width of **100%**.
+
+### CSS: Setting Height and Width
+
+The `height` and `width` properties are used to define the dimensions of an element.
+
+> **Note:** These properties do **not** include padding, borders, or margins. They set the size of the area *inside* the padding, border, and margin.
+
+### CSS Height and Width Values
+
+The `height` and `width` properties may have the following values:
+
+- `auto` – This is the default. The browser calculates the height and width.
+- `length` – Defines the height/width in units like `px`, `cm`, etc.
+- `%` – Defines the height/width in percent of the containing block.
+- `initial` – Sets the height/width to its default value.
+- `inherit` – The height/width will be inherited from the parent element.
+
+### Setting `max-width`
+
+The `max-width` property is used to set the **maximum width** of an element.
+
+The `max-width` can be specified in:
+
+- Length values like `px`, `cm`, etc.
+- Percentage (`%`) of the containing block
+- `none` – This is the default, meaning there is **no maximum width**
+
+---
+
+The problem with the `<div>` above occurs when the browser window is smaller than the element's width (e.g., `500px`).  
+In that case, the browser adds a **horizontal scrollbar** to the page.
+
+Using `max-width` helps the browser handle **small windows** more gracefully.
+
+> **Tip:** Drag the browser window to smaller than 500px wide to see the difference between the two `<div>` elements!
+
+> This element has a height of **100 pixels** and a `max-width` of **500 pixels**.
+
+---
+
+> **Note:**  
+> If you use both the `width` and `max-width` properties on the same element, and the `width` value is **larger** than the `max-width`,  
+> then the `max-width` **overrides** the `width` property.
+

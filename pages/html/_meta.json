@@ -1,3 +1,13 @@
 {
-    "introduction":"Introduction to Html"
+    "introduction":"Introduction to Html",
+    "html-basic":"HTML Basic",
+    "html-ele":"HTML Element",
+    "html-attributes":"HTML Attributes",
+    "html-headings":"HTML Headings",
+    "html-paragraph":"HTML Paragraph",
+    "html-comments":"HTML Comments",
+    "html-favicon":"HTML Favicon",
+    "html-page-title":"HTML Page Title",
+    "html-Table":"HTML Tables",
+    "html-form":"HTML Form"
 }

@@ -1,0 +1,60 @@
+# CSS Border Width
+
+The **border-width** property specifies the width of the four borders.
+
+The width can be set as a specific size (in `px`, `pt`, `cm`, `em`, etc.) or by using one of the three pre-defined values:
+
+- **thin**: Defines a thin border width.
+- **medium**: Defines a medium border width.
+- **thick**: Defines a thick border width.
+
+### Example:
+
+```css
+div.thin {
+  border-width: thin;
+}
+
+div.medium {
+  border-width: medium;
+}
+
+div.thick {
+  border-width: thick;
+}
+
+div.custom {
+  border-width: 5px;
+}
+```
+# CSS Border Width
+
+The **border-width** property specifies the width of the four borders.
+
+The width can be set as a specific size (in `px`, `pt`, `cm`, `em`, etc.) or by using one of the three pre-defined values: **thin**, **medium**, or **thick**.
+
+## Example: Demonstration of the different border widths
+
+```html
+<p className="one">This is a solid border with 5px width.</p>
+<p className="two">This is a solid border with medium width.</p>
+<p className="three">This is a dotted border with 2px width.</p>
+<p className="four">This is a dotted border with thick width.</p>
+```
+# CSS Specific Side Widths
+
+The **border-width** property can have from one to four values, which specify the width of the borders for each side of an element (top, right, bottom, and left).
+
+- **One value**: Applies the same width to all four sides.
+- **Two values**: The first value is for the top and bottom, and the second is for the left and right.
+- **Three values**: The first value is for the top, the second for the left and right, and the third for the bottom.
+- **Four values**: Each value corresponds to one side (top, right, bottom, and left).
+
+### Example: Specific Side Widths
+
+```html
+<p className="one">All sides have the same width.</p>
+<p className="two">Top and bottom have the same width, left and right have the same width.</p>
+<p className="three">Top has a different width, left and right have the same width, bottom has a different width.</p>
+<p className="four">Each side has a different width.</p>
+```
