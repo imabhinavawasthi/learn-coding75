@@ -1,0 +1,57 @@
+
+
+# Table Header in HTML
+
+In HTML, a table header refers to the cells at the top (or sometimes the side) of a table that define the name or title of the content in each column or row. Table headers are typically used to describe the data in the rows or columns beneath them, making the table more readable and organized.
+
+## Key Points:
+
+1. **Table headers are defined with the `<th>` element**: This tag is used for header cells in a table.
+2. **Content in `<th>` elements is typically bold and centered by default**, but you can customize the style using CSS.
+3. **Table headers can be used for columns or rows**: You can place `<th>` elements in the first row for column headers or in the first column for row headers (vertical headers).
+
+```html
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+
+```
+## Vertical Table Headers
+
+To use the first column as table headers, define the first cell in each row as a `<th>` element.
+
+### Example:
+
+```html
+<table>
+  <tr>
+    <th>Firstname</th>
+    <td>Jill</td>
+    <td>Eve</td>
+  </tr>
+  <tr>
+    <th>Lastname</th>
+    <td>Smith</td>
+    <td>Jackson</td>
+  </tr>
+  <tr>
+    <th>Age</th>
+    <td>94</td>
+    <td>50</td>
+  </tr>
+</table>
+```
