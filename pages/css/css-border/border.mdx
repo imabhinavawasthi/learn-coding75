@@ -1,0 +1,52 @@
+# CSS Border
+
+In CSS, a **border** is a property used to define the outline or edge of an element. It is a way of visually framing an element by adding a border around it. You can control the **width**, **style**, and **color** of the border, which allows you to customize how it looks.
+
+## Components of CSS Border
+
+### 1. **Border Width**:
+Specifies the thickness of the border.
+
+Example:
+```css
+div {
+  border-width: 2px;
+}
+```
+
+# CSS Border Style
+
+The **border-style** property specifies what kind of border to display.
+
+The following values are allowed:
+
+- **dotted**: Defines a dotted border.
+- **dashed**: Defines a dashed border.
+- **solid**: Defines a solid border.
+- **double**: Defines a double border.
+- **groove**: Defines a 3D grooved border. The effect depends on the `border-color` value.
+- **ridge**: Defines a 3D ridged border. The effect depends on the `border-color` value.
+- **inset**: Defines a 3D inset border. The effect depends on the `border-color` value.
+- **outset**: Defines a 3D outset border. The effect depends on the `border-color` value.
+- **none**: Defines no border.
+- **hidden**: Defines a hidden border.
+
+The **border-style** property can have from one to four values (for the top border, right border, bottom border, and left border).
+
+## Example
+
+Demonstration of the different border styles:
+
+```html
+<p className="dotted">This is a dotted border.</p>
+<p className="dashed">This is a dashed border.</p>
+<p className="solid">This is a solid border.</p>
+<p className="double">This is a double border.</p>
+<p className="groove">This is a groove border.</p>
+<p className="ridge">This is a ridge border.</p>
+<p className="inset">This is an inset border.</p>
+<p className="outset">This is an outset border.</p>
+<p className="none">This element has no border.</p>
+<p className="hidden">This element has a hidden border.</p>
+<p className="mix">This is a mixed border style (dotted, dashed, solid, double).</p>
+```

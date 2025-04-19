@@ -1,0 +1,68 @@
+# CSS HSL Colors
+
+**HSL** stands for **hue**, **saturation**, and **lightness**.
+
+### HSL Value
+
+In CSS, a color can be specified using hue, saturation, and lightness (HSL) in the form:
+
+```css
+hsl(hue, saturation, lightness)
+```
+
+# CSS HSL Colors: Saturation and Lightness
+
+### Saturation
+
+Saturation can be described as the intensity of a color.
+
+- **100%** is pure color, with no shades of gray.
+- **50%** is 50% gray, but you can still see the color.
+- **0%** is completely gray, and you can no longer see the color.
+
+#### Example:
+```css
+hsl(0, 100%, 50%)  /* Pure red */
+hsl(0, 80%, 50%)   /* Less intense red */
+hsl(0, 60%, 50%)   /* Less saturated red */
+hsl(0, 40%, 50%)   /* Faint red */
+hsl(0, 20%, 50%)   /* Almost gray */
+hsl(0, 0%, 50%)    /* Gray */
+```
+# Shades of Gray in HSL
+
+Shades of gray are often defined by setting the **hue** and **saturation** to `0`, and adjusting the **lightness** from `0%` to `100%` to get darker or lighter shades.
+
+### Example:
+
+```css
+hsl(0, 0%, 0%)    /* Black */
+hsl(0, 0%, 24%)   /* Very dark gray */
+hsl(0, 0%, 47%)   /* Medium gray */
+hsl(0, 0%, 71%)   /* Light gray */
+hsl(0, 0%, 94%)   /* Very light gray */
+hsl(0, 0%, 100%)  /* White */
+```
+# CSS HSLA Colors
+
+**HSLA** color values are an extension of **HSL** color values with an **alpha channel**, which specifies the opacity for a color.
+
+### HSLA Value
+
+An **HSLA** color value is specified with:
+
+```css
+hsla(hue, saturation, lightness, alpha)
+```
+# CSS HSLA Colors: Transparency
+
+### Example:
+
+```css
+hsla(9, 100%, 64%, 0)   /* Fully transparent */
+hsla(9, 100%, 64%, 0.2) /* 20% opacity */
+hsla(9, 100%, 64%, 0.4) /* 40% opacity */
+hsla(9, 100%, 64%, 0.6) /* 60% opacity */
+hsla(9, 100%, 64%, 0.8) /* 80% opacity */
+hsla(9, 100%, 64%, 1)   /* Fully opaque */
+```
