@@ -1,3 +1,18 @@
-{
-    "introduction":"Introduction to SQL"
+{   "introduction":"Introduction to SQL",
+    "sql-datatype":"SQL Datatype",
+    "sql-operator":"SQL Operator",
+    "sql-views":"SQL Views",
+    "sql-index":"SQL Index",
+    "sql-sub-query":"SQL Sub-Query",
+    "sql-clauses":"SQL Clauses",
+    "group-by":"SQL Group-By",
+    "aggregate-func":"SQL Aggregate Functions",
+    "joins":"SQL Joins",
+    "union":"SQL Unoin",
+    "create-db":"SQL Create Database",
+    "drop-db":"SQL Drop Database",
+    "constraints":"SQL Constraints",
+    "primary-key":"SQL Primary Key",
+    "secondry-key":"SQL Foreign  Key",
+    "aliasas":"SQL Aliases"
 }

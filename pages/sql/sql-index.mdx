@@ -1,0 +1,29 @@
+# SQL Index
+
+- **Indexes** are special lookup tables used to retrieve data from the database very quickly.
+- An index is used to **speed up** `SELECT` queries and `WHERE` clauses. However, it may **slow down** data input operations like `INSERT` and `UPDATE`.
+- Indexes can be created or dropped without affecting the data in the database.
+- An index in a database is similar to an **index in the back of a book**—it helps you locate information quickly.
+
+---
+
+## Creating an Index
+
+You can create an index using the `CREATE INDEX` statement.
+
+### Syntax
+
+```sql
+CREATE INDEX index_name
+ON table_name (column1, column2, ...);
+
+# Unique Index in SQL
+
+A **Unique Index** ensures that the values in the indexed columns are unique.
+
+## Syntax
+
+```sql
+CREATE UNIQUE INDEX index_name
+ON table_name (column1, column2, ...);
+

@@ -1,0 +1,41 @@
+# HTTP vs HTTPS
+
+## What is HTTP?
+
+HTTP stands for **Hypertext Transfer Protocol**. The HTTP protocol facilitates communication between different communication systems. When a user makes an HTTP request through the browser, the web server sends the requested data back to the user in the form of web pages. In short, the HTTP protocol allows data to be transferred from the server to the client.
+
+- HTTP is an **application layer protocol** that operates above the TCP layer.
+- It defines standard rules that web browsers and servers use to communicate with each other.
+- HTTP is a **stateless protocol**, meaning each transaction is executed independently, without knowledge of previous transactions. Once the transaction is completed, the connection is lost.
+
+## What is HTTPS?
+
+HTTPS stands for **Hypertext Transfer Protocol Secure**. Unlike HTTP, which does not provide data security, HTTPS ensures the security of the data being transferred. HTTPS is essentially a secure version of the HTTP protocol, encrypting the data during transmission.
+
+- HTTPS is primarily used for websites where sensitive data, such as bank account details or login credentials, need to be transmitted securely.
+- Modern browsers like Chrome differentiate between HTTP and HTTPS, marking HTTPS with a padlock icon.
+- HTTPS uses **Transport Layer Security (TLS)** (formerly Secure Sockets Layer, SSL) to provide encryption.
+- The encryption mechanism uses **asymmetric public key infrastructure** with two keys:
+  - **Private key**: Managed by the website owner, stored on the web server, and used to decrypt data encrypted by the public key.
+  - **Public key**: Available to everyone, and it encrypts the data before transmission.
+
+## Main Difference Between HTTP and HTTPS
+
+The major difference between HTTP and HTTPS is the **SSL certificate**. HTTPS is an extended version of HTTP with an added layer of security, essential for transmitting sensitive data like credit card information.
+
+- **HTTP**: No encryption, data is transmitted in plaintext.
+- **HTTPS**: Data is encrypted, ensuring privacy and integrity of the transmitted data.
+
+# HTTP vs HTTPS
+
+| **Feature**                     | **HTTP**                                         | **HTTPS**                                      |
+|----------------------------------|-------------------------------------------------|------------------------------------------------|
+| **Full Form**                    | Hypertext Transfer Protocol                     | Hypertext Transfer Protocol Secure             |
+| **Address Bar**                  | Written as `http://`                             | Written as `https://`                          |
+| **Port Number**                  | Transmits data over port number 80               | Transmits data over port number 443            |
+| **Security**                     | Unsecured, as it transmits data in plain text, which can be accessed by hackers. | Secured, as it encrypts data, making it unreadable by hackers. |
+| **Use Case**                     | Mainly used for websites that provide information, like blogs. | Used for websites requiring secure data transmission, such as banking or e-commerce sites. |
+| **Protocol Layer**               | Application layer protocol                      | Transport layer protocol                       |
+| **SSL/TLS Usage**                | Does not use SSL/TLS                             | Uses SSL/TLS to provide encryption for data    |
+| **Google Preference**            | Google does not give preference to HTTP websites. | Google gives preference to HTTPS websites, as they are more secure. |
+| **Page Loading Speed**           | Faster page loading speed                       | Slower page loading speed due to the encryption overhead. |

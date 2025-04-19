@@ -1,0 +1,37 @@
+# SQL GROUP BY Statement
+
+The `GROUP BY` statement groups rows that have the same values into summary rows, like "find the number of customers in each country".
+
+The `GROUP BY` statement is often used with aggregate functions (`COUNT()`, `MAX()`, `MIN()`, `SUM()`, `AVG()`) to group the result-set by one or more columns.
+
+---
+
+## GROUP BY Syntax
+
+```sql
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+```
+
+# SQL GROUP BY Statement
+
+The `GROUP BY` statement is used to group rows that have the same values in specified columns into summary rows. This is often done in conjunction with aggregate functions like `COUNT()`, `SUM()`, `AVG()`, `MAX()`, or `MIN()` to perform calculations on each group of data.
+
+---
+
+##  Key Concepts:
+
+- **Grouping Data**: `GROUP BY` groups rows based on one or more columns.
+- **Aggregation**: It is commonly used with aggregate functions to return a summarized result for each group.
+- **ORDER BY**: You can also use `ORDER BY` to sort the result-set based on the grouped data.
+
+---
+
+##  Why Use `GROUP BY`?
+
+To calculate **statistics** or **summaries** for different groups within a dataset, such as the total sales per region or the number of orders per customer.
+
+It helps in **organizing** data and simplifying reports, analysis, and insights.

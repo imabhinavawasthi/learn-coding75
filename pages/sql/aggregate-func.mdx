@@ -1,0 +1,80 @@
+# SQL Aggregate Functions
+
+An **aggregate function** is a function that performs a calculation on a set of values and returns a single value.
+
+Aggregate functions are commonly used with the `GROUP BY` clause of the `SELECT` statement. The `GROUP BY` clause divides the result-set into groups of values, and the aggregate function returns a single value for each group.
+
+## Common Aggregate Functions
+
+- **MIN()** – Returns the smallest value in the selected column.
+- **MAX()** – Returns the largest value in the selected column.
+- **COUNT()** – Returns the number of rows in a set.
+- **SUM()** – Returns the total sum of a numeric column.
+- **AVG()** – Returns the average value of a numeric column.
+
+> 🔹 Note: Aggregate functions ignore `NULL` values, except for `COUNT()`.
+
+## Example
+
+```sql
+SELECT department, COUNT(*) AS total_employees
+FROM employee
+GROUP BY department;
+```
+
+# SQL MIN() and MAX() Functions
+
+The `MIN()` and `MAX()` functions are used to retrieve the smallest and largest values from a specified column.
+
+## MIN() Function
+
+- Returns the **smallest** value of the selected column.
+
+```sql
+SELECT MIN(column_name)
+FROM table_name
+WHERE condition;
+```
+
+## MAX() Function
+
+- Returns the **largest** value of the selected column.
+
+### Syntax
+
+```sql
+SELECT MAX(column_name)
+FROM table_name
+WHERE condition;
+```
+
+# The SQL COUNT() Function
+
+The `COUNT()` function returns the **number of rows** that match a specified condition.
+
+## Syntax
+
+```sql
+SELECT COUNT(*)
+FROM table_name;
+```
+# The SQL SUM() Function
+
+The `SUM()` function returns the **total sum** of a numeric column.
+
+## Syntax
+
+```sql
+SELECT SUM(column_name)
+FROM table_name;
+```
+# The SQL AVG() Function
+
+The `AVG()` function returns the **average value** of a numeric column.
+
+## Syntax
+
+```sql
+SELECT AVG(column_name)
+FROM table_name;
+```

@@ -1,0 +1,116 @@
+# OSI Model | 7 Layers Explained in Computer Network
+
+The **OSI (Open Systems Interconnection)** model is a reference framework that describes how data from a software application in one computer travels through a network medium to reach a software application in another computer. The OSI model consists of seven layers, each of which performs specific functions to facilitate network communication. 
+
+The OSI model was developed by the **International Organization for Standardization (ISO)** in 1984, and it is considered an architectural model for inter-computer communications.
+
+### Characteristics of OSI Model
+
+The OSI model is divided into two layers:
+
+1. **Upper layers**: These layers deal with application-related tasks and are implemented primarily in software. The **Application layer** is closest to the end-user, interacting directly with software applications.
+2. **Lower layers**: These layers manage data transport tasks, and the **Physical layer** is the lowest, closest to the physical medium used for transmission.
+
+## 7 Layers of OSI Model
+
+1. **Physical Layer**
+2. **Data-Link Layer**
+3. **Network Layer**
+4. **Transport Layer**
+5. **Session Layer**
+6. **Presentation Layer**
+7. **Application Layer**
+
+---
+
+## 1 Physical Layer
+
+The **Physical Layer** is the lowest layer in the OSI model. Its main function is to transmit raw bits over a physical medium.
+
+### Functions of the Physical Layer:
+- **Line Configuration**: Defines how devices are physically connected.
+- **Data Transmission**: Specifies the transmission mode (simplex, half-duplex, full-duplex).
+- **Topology**: Determines the arrangement of network devices.
+- **Signals**: Defines the type of signal used for transmitting data.
+
+---
+
+## 2 Data-Link Layer
+
+The **Data-Link Layer** ensures error-free transfer of data frames across the network.
+
+### Functions of the Data-Link Layer:
+- **Framing**: Converts the raw bit stream into frames and adds necessary headers and trailers.
+- **Physical Addressing**: Adds destination and source addresses to frames.
+- **Flow Control**: Regulates the data transfer rate to prevent data corruption.
+- **Error Control**: Adds error-checking data (e.g., CRC) to ensure data integrity.
+- **Access Control**: Determines which device can access the shared communication channel at any time.
+
+### Sub-Layers:
+- **Logical Link Control (LLC)**: Provides flow control and error management, and defines the upper boundary of the data link layer.
+- **Media Access Control (MAC)**: Controls how devices on the network gain access to the transmission medium.
+
+---
+
+## 3 Network Layer
+
+The **Network Layer** is responsible for device addressing and routing, ensuring that data is sent from the source to the destination across multiple networks.
+
+### Functions of the Network Layer:
+- **Internetworking**: Provides logical connections between devices across networks.
+- **Addressing**: Adds source and destination addresses to packets.
+- **Routing**: Determines the best path for data to travel from source to destination.
+- **Packetizing**: Breaks down data into packets for transmission.
+
+---
+
+## 4 Transport Layer
+
+The **Transport Layer** is responsible for end-to-end communication between devices. It ensures that data is delivered in sequence and without errors.
+
+### Functions of the Transport Layer:
+- **Service-point Addressing**: Identifies the destination process using port addresses.
+- **Segmentation and Reassembly**: Divides data into segments and reassembles them at the destination.
+- **Connection Control**: Provides both connection-oriented and connectionless services.
+- **Flow Control**: Ensures smooth data transmission without congestion.
+- **Error Control**: Detects and corrects errors in the data stream.
+
+### Protocols:
+- **Transmission Control Protocol (TCP)**: A reliable, connection-oriented protocol.
+- **User Datagram Protocol (UDP)**: An unreliable, connectionless protocol.
+
+---
+
+## 5 Session Layer
+
+The **Session Layer** is responsible for establishing, maintaining, and terminating communication sessions between devices.
+
+### Functions of the Session Layer:
+- **Dialog Control**: Manages communication in full-duplex or half-duplex modes.
+- **Synchronization**: Adds checkpoints to data to allow for recovery if transmission errors occur.
+
+---
+
+## 6 Presentation Layer
+
+The **Presentation Layer** is responsible for translating, encrypting, and compressing data to ensure compatibility between different systems.
+
+### Functions of the Presentation Layer:
+- **Translation**: Converts data between different encoding schemes.
+- **Encryption**: Ensures data privacy by transforming the data into a secure format.
+- **Compression**: Reduces the size of data to optimize bandwidth.
+
+---
+
+## 7 Application Layer
+
+The **Application Layer** is closest to the end-user and facilitates access to network services.
+
+### Functions of the Application Layer:
+- **File Transfer, Access, and Management (FTAM)**: Allows users to access, retrieve, and manage files on remote systems.
+- **Mail Services**: Manages email forwarding, storage, and retrieval.
+- **Directory Services**: Provides global information about various network objects.
+
+---
+
+This breakdown of the OSI model helps in understanding how data is transmitted across networks, with each layer serving a specific function to ensure reliable communication.

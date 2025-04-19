@@ -1,0 +1,77 @@
+# TCP/IP Model
+
+The TCP/IP model was developed prior to the OSI model.  
+The TCP/IP model is not exactly similar to the OSI model.  
+The TCP/IP model consists of five layers: the application layer, transport layer, network layer, data link layer, and physical layer.  
+The first four layers provide physical standards, network interface, internetworking, and transport functions that correspond to the first four layers of the OSI model, and these four layers are represented in the TCP/IP model by a single layer called the application layer.  
+TCP/IP is a hierarchical protocol made up of interactive modules, and each of them provides specific functionality.  
+Here, "hierarchical" means that each upper-layer protocol is supported by two or more lower-level protocols.
+
+## Functions of TCP/IP Layers
+
+### Network Access Layer
+
+The network access layer is the lowest layer of the TCP/IP model.  
+It is a combination of the Physical layer and Data Link layer as defined in the OSI reference model.  
+This layer defines how data should be sent physically through the network.  
+It is mainly responsible for the transmission of data between two devices on the same network.  
+The functions carried out by this layer include encapsulating the IP datagram into frames transmitted by the network and mapping of IP addresses into physical addresses.  
+Protocols used by this layer are Ethernet, Token Ring, FDDI, X.25, Frame Relay.
+
+### Internet Layer
+
+The internet layer is the second layer of the TCP/IP model and is also known as the network layer.  
+The main responsibility of the internet layer is to send packets from any network and ensure they arrive at the destination, irrespective of the route they take.  
+Protocols used in this layer include:
+
+- **IP Protocol**: The most significant part of the entire TCP/IP suite.
+    - **Responsibilities of this protocol**:
+        - **IP Addressing**: Implements logical host addresses known as IP addresses.
+        - **Host-to-host communication**: Determines the path through which data is transmitted.
+        - **Data Encapsulation and Formatting**: Accepts data from the transport layer, encapsulates it into an IP datagram.
+        - **Fragmentation and Reassembly**: Splits the datagram if it exceeds the Maximum Transmission Unit (MTU) and reassembles them at the receiving end.
+        - **Routing**: Sends the datagram over various devices like routers when the source and destination are on different networks.
+
+- **ARP Protocol**: 
+    - **Address Resolution Protocol (ARP)** is used to find the physical address (MAC address) from the IP address.
+    - **ARP Request**: Sent by the sender to ask for the physical address.
+    - **ARP Reply**: Sent by the device with the matching IP address, providing its physical address.
+
+- **ICMP Protocol**: 
+    - **Internet Control Message Protocol (ICMP)** is used to send error messages and notifications about problems with datagram delivery.
+    - **ICMP Test**: Used to test if the destination is reachable.
+    - **ICMP Reply**: Used to check whether the destination device is responding.
+
+### Transport Layer
+
+The transport layer is responsible for the reliability, flow control, and correction of data being sent over the network.  
+
+The two protocols used in this layer are:
+1. **User Datagram Protocol (UDP)**:
+    - Provides a connectionless service and end-to-end delivery.
+    - It is unreliable, discovering errors but not specifying them.
+    - Fields in UDP:
+        - **Source Port Address**
+        - **Destination Port Address**
+        - **Total Length**
+        - **Checksum** (used for error detection)
+
+2. **Transmission Control Protocol (TCP)**:
+    - Provides full transport layer services, ensuring reliability.
+    - Establishes a virtual circuit between sender and receiver.
+    - Ensures the data is transmitted and acknowledged before completion.
+
+### Application Layer
+
+The application layer is the topmost layer in the TCP/IP model.  
+It is responsible for handling high-level protocols and representation issues.  
+It allows users to interact with the application.  
+
+**Common protocols used in the application layer**:
+- **HTTP**: Hypertext Transfer Protocol, used to access data over the World Wide Web.
+- **SNMP**: Simple Network Management Protocol, used for managing network devices.
+- **SMTP**: Simple Mail Transfer Protocol, used to send emails.
+- **DNS**: Domain Name System, maps domain names to IP addresses.
+- **TELNET**: Used to establish a remote connection with another system.
+- **FTP**: File Transfer Protocol, used to transfer files between computers.
+

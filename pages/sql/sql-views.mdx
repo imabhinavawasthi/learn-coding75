@@ -1,0 +1,47 @@
+# Views in SQL
+
+- **Views** in SQL are considered as **virtual tables**.
+- A view also contains **rows and columns**, but unlike tables, it does not store data physically.
+- To create a view, we can select fields from **one or more tables** present in the database.
+- A view can either display **specific rows** based on a certain condition or show **all the rows** of a table.
+
+---
+
+## Creating a View
+
+A view can be created using the `CREATE VIEW` statement. Views can be created from a **single table** or **multiple tables**.
+
+### Syntax
+
+```sql
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+# Creating a View in SQL
+
+A view in SQL can be created using the `CREATE VIEW` statement. Views can be created from a **single table** or from **multiple tables**.
+
+## Syntax
+
+```sql
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+```
+# Creating a View from Multiple Tables
+
+A view from multiple tables can be created by simply including multiple tables in the `SELECT` statement.
+
+In the given example, a view named **MarksView** is created from two tables: `Student_Detail` and `Student_Marks`.
+
+### Syntax
+
+```sql
+CREATE VIEW MarksView AS
+SELECT Student_Detail.NAME, Student_Detail.ADDRESS, Student_Marks.MARKS
+FROM Student_Detail, Student_Marks
+WHERE Student_Detail.NAME = Student_Marks.NAME;

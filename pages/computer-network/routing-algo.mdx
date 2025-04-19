@@ -1,0 +1,45 @@
+# Routing algorithm
+
+To transfer data from source to destination, the network layer needs to find the best route. This is done using routing protocols, which are algorithms that determine the best (least-cost) path. Routing involves forwarding packets, and the routing algorithm decides the optimal path for these packets to travel.
+
+In short: The network layer finds the best route for data transfer using routing algorithms.
+
+## Classification of a Routing algorithm
+The Routing algorithm is divided into two categories:
+
+- **Adaptive Routing algorithm**
+- **Non-adaptive Routing algorithm**
+
+### Routing algorithm
+
+#### Adaptive Routing algorithm
+An adaptive routing algorithm is also known as dynamic routing algorithm.
+This algorithm makes the routing decisions based on the topology and network traffic.
+The main parameters related to this algorithm are hop count, distance and estimated transit time.
+An adaptive routing algorithm can be classified into three parts:
+
+1. **Centralized algorithm:** It is also known as global routing algorithm as it computes the least-cost path between source and destination by using complete and global knowledge about the network. This algorithm takes the connectivity between the nodes and link cost as input, and this information is obtained before actually performing any calculation. Link state algorithm is referred to as a centralized algorithm since it is aware of the cost of each link in the network.
+
+2. **Isolation algorithm:** It is an algorithm that obtains the routing information by using local information rather than gathering information from other nodes.
+
+3. **Distributed algorithm:** It is also known as decentralized algorithm as it computes the least-cost path between source and destination in an iterative and distributed manner. In the decentralized algorithm, no node has the knowledge about the cost of all the network links. In the beginning, a node contains the information only about its own directly attached links and through an iterative process of calculation computes the least-cost path to the destination. A Distance vector algorithm is a decentr...
+
+#### Non-Adaptive Routing algorithm
+Non Adaptive routing algorithm is also known as a static routing algorithm.
+When booting up the network, the routing information stores to the routers.
+Non Adaptive routing algorithms do not take the routing decision based on the network topology or network traffic.
+The Non-Adaptive Routing algorithm is of two types:
+
+1. **Flooding:** In case of flooding, every incoming packet is sent to all the outgoing links except the one from it has been reached. The disadvantage of flooding is that node may contain several copies of a particular packet.
+
+2. **Random walks:** In case of random walks, a packet sent by the node to one of its neighbors randomly. An advantage of using random walks is that it uses the alternative routes very efficiently.
+
+## Differences b/w Adaptive and Non-Adaptive Routing Algorithm
+
+| **Basis Of Comparison**      | **Adaptive Routing algorithm**                                     | **Non-Adaptive Routing algorithm**                                     |
+|------------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------|
+| **Define**                    | Adaptive Routing algorithm is an algorithm that constructs the routing table based on the network conditions. | The Non-Adaptive Routing algorithm is an algorithm that constructs the static table to determine which node to send the packet. |
+| **Usage**                     | Adaptive routing algorithm is used by dynamic routing.            | The Non-Adaptive Routing algorithm is used by static routing.         |
+| **Routing decision**          | Routing decisions are made based on topology and network traffic.  | Routing decisions are the static tables.                             |
+| **Categorization**            | The types of adaptive routing algorithm, are Centralized, isolation and distributed algorithm. | The types of Non Adaptive routing algorithm are flooding and random walks. |
+| **Complexity**                | Adaptive Routing algorithms are more complex.                     | Non-Adaptive Routing algorithms are simple.                          |

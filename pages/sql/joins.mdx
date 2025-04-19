@@ -1,0 +1,44 @@
+# SQL Joins
+
+A **JOIN** clause is used to combine rows from two or more tables based on a related column between them.
+
+### Example Tables
+
+**Orders Table:**
+
+| OrderID | CustomerID | OrderDate   |
+|---------|------------|-------------|
+| 10308   | 2          | 1996-09-18  |
+| 10309   | 37         | 1996-09-19  |
+| 10310   | 77         | 1996-09-20  |
+
+**Customers Table:**
+
+| CustomerID | CustomerName                         | ContactName     | Country |
+|------------|--------------------------------------|-----------------|---------|
+| 1          | Alfreds Futterkiste                  | Maria Anders    | Germany |
+| 2          | Ana Trujillo Emparedados y helados  | Ana Trujillo    | Mexico  |
+| 3          | Antonio Moreno Taquería              | Antonio Moreno  | Mexico  |
+
+The relationship between the tables is via the `CustomerID` column.
+
+---
+
+### INNER JOIN Example
+
+This query selects records that have matching values in both tables:
+
+```sql
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+```
+
+##  SQL Joins
+
+### JOIN Types Summary
+- **INNER JOIN**: Matching records in both tables
+- **LEFT JOIN**: All from left + matched from right
+- **RIGHT JOIN**: All from right + matched from left
+- **FULL OUTER JOIN**: All records from both tables
+

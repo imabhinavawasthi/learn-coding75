@@ -1,0 +1,35 @@
+## DNS (Domain Name System)
+
+**DNS** stands for **Domain Name System**. It is an **application layer protocol** that provides a mapping between a host's name on the network and its numerical IP address.
+
+### Importance of DNS:
+- DNS allows users to use **user-friendly names** (like `ftp.EduSoft.com`) instead of remembering numerical IP addresses (like `132.147.165.50`).
+- It is essential for the functioning of the **internet**, as it translates domain names into IP addresses, allowing for easier navigation across the web.
+
+### Types of Domain Names:
+1. **Generic Domains**: 
+   - Defines registered hosts by their generic behavior (e.g., `.com`, `.org`).
+   - Uses three-character labels to describe the organization type.
+
+2. **Country Domain**: 
+   - Follows the same format as generic domains but uses two-character country codes (e.g., `us` for the United States).
+
+3. **Inverse Domain**:
+   - Used for mapping an address to a name. For security purposes, the DNS server checks if the client is authorized by mapping the address back to a domain name.
+
+### Working of DNS:
+- DNS operates on a **client/server model**:
+  - **DNS Clients** send requests to DNS servers.
+  - **DNS Servers** respond with the corresponding information.
+  
+  **DNS Lookups**:
+  - **Forward DNS Lookup**: A request where the client sends a domain name to get the corresponding IP address.
+  - **Reverse DNS Lookup**: A request where the client sends an IP address to get the associated domain name.
+
+- DNS uses a **distributed database** to store host names and IP addresses. When a DNS server doesn't have the IP address for a given hostname, it forwards the request to another DNS server.
+
+### How DNS Works:
+1. A **DNS resolver** receives a hostname request from the client (e.g., a web browser).
+2. The resolver queries the **DNS server** for the IP address of the hostname.
+3. If the DNS server doesn’t have the IP address, it forwards the request to another DNS server.
+4. The resolver receives the IP address and completes the request, allowing the client to connect to the host.

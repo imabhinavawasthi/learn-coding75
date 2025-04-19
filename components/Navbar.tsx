@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "./global/container";
 import Image from "next/image";
 import { useState, useEffect, useRef} from "react";
+import { ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const csRef = useRef(null);
@@ -18,7 +19,11 @@ const Navbar = () => {
   // Close dropdown if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (
+        csRef.current && !csRef.current.contains(event.target) &&
+        webdevRef.current && !webdevRef.current.contains(event.target) &&
+        langRef.current && !langRef.current.contains(event.target)
+      ) {
         setOpenDropdown(null);
       }
     };
@@ -55,9 +60,9 @@ const Navbar = () => {
                <div ref={csRef} className="relative">
                 <button
                   onClick={() => toggleDropdown("CS Fundamental")}
-                  className="hover:text-foreground/80 text-sm"
+                  className="hover:text-foreground/80 text-sm flex items-center gap-1"
                 >
-                  CS Fundamental
+                  CS Fundamental <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${openDropdown === "CS Fundamental" ? "rotate-180" : ""}`} />
                 </button>
                 {openDropdown === "CS Fundamental" && (
                   <ul className="absolute top-full mt-2 left-0 bg-white text-black border border-gray-200 shadow-lg rounded-md py-2 z-[999] w-40">
@@ -76,9 +81,9 @@ const Navbar = () => {
               <div ref={webdevRef} className="relative">
                 <button
                   onClick={() => toggleDropdown("webdev")}
-                  className="hover:text-foreground/80 text-sm"
+                  className="hover:text-foreground/80 text-sm flex items-center gap-1"
                 >
-                  Web Development
+                  Web Development <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${openDropdown === "webdev" ? "rotate-180" : ""}`} />
                 </button>
                 {openDropdown === "webdev" && (
                   <ul className="absolute top-full mt-2 left-0 bg-white text-black border border-gray-200 shadow-lg rounded-md py-2 z-[999] w-40">
@@ -93,9 +98,9 @@ const Navbar = () => {
               <div ref={langRef} className="relative">
                 <button
                   onClick={() => toggleDropdown("languages")}
-                  className="hover:text-foreground/80 text-sm"
+                  className="hover:text-foreground/80 text-sm flex items-center gap-1"
                 >
-                  Programming Languages
+                  Programming Languages <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${openDropdown === "languages" ? "rotate-180" : ""}`} />
                 </button>
                 {openDropdown === "languages" && (
                   <ul className="absolute top-full mt-2 left-0 bg-white text-black border border-gray-200 shadow-lg rounded-md py-2 z-[999] w-56">

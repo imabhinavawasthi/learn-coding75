@@ -1,0 +1,43 @@
+# Sliding Window Protocol
+
+The sliding window is a technique for sending multiple frames at a time. It controls the data packets between two devices where reliable and gradual delivery of data frames is needed. This technique is also used in TCP (Transmission Control Protocol).
+
+In the sliding window technique, each frame is sent with a sequence number. The sequence numbers help in identifying any missing data on the receiver's end. The main purpose of the sliding window technique is to avoid duplicate data, which is achieved by using sequence numbers.
+
+## Types of Sliding Window Protocol
+
+There are two types of sliding window protocols:
+
+1. **Go-Back-N ARQ**
+2. **Selective Repeat ARQ**
+
+### Go-Back-N ARQ
+
+Go-Back-N ARQ (Automatic Repeat Request) is a data link layer protocol that uses a sliding window method. In this protocol, if any frame is corrupted or lost, all subsequent frames need to be sent again.
+
+- The sender window size in Go-Back-N ARQ is `N`. For example, in Go-Back-8, the sender window size is 8.
+- The receiver window size is always 1.
+- If the receiver receives a corrupted frame, it discards it. The receiver does not accept a corrupted frame. 
+- When the timer expires, the sender retransmits the correct frame.
+
+The design of the Go-Back-N ARQ protocol is shown below.
+
+### Selective Repeat ARQ
+
+Selective Repeat ARQ is a data link layer protocol that uses a sliding window method. This protocol is used when the Go-Back-N ARQ performs poorly due to a high error rate, as retransmitting all subsequent frames wastes bandwidth.
+
+- The sender window size is equal to the receiver window size in Selective Repeat ARQ.
+- If a corrupted frame is received, it is not discarded. Instead, a negative acknowledgment (NAK) is sent to the sender, which only retransmits the corrupted frame without waiting for a timeout.
+
+The design of the Selective Repeat ARQ protocol is shown below.
+
+## Difference between Go-Back-N ARQ and Selective Repeat ARQ
+
+| **Feature**                  | **Go-Back-N ARQ**                                     | **Selective Repeat ARQ**                                |
+|------------------------------|-------------------------------------------------------|---------------------------------------------------------|
+| **Frame Retransmission**      | If a frame is corrupted or lost, all subsequent frames need to be sent again. | Only the corrupted or lost frame is sent again.         |
+| **Bandwidth Usage**           | High error rates lead to significant bandwidth wastage due to retransmissions. | Low bandwidth wastage as only the corrupted frames are retransmitted. |
+| **Complexity**                 | Less complex.                                         | More complex due to sorting, searching, and requiring more storage. |
+| **Sorting**                    | Does not require sorting.                            | Sorting is done to ensure frames are in the correct order. |
+| **Searching**                  | Does not require searching.                          | Requires searching to find the missing frames.          |
+| **Usage**                      | More commonly used.                                  | Less commonly used due to its complexity.               |

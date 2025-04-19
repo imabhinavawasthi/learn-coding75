@@ -38,7 +38,7 @@ const Footer = () => {
                 </li>
                 <li className="mt-2">
                   <Link
-                    href=""
+                    href="/dsa/introduction"
                     className="hover:text-foreground transition-all duration-300"
                   >
                     DSA
@@ -46,7 +46,7 @@ const Footer = () => {
                 </li>
                 <li className="mt-2">
                   <Link
-                    href=""
+                    href="/cpp/introduction"
                     className="hover:text-foreground transition-all duration-300"
                   >
                     CPP
@@ -54,7 +54,7 @@ const Footer = () => {
                 </li>
                 <li className="mt-2">
                   <Link
-                    href=""
+                    href="/java/java-syllabus"
                     className="hover:text-foreground transition-all duration-300"
                   >
                     JAVA
@@ -67,7 +67,7 @@ const Footer = () => {
               <ul className="mt-4 text-sm text-muted-foreground">
                 <li className="">
                   <Link
-                    href=""
+                    href="https://www.youtube.com/@AbhinavAwasthi"
                     className="hover:text-foreground transition-all duration-300"
                   >
                     Youtube
@@ -75,7 +75,7 @@ const Footer = () => {
                 </li>
                 <li className="mt-2">
                   <Link
-                    href=""
+                    href="https://www.linkedin.com/in/abhinavawasthi01/"
                     className="hover:text-foreground transition-all duration-300"
                   >
                     Linkedin
@@ -83,10 +83,18 @@ const Footer = () => {
                 </li>
                 <li className="mt-2">
                   <Link
-                    href=""
+                    href="https://t.me/cpabhinav"
                     className="hover:text-foreground transition-all duration-300"
                   >
                     Telegram
+                  </Link>
+                </li>
+                <li className="mt-2">
+                  <Link
+                    href="https://whatsapp.com/channel/0029Va55Idf1NCrU16kHOt3j"
+                    className="hover:text-foreground transition-all duration-300"
+                  >
+                    Whatsapp
                   </Link>
                 </li>
               </ul>
