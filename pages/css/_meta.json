@@ -1,3 +1,16 @@
 {
-    "introduction":"CSS basic"
+    "introduction":"CSS Introduction",
+    "css-syntax":"CSS Syntax",
+    "css-color":"CSS Colors",
+    "css-comments":"CSS Comments",
+    "css-background":"CSS Background",
+    "css-icon":"CSS Icon",
+    "css-link":"CSS Link",
+    "css-display":"CSS Display",
+    "css-position":"CSS Position",
+    "css-border":"CSS Border",
+    "css-padding":"CSS Padding",
+    "css-margins":"CSS Margins",
+    "css-height-width":"CSS Height/Width",
+    "css-box-model":"Box Model"
 }

@@ -1,0 +1,74 @@
+# HTML Form Elements
+
+This chapter describes all the different HTML form elements.
+
+## The HTML `<form>` Elements
+
+The HTML `<form>` element can contain one or more of the following form elements:
+
+- `<input>`
+- `<label>`
+- `<select>`
+- `<textarea>`
+- `<button>`
+- `<fieldset>`
+- `<legend>`
+- `<datalist>`
+- `<output>`
+- `<option>`
+- `<optgroup>`
+
+## The `<input>` Element
+
+One of the most used form elements is the `<input>` element.
+
+The `<input>` element can be displayed in several ways, depending on the `type` attribute.
+
+### Example
+
+```html
+<label for="fname">First name:</label>
+<input type="text" id="fname" name="fname">
+```
+
+## The `<label>` Element
+
+The `<label>` element defines a label for several form elements.
+
+The `<label>` element is useful for screen-reader users because the screen reader will read out loud the label when the user focuses on the input element.
+
+The `<label>` element also helps users who have difficulty clicking on very small regions (such as radio buttons or checkboxes) — because when the user clicks the text within the `<label>` element, it toggles the radio button or checkbox.
+
+The `for` attribute of the `<label>` tag should be equal to the `id` attribute of the `<input>` element to bind them together.
+
+---
+
+## The `<select>` Element
+
+The `<select>` element defines a drop-down list:
+
+### Example
+
+```html
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+```
+
+## The `<option>` Element
+
+The `<option>` element defines an option that can be selected.
+
+By default, the first item in the drop-down list is selected.
+
+To define a pre-selected option, add the `selected` attribute to the option:
+
+### Example
+
+```html
+<option value="fiat" selected>Fiat</option>
+```

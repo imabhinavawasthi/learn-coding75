@@ -1,0 +1,40 @@
+## CSS Border Sides
+
+### CSS Border - Individual Sides
+
+From the examples on the previous pages, you have seen that it is possible to specify a different border for each side.
+
+In CSS, there are also properties for specifying each of the borders (top, right, bottom, and left):
+
+#### Example
+
+```css
+p {
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+}
+```
+## Understanding `border-style` Shorthand in CSS
+
+The `border-style` property in CSS allows you to set the style of all four borders of an element using shorthand notation. Depending on how many values you provide, CSS will assign them in a specific order.
+
+###  When four values are provided:
+
+```css
+border-style: dotted solid double dashed;
+```
+
+## CSS `border-style` Examples
+
+Here’s how the `border-style` property works with different numbers of values:
+
+###  Four Values
+
+```css
+/* Top: dotted, Right: solid, Bottom: double, Left: dashed */
+p {
+  border-style: dotted solid double dashed;
+}
+```

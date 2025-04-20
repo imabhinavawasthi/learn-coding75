@@ -1,0 +1,112 @@
+---
+title: "CSS Links"
+---
+
+# CSS Links
+
+With CSS, links can be styled in many different ways.
+
+You can style text links like this:
+
+- **Text Link**
+- **Link Button**
+
+---
+
+## Styling Links
+
+Links can be styled with any CSS property (e.g. `color`, `font-family`, `background`, etc.).
+
+### Basic Example
+
+```css
+a {
+  color: hotpink;
+}
+```
+
+
+# CSS Link States Example
+
+You can style different states of a link using pseudo-classes like `:link`, `:visited`, `:hover`, and `:active`.
+
+Here’s a complete example:
+
+```css
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected (active) link */
+a:active {
+  color: blue;
+}
+```
+
+
+# CSS Link Styling Rules
+
+When setting styles for multiple link states, it's important to follow a specific **order** to ensure the styles apply correctly.
+
+##  Link State Order
+
+- `a:link` – normal, unvisited link  
+- `a:visited` – link the user has visited  
+- `a:hover` – link when hovered  
+- `a:active` – link when clicked
+
+>  **Order Rules:**
+> - `a:hover` **must come after** `a:link` and `a:visited`
+> - `a:active` **must come after** `a:hover`
+
+This order ensures that the hover and active styles are not accidentally overridden by earlier rules.
+
+---
+
+##  Text Decoration
+
+The `text-decoration` property is commonly used to **remove the underline** from links.
+
+### Example
+
+```css
+a {
+  text-decoration: none;
+}
+
+```
+
+# Text Decoration for Link States
+
+You can control whether links are underlined (or not) in different states using the `text-decoration` property.
+
+Here’s a common styling pattern:
+
+```css
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+```
