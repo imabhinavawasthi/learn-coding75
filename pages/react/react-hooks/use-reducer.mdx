@@ -1,0 +1,96 @@
+# `useRoutes` Hook in React Router
+
+React Router is a library used for handling **navigation and routing** in React applications. It allows seamless navigation between components or pages while keeping a **Single Page Application (SPA)** structure.
+
+---
+
+## What is `useRoutes` Hook?
+
+The `useRoutes` Hook is a part of **React Router v6**. It allows you to **define and configure routes declaratively** using JavaScript objects instead of JSX.
+
+It is the **functional equivalent** of the `<Routes>` component.
+
+### Key Benefits
+
+- Declarative route configuration
+- Programmatic flexibility
+- Ideal for dynamic or nested routing setups
+
+---
+
+## Syntax
+
+```js
+const element = useRoutes(routes);
+```
+# Example: Using `useRoutes` in React Router v6
+
+Below is a basic example demonstrating how to use the `useRoutes` Hook from `react-router-dom` to define application routes in a declarative way.
+
+---
+
+## Code Example
+
+```jsx
+import { useRoutes, BrowserRouter } from "react-router-dom";
+
+const AppRoutes = () => {
+  const routes = [
+    { path: "/", element: <Home /> },
+    { path: "/about", element: <About /> },
+    {
+      path: "/dashboard",
+      element: <Dashboard />,
+      children: [
+        { path: "stats", element: <Stats /> },
+        { path: "profile", element: <Profile /> }
+      ]
+    }
+  ];
+
+  const routing = useRoutes(routes);
+  return routing;
+};
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  );
+}
+```
+
+# Features and Uses of `useRoutes` Hook
+
+The `useRoutes` Hook from React Router v6 allows developers to define routes using a **configuration object**, offering a more programmatic and flexible way to manage routing in React applications.
+
+---
+
+##  Features of `useRoutes`
+
+- **Declarative Route Definition**  
+  Define routes using a configuration JavaScript object instead of JSX.
+
+- **Nested Routing**  
+  Easily create **nested routes** for sections like dashboards or layouts.
+
+- **Dynamic Parameters**  
+  Supports parameters like `/product/:id` for dynamic route matching.
+
+- **Wildcard Support**  
+  Use `*` for **catch-all routes** (e.g., handling 404 pages).
+
+---
+
+##  Uses of `useRoutes` Hook
+
+### 1. Making Routes Flexible
+
+Allows you to change routes **dynamically** based on application state or data. For example:
+
+```js
+const routes = user.isLoggedIn
+  ? [{ path: "/dashboard", element: <Dashboard /> }]
+  : [{ path: "/login", element: <Login /> }];
+```

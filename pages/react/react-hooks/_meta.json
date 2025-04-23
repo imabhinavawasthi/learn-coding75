@@ -1,0 +1,10 @@
+{
+    "hook":"Hook",
+    "usestate":"UseState",
+    "use-effect":"UseEffect",
+    "use-context":"UseContext",
+    "useref":"UseRef",
+    "use-reducer":"UseReducer",
+    "use-callback":"UseCallback",
+    "use-memo":"UseMemo"
+}

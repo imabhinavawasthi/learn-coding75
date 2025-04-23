@@ -1,0 +1,88 @@
+---
+title: React Getting Started
+lastUpdated: 22 Apr, 2025
+---
+
+# React Getting Started
+
+To use React in production, you need **npm**, which comes bundled with **Node.js**.
+
+However, to quickly understand what React is and how it works, you can start writing React code **directly in HTML files** without any complex setup.
+
+---
+
+## React Directly in HTML
+
+The quickest way to start learning React is to embed it directly in your HTML files. This is perfect for beginners or small experiments.
+
+---
+
+## How to Use React in HTML
+
+Start by including the following three scripts in your HTML file:
+
+1. **React**  
+2. **ReactDOM**  
+3. **Babel** — allows you to use JSX and modern JavaScript features in older browsers.
+
+> You will learn more about JSX in the **React JSX** chapter.
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React in HTML</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function App() {
+        return <h1>Hello from React!</h1>;
+      }
+
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+  </body>
+</html>
+```
+
+
+# What's Next?
+
+Now that you have a React environment set up on your computer, you're ready to dive deeper into learning React!
+
+In the rest of this tutorial, we will use our **"Show React"** tool to demonstrate various React concepts and how they are rendered in the browser.
+
+---
+
+## Try It on Your Own Computer
+
+If you'd like to follow along with the examples on your machine:
+
+- Start by **cleaning the `src` folder** of your React app.
+- Keep only a single file: `index.js`.
+- Remove any extra or unnecessary lines from `index.js` to match the example below.
+
+---
+
+## Example
+
+Click the **"Run Example"** button (if using the online tool) to see the result.
+
+Here’s the content of a simplified `index.js` file:
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+const myFirstElement = <h1>Hello React!</h1>;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myFirstElement);

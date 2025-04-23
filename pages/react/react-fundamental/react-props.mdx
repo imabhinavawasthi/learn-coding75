@@ -1,0 +1,87 @@
+## React Props
+
+**Props** are arguments passed into React components.
+
+Props are passed to components via **HTML attributes**.
+
+>  `props` stands for **properties**.
+
+---
+
+### What are Props?
+
+React props are like **function arguments in JavaScript** and **attributes in HTML**.
+
+To send props into a component, use the same syntax as HTML attributes:
+
+---
+
+### Example 1
+
+**Add a `brand` attribute to the `Car` element:**
+
+```jsx
+const myElement = <Car brand="Ford" />;
+```
+```jsx
+function Car(props) {
+  return <h2>I am a {props.brand}!</h2>;
+}
+
+```
+
+## Pass Data
+
+**Props** are also how you **pass data from one component to another**, just like parameters in functions.
+
+---
+
+### Example
+
+**Send the `brand` property from the `Garage` component to the `Car` component:**
+
+```jsx
+function Car(props) {
+  return <h2>I am a {props.brand}!</h2>;
+}
+
+function Garage() {
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Car brand="Ford" />
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);
+
+## Passing Variables as Props
+
+If you have a **variable** to send, and not a string as in the example above, you just put the **variable name** inside **curly brackets**.
+
+---
+
+### Example
+
+**Create a variable named `carName` and send it to the `Car` component:**
+
+```jsx
+function Car(props) {
+  return <h2>I am a {props.brand}!</h2>;
+}
+
+function Garage() {
+  const carName = "Ford";
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <Car brand={carName} />
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);
+

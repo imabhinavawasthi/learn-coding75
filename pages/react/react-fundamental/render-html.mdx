@@ -1,0 +1,47 @@
+---
+title: React Render HTML
+lastUpdated: 22 Apr, 2025
+---
+
+# React Render HTML
+
+React's primary goal is to **render HTML** inside a web page dynamically.
+
+This is done using the `createRoot()` function and its method `render()` from the `react-dom/client` package.
+
+---
+
+## The `createRoot()` Function
+
+The `createRoot()` function takes **one argument**, an HTML element from the DOM.
+
+Its purpose is to **specify the HTML element** where your React components should be rendered.
+
+---
+
+## The `render()` Method
+
+Once the root is created, the `render()` method is used to display the desired React content **inside the specified HTML element**.
+
+---
+
+## But Render Where?
+
+In a React project, there is a folder named **`public`**. Inside that, you'll find an `index.html` file.
+
+Within the `<body>` tag of `index.html`, there's usually a single empty element like this:
+
+```html
+<body>
+  <div id="root"></div>
+</body>
+```
+## Example
+
+**Display a paragraph inside an element with the id of `"root"`:**
+
+```js
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render(<p>Hello</p>);
+```

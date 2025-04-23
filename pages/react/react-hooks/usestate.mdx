@@ -1,0 +1,105 @@
+## React useState Hook
+
+The React **useState** Hook allows us to track state in a function component.
+
+State generally refers to data or properties that need to be tracked in an application.
+
+---
+
+### Import useState
+
+To use the `useState` Hook, we first need to import it into our component.
+
+```jsx
+import { useState } from "react";
+```
+
+## Initialize useState
+
+We initialize our state by calling `useState` in our function component.
+
+`useState` accepts an initial state and returns two values:
+
+- The **current state**.
+- A **function** that updates the state.
+
+---
+
+### Example: Initialize state
+
+Initialize state at the top of the function component.
+
+```jsx
+import { useState } from "react";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("");
+}
+```
+## Destructuring useState
+
+Notice that again, we are destructuring the returned values from `useState`.
+
+- The first value, `color`, is our **current state**.
+- The second value, `setColor`, is the **function** that is used to update our state.
+
+These names are variables that can be named anything you would like.
+
+Lastly, we set the initial state to an empty string: `useState("")`
+
+## Read State
+
+We can now include our state anywhere in our component.
+
+---
+
+### Example: Use State in Render
+
+Use the state variable in the rendered component.
+
+```jsx
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("red");
+
+  return <h1>My favorite color is {color}!</h1>
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<FavoriteColor />);
+```
+## Update State
+
+To update our state, we use our state updater function.
+
+We should **never** directly update state. For example: `color = "red"` is not allowed.
+
+---
+
+### Example: Use Button to Update State
+
+Use a button to update the state:
+
+```jsx
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("red");
+
+  return (
+    <>
+      <h1>My favorite color is {color}!</h1>
+      <button
+        type="button"
+        onClick={() => setColor("blue")}
+      >Blue</button>
+    </>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<FavoriteColor />);
+```
