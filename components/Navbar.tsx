@@ -90,6 +90,7 @@ const Navbar = () => {
                     <li><Link href="/html/introduction" className="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ease-in-out">HTML</Link></li>
                     <li><Link href="/css/introduction" className="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ease-in-out">CSS</Link></li>
                     <li><Link href="/learn-javascript" className="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ease-in-out">JavaScript</Link></li>
+                    <li><Link href="/react/introduction" className="block px-4 py-2 rounded-md hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 ease-in-out">React.Js</Link></li>
                   </ul>
                 )}
               </div>

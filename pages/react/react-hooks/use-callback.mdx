@@ -1,0 +1,171 @@
+# React `useCallback` Hook
+
+The `useCallback` Hook is a built-in React Hook that **memoizes a callback function**, preventing it from being recreated on every render unless its dependencies change.
+
+This is particularly useful for **performance optimization**, especially when you're passing functions as props to child components — helping avoid unnecessary re-renders.
+
+---
+
+##  Syntax
+
+```js
+const memoizedCallback = useCallback(() => {
+  // Function logic
+}, [dependencies]);
+```
+
+##  Key Points
+
+- The function to be memoized is passed as the **first argument**.
+- An array of **dependencies** is passed as the **second argument** — the callback is only recreated when these change.
+
+---
+
+##  Why `useCallback` Matters
+
+Without `useCallback`, a **new instance** of the function is created on **every render**, which can result in:
+
+-  **Unnecessary re-renders** of child components
+-  **Performance degradation** in large or deeply nested components
+
+With `useCallback`:
+
+- The function is **memoized**
+- It only **updates when dependencies change**
+- React can **skip re-renders**, making your app smoother and more efficient
+
+>  Use `useCallback` when passing functions as props to optimize rendering performance.
+
+##  Without the `useCallback` Hook
+
+This example demonstrates a **counter app** built **without using** the `useCallback` Hook.
+
+Each time the component re-renders, **new instances** of the functions are created, causing the `Set` to grow — proving that the functions aren't memoized.
+
+---
+
+###  Code Example
+
+```jsx
+import React, { useState } from "react";
+
+const funcSet = new Set();
+
+const App = () => {
+  const [cnt, setCnt] = useState(0);
+  const [num, setNum] = useState(0);
+
+  const incCnt = () => setCnt(cnt + 1);
+  const decCnt = () => setCnt(cnt - 1);
+  const incNum = () => setNum(num + 1);
+
+  funcSet.add(incCnt);
+  funcSet.add(decCnt);
+  funcSet.add(incNum);
+  alert(funcSet.size); // Alerts growing size due to new function instances
+
+  return (
+    <div>
+      <h2>Without useCallback Hook</h2>
+      <button onClick={incCnt}>Increase Counter</button>
+      <button onClick={decCnt}>Decrease Counter</button>
+      <button onClick={incNum}>Increase Number</button>
+    </div>
+  );
+};
+
+export default App;
+```
+###  In This Example
+
+- `useState` manages `cnt` and `num` states.
+- Functions (`incCnt`, `decCnt`, `incNum`) are used to update these states.
+- Functions are stored in a `Set`, which only keeps **unique values**.
+- Clicking a button updates the state and triggers an **alert** showing the current count of unique function references.
+
+---
+
+###  The Problem
+
+Every time the component re-renders:
+
+- **New function references** are created.
+- The `Set` keeps adding them because it sees them as **new objects**.
+- This leads to:
+  -  **Unnecessary re-renders** of child components (if functions are passed as props)
+  -  **Inefficient memory usage** as more and more function instances are stored
+
+>  To solve this issue, we can use the `useCallback` Hook to **memoize** these functions and keep them stable across renders.
+
+##  Using the `useCallback` Hook
+
+To solve the problem of unnecessary re-renders and memory inefficiency, we can use the `useCallback` hook. It optimizes performance by memoizing the callback functions, ensuring that the functions are only recreated when their dependencies change.
+
+---
+
+###  Code Example
+
+```jsx
+import React, { useState, useCallback } from "react";
+
+const funcSet = new Set();
+
+const App = () => {
+  const [cnt, setCnt] = useState(0);
+  const [num, setNum] = useState(0);
+
+  const incCnt = useCallback(() => setCnt(cnt + 1), [cnt]);
+  const decCnt = useCallback(() => setCnt(cnt - 1), [cnt]);
+  const incNum = useCallback(() => setNum(num + 1), [num]);
+
+  funcSet.add(incCnt);
+  funcSet.add(decCnt);
+  funcSet.add(incNum);
+  alert(funcSet.size); // Alerts 3 — function references are stable
+
+  return (
+    <div>
+      <h2>With useCallback Hook</h2>
+      <button onClick={incCnt}>Increase Counter</button>
+      <button onClick={decCnt}>Decrease Counter</button>
+      <button onClick={incNum}>Increase Number</button>
+    </div>
+  );
+};
+
+export default App;
+```
+###  In This Example
+
+- `useState` manages the `cnt` and `num` states.
+- `useCallback` memoizes `incCnt`, `decCnt`, and `incNum` to **prevent unnecessary function re-creations**.
+- Each function updates `cnt` and `num` when called.
+- The `funcSet` keeps track of **unique function references**.
+- Clicking a button updates the corresponding state and triggers an **alert** showing the current count of unique function references.
+
+---
+
+> Using `useCallback` ensures that the same function references are used on each render, improving performance and memory efficiency.
+
+
+##  When to Use `useCallback`?
+
+You should use the `useCallback` Hook in the following scenarios:
+
+- **Passing Functions as Props**: To prevent unnecessary re-renders of child components that rely on stable function references.
+- **Avoiding Unnecessary Function Re-creations**: Inside `useEffect` or event handlers, where functions would be re-created on each render.
+- **Ensuring Stable Function References**: To ensure a function reference does not change across renders unless its dependencies change.
+
+###  Caution: Avoid Overusing `useCallback`
+
+While `useCallback` can optimize performance, it can also add unnecessary complexity and lead to **premature optimization**. Only use it when you notice performance issues caused by function re-creations.
+
+---
+
+
+### When to Use:
+
+- Use **`useCallback`** for stable function references, especially when passing functions to child components.
+- Use **`useMemo`** for optimizing expensive calculations or values that do not need to be recalculated on each render.
+
+>  **In short**: Use `useCallback` for **functions** and `useMemo` for **values**.

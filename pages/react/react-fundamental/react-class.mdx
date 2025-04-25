@@ -1,0 +1,80 @@
+## React Class Components
+
+Before React 16.8, **Class components** were the only way to track state and lifecycle in a React component.  
+Function components were considered "**state-less**".
+
+With the addition of **Hooks**, Function components are now almost equivalent to Class components.  
+The differences are so minor that you will probably **never need to use a Class component** in React.
+
+Even though Function components are preferred, there are **no current plans to remove Class components** from React.
+
+---
+
+This section will give you an overview of how to use **Class components** in React.
+
+>  *Feel free to skip this section, and use Function Components instead.*
+
+## React Components
+
+Components are **independent** and **reusable** bits of code.  
+They serve the same purpose as JavaScript functions, but work in **isolation** and return HTML via a `render()` function.
+
+Components come in two types: **Class components** and **Function components**.  
+In this chapter, you will learn about **Class components**.
+
+---
+
+### Create a Class Component
+
+When creating a React component, the component's name must start with an **upper case** letter.
+
+The component has to include the `extends React.Component` statement.  
+This statement creates an inheritance to `React.Component` and gives your component access to React's component functions.
+
+The component also requires a `render()` method. This method returns HTML.
+
+---
+
+#### Example
+
+**Create a Class component called `Car`:**
+
+```jsx
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
+```
+
+## Component Constructor
+
+If there is a `constructor()` function in your component, this function will be called when the component gets **initiated**.
+
+The `constructor` function is where you **initiate the component's properties**.
+
+In React, component properties should be kept in an object called `state`.
+
+> 💡 You will learn more about `state` later in this tutorial.
+
+The `constructor` function is also where you honor the inheritance of the parent component by including the `super()` statement.  
+This executes the parent component's constructor function and allows your component to access all the functions of the parent (`React.Component`).
+
+---
+
+### Example 1
+
+**Create a constructor function in the `Car` component and add a `color` property:**
+
+```jsx
+class Car extends React.Component {
+  constructor() {
+    super();
+    this.state = { color: "red" };
+  }
+
+  render() {
+    return <h2>I am a Car!</h2>;
+  }
+}
+```

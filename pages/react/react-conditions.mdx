@@ -1,0 +1,91 @@
+## React Conditional Rendering
+
+In React, you can **conditionally render components**.
+
+There are several ways to do this.
+
+---
+
+### if Statement
+
+We can use the **if** JavaScript operator to decide which component to render.
+
+---
+
+### Example 1
+
+**We'll use these two components:**
+
+```jsx
+function MissedGoal() {
+  return <h1>MISSED!</h1>;
+}
+
+function MadeGoal() {
+  return <h1>Goal!</h1>;
+}
+```
+
+```jsx
+function Goal(props) {
+  const isGoal = props.isGoal;
+  if (isGoal) {
+    return <MadeGoal />;
+  }
+  return <MissedGoal />;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Goal isGoal={false} />);
+```
+
+## Logical && Operator
+
+Another way to conditionally render a React component is by using the `&&` operator.
+
+---
+
+### Example
+
+We can embed JavaScript expressions in JSX by using curly braces:
+
+```jsx
+function Garage(props) {
+  const cars = props.cars;
+  return (
+    <>
+      <h1>Garage</h1>
+      {cars.length > 0 && 
+        <h2>
+          You have {cars.length} cars in your garage.
+        </h2>
+      }
+    </>
+  );
+}
+
+const cars = ['Ford', 'BMW', 'Audi'];
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage cars={cars} />);
+```
+
+## Ternary Operator
+
+Another way to conditionally render elements is by using a **ternary operator**.
+
+```jsx
+condition ? true : false
+```
+```jsx
+function Goal(props) {
+  const isGoal = props.isGoal;
+  return (
+    <>
+      { isGoal ? <MadeGoal /> : <MissedGoal /> }
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Goal isGoal={false} />);
+```

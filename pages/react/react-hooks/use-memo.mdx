@@ -1,0 +1,74 @@
+# ReactJS `useMemo` Hook
+
+
+The `useMemo` Hook is a built-in React Hook that helps **optimize performance** by **memoizing** the result of a computation. It reuses the result unless its dependencies change, preventing expensive computations from being **re-executed unnecessarily** during component re-renders.
+
+---
+
+##  Syntax
+
+```js
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+```
+## 1. Optimizing Expensive Calculations
+
+In this example, we have an expensive computation (squaring a number) that should not be recalculated on every render. We use the `useMemo` hook to memoize the result of the computation.
+
+###  Code Example
+
+```jsx
+import React, { useState, useMemo } from "react";
+
+function App() {
+    const [number, setNumber] = useState(0);
+    const squaredNum = useMemo(() => squareNum(number), [number]);
+    const [counter, setCounter] = useState(0);
+
+    const onChangeHandler = (e) => {
+        setNumber(e.target.value);
+    };
+
+    const counterHander = () => {
+        setCounter(counter + 1);
+    };
+
+    return (
+        <div className="App">
+            <h1>Welcome to Geeksforgeeks</h1>
+            <input
+                type="number"
+                placeholder="Enter a number"
+                value={number}
+                onChange={onChangeHandler}
+            ></input>
+
+            <div>OUTPUT: {squaredNum}</div>
+            <button onClick={counterHander}>Counter ++</button>
+            <div>Counter : {counter}</div>
+        </div>
+    );
+}
+
+function squareNum(number) {
+    console.log("Squaring will be done!");
+    return Math.pow(number, 2);
+}
+
+export default App;
+```
+##  When to Use `useMemo`?
+
+You should use the `useMemo` Hook in the following scenarios:
+
+- **Expensive Calculations**: When you have expensive computations that **do not need to be re-executed** unless certain dependencies change.
+- **Large Data Sets**: When you're working with large data sets and want to **optimize performance** by preventing unnecessary recalculations.
+- **Prevent Unnecessary Re-renders**: To prevent **unnecessary re-renders** of child components by ensuring stable references.
+
+---
+
+##  `useCallback` vs `useMemo`
+
+Both `useCallback` and `useMemo` are **similar** but serve **different purposes**:
+
+- **`useCallback`**: Memoizes a **function** and ensures its reference remains stable across renders.
+- **`useMemo`**: Memoizes a **value** (often the result of an expensive calculation), caching the result to avoid unnecessary recomputations.

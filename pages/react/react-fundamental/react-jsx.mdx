@@ -1,0 +1,82 @@
+---
+title: React JSX
+lastUpdated: 22 Apr, 2025
+---
+
+# React JSX
+
+## What is JSX?
+
+**JSX** stands for **JavaScript XML**. It allows us to write HTML-like syntax directly in JavaScript, which makes it easier to define the structure of UI elements in React.
+
+JSX simplifies the process of adding HTML elements in React and is commonly used in React code.
+
+---
+
+## Coding JSX
+
+JSX allows us to write HTML elements in JavaScript and place them directly in the DOM without needing to use methods like `createElement()` or `appendChild()`.
+
+When you write JSX, it gets converted into **React elements**, which React can then render to the DOM.
+
+Although it’s not required to use JSX in React, it **makes it easier** and cleaner to write React applications.
+
+---
+
+## Example 1: Using JSX
+
+```js
+const myElement = <h1>I Love JSX!</h1>;
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(myElement);
+```
+
+## JSX Expressions
+
+As you saw in the first example, JSX allows us to write **HTML directly** within JavaScript code. 
+
+JSX is an **extension of the JavaScript language** based on ES6 syntax and is **converted into regular JavaScript** during runtime.
+
+---
+
+## Expressions in JSX
+
+In JSX, you can write **expressions** inside curly braces `{ }`. 
+
+These expressions can be:
+
+- React variables or properties
+- Any valid JavaScript expression
+
+JSX will evaluate the expression and render the result.
+
+---
+
+## Example
+
+Execute the expression `5 + 5` within JSX:
+
+```js
+const myElement = <h1>React is {5 + 5} times better with JSX</h1>;
+```
+
+## Inserting a Large Block of HTML
+
+When you need to write HTML that spans multiple lines, wrap the HTML inside **parentheses**. This helps to keep the code clean and properly formatted.
+
+---
+
+## Example
+
+Create a list with three list items:
+
+```js
+const myElement = (
+  <ul>
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Cherries</li>
+  </ul>
+);
+```

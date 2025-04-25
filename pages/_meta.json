@@ -50,5 +50,9 @@
   "learn-javascript": {
     "title": "JavaScript",
     "type": "page"
+  },
+  "react":{
+    "title": "React",
+    "type": "page"
   }
 }
