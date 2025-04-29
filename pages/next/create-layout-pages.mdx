@@ -1,0 +1,111 @@
+## How to Create Layouts and Pages
+
+Next.js uses file-system based routing, meaning you can use folders and files to define routes.  
+This page will guide you through how to create layouts and pages, and link between them.
+
+---
+
+### Creating a Page
+
+A **page** is UI that is rendered on a specific route.  
+To create a page, add a page file inside the `app` directory and default export a React component.
+
+For example, to create an **index page** (`/`):
+
+```jsx
+// app/page.js (or app/page.tsx if using TypeScript)
+
+export default function HomePage() {
+  return (
+    <div>
+      <h1>Welcome to the Home Page</h1>
+    </div>
+  );
+}
+```
+### Creating a Layout
+
+A **layout** is UI that is shared between multiple pages.  
+On navigation, layouts preserve state, remain interactive, and do not rerender.
+
+You can define a layout by default exporting a React component from a `layout.js` (or `layout.tsx`) file.  
+The component should accept a `children` prop, which can be a page or another layout.
+
+For example, to create a layout that accepts your index page as a child, add a `layout.js` file inside the `app` directory:
+
+```jsx
+// app/layout.js
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        <header>
+          <h1>My Website Header</h1>
+        </header>
+        <main>{children}</main>
+        <footer>
+          <p>© 2025 My Website. All rights reserved.</p>
+        </footer>
+      </body>
+    </html>
+  );
+}
+```
+### Creating a Nested Route
+
+A **nested route** is a route composed of multiple URL segments.  
+For example, the `/blog/[slug]` route is composed of three segments:
+
+- `/` (Root Segment)
+- `blog` (Segment)
+- `[slug]` (Leaf Segment)
+
+---
+
+In Next.js:
+
+- **Folders** are used to define the route segments that map to URL segments.
+- **Files** (like `page` and `layout`) are used to create the UI that is shown for a segment.
+
+---
+
+To create nested routes, you can nest folders inside each other.  
+For example, to add a route for `/blog`, create a folder called `blog` in the `app` directory.  
+Then, to make `/blog` publicly accessible, add a `page.tsx` file:
+
+```tsx
+// app/blog/page.tsx
+
+export default function BlogPage() {
+  return (
+    <div>
+      <h1>Welcome to the Blog</h1>
+    </div>
+  );
+}
+```
+
+### Nesting Layouts
+
+By default, layouts in the folder hierarchy are also nested,  
+which means they wrap child layouts via their `children` prop.  
+
+You can nest layouts by adding a `layout.js` (or `layout.tsx`) file inside specific route segments (folders).
+
+---
+
+For example, to create a layout for the `/blog` route, add a new `layout.tsx` file inside the `blog` folder:
+
+```tsx
+// app/blog/layout.tsx
+
+export default function BlogLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <section>
+      <h2>Blog Section</h2>
+      <div>{children}</div>
+    </section>
+  );
+}
+```

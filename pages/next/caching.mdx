@@ -1,0 +1,36 @@
+# Caching in Next.js
+
+Next.js uses several caching mechanisms to improve the performance and reduce the cost of your application. These caching strategies are often set by default, but you can customize them based on your needs.
+
+## 1. Static Site Generation (SSG)
+
+### How it works:
+Next.js pre-renders pages at build time and caches them as static HTML. This is great for pages that don’t change often.
+
+### Caching mechanism:
+The static HTML is cached by CDNs, which helps serve it quickly to users. You can also use `revalidate` for Incremental Static Regeneration (ISR), allowing you to define revalidation intervals.
+
+## 2. Server-Side Rendering (SSR)
+
+### How it works:
+For SSR, Next.js generates the HTML on each request, providing fresh content.
+
+### Caching mechanism:
+You can use HTTP caching headers for server-side rendered pages, like `Cache-Control`, to control how long the page is cached by browsers or CDNs.
+
+## 3. Client-Side Caching
+
+### How it works:
+On the client side, Next.js supports caching of data fetched using `getServerSideProps` or `getStaticProps` by using strategies like Stale-While-Revalidate or `Cache-Control` headers to make subsequent requests faster.
+
+### API usage:
+You can utilize the `fetch` API and its caching options, such as `cache: 'reload'`, to configure client-side data fetching.
+
+## 4. Image Optimization Caching
+
+### How it works:
+Next.js optimizes images on demand, but once an image is optimized, it can be cached by your CDN.
+
+### Caching mechanism:
+Image URLs with hashed filenames allow CDNs to cache them efficiently.
+

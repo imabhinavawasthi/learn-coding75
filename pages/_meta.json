@@ -54,5 +54,9 @@
   "react":{
     "title": "React",
     "type": "page"
+  },
+  "next":{
+    "title": "NextJs",
+    "type": "page"
   }
 }

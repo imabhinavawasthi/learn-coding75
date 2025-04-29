@@ -1,0 +1,95 @@
+# Incremental Static Regeneration (ISR)
+
+Incremental Static Regeneration (ISR) enables you to:
+
+- Update static content without rebuilding the entire site
+- Reduce server load by serving prerendered, static pages for most requests
+- Ensure proper cache-control headers are automatically added to pages
+- Handle large amounts of content pages without long `next build` times
+
+Here's a minimal example:
+
+## Example of Incremental Static Regeneration (ISR) with Dynamic Params
+
+```typescript
+interface Post {
+  id: string
+  title: string
+  content: string
+}
+
+// Next.js will invalidate the cache when a
+// request comes in, at most once every 60 seconds.
+export const revalidate = 60
+
+// We'll prerender only the params from `generateStaticParams` at build time.
+// If a request comes in for a path that hasn't been generated,
+// Next.js will server-render the page on-demand.
+export const dynamicParams = true // or false, to 404 on unknown paths
+
+export async function generateStaticParams() {
+  const posts: Post[] = await fetch('https://api.vercel.app/blog').then((res) =>
+    res.json()
+  )
+  return posts.map((post) => ({
+    id: String(post.id),
+  }))
+}
+
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = await params
+  const post: Post = await fetch(`https://api.vercel.app/blog/${id}`).then(
+    (res) => res.json()
+  )
+  return (
+    <main>
+      <h1>{post.title}</h1>
+      <p>{post.content}</p>
+    </main>
+  )
+}
+```
+## How This Example Works
+
+- During `next build`, all known blog posts are generated (there are 25 in this example).
+- All requests made to these pages (e.g., `/blog/1`) are cached and instantaneous.
+- After 60 seconds has passed, the next request will still show the cached (stale) page.
+- The cache is invalidated and a new version of the page begins generating in the background.
+- Once generated successfully, Next.js will display and cache the updated page.
+- If `/blog/26` is requested, Next.js will generate and cache this page on-demand.
+
+## Examples
+
+### Time-based Revalidation
+
+This fetches and displays a list of blog posts on `/blog`. After an hour, the cache for this page is invalidated on the next visit to the page. Then, in the background, a new version of the page is generated with the latest blog posts.
+
+## Example of Time-based Revalidation
+
+```typescript
+interface Post {
+  id: string
+  title: string
+  content: string
+}
+
+export const revalidate = 3600 // invalidate every hour
+
+export default async function Page() {
+  const data = await fetch('https://api.vercel.app/blog')
+  const posts: Post[] = await data.json()
+  return (
+    <main>
+      <h1>Blog Posts</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </main>
+  )
+}

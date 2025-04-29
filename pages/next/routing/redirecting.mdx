@@ -1,0 +1,119 @@
+### Redirecting
+
+There are a few ways you can handle redirects in Next.js. This page will go through each available option, use cases, and how to manage large numbers of redirects.
+
+| API                       | Purpose                                                        | Where                                        | Status Code                     |
+|---------------------------|----------------------------------------------------------------|----------------------------------------------|----------------------------------|
+| `redirect`                | Redirect user after a mutation or event                        | Server Components, Server Actions, Route Handlers | 307 (Temporary) or 303 (Server Action) |
+| `permanentRedirect`       | Redirect user after a mutation or event                        | Server Components, Server Actions, Route Handlers | 308 (Permanent)                 |
+| `useRouter`               | Perform a client-side navigation                               | Event Handlers in Client Components          | N/A                              |
+| `redirects` in `next.config.js` | Redirect an incoming request based on a path                  | `next.config.js` file                       | 307 (Temporary) or 308 (Permanent) |
+| `NextResponse.redirect`   | Redirect an incoming request based on a condition              | Middleware                                  | N/A                              |
+
+### redirect function
+
+The `redirect` function allows you to redirect the user to another URL. You can call `redirect` in Server Components, Route Handlers, and Server Actions.
+
+`redirect` is often used after a mutation or event. For example, creating a post:
+
+```ts
+// app/actions.ts
+
+'use server'
+
+import { redirect } from 'next/navigation'
+import { revalidatePath } from 'next/cache'
+
+export async function createPost(id: string) {
+  try {
+    // Call database
+  } catch (error) {
+    // Handle errors
+  }
+
+  revalidatePath('/posts') // Update cached posts
+  redirect(`/post/${id}`) // Navigate to the new post page
+}
+```
+
+### permanentRedirect function
+
+The `permanentRedirect` function allows you to permanently redirect the user to another URL. You can call `permanentRedirect` in Server Components, Route Handlers, and Server Actions.
+
+`permanentRedirect` is often used after a mutation or event that changes an entity's canonical URL, such as updating a user's profile URL after they change their username:
+
+```ts
+// app/actions.ts
+
+'use server'
+
+import { permanentRedirect } from 'next/navigation'
+import { revalidateTag } from 'next/cache'
+
+export async function updateUsername(username: string, formData: FormData) {
+  try {
+    // Call database
+  } catch (error) {
+    // Handle errors
+  }
+
+  revalidateTag('username') // Update all references to the username
+  permanentRedirect(`/profile/${username}`) // Navigate to the new user profile
+}
+```
+
+### useRouter() hook
+
+If you need to redirect inside an event handler in a Client Component, you can use the `push` method from the `useRouter` hook. For example:
+
+```ts
+// app/page.tsx
+
+'use client'
+
+import { useRouter } from 'next/navigation'
+
+export default function Page() {
+  const router = useRouter()
+
+  return (
+    <button type="button" onClick={() => router.push('/dashboard')}>
+      Dashboard
+    </button>
+  )
+}
+```
+### redirects in next.config.js
+
+The `redirects` option in the `next.config.js` file allows you to redirect an incoming request path to a different destination path. This is useful when you change the URL structure of pages or have a list of redirects that are known ahead of time.
+
+`redirects` supports path, header, cookie, and query matching, giving you the flexibility to redirect users based on an incoming request.
+
+To use redirects, add the option to your `next.config.js` file:
+
+```ts
+// next.config.ts
+
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      // Basic redirect
+      {
+        source: '/about',
+        destination: '/',
+        permanent: true,
+      },
+      // Wildcard path matching
+      {
+        source: '/blog/:slug',
+        destination: '/news/:slug',
+        permanent: true,
+      },
+    ]
+  },
+}
+
+export default nextConfig
+```

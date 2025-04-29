@@ -1,0 +1,113 @@
+### Optimizing Images
+
+The Next.js `<Image>` component extends the HTML `<img>` element to provide:
+
+- **Size Optimization**:  
+  Automatically serves correctly sized images for each device, using modern image formats like WebP.
+
+- **Visual Stability**:  
+  Prevents layout shift automatically when images are loading.
+
+- **Faster Page Loads**:  
+  Only loads images when they enter the viewport using native browser lazy loading, with optional blur-up placeholders.
+
+- **Asset Flexibility**:  
+  Resizes images on-demand, even images stored on remote servers.
+
+---
+
+To start using `<Image>`, import it from `next/image` and render it within your component:
+
+```tsx
+import Image from 'next/image';
+
+export default function MyComponent() {
+  return (
+    <Image
+      src="/images/my-photo.jpg"
+      alt="My Photo"
+      width={500}
+      height={300}
+    />
+  );
+}
+```
+### Optimizing Fonts
+
+The `next/font` module automatically optimizes your fonts and removes external network requests for improved privacy and performance.
+
+It includes built-in self-hosting for any font file.  
+This means you can optimally load web fonts with no layout shift.
+
+---
+
+To start using `next/font`, import it from `next/font/local` or `next/font/google`,  
+call it as a function with the appropriate options, and set the `className` of the element you want to apply the font to.
+
+For example:
+
+```tsx
+// Using a Google Font
+import { Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+});
+
+export default function MyComponent() {
+  return (
+    <div className={roboto.className}>
+      <h1>Hello with Roboto font!</h1>
+    </div>
+  );
+}
+```
+
+### Google Fonts
+
+You can automatically self-host any Google Font.  
+Fonts are included in the deployment and served from the same domain as your deployment, meaning no requests are sent to Google by the browser when the user visits your site.
+
+---
+
+To start using a Google Font, import your chosen font from `next/font/google`
+
+```tsx
+import { Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+});
+
+export default function MyComponent() {
+  return (
+    <div className={roboto.className}>
+      <h1>Welcome with Roboto Font!</h1>
+    </div>
+  );
+}
+```
+We recommend using **variable fonts** for the best performance and flexibility.  
+But if you can't use a variable font, you will need to specify a **weight**.
+
+```tsx
+import { Geist } from 'next/font/google';
+
+const geist = Geist({
+  subsets: ['latin'],
+});
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className={geist.className}>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
