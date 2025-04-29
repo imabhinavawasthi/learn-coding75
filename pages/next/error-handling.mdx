@@ -1,0 +1,100 @@
+### How to Handle Errors
+
+Errors can be divided into two categories: **expected errors** and **uncaught exceptions**.  
+This page will walk you through how you can handle these errors in your Next.js application.
+
+---
+
+### Handling Expected Errors
+
+**Expected errors** are those that can occur during the normal operation of the application, such as those from server-side form validation or failed requests.  
+These errors should be handled explicitly and returned to the client.
+
+#### Server Functions
+
+You can use the `useActionState` hook to handle expected errors in **Server Functions**.
+
+For these errors, avoid using `try/catch` blocks and throwing errors. Instead, model expected errors as **return values**.
+
+```tsx
+import { useActionState } from 'next/actions';
+
+export default function MyForm() {
+  const [state, setState] = useActionState();
+
+  const handleSubmit = async (data) => {
+    const result = await fetch('/api/submit', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+
+    if (!result.ok) {
+      setState({ error: 'Form submission failed' });
+    } else {
+      setState({ success: 'Form submitted successfully!' });
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* Form fields */}
+      <button type="submit">Submit</button>
+      {state.error && <div>{state.error}</div>}
+      {state.success && <div>{state.success}</div>}
+    </form>
+  );
+}
+```
+
+### Handling Uncaught Exceptions
+
+**Uncaught exceptions** are unexpected errors that indicate bugs or issues that should not occur during the normal flow of your application.  
+These should be handled by throwing errors, which will then be caught by **error boundaries**.
+
+---
+
+#### Nested Error Boundaries
+
+Next.js uses **error boundaries** to handle uncaught exceptions.  
+Error boundaries catch errors in their child components and display a fallback UI instead of the component tree that crashed.
+
+---
+
+To create an error boundary, add an `error.js` (or `error.tsx`) file inside a route segment and export a React component:
+
+```tsx
+// app/blog/error.js
+
+export default function ErrorBoundary() {
+  return (
+    <div>
+      <h2>Something went wrong in the Blog section!</h2>
+      <p>Sorry, we encountered an error while loading this section.</p>
+    </div>
+  );
+}
+```
+
+### Global Errors
+
+While less common, you can handle errors in the **root layout** using the `global-error.js` file, located in the root app directory, even when leveraging internationalization.  
+The **global error UI** must define its own `<html>` and `<body>` tags since it is replacing the root layout or template when active.
+
+---
+
+#### Example: `app/global-error.tsx`
+
+```tsx
+// app/global-error.tsx
+
+export default function GlobalError() {
+  return (
+    <html lang="en">
+      <body>
+        <h1>Something went wrong globally!</h1>
+        <p>Sorry, we encountered an error across the entire app.</p>
+      </body>
+    </html>
+  );
+}
+```

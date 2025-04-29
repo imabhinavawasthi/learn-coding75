@@ -1,0 +1,58 @@
+# Server Actions and Mutations
+
+Server Actions are asynchronous functions that are executed on the server. They can be called in Server and Client Components to handle form submissions and data mutations in Next.js applications.
+
+## Convention
+
+A Server Action can be defined with the React `"use server"` directive. You can place the directive at the top of an async function to mark the function as a Server Action, or at the top of a separate file to mark all exports of that file as Server Actions.
+
+### Server Components
+
+Server Components can use the inline function level or module level `"use server"` directive. To inline a Server Action, add `"use server"` to the top of the function body:
+
+## Example of a Server Action in Next.js
+
+```typescript
+export default function Page() {
+  // Server Action
+  async function create() {
+    'use server'
+    // Mutate data
+  }
+
+  return '...'
+}
+```
+
+## Client Components
+
+To call a Server Action in a Client Component, create a new file and add the `"use server"` directive at the top of it. All exported functions within the file will be marked as Server Actions that can be reused in both Client and Server Components:
+
+## Example of Calling a Server Action from a Client Component
+
+```typescript
+'use client'
+
+import { create } from './actions'
+
+export function Button() {
+  return <button onClick={() => create()}>Create</button>
+}
+```
+## Passing Actions as Props
+
+You can also pass a Server Action to a Client Component as a prop:
+
+## Example of Passing Actions as Props to a Client Component
+
+```typescript
+'use client'
+
+export default function ClientComponent({
+  updateItemAction,
+}: {
+  updateItemAction: (formData: FormData) => void
+}) {
+  return <form action={updateItemAction}>{/* ... */}</form>
+}
+```

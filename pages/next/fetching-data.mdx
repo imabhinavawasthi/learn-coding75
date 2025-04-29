@@ -1,0 +1,99 @@
+### How to Fetch Data and Stream
+
+This page will walk you through how you can fetch data in **Server Components** and **Client Components**, as well as how to stream content that depends on data.
+
+---
+
+### Fetching Data
+
+#### Server Components
+
+You can fetch data in Server Components using:
+
+- The **fetch API**
+- An **ORM** or **database**
+
+---
+
+#### With the fetch API
+
+To fetch data with the fetch API, turn your component into an asynchronous function, and `await` the fetch call.  
+For example:
+
+```tsx
+// Example of fetching data in a Server Component
+
+export default async function MyComponent() {
+  const res = await fetch('https://api.example.com/data');
+  const data = await res.json();
+
+  return (
+    <div>
+      <h1>Fetched Data</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
+}
+```
+
+#### Client Components
+
+There are two ways to fetch data in Client Components, using:
+
+- **React's `use` hook**
+- A **community library** like SWR or React Query
+
+---
+
+#### With the `use` hook
+
+You can use React's `use` hook to stream data from the server to the client.  
+Start by fetching data in your Server component, and pass the promise to your Client Component as a prop:
+
+```tsx
+// Server Component
+export default async function ServerComponent() {
+  const res = await fetch('https://api.example.com/data');
+  const data = await res.json();
+
+  return <ClientComponent data={data} />;
+}
+
+// Client Component
+import React from 'react';
+
+export default function ClientComponent({ data }) {
+  return (
+    <div>
+      <h1>Client-side Data</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
+}
+```
+
+#### With an ORM or Database
+
+Since **Server Components** are rendered on the server, you can safely make database queries using an ORM or database client.  
+Turn your component into an asynchronous function, and `await` the call:
+
+```tsx
+// Example of fetching data with an ORM (like Prisma)
+
+import { prisma } from './prisma'; // Assuming you have a Prisma client set up
+
+export default async function ServerComponent() {
+  const users = await prisma.user.findMany();
+
+  return (
+    <div>
+      <h1>Users List</h1>
+      <ul>
+        {users.map(user => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```

@@ -1,0 +1,83 @@
+# Partial Prerendering
+
+> **Note:** Partial Prerendering is an experimental feature only available on canary and is subject to change. It is not ready for production use.
+
+Partial Prerendering (PPR) enables you to combine static and dynamic components together in the same route.
+
+During the build, Next.js prerenders as much of the route as possible. If dynamic code is detected, like reading from the incoming request, you can wrap the relevant component with a React `Suspense` boundary. The `Suspense` boundary fallback will then be included in the prerendered HTML.
+
+## Background
+
+PPR enables your Next.js server to immediately send prerendered content.
+
+To prevent client-to-server waterfalls, dynamic components begin streaming from the server in parallel while serving the initial prerender. This ensures dynamic components can begin rendering before client JavaScript has been loaded in the browser.
+
+To prevent creating many HTTP requests for each dynamic component, PPR is able to combine the static prerender and dynamic components together into a single HTTP request. This ensures there are not multiple network roundtrips needed for each dynamic component.
+
+# Using Partial Prerendering
+
+## Incremental Adoption (Version 15 Canary Versions)
+
+In Next.js 15 canary versions, PPR is available as an experimental feature. It's not available in the stable versions yet. To install:
+
+```bash
+npm install next@canary
+```
+
+## Example `next.config.js` Configuration
+
+```typescript
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
+  experimental: {
+    ppr: 'incremental',
+  },
+}
+
+export default nextConfig
+```
+## Example Usage of Partial Prerendering
+
+```typescript
+import { Suspense } from 'react'
+import { StaticComponent, DynamicComponent, Fallback } from '@/app/ui'
+
+export const experimental_ppr = true
+
+export default function Page() {
+  return (
+    <>
+      <StaticComponent />
+      <Suspense fallback={<Fallback />}>
+        <DynamicComponent />
+      </Suspense>
+    </>
+  )
+}
+```
+## Dynamic Components
+
+When creating the prerender for your route during `next build`, Next.js requires that Dynamic APIs are wrapped with React `Suspense`. The fallback is then included in the prerender.
+
+For example, using functions like cookies or headers:
+
+## Example of Dynamic Component with Suspense
+
+```typescript
+import { Suspense } from 'react'
+import { User, AvatarSkeleton } from './user'
+
+export const experimental_ppr = true
+
+export default function Page() {
+  return (
+    <section>
+      <h1>This will be prerendered</h1>
+      <Suspense fallback={<AvatarSkeleton />}>
+        <User />
+      </Suspense>
+    </section>
+  )
+}
+```

@@ -1,0 +1,12 @@
+{
+    "introduction":"Introduction to Next.Js",
+    "getting-started":"getting Started",
+    "create-layout-pages":"How to Create Layout and Pages",
+    "image-font":"Image and Fonts",
+    "fetching-data":"Fetching Data",
+    "error-handling":"Error Handling",
+    "routing":"Routing",
+    "rendering":"Rendering",
+    "data-fetching":"Data Fetching",
+    "caching":"Caching"
+}

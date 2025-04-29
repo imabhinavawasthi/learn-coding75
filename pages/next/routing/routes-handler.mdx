@@ -1,0 +1,87 @@
+### Route Handlers
+
+Route Handlers allow you to create custom request handlers for a given route using the Web Request and Response APIs.
+
+#### Route.js Special File
+
+Good to know: Route Handlers are only available inside the `app` directory. They are the equivalent of **API Routes** inside the `pages` directory, meaning you do not need to use API Routes and Route Handlers together.
+
+### Convention
+
+Route Handlers are defined in a `route.js|ts` file inside the `app` directory:
+
+```ts
+// app/api/route.ts (TypeScript Example)
+export async function GET(request: Request) {
+  // Your logic here
+}
+```
+### Route Handlers in Next.js
+
+Route Handlers can be nested anywhere inside the `app` directory, similar to `page.js` and `layout.js`. However, a `route.js` file cannot exist at the same route segment level as a `page.js`.
+
+### Supported HTTP Methods
+
+The following HTTP methods are supported:
+
+- `GET`
+- `POST`
+- `PUT`
+- `PATCH`
+- `DELETE`
+- `HEAD`
+- `OPTIONS`
+
+If an unsupported method is called, Next.js will return a `405 Method Not Allowed` response.
+
+### Extended NextRequest and NextResponse APIs
+
+Next.js extends the native `Request` and `Response` APIs with `NextRequest` and `NextResponse` to provide convenient helpers for advanced use cases.
+
+### Behavior: Caching in Route Handlers
+
+Route Handlers are not cached by default. However, you can opt into caching for `GET` methods. Other supported HTTP methods are not cached. To cache a `GET` method, use a route config option such as `export const dynamic = 'force-static'` in your Route Handler file.
+
+#### Example: Caching a GET Method
+
+```typescript
+// app/items/route.ts
+
+export const dynamic = 'force-static'
+
+export async function GET() {
+  const res = await fetch('https://data.mongodb-api.com/...', {
+    headers: {
+      'Content-Type': 'application/json',
+      'API-Key': process.env.DATA_API_KEY,
+    },
+  })
+  const data = await res.json()
+
+  return Response.json({ data })
+}
+```
+
+### Special Route Handlers
+
+Special Route Handlers like `sitemap.ts`, `opengraph-image.tsx`, `icon.tsx`, and other metadata files remain static by default unless they use Dynamic APIs or dynamic config options.
+
+### Route Resolution
+
+You can consider a route the lowest-level routing primitive. They do not participate in layouts or client-side navigations like pages.
+
+There cannot be a `route.js` file at the same route as `page.js`.
+
+### Example
+
+```tsx
+// app/page.tsx
+export default function Page() {
+  return <h1>Hello, Next.js!</h1>
+}
+
+// app/route.ts
+export async function POST(request: Request) {}
+```
+
+

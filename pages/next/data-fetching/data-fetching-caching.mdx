@@ -1,0 +1,72 @@
+# Data Fetching and Caching
+
+This guide will walk you through the basics of data fetching and caching in Next.js, providing practical examples and best practices.
+
+## Minimal Example of Data Fetching in Next.js
+
+```typescript
+export default async function Page() {
+  const data = await fetch('https://api.vercel.app/blog')
+  const posts = await data.json()
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  )
+}
+```
+This example demonstrates a basic server-side data fetch using the `fetch` API in an asynchronous React Server Component.
+
+# Reference
+
+- `fetch`
+- React cache
+- Next.js `unstable_cache`
+
+## Examples
+
+### Fetching Data on the Server with the `fetch` API
+
+This component will fetch and display a list of blog posts. The response from `fetch` is not cached by default.
+
+## Example of Server-Side Data Fetching
+
+```typescript
+export default async function Page() {
+  const data = await fetch('https://api.vercel.app/blog')
+  const posts = await data.json()
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  )
+}
+```
+If you are not using any Dynamic APIs anywhere else in this route, it will be prerendered during `next build` to a static page. The data can then be updated using Incremental Static Regeneration.
+
+To prevent the page from prerendering, you can add the following to your file:
+
+## Fetching Data on the Server with an ORM or Database
+
+This component will fetch and display a list of blog posts. The response from the database is not cached by default but could be with additional configuration.
+
+## Example of Fetching Data from a Database with an ORM
+
+```typescript
+import { db, posts } from '@/lib/db'
+
+export default async function Page() {
+  const allPosts = await db.select().from(posts)
+  return (
+    <ul>
+      {allPosts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  )
+}
+```
